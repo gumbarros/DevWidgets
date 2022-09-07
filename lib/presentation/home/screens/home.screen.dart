@@ -10,15 +10,9 @@ class HomeScreen extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('HomeScreen'),
-        centerTitle: true,
+        title: Text('all_tools'.tr)
       ),
-      body: Center(
-        child: Text(
-          'HomeScreen is working',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
+      body: SingleChildScrollView(child: Column(children: controller.getAllTools().map((e) => Text(e.name)).toList())),
     );
   }
 }

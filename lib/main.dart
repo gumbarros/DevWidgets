@@ -1,24 +1,28 @@
+import 'package:devtoys/infrastructure/navigation/bindings/domains/categories.binding.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yaru/yaru.dart';
 import 'infrastructure/navigation/navigation.dart';
 import 'infrastructure/navigation/routes.dart';
+import 'locale/translations.dart';
 
 void main() async {
-  var initialRoute = await Routes.initialRoute;
-  runApp(Main(initialRoute));
+  runApp(const Main());
 }
 
 class Main extends StatelessWidget {
-  final String initialRoute;
-  const Main(this.initialRoute);
+  const Main({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      initialRoute: initialRoute,
+      initialRoute: Routes.home,
+      debugShowCheckedModeBanner: false,
+      initialBinding: CategoriesBinding(),
+      locale: Get.deviceLocale,
       getPages: Navigation.pages,
-      builder: ((context, child) => YaruTheme(child: child,)),
+      translations: DevToysTranslations(),
+      builder: ((context, child) => YaruTheme(child: child)),
     );
   }
 }

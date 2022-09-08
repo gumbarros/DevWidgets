@@ -1,5 +1,5 @@
 
-import 'package:devtoys/domain/tools/tool.dart';
+import 'package:devtoys/domain/models/tools/tool.dart';
 import 'package:flutter/material.dart';
 
 abstract class Category{

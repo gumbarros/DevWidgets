@@ -1,1 +1,1 @@
-export 'package:devtoys/infrastructure/navigation/bindings/controllers/home.controller.binding.dart'; 
+export 'package:devtoys/infrastructure/navigation/bindings/controllers/home_controller_binding.dart'; 

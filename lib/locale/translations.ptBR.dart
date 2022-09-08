@@ -4,6 +4,7 @@ class BrazilianPortugueseTranslations{
     "encoders_decoders":"Encoders / Decoders",
     "converters":"Conversores",
     "html":"HTML",
+    "app_name":"DevToys",
     "json_yaml_converter":"JSON <> YAML"
   };
 }

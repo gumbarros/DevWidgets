@@ -4,6 +4,7 @@ class EnglishTranslations{
     "encoders_decoders":"Encoders / Decoders",
     "converters":"Converters",
     "html":"HTML",
+    "app_name":"DevToys",
     "json_yaml_converter":"JSON <> YAML"
   };
 }

@@ -1,19 +1,20 @@
 name: devtoys
 version: 1.0.0+1
 publish_to: none
-description: A new Flutter project.
+description: A Swiss Army knife for developers.
 environment: 
   sdk: '>=2.17.6 <3.0.0'
 
 dependencies: 
-  cupertino_icons: ^1.0.2
-  get: 4.6.5
   flutter: 
     sdk: flutter
   yaru: ^0.3.3
+  yaru_widgets: ^1.1.2
+  yaru_icons: ^0.2.2
+  get: ^4.6.5
+  layout: ^1.0.3
 
 dev_dependencies: 
-  flutter_lints: 2.0.1
   flutter_test: 
     sdk: flutter
 

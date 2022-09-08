@@ -1,10 +1,11 @@
-import 'package:devtoys/domain/tools/tool.dart';
+import 'package:devtoys/domain/models/tools/tool.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:yaru_icons/yaru_icons.dart';
 
 class JsonYamlConverterTool implements Tool{
   @override
-  IconData get icon => Icons.ac_unit_outlined;
+  IconData get icon => YaruIcons.network_cellular_connected;
 
   @override
   String get name => "json_yaml_converter".tr;

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'tool.dart';
+import 'package:yaru_icons/yaru_icons.dart';
+import '../tool.dart';
 
 class HtmlEncoderTool implements Tool{
   @override
-  IconData get icon => Icons.abc;
+  IconData get icon => YaruIcons.network_cellular_connected;
 
   @override
   String get name => "html".tr;

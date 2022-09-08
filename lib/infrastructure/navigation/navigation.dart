@@ -1,5 +1,5 @@
+import 'package:devtoys/presentation/home/screens/home_screen.dart';
 import 'package:get/get.dart';
-import '../../presentation/home/screens/screens.dart';
 import 'bindings/controllers/controllers_bindings.dart';
 import 'routes.dart';
 

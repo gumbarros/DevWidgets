@@ -1,6 +1,5 @@
-
-import 'package:devtoys/domain/categories/category.dart';
-import 'package:devtoys/domain/tools/tool.dart';
+import 'package:devtoys/domain/models/categories/category.dart';
+import 'package:devtoys/domain/models/tools/tool.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {

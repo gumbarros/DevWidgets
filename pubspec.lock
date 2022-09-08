@@ -50,13 +50,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.16.0"
-  cupertino_icons:
-    dependency: "direct main"
-    description:
-      name: cupertino_icons
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.5"
   dbus:
     dependency: transitive
     description:
@@ -90,18 +83,18 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_lints:
-    dependency: "direct dev"
-    description:
-      name: flutter_lints
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.0.1"
   flutter_test:
     dependency: "direct dev"
     description: flutter
     source: sdk
     version: "0.0.0"
+  gap:
+    dependency: transitive
+    description:
+      name: gap
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0"
   get:
     dependency: "direct main"
     description:
@@ -116,13 +109,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.2.5"
-  lints:
-    dependency: transitive
+  layout:
+    dependency: "direct main"
     description:
-      name: lints
+      name: layout
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.0"
+    version: "1.0.3"
   matcher:
     dependency: transitive
     description:
@@ -261,6 +254,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.0"
+  yaru_icons:
+    dependency: "direct main"
+    description:
+      name: yaru_icons
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.2"
+  yaru_widgets:
+    dependency: "direct main"
+    description:
+      name: yaru_widgets
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.2"
 sdks:
   dart: ">=2.17.6 <3.0.0"
   flutter: ">=3.0.0"

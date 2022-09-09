@@ -1,8 +1,9 @@
 import 'package:devtoys/domain/models/tools/encoders/html_encoder_tool.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:yaru_icons/yaru_icons.dart';
+
 import 'category.dart';
 
 class EncodersCategory implements Category{
@@ -16,7 +17,7 @@ class EncodersCategory implements Category{
   EncodersCategory._internal();
   
   @override
-  IconData get icon => YaruIcons.network_cellular_connected;
+  IconData get icon => FontAwesomeIcons.codepen;
 
   @override
   String get name => "encoders_decoders".tr;

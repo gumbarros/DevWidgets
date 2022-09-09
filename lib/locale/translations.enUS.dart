@@ -5,6 +5,7 @@ class EnglishTranslations{
     "converters":"Converters",
     "html":"HTML",
     "app_name":"DevToys",
+    "cron_parser":"Cron Parser",
     "json_yaml_converter":"JSON <> YAML"
   };
 }

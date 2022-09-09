@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 class Tool{
   final IconData icon;
   final String name;
-  //TODO: description
+  final String route;
+  final String description; 
   //TODO: searchTags
-  //TODO: route
 
-  Tool(this.icon, this.name);
+  Tool(this.icon, this.name, this.route, this.description);
 }

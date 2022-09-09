@@ -9,6 +9,6 @@ class Navigation {
       name: Routes.home,
       page: () => const HomeScreen(),
       binding: HomeControllerBinding(),
-    ),
+    )
   ];
 }

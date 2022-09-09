@@ -10,9 +10,10 @@ dependencies:
     sdk: flutter
   yaru: ^0.3.3
   yaru_widgets: ^1.1.2
-  yaru_icons: ^0.2.2
   get: ^4.6.5
   layout: ^1.0.3
+  auto_size_text: ^3.0.0
+  font_awesome_flutter: ^10.2.1
 
 dev_dependencies: 
   flutter_test: 

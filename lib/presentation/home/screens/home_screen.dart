@@ -11,20 +11,20 @@ class HomeScreen extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     final tools = controller.getAllTools();
-
+    
     return Scaffold(
       appBar: AppBar(
           title: Text(
         'all_tools'.tr,
-        style: TextStyle(fontSize: 18),
+        style: const TextStyle(fontSize: 24),
       )),
       body: SingleChildScrollView(
           child: GridView.builder(
         itemCount: tools.length,
         shrinkWrap: true,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          childAspectRatio: context.layout.value(xs: 1.5, sm: 2, md: 2.5, lg: 3, xl: 3.5),
-          crossAxisCount: context.layout.value(xs: 1, sm: 2, md: 3, lg: 4, xl: 3),
+          childAspectRatio: 3/2,
+          crossAxisCount: context.layout.value(xs: 1, sm: 2, md: 3, lg: 4, xl: 5)
         ),
         itemBuilder: (BuildContext context, int index) {
           return MenuCard(

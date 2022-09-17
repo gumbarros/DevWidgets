@@ -1,21 +1,17 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:devtoys/domain/models/tools/tool.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:layout/layout.dart';
 
-import 'package:yaru_widgets/yaru_widgets.dart';
+class ToolCard extends StatelessWidget {
+  final Tool tool;
 
-class MenuCard extends StatelessWidget {
-  final IconData icon;
-  final String? text;
-  final Function? onTap;
-
-  MenuCard({required this.icon, required this.text, required this.onTap});
+  ToolCard(this.tool);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap as void Function()?,
+      onTap: ()=>Get.toNamed(tool.route),
       child: Container(
         margin: EdgeInsets.only(right: 50, left: 50, top: 15, bottom: 15),
         decoration: BoxDecoration(
@@ -28,10 +24,10 @@ class MenuCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Icon(icon, size: 75),
+              Icon(tool.icon, size: 75),
               SizedBox(height: 10),
               AutoSizeText(
-                text!,
+                tool.name,
                 style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,
               ),

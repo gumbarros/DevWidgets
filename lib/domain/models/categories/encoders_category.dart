@@ -21,7 +21,4 @@ class EncodersCategory implements Category{
 
   @override
   String get name => "encoders_decoders".tr;
-
-  @override
-  List<Tool> get tools => <Tool>[HtmlEncoderTool()];
 }

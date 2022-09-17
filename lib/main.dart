@@ -1,4 +1,4 @@
-import 'package:devtoys/infrastructure/navigation/bindings/domains/categories_binding.dart';
+import 'package:devtoys/infrastructure/bindings/domains/tools_binding.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:layout/layout.dart';
@@ -21,7 +21,7 @@ class Main extends StatelessWidget {
         initialRoute: Routes.home,
         debugShowCheckedModeBanner: false,
         title: "app_name".tr,
-        initialBinding: CategoriesBinding(),
+        initialBinding: ToolsBinding(),
         locale: Get.deviceLocale,
         getPages: Navigation.pages,
         translations: DevToysTranslations(),

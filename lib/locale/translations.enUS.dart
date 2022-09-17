@@ -6,6 +6,7 @@ class EnglishTranslations{
     "html":"HTML",
     "app_name":"DevToys",
     "cron_parser":"Cron Parser",
+    "sql_formatter":"SQL Formatter",
     "json_yaml_converter":"JSON <> YAML"
   };
 }

@@ -1,3 +1,4 @@
+import 'package:devtoys/domain/models/categories/category.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../tool.dart';
@@ -15,4 +16,8 @@ class HtmlEncoderTool implements Tool{
   @override
   // TODO: implement description
   String get description => throw UnimplementedError();
+
+  @override
+  // TODO: implement category
+  Category get category => throw UnimplementedError();
 }

@@ -1,3 +1,4 @@
+import 'package:devtoys/domain/models/categories/category.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -17,4 +18,8 @@ class NumberBaseConverterTool implements Tool{
   @override
   // TODO: implement description
   String get description => throw UnimplementedError();
+
+  @override
+  // TODO: implement category
+  Category get category => throw UnimplementedError();
 }

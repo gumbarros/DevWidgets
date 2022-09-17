@@ -6,6 +6,7 @@ class BrazilianPortugueseTranslations{
     "html":"HTML",
     "app_name":"DevToys",
     "cron_parser":"Analisador de Cron",
-    "json_yaml_converter":"JSON <> YAML"
+    "json_yaml_converter":"JSON <> YAML",
+    "sql_formatter":"Formatador SQL"
   };
 }

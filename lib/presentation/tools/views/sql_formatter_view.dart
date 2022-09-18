@@ -1,9 +1,8 @@
+import 'package:code_text_field/code_text_field.dart';
 import 'package:devtoys/presentation/tools/controllers/sql_formatter_controller.dart';
-import 'package:devtoys/presentation/widgets/tool_card.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:layout/layout.dart';
-
 
 class SQLFormatterView extends GetView<SQLFormatterController> {
   const SQLFormatterView({Key? key}) : super(key: key);
@@ -11,12 +10,48 @@ class SQLFormatterView extends GetView<SQLFormatterController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          title: Text(
-        controller.formatter.name,
-        style: const TextStyle(fontSize: 24),
-      )),
-      body: Text("Hello"),
-    );
+        appBar: AppBar(
+            actions: [
+              DropdownButton(
+                  value: "Generic SQL",
+                  items: [
+                    DropdownMenuItem<String>(
+                      child: Text("Generic SQL"),
+                      value: "Generic SQL",
+                    ),
+                  ],
+                  onChanged: (selected) {}),
+              IconButton(
+                icon: Icon(FontAwesomeIcons.fileLines),
+                onPressed: () {},
+              )
+            ],
+            title: Text(
+              controller.tool.name,
+              style: const TextStyle(fontSize: 24),
+            )),
+        body: Container(
+          height: Get.height - kToolbarHeight,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Container(
+                  width: Get.width / 2,
+                  height: Get.height,
+                  child: CodeField(
+                    expands: true,
+                    controller: controller.inputController,
+                  )),
+              Container(
+                  width: Get.width / 2,
+                  height: Get.height,
+                  child: CodeField(
+                    expands: true,
+                    controller: controller.resultController,
+                    enabled: false,
+                  ))
+            ],
+          ),
+        ));
   }
 }

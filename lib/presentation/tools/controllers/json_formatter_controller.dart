@@ -10,8 +10,8 @@ class JSONFormatterController extends GetxController {
   late CodeController inputController;
   late CodeController outputController;
 
-  Indentation indentation = Indentation.FourSpaces;
-  bool sort = false;
+  Rx<Indentation> indentation = Indentation.FourSpaces.obs;
+  Rx<bool> sortAlphabetically = false.obs;
 
   String? result;
 
@@ -24,9 +24,12 @@ class JSONFormatterController extends GetxController {
     outputController = CodeController(language: json, theme: vs2015Theme);
 
     inputController.addListener(() {
+      var formattedText = tool.formatter.format(inputController.text,
+          indentation: indentation.value,
+          sortAlphabetically: sortAlphabetically.value);
+
       try {
-        outputController.text = tool.formatter
-            .format(inputController.text, indentation: indentation, sort: sort);
+        outputController.text = formattedText;
       } catch (_) {
         //Bug on code_text_field package.
       }

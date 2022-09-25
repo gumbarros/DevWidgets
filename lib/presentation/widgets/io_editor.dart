@@ -25,7 +25,10 @@ class IOEditor extends StatelessWidget {
               ElevatedButton.icon(
                 icon: Icon(FontAwesomeIcons.paste),
                 label: Text("paste".tr),
-                onPressed: () {},
+                onPressed: () async {
+                  inputController.text = await Clipboard.getData("text/plain")
+                      .then((value) => value?.text ?? "");
+                },
               ),
               ElevatedButton.icon(
                 icon: Icon(FontAwesomeIcons.copy),

@@ -13,6 +13,7 @@ class EnglishTranslations {
         "paste": "Paste",
         "copy": "Copy",
         "clear": "Clear",
+        "compact": "Compact",
         "json_formatter": "JSON Formatter",
         "configuration": "Configuration",
         "indentation": "Indentation",

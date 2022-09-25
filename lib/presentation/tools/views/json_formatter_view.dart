@@ -34,16 +34,16 @@ class JSONFormatterView extends GetView<JSONFormatterController> {
                         ),
                         padding: const EdgeInsets.only(left: 8.0),
                       ),
-                      actionWidget: DropdownButton(
-                          value: controller.indentation,
-                          items: Indentation.values.map((Indentation i) {
-                            return DropdownMenuItem<Indentation>(
-                                value: i, child: Text(i.description.tr));
-                          }).toList(),
-                          onChanged: (selected) {
-                            controller.indentation = selected as Indentation;
-                            controller.update();
-                          })),
+                      actionWidget: Obx(
+                        () => DropdownButton(
+                            value: controller.indentation.value,
+                            items: Indentation.values.map((Indentation i) {
+                              return DropdownMenuItem<Indentation>(
+                                  value: i, child: Text(i.description.tr));
+                            }).toList(),
+                            onChanged: (selected) => controller
+                                .indentation.value = selected as Indentation),
+                      )),
                   YaruRow(
                     enabled: true,
                     leadingWidget: Icon(FontAwesomeIcons.arrowDownAZ),
@@ -54,12 +54,12 @@ class JSONFormatterView extends GetView<JSONFormatterController> {
                       ),
                       padding: const EdgeInsets.only(left: 8.0),
                     ),
-                    actionWidget: Switch(
-                      onChanged: (value) {
-                        controller.sort = value;
-                        controller.update();
-                      },
-                      value: controller.sort,
+                    actionWidget: Obx(
+                      () => Switch(
+                        onChanged: (value) =>
+                            controller.sortAlphabetically.value = value,
+                        value: controller.sortAlphabetically.value,
+                      ),
                     ),
                   )
                 ]),

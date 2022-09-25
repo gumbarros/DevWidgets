@@ -1,11 +1,11 @@
-import 'package:devtoys/presentation/tools/controllers/sql_formatter_controller.dart';
+import 'package:devtoys/presentation/tools/controllers/json_formatter_controller.dart';
 import 'package:devtoys/presentation/widgets/io_editor.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-class SQLFormatterView extends GetView<SQLFormatterController> {
-  const SQLFormatterView({Key? key}) : super(key: key);
+class JSONFormatterView extends GetView<JSONFormatterController> {
+  const JSONFormatterView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

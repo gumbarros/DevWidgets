@@ -1,3 +1,4 @@
+import 'package:devtoys/domain/formatters/json_formatter.dart';
 import 'package:devtoys/domain/formatters/sql_formatter.dart';
 import 'package:devtoys/domain/models/tools/converters/cron_parser_tool.dart';
 import 'package:devtoys/domain/models/tools/converters/json_yaml_converter_tool.dart';
@@ -17,7 +18,7 @@ class ToolsFactory {
       NumberBaseConverterTool(),
       TimestampConverterTool(),
       HtmlEncoderTool(),
-      JsonFormatterTool(),
+      JSONFormatterTool(JSONFormatter()),
       SQLFormatterTool(SQLFormatter()),
       XmlFormatterTool()
     ];

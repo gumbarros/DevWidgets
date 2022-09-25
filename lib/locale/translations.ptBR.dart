@@ -13,6 +13,8 @@ class BrazilianPortugueseTranslations {
         "paste": "Colar",
         "copy": "Copiar",
         "clear": "Limpar",
-        "json_formatter": "Formatador JSON"
+        "json_formatter": "Formatador JSON",
+        "sort_json_properties_alphabetically":
+            "Ordenar as propriedades JSON em ordem alfabética"
       };
 }

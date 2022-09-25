@@ -71,9 +71,8 @@ class IOEditor extends StatelessWidget {
                   height: Get.height / 1.5,
                   child: CodeField(
                     expands: true,
-                    wrap: true,
                     controller: outputController,
-                    enabled: false,
+                    enabled: true,
                   )),
             ],
           ),

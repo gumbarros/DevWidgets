@@ -13,6 +13,13 @@ class EnglishTranslations {
         "paste": "Paste",
         "copy": "Copy",
         "clear": "Clear",
-        "json_formatter": "JSON Formatter"
+        "json_formatter": "JSON Formatter",
+        "configuration": "Configuration",
+        "indentation": "Indentation",
+        "one_tab": "One Tab",
+        "two_spaces": "Two Spaces",
+        "four_spaces": "Four Spaces",
+        "sort_json_properties_alphabetically":
+            "Sort JSON properties alphabetically"
       };
 }

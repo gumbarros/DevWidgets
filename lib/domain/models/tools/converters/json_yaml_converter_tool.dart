@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 
 class JsonYamlConverterTool implements Tool {
   @override
-  IconData get icon => FontAwesomeIcons.box;
+  IconData get icon => Icons.data_object;
 
   @override
   String get name => "json_yaml_converter".tr;

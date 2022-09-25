@@ -8,16 +8,16 @@ import 'package:get/get.dart';
 
 class NumberBaseConverterTool implements Tool {
   @override
-  IconData get icon => FontAwesomeIcons.box;
+  IconData get icon => Icons.numbers;
 
   @override
-  String get name => "number_base".tr;
+  String get name => "number_base_converter".tr;
 
   @override
   String get route => Routes.numberBase;
 
   @override
-  String get description => "number_base_description".tr;
+  String get description => "number_base_converter_description".tr;
 
   @override
   Group get group => ConvertersGroup();

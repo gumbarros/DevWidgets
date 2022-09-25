@@ -15,7 +15,6 @@ class JSONFormatter implements Formatter {
 
     try {
       object = jsonDecode(json);
-      success = true;
     } on FormatException catch (_) {
       if (!Get.isSnackbarOpen)
         Get.snackbar("error".tr + "!", "invalid_json_data".tr,
@@ -23,7 +22,7 @@ class JSONFormatter implements Formatter {
             snackPosition: SnackPosition.BOTTOM,
             backgroundColor: Colors.red);
     }
-    if (success) {
+    if (object != null) {
       if (sortAlphabetically) object = _sort(object);
       return JsonEncoder.withIndent(indentation.toString()).convert(object);
     } else {

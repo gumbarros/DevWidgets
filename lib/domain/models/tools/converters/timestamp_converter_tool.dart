@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 
 class TimestampConverterTool implements Tool {
   @override
-  IconData get icon => FontAwesomeIcons.box;
+  IconData get icon => FontAwesomeIcons.clock;
 
   @override
   String get name => "timestamp_converter".tr;

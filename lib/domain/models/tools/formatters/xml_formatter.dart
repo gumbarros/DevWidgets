@@ -9,7 +9,7 @@ import '../tool.dart';
 
 class XmlFormatterTool implements Tool {
   @override
-  IconData get icon => FontAwesomeIcons.box;
+  IconData get icon => FontAwesomeIcons.code;
 
   @override
   String get name => "xml_formatter".tr;

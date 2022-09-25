@@ -1,5 +1,4 @@
 import 'package:devtoys/domain/models/tools/formatters/json_formatter.dart';
-import 'package:devtoys/domain/models/tools/formatters/sql_formatter.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
 import 'package:devtoys/presentation/tools/controllers/json_formatter_controller.dart';
 import 'package:get/get.dart';

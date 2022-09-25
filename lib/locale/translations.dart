@@ -1,5 +1,5 @@
-import 'package:devtoys/locale/translations.enUS.dart';
-import 'package:devtoys/locale/translations.ptBR.dart';
+import 'package:devtoys/locale/translations.en_us.dart';
+import 'package:devtoys/locale/translations.pt_br.dart';
 import 'package:get/get.dart';
 
 class DevToysTranslations extends Translations {

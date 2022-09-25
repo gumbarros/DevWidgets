@@ -11,7 +11,7 @@ class ToolCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: ()=>Get.toNamed(tool.route),
+      onTap: () => Get.toNamed(tool.route),
       child: Container(
         margin: EdgeInsets.only(right: 50, left: 50, top: 15, bottom: 15),
         decoration: BoxDecoration(
@@ -19,7 +19,7 @@ class ToolCard extends StatelessWidget {
         ),
         child: Card(
           surfaceTintColor: Colors.transparent,
-          color: Color.fromRGBO(53, 53, 53, 1),
+          // color: Color.fromRGBO(53, 53, 53, 1),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -33,8 +33,7 @@ class ToolCard extends StatelessWidget {
               ),
               SizedBox(height: 10),
               Flexible(
-                child: AutoSizeText(
-                    "TODO: Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                child: AutoSizeText(tool.description,
                     style:
                         TextStyle(fontSize: 17, fontWeight: FontWeight.normal),
                     textAlign: TextAlign.center,

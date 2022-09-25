@@ -3,19 +3,18 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'category.dart';
 
-class FormattersCategory implements Category{
+class ConvertersGroup implements Group {
+  static final ConvertersGroup _singleton = ConvertersGroup._internal();
 
-  static final FormattersCategory _singleton = FormattersCategory._internal();
-
-  factory FormattersCategory() {
+  factory ConvertersGroup() {
     return _singleton;
   }
 
-  FormattersCategory._internal();
-  
+  ConvertersGroup._internal();
+
   @override
   IconData get icon => FontAwesomeIcons.box;
 
   @override
-  String get name => "formatters".tr;
+  String get name => "converters".tr;
 }

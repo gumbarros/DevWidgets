@@ -6,11 +6,10 @@ import 'package:get/get.dart';
 class SQLFormatterBinding extends Bindings {
   @override
   void dependencies() {
+    var tool = Get.find<List<Tool>>()
+            .firstWhere((element) => element.runtimeType == SQLFormatterTool)
+        as SQLFormatterTool;
 
-    var tool = Get.find<List<Tool>>().firstWhere((element) => element.runtimeType == SQLFormatterTool) as SQLFormatterTool;
-
-    Get.lazyPut<SQLFormatterController>(
-      () => SQLFormatterController(tool)
-    );
+    Get.lazyPut<SQLFormatterController>(() => SQLFormatterController(tool));
   }
 }

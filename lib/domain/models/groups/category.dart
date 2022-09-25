@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-abstract class Category{
+abstract class Group {
   final String name;
   final IconData icon;
-  
-  Category(this.name,this.icon);
+
+  Group(this.name, this.icon);
 }

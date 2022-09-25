@@ -7,7 +7,7 @@ import 'infrastructure/navigation/navigation.dart';
 import 'infrastructure/navigation/routes.dart';
 import 'locale/translations.dart';
 
-void main(){
+void main() {
   runApp(const Main());
 }
 
@@ -20,10 +20,10 @@ class Main extends StatelessWidget {
       child: GetMaterialApp(
         initialRoute: Routes.home,
         debugShowCheckedModeBanner: false,
-        title: "app_name".tr,
         initialBinding: ToolsBinding(),
         locale: Get.deviceLocale,
         getPages: Navigation.pages,
+        title: "app_name".tr,
         translations: DevToysTranslations(),
         builder: ((context, child) => YaruTheme(child: child)),
       ),

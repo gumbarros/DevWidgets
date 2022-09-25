@@ -1,17 +1,34 @@
 import 'dart:convert';
 import 'package:devtoys/domain/formatters/formatter.dart';
 import 'package:devtoys/domain/formatters/indentation.dart';
+import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 
 class JSONFormatter implements Formatter {
   @override
   String format(String json,
       {Indentation indentation = Indentation.FourSpaces,
       bool sortAlphabetically = false}) {
-    var object = jsonDecode(json);
+    bool success = true;
+    dynamic object;
 
-    if (sortAlphabetically) object = _sort(object);
-
-    return JsonEncoder.withIndent(indentation.toString()).convert(object);
+    try {
+      object = jsonDecode(json);
+      success = true;
+    } on FormatException catch (_) {
+      if (!Get.isSnackbarOpen)
+        Get.snackbar("error".tr + "!", "invalid_json_data".tr,
+            icon: Icon(FontAwesomeIcons.triangleExclamation),
+            snackPosition: SnackPosition.BOTTOM,
+            backgroundColor: Colors.red);
+    }
+    if (success) {
+      if (sortAlphabetically) object = _sort(object);
+      return JsonEncoder.withIndent(indentation.toString()).convert(object);
+    } else {
+      return "";
+    }
   }
 
   _sort(json) {

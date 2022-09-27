@@ -16,6 +16,7 @@ dependencies:
   font_awesome_flutter: ^10.2.1
   code_text_field: ^1.0.2
   resizable_widget: ^1.0.5
+  yaru_colors: ^0.1.0
 
 dev_dependencies: 
   flutter_test: 

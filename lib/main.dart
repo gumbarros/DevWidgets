@@ -1,11 +1,12 @@
 import 'package:devtoys/infrastructure/bindings/domains/tools_binding.dart';
+import 'package:devtoys/infrastructure/locale/translations.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:layout/layout.dart';
 import 'package:yaru/yaru.dart';
 import 'infrastructure/navigation/navigation.dart';
 import 'infrastructure/navigation/routes.dart';
-import 'locale/translations.dart';
+
 
 void main() {
   runApp(const Main());

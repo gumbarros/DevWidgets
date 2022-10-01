@@ -1,11 +1,14 @@
 import 'package:devtoys/domain/models/groups/category.dart';
 import 'package:devtoys/domain/models/groups/encoders_group.dart';
+import 'package:devtoys/domain/models/tools/encoders/encoder_tool.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../tool.dart';
 
-class HtmlEncoderTool implements Tool {
+class HtmlEncoderTool extends EncoderTool implements Tool {
+  HtmlEncoderTool(super.encoder);
+
   @override
   IconData get icon => Icons.code;
 

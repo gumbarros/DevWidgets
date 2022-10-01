@@ -1,9 +1,9 @@
 import 'package:devtoys/domain/models/tools/formatters/json_formatter.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
-import 'package:devtoys/presentation/tools/controllers/json_formatter_controller.dart';
+import 'package:devtoys/presentation/formatters/controllers/json_formatter_controller.dart';
 import 'package:get/get.dart';
 
-class JSONFormatterBinding extends Bindings {
+class JSONFormatterControllerBinding extends Bindings {
   @override
   void dependencies() {
     var tool = Get.find<List<Tool>>()

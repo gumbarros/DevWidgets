@@ -1,9 +1,9 @@
 import 'package:devtoys/domain/models/tools/formatters/sql_formatter.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
-import 'package:devtoys/presentation/tools/controllers/sql_formatter_controller.dart';
+import 'package:devtoys/presentation/formatters/controllers/sql_formatter_controller.dart';
 import 'package:get/get.dart';
 
-class SQLFormatterBinding extends Bindings {
+class SQLFormatterControllerBinding extends Bindings {
   @override
   void dependencies() {
     var tool = Get.find<List<Tool>>()

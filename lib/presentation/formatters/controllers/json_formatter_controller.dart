@@ -1,5 +1,5 @@
 import 'package:code_text_field/code_text_field.dart';
-import 'package:devtoys/domain/formatters/indentation.dart';
+import 'package:devtoys/domain/models/tools/formatters/indentation.dart';
 import 'package:devtoys/domain/models/tools/formatters/json_formatter.dart';
 import 'package:get/get.dart';
 import 'package:highlight/languages/json.dart';

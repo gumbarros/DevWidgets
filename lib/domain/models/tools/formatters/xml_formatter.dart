@@ -1,5 +1,6 @@
 import 'package:devtoys/domain/models/groups/category.dart';
 import 'package:devtoys/domain/models/groups/formatters_group.dart';
+import 'package:devtoys/domain/models/tools/formatters/formatter_tool.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -7,7 +8,9 @@ import 'package:get/get.dart';
 
 import '../tool.dart';
 
-class XmlFormatterTool implements Tool {
+class XmlFormatterTool extends FormatterTool implements Tool {
+  XmlFormatterTool(super.formatter);
+
   @override
   IconData get icon => FontAwesomeIcons.code;
 

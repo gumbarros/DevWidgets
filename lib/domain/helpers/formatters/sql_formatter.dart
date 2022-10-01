@@ -1,7 +1,7 @@
 //Based on https://github.com/mrdziuban/sql-formatter/blob/e8065c29af8c8fa4af7318a46b01205f6389e6c9/dart/src/sql_formatter.dart;
 //This is just a POC, I need to implement a formatter foreach SQL dialect like the original DevToys.
 
-import 'package:devtoys/domain/formatters/formatter.dart';
+import 'package:devtoys/domain/helpers/formatters/formatter.dart';
 
 class T {
   String str;

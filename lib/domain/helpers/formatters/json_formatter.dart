@@ -1,6 +1,6 @@
 import 'dart:convert';
-import 'package:devtoys/domain/formatters/formatter.dart';
-import 'package:devtoys/domain/formatters/indentation.dart';
+import 'package:devtoys/domain/helpers/formatters/formatter.dart';
+import 'package:devtoys/domain/models/tools/formatters/indentation.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -10,7 +10,6 @@ class JSONFormatter implements Formatter {
   String format(String json,
       {Indentation indentation = Indentation.FourSpaces,
       bool sortAlphabetically = false}) {
-    bool success = true;
     dynamic object;
 
     try {

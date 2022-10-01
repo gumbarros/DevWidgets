@@ -1,4 +1,4 @@
-import 'package:devtoys/domain/formatters/sql_formatter.dart';
+import 'package:devtoys/domain/helpers/formatters/sql_formatter.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

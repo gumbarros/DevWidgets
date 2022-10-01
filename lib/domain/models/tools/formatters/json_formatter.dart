@@ -1,13 +1,16 @@
-import 'package:devtoys/domain/formatters/json_formatter.dart';
+import 'package:devtoys/domain/helpers/formatters/json_formatter.dart';
 import 'package:devtoys/domain/models/groups/category.dart';
 import 'package:devtoys/domain/models/groups/formatters_group.dart';
+import 'package:devtoys/domain/models/tools/formatters/formatter_tool.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import '../tool.dart';
 
-class JSONFormatterTool implements Tool {
+class JSONFormatterTool extends FormatterTool implements Tool {
+  JSONFormatterTool(this.formatter) : super(formatter);
+
   @override
   IconData get icon => FontAwesomeIcons.alignLeft;
 
@@ -23,7 +26,6 @@ class JSONFormatterTool implements Tool {
   @override
   String get description => "json_formatter_description".tr;
 
+  @override
   final JSONFormatter formatter;
-
-  JSONFormatterTool(this.formatter);
 }

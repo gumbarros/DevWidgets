@@ -1,4 +1,6 @@
-enum Indentation {
+import 'package:devtoys/domain/models/described_enum.dart';
+
+enum Indentation implements DescribedEnum {
   OneTab("one_tab"),
   TwoSpaces("two_spaces"),
   FourSpaces("four_spaces"),

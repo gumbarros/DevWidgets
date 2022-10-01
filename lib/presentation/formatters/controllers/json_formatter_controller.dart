@@ -11,7 +11,7 @@ class JSONFormatterController extends GetxController {
   late CodeController inputController;
   late CodeController outputController;
 
-  Rx<Indentation> indentation = Indentation.FourSpaces.obs;
+  Rx<Indentation?> indentation = Indentation.FourSpaces.obs;
   Rx<bool> sortAlphabetically = false.obs;
 
   String? result;
@@ -28,7 +28,7 @@ class JSONFormatterController extends GetxController {
 
     inputController.addListener(() {
       var formattedText = tool.formatter.format(inputController.text,
-          indentation: indentation.value,
+          indentation: indentation.value!,
           sortAlphabetically: sortAlphabetically.value);
 
       try {

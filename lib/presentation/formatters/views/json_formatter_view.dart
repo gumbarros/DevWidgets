@@ -1,5 +1,6 @@
 import 'package:devtoys/domain/models/tools/formatters/indentation.dart';
 import 'package:devtoys/presentation/formatters/controllers/json_formatter_controller.dart';
+import 'package:devtoys/presentation/widgets/helpers.dart';
 import 'package:devtoys/presentation/widgets/io_editor.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -35,14 +36,12 @@ class JSONFormatterView extends GetView<JSONFormatterController> {
                         padding: const EdgeInsets.only(left: 8.0),
                       ),
                       actionWidget: Obx(
-                        () => DropdownButton(
+                        () => DropdownButton<Indentation>(
                             value: controller.indentation.value,
-                            items: Indentation.values.map((Indentation i) {
-                              return DropdownMenuItem<Indentation>(
-                                  value: i, child: Text(i.description.tr));
-                            }).toList(),
-                            onChanged: (selected) => controller
-                                .indentation.value = selected as Indentation),
+                            items: Helpers.getDropdownMenuItems<Indentation>(
+                                Indentation.values),
+                            onChanged: (selected) =>
+                                controller.indentation.value = selected),
                       )),
                   YaruRow(
                     enabled: true,

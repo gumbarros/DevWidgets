@@ -17,11 +17,11 @@ dependencies:
   code_text_field: ^1.0.2
   resizable_widget: ^1.0.5
   yaru_colors: ^0.1.0
+  html_unescape: ^2.0.0
 
 dev_dependencies: 
   flutter_test: 
     sdk: flutter
-
 flutter: 
   uses-material-design: true
 

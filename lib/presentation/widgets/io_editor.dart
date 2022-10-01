@@ -9,15 +9,20 @@ class IOEditor extends StatelessWidget {
   final CodeController inputController;
   final CodeController outputController;
 
-  const IOEditor(
+  ///When set to true, creates horizontal separators.
+  final bool isVerticalLayout;
+
+  IOEditor(
       {super.key,
       required this.inputController,
-      required this.outputController});
+      required this.outputController,
+      this.isVerticalLayout = false});
 
   @override
   Widget build(BuildContext context) {
     return ResizableWidget(
       isDisabledSmartHide: true,
+      isHorizontalSeparator: isVerticalLayout,
       children: [
         Column(
           children: [
@@ -47,7 +52,7 @@ class IOEditor extends StatelessWidget {
             Container(
                 width: Get.width,
                 margin: EdgeInsets.all(8.0),
-                height: Get.height / 1.5,
+                height: isVerticalLayout ? Get.height / 3.5 : Get.height / 1.5,
                 child: CodeField(
                   wrap: true,
                   expands: true,
@@ -69,13 +74,14 @@ class IOEditor extends StatelessWidget {
                 ),
               ]),
               Container(
-                  width: Get.width,
+                  width: isVerticalLayout ? Get.width : Get.width / 1.5,
                   margin: EdgeInsets.all(8.0),
-                  height: Get.height / 1.5,
+                  height:
+                      isVerticalLayout ? Get.height / 3.5 : Get.height / 1.5,
                   child: CodeField(
                     expands: true,
                     controller: outputController,
-                    enabled: true,
+                    enabled: false,
                   )),
             ],
           ),

@@ -1,6 +1,6 @@
 import 'package:code_text_field/code_text_field.dart';
+import 'package:devtoys/domain/models/tools/encoders/conversion_mode.dart';
 import 'package:devtoys/domain/models/tools/encoders/html_encoder_tool.dart';
-import 'package:devtoys/domain/models/tools/formatters/indentation.dart';
 import 'package:get/get.dart';
 import 'package:highlight/languages/xml.dart';
 import 'package:flutter_highlight/themes/vs2015.dart';
@@ -11,7 +11,7 @@ class HTMLEncoderController extends GetxController {
   late CodeController inputController;
   late CodeController outputController;
 
-  Rx<Indentation> indentation = Indentation.FourSpaces.obs;
+  Rx<ConversionMode?> conversionMode = ConversionMode.Decode.obs;
   Rx<bool> sortAlphabetically = false.obs;
 
   String? result;
@@ -20,16 +20,23 @@ class HTMLEncoderController extends GetxController {
 
   @override
   void onInit() {
-    inputController = CodeController(theme: Get.isDarkMode ? vs2015Theme : vsTheme);
+    inputController = CodeController(
+        language: xml, theme: Get.isDarkMode ? vs2015Theme : vsTheme);
 
     outputController = CodeController(
         language: xml, theme: Get.isDarkMode ? vs2015Theme : vsTheme);
 
     inputController.addListener(() {
-      var formattedText = tool.encoder.encode("");
+      String result;
+
+      if (conversionMode.value == ConversionMode.Encode) {
+        result = tool.encoder.encode(inputController.text);
+      } else {
+        result = tool.encoder.decode(inputController.text);
+      }
 
       try {
-        outputController.text = formattedText;
+        outputController.text = result;
       } catch (_) {
         //Bug on code_text_field package.
       }

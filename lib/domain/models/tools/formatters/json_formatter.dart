@@ -28,4 +28,7 @@ class JSONFormatterTool extends FormatterTool implements Tool {
 
   @override
   final JSONFormatter formatter;
+
+  @override
+  String get commandLineArgName => "jsonformat";
 }

@@ -20,4 +20,8 @@ class NumberBaseConverterTool implements Tool {
 
   @override
   Group get group => ConvertersGroup();
+
+  @override
+  // TODO: implement commandLineArgName
+  String get commandLineArgName => throw UnimplementedError();
 }

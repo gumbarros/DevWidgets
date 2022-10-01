@@ -23,4 +23,7 @@ class HtmlEncoderTool extends EncoderTool implements Tool {
 
   @override
   Group get group => EncodersGroup();
+
+  @override
+  String get commandLineArgName => "html";
 }

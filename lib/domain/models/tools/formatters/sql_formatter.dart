@@ -24,4 +24,7 @@ class SQLFormatterTool extends FormatterTool implements Tool {
 
   @override
   String get description => "sql_formatter_description".tr;
+
+  @override
+  String get commandLineArgName => "sqlformat";
 }

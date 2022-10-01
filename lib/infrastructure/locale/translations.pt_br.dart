@@ -10,6 +10,7 @@ class BrazilianPortugueseTranslations {
         "encoders_decoders": "Encoders / Decoders",
         "html": "HTML",
         "input": "Entrada",
+        "text": "Texto",
         "json_formatter": "Formatador JSON",
         "json_formatter_description": "Indente ou minifique arquivos JSON",
         "json_yaml_converter": "JSON <> YAML",

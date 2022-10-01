@@ -9,7 +9,6 @@ class HTMLEncoder implements Encoder {
     var unescape = HtmlUnescape();
 
     return unescape.convert(content);
-    ;
   }
 
   @override

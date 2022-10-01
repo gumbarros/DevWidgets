@@ -7,8 +7,9 @@ abstract class Tool {
   final String description;
   final Group group;
   final String route;
-
+  final String commandLineArgName;
   //TODO: searchTags
 
-  Tool(this.icon, this.name, this.description, this.group, this.route);
+  Tool(this.icon, this.name, this.description, this.group, this.route,
+      this.commandLineArgName);
 }

@@ -25,4 +25,7 @@ class XmlFormatterTool extends FormatterTool implements Tool {
 
   @override
   Group get group => FormattersGroup();
+
+  @override
+  String get commandLineArgName => "sqlformat";
 }

@@ -1,3 +1,4 @@
+import 'package:devtoys/domain/models/tools_factory.dart';
 import 'package:devtoys/infrastructure/bindings/domains/tools_binding.dart';
 import 'package:devtoys/infrastructure/locale/translations.dart';
 import 'package:flutter/material.dart';
@@ -7,19 +8,25 @@ import 'package:yaru/yaru.dart';
 import 'infrastructure/navigation/navigation.dart';
 import 'infrastructure/navigation/routes.dart';
 
+void main(List<String> arguments) {
+  final String initialRoute = arguments.isNotEmpty
+      ? ToolsFactory.getToolRouteByCommandLineArg(arguments.first)
+      : Routes.home;
 
-void main() {
-  runApp(const Main());
+  runApp(Main(initialRoute));
 }
 
 class Main extends StatelessWidget {
-  const Main({Key? key}) : super(key: key);
+  final String initialRoute;
+
+  const Main(this.initialRoute, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Layout(
       child: GetMaterialApp(
-        initialRoute: Routes.home,
+        useInheritedMediaQuery: true,
+        initialRoute: initialRoute,
         debugShowCheckedModeBanner: false,
         initialBinding: ToolsBinding(),
         locale: Get.deviceLocale,

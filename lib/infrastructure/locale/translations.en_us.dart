@@ -11,6 +11,13 @@ class EnglishTranslations {
         "encoders_decoders": "Encoders / Decoders",
         "four_spaces": "Four Spaces",
         "html": "HTML",
+        "text_escape_description":
+            "Escapes or unescapes a string, removing characters that could prevent parsing.",
+        "text_escape": "Escape / Unescape",
+        "escape": "Escape",
+        "unescape": "Unescape",
+        "conversion_description":
+            "Select which conversion mode you want to use",
         "text": "Text",
         "indentation": "Indentation",
         "input": "Input",

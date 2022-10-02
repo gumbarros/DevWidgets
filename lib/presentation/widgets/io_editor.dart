@@ -6,14 +6,16 @@ import 'package:get/get.dart';
 import 'package:resizable_widget/resizable_widget.dart';
 
 class IOEditor extends StatelessWidget {
-  final CodeController inputController;
-  final CodeController outputController;
+  final bool usesCodeControllers;
+  final TextEditingController inputController;
+  final TextEditingController outputController;
 
   ///When set to true, creates horizontal separators.
   final bool isVerticalLayout;
 
   IOEditor(
       {super.key,
+      this.usesCodeControllers = true,
       required this.inputController,
       required this.outputController,
       this.isVerticalLayout = false});
@@ -53,11 +55,18 @@ class IOEditor extends StatelessWidget {
                 width: Get.width,
                 margin: EdgeInsets.all(8.0),
                 height: isVerticalLayout ? Get.height / 3.5 : Get.height / 1.5,
-                child: CodeField(
-                  wrap: true,
-                  expands: true,
-                  controller: inputController,
-                )),
+                child: usesCodeControllers
+                    ? CodeField(
+                        wrap: true,
+                        expands: true,
+                        controller: inputController as CodeController,
+                      )
+                    : TextField(
+                        maxLines: null,
+                        minLines: 10,
+                        controller: inputController,
+                        keyboardType: TextInputType.multiline,
+                      )),
           ],
         ),
         Container(
@@ -78,11 +87,18 @@ class IOEditor extends StatelessWidget {
                   margin: EdgeInsets.all(8.0),
                   height:
                       isVerticalLayout ? Get.height / 3.5 : Get.height / 1.5,
-                  child: CodeField(
-                    expands: true,
-                    controller: outputController,
-                    enabled: false,
-                  )),
+                  child: usesCodeControllers
+                      ? CodeField(
+                          wrap: true,
+                          expands: true,
+                          controller: outputController as CodeController,
+                        )
+                      : TextField(
+                          maxLines: null,
+                          minLines: 10,
+                          controller: outputController,
+                          keyboardType: TextInputType.multiline,
+                        )),
             ],
           ),
         )

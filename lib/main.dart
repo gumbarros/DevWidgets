@@ -6,12 +6,10 @@ import 'package:get/get.dart';
 import 'package:layout/layout.dart';
 import 'package:yaru/yaru.dart';
 import 'infrastructure/navigation/navigation.dart';
-import 'infrastructure/navigation/routes.dart';
 
 void main(List<String> arguments) {
-  final String initialRoute = arguments.isNotEmpty
-      ? ToolsFactory.getToolRouteByCommandLineArg(arguments.first)
-      : Routes.home;
+  final String initialRoute =
+      ToolsFactory.getToolRouteByCommandLineArgs(arguments);
 
   runApp(Main(initialRoute));
 }

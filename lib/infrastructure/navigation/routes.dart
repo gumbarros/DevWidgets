@@ -5,6 +5,7 @@ class Routes {
   static const sqlFormatter = '/formatters/sql';
   static const jsonFormatter = '/formatters/json';
   static const htmlEncoder = "/encoders/html";
+  static const textEscape = "/text/escape";
 
   static var timestampConverter;
 

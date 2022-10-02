@@ -1,7 +1,7 @@
 import 'package:devtoys/domain/models/tools/encoders/encode_conversion_mode.dart';
 import 'package:devtoys/presentation/encoders/controllers/html_encoder_controller.dart';
 import 'package:devtoys/presentation/widgets/helpers.dart';
-import 'package:devtoys/presentation/widgets/io_editor.dart';
+import 'package:devtoys/presentation/widgets/io_editor/io_editor.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';

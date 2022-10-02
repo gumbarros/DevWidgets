@@ -18,6 +18,7 @@ dependencies:
   resizable_widget: ^1.0.5
   yaru_colors: ^0.1.0
   html_unescape: ^2.0.0
+  flutter_markdown: ^0.6.12
 
 dev_dependencies: 
   flutter_test: 

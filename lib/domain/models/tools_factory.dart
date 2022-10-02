@@ -6,10 +6,12 @@ import 'package:devtoys/domain/models/tools/encoders/html_encoder_tool.dart';
 import 'package:devtoys/domain/models/tools/formatters/json_formatter.dart';
 import 'package:devtoys/domain/models/tools/formatters/sql_formatter.dart';
 import 'package:devtoys/domain/models/tools/home_tool.dart';
+import 'package:devtoys/domain/models/tools/text/markdown_preview.dart';
 import 'package:devtoys/domain/models/tools/text/text_escape.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
 
+//TODO: Move this to bindings
 class ToolsFactory {
   static List<Tool> getAllTools() {
     return [
@@ -17,7 +19,8 @@ class ToolsFactory {
       JSONFormatterTool(JSONFormatter()),
       SQLFormatterTool(SQLFormatter()),
       TextEscapeTool(TextEscaper()),
-      HomeTool()
+      HomeTool(),
+      MarkdownPreviewTool()
     ];
   }
 

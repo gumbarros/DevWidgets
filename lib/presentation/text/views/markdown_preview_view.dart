@@ -1,0 +1,40 @@
+import 'package:code_text_field/code_text_field.dart';
+import 'package:devtoys/presentation/text/controllers/markdown_preview_controller.dart';
+import 'package:devtoys/presentation/widgets/io_editor/io_editor.dart';
+import 'package:devtoys/presentation/widgets/io_editor/io_toolbar.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:get/get.dart';
+
+class MarkdownPreviewView extends GetView<MarkdownPreviewController> {
+  const MarkdownPreviewView({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+            title: Text(
+          controller.tool.name,
+          style: const TextStyle(fontSize: 24),
+        )),
+        body: Container(
+            height: Get.height - kToolbarHeight,
+            child: SingleChildScrollView(
+              child: Container(
+                height: Get.height / 1.2,
+                child: IOEditor(
+                    inputController: controller.inputController,
+                    outputChild: Column(children: [
+                      IOToolbar(title: "preview".tr),
+                      Container(
+                        width: Get.width / 1.5,
+                        margin: EdgeInsets.all(8.0),
+                        height: Get.height / 1.5,
+                        child: Obx(() =>
+                            Markdown(data: controller.output.value ?? "")),
+                      )
+                    ])),
+              ),
+            )));
+  }
+}

@@ -7,6 +7,7 @@ class EnglishTranslations {
         "configuration": "Configuration",
         "converters": "Converters",
         "copy": "Copy",
+        "preview": "Preview",
         "cron_parser": "Cron Parser",
         "encoders_decoders": "Encoders / Decoders",
         "four_spaces": "Four Spaces",
@@ -16,6 +17,8 @@ class EnglishTranslations {
         "text_escape": "Escape / Unescape",
         "escape": "Escape",
         "unescape": "Unescape",
+        "markdown_preview": "Markdown Preview",
+        "markdown_preview_description": "Preview a Markdown document",
         "conversion_description":
             "Select which conversion mode you want to use",
         "text": "Text",

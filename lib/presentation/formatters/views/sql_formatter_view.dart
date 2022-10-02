@@ -1,5 +1,5 @@
 import 'package:devtoys/presentation/formatters/controllers/sql_formatter_controller.dart';
-import 'package:devtoys/presentation/widgets/io_editor.dart';
+import 'package:devtoys/presentation/widgets/io_editor/io_editor.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';

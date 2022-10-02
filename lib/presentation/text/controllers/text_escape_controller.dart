@@ -34,11 +34,7 @@ class TextEscapeController extends GetxController {
         result = tool.escaper.unescape(inputController.text);
       }
 
-      try {
-        outputController.text = result;
-      } catch (_) {
-        //Bug on code_text_field package.
-      }
+      outputController.text = result;
     });
     super.onInit();
   }

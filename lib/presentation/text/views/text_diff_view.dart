@@ -97,30 +97,46 @@ class TextDiffView extends GetView<TextDiffController> {
                           usesCodeControllers: false),
                     ],
                   )),
-              Container(
-                  margin: const EdgeInsets.all(8.0),
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Get.theme.disabledColor,
-                    ),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(10),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: Container(
+                      margin: const EdgeInsets.all(8.0),
+                      child: Text("difference".tr,
+                          style: Get.theme.textTheme.titleMedium,
+                          textAlign: TextAlign.start),
                     ),
                   ),
-                  height: Get.height / 3,
-                  width: Get.width,
-                  child: SingleChildScrollView(
-                    child: Obx(
-                      () => PrettyDiffText(
-                          textAlign: TextAlign.left,
-                          diffEditCost: controller.editCost.value,
-                          diffCleanupType: controller.diffCleanupType.value ??
-                              DiffCleanupType.SEMANTIC,
-                          defaultTextStyle: Get.theme.textTheme.bodyText1!,
-                          newText: controller.newText.value,
-                          oldText: controller.oldText.value),
-                    ),
-                  )),
+                  Container(
+                      margin: const EdgeInsets.all(8.0),
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Get.theme.disabledColor,
+                        ),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                      ),
+                      height: Get.height / 3,
+                      width: Get.width,
+                      padding: const EdgeInsets.all(8.0),
+                      child: SingleChildScrollView(
+                        child: Obx(
+                          () => PrettyDiffText(
+                              textAlign: TextAlign.left,
+                              diffEditCost: controller.editCost.value,
+                              diffCleanupType:
+                                  controller.diffCleanupType.value ??
+                                      DiffCleanupType.SEMANTIC,
+                              defaultTextStyle: Get.theme.textTheme.bodyText1!,
+                              newText: controller.newText.value,
+                              oldText: controller.oldText.value),
+                        ),
+                      )),
+                ],
+              ),
             ],
           ),
         ));

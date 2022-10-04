@@ -1,4 +1,3 @@
-import 'package:code_text_field/code_text_field.dart';
 import 'package:devtoys/presentation/text/controllers/markdown_preview_controller.dart';
 import 'package:devtoys/presentation/widgets/io_editor/io_editor.dart';
 import 'package:devtoys/presentation/widgets/io_editor/io_toolbar.dart';

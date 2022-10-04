@@ -7,11 +7,14 @@ import 'package:get/get.dart';
 class InputToolBar extends StatelessWidget {
   final TextEditingController inputController;
 
-  const InputToolBar({super.key, required this.inputController});
+  final String? toolbarTitle;
+
+  const InputToolBar(
+      {super.key, required this.inputController, this.toolbarTitle});
 
   @override
   Widget build(BuildContext context) {
-    return IOToolbar(title: "input".tr, actions: [
+    return IOToolbar(title: toolbarTitle ?? "input".tr, actions: [
       ElevatedButton.icon(
         icon: Icon(FontAwesomeIcons.paste),
         label: Text("paste".tr),

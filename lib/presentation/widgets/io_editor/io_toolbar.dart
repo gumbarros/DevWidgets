@@ -19,7 +19,7 @@ class IOToolbar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(title, style: TextStyle(fontSize: 20)),
+          Text(title, style: Get.theme.textTheme.titleMedium),
           Row(
             children: actions
                     ?.map(

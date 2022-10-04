@@ -7,11 +7,14 @@ import 'package:get/get.dart';
 class OutputToolbar extends StatelessWidget {
   final TextEditingController outputController;
 
-  const OutputToolbar({super.key, required this.outputController});
+  final String? toolbarTitle;
+
+  const OutputToolbar(
+      {super.key, required this.outputController, this.toolbarTitle});
 
   @override
   Widget build(BuildContext context) {
-    return IOToolbar(title: "output".tr, actions: [
+    return IOToolbar(title: toolbarTitle ?? "output".tr, actions: [
       ElevatedButton.icon(
         icon: Icon(FontAwesomeIcons.copy),
         label: Text("copy".tr),

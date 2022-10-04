@@ -9,8 +9,27 @@ class EnglishTranslations {
         "copy": "Copy",
         "preview": "Preview",
         "cron_parser": "Cron Parser",
+        "current": "Current",
+        "text_diff": "Text Diff",
+        "text_diff_description": "Compare two texts",
         "encoders_decoders": "Encoders / Decoders",
+        "diff_mode_semantic":
+            "Increase human readability by factoring out commonalities which are likely to be coincidental.",
+        "diff_mode_efficiency":
+            "Increase computational efficiency by factoring out short commonalities which are not worth the overhead.",
+        "diff_mode_none": "No cleanup. Raw output.",
         "four_spaces": "Four Spaces",
+        "new_text": "New text",
+        "old_text": "Old text",
+        "semantic_cleanup": "Semantic Cleanup",
+        "efficiency_cleanup": "Efficiency Cleanup",
+        "no_cleanup": "No Cleanup",
+        "no_cleanup_description": "Raw output",
+        "edit_cost": "Edit Cost",
+        "efficiency_cleanup_description":
+            "Increase computational efficiency by factoring out short commonalities which are not worth the overhead. The larger the edit cost, the more aggressive the cleanup",
+        "semantic_cleanup_description":
+            "Increase human readability by factoring out commonalities which are likely to be coincidental",
         "html": "HTML",
         "text_escape_description":
             "Escapes or unescapes a string, removing characters that could prevent parsing.",

@@ -1,3 +1,4 @@
+import 'package:devtoys/domain/helpers/formatters/xml_formatter.dart';
 import 'package:devtoys/domain/models/groups/category.dart';
 import 'package:devtoys/domain/models/groups/formatters_group.dart';
 import 'package:devtoys/domain/models/tools/formatters/formatter_tool.dart';
@@ -9,10 +10,10 @@ import 'package:get/get.dart';
 import '../tool.dart';
 
 class XmlFormatterTool extends FormatterTool implements Tool {
-  XmlFormatterTool(super.formatter);
+  XmlFormatterTool(this.formatter) : super(formatter);
 
   @override
-  IconData get icon => FontAwesomeIcons.code;
+  IconData get icon => Icons.code;
 
   @override
   String get name => "xml_formatter".tr;
@@ -27,5 +28,8 @@ class XmlFormatterTool extends FormatterTool implements Tool {
   Group get group => FormattersGroup();
 
   @override
-  String get commandLineArgName => "sqlformat";
+  String get commandLineArgName => "xmlformat";
+
+  @override
+  final XMLFormatter formatter;
 }

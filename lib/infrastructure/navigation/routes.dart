@@ -6,6 +6,7 @@ class Routes {
 
   static const sqlFormatter = '/formatters/sql';
   static const jsonFormatter = '/formatters/json';
+  static const xmlFormatter = '/formatters/xml';
   static const htmlEncoder = "/encoders/html";
   static const textEscape = "/text/escape";
   static const markdownPreview = "/text/markdown";
@@ -15,7 +16,6 @@ class Routes {
   static var jsonYamlConverter;
   static var cronParser;
   static var numberBase;
-  static var xmlFormatter;
 
   static String getToolRouteByCommandLineArgs(List<String> args) {
     if (args.isNotEmpty) {

@@ -1,6 +1,10 @@
-# DevToys Linux
+# DevToys Flutter 
 This is a W.I.P Flutter port of [DevToys for Windows](https://github.com/veler/DevToys).
+
+[Click here](https://gumbarros.github.io/DevToysFlutter) to try it from your browser 🌐!
+
 ![image](https://user-images.githubusercontent.com/52143624/194722103-a0189544-9aab-4ca4-a91e-9c9f17b7e5e3.png)
+
 ## Getting Started
 
 ### Building from source

@@ -19,3 +19,5 @@ git clone https://github.com/gumbarros/DevToysFlutter
 flutter pub get
 flutter run
 ```
+### Motivation
+I really loved the idea of the original DevToys, but I was upset that it only runs on Windows. I created this project with the aim of just being a port for Linux, but since it was written in Flutter, I think it's strange to keep it only for that platform.

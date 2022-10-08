@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'category.dart';
+import 'group.dart';
 
 class HomeGroup implements Group {
   static final HomeGroup _singleton = HomeGroup._internal();
@@ -16,5 +16,5 @@ class HomeGroup implements Group {
   IconData get icon => FontAwesomeIcons.house;
 
   @override
-  String get name => "text".tr;
+  String get name => "all_tools".tr;
 }

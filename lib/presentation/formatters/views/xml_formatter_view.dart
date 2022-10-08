@@ -15,7 +15,7 @@ class XMLFormatterView extends GetView<XMLFormatterController> {
     return Scaffold(
         appBar: AppBar(
             title: Text(
-          controller.tool.name,
+          controller.tool.title,
           style: const TextStyle(fontSize: 24),
         )),
         body: Container(
@@ -27,7 +27,7 @@ class XMLFormatterView extends GetView<XMLFormatterController> {
                 child: YaruSection(headline: "configuration".tr, children: [
                   YaruRow(
                       enabled: true,
-                      leadingWidget: Icon(FontAwesomeIcons.rightLong),
+                      leadingWidget: FaIcon(FontAwesomeIcons.rightLong),
                       trailingWidget: Padding(
                         child: Text(
                           "indentation".tr,

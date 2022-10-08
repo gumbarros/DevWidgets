@@ -1,4 +1,4 @@
-import 'package:devtoys/domain/models/groups/category.dart';
+import 'package:devtoys/domain/models/groups/group.dart';
 import 'package:devtoys/domain/models/groups/converters_group.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
@@ -11,7 +11,7 @@ class CronParserTool implements Tool {
   IconData get icon => FontAwesomeIcons.clock;
 
   @override
-  String get name => "cron_parser".tr;
+  String get title => "cron_parser".tr;
 
   @override
   String get route => Routes.cronParser;

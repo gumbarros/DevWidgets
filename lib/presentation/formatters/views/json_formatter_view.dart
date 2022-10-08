@@ -14,7 +14,7 @@ class JSONFormatterView extends GetView<JSONFormatterController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: DefaultAppBar(title: controller.tool.name),
+        appBar: DefaultAppBar(title: controller.tool.title),
         body: Container(
           height: Get.height - kToolbarHeight,
           child: ListView(
@@ -24,7 +24,7 @@ class JSONFormatterView extends GetView<JSONFormatterController> {
                 child: YaruSection(headline: "configuration".tr, children: [
                   YaruRow(
                       enabled: true,
-                      leadingWidget: Icon(FontAwesomeIcons.rightLong),
+                      leadingWidget: FaIcon(FontAwesomeIcons.rightLong),
                       trailingWidget: Padding(
                         child: Text(
                           "indentation".tr,
@@ -42,7 +42,7 @@ class JSONFormatterView extends GetView<JSONFormatterController> {
                       )),
                   YaruRow(
                     enabled: true,
-                    leadingWidget: Icon(FontAwesomeIcons.arrowDownAZ),
+                    leadingWidget: FaIcon(FontAwesomeIcons.arrowDownAZ),
                     trailingWidget: Padding(
                       child: Text(
                         "sort_json_properties_alphabetically".tr,

@@ -23,6 +23,7 @@ class EnglishTranslations {
         "new_text": "New text",
         "home": "Home",
         "old_text": "Old text",
+        "formatters": "Formatters",
         "semantic_cleanup": "Semantic Cleanup",
         "efficiency_cleanup": "Efficiency Cleanup",
         "no_cleanup": "No Cleanup",

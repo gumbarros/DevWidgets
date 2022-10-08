@@ -1,18 +1,19 @@
 import 'package:devtoys/domain/helpers/text/text_escaper.dart';
-import 'package:devtoys/domain/models/groups/category.dart';
+import 'package:devtoys/domain/models/groups/group.dart';
 import 'package:devtoys/domain/models/groups/text_group.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
 import '../tool.dart';
 
 class TextEscapeTool implements Tool {
   @override
-  IconData get icon => Icons.text_fields;
+  IconData get icon => FontAwesomeIcons.textSlash;
 
   @override
-  String get name => "text_escape".tr;
+  String get title => "text_escape".tr;
 
   @override
   String get route => Routes.textEscape;

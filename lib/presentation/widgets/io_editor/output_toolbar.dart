@@ -16,7 +16,7 @@ class OutputToolbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return IOToolbar(title: toolbarTitle ?? "output".tr, actions: [
       ElevatedButton.icon(
-        icon: Icon(FontAwesomeIcons.copy),
+        icon: FaIcon(FontAwesomeIcons.copy),
         label: Text("copy".tr),
         onPressed: () async {
           await Clipboard.setData(ClipboardData(text: outputController.text));

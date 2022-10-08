@@ -12,7 +12,7 @@ class MarkdownPreviewView extends GetView<MarkdownPreviewController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: DefaultAppBar(title: controller.tool.name),
+        appBar: DefaultAppBar(title: controller.tool.title),
         body: Container(
             height: Get.height - kToolbarHeight,
             child: SingleChildScrollView(

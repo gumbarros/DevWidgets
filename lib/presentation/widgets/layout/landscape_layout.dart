@@ -1,3 +1,4 @@
+import 'package:devtoys/domain/models/tools/home_tool.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
 import 'package:devtoys/presentation/widgets/layout/menu.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +9,7 @@ class LandscapeLayout extends StatelessWidget {
   final List<Tool> tools;
 
   static final Rx<bool> compactMode = false.obs;
-  static final Rx<int> selectedIndex = 0.obs;
+  static final Rx<String> selectedToolName = (HomeTool).toString().obs;
 
   const LandscapeLayout({super.key, required this.child, required this.tools});
 
@@ -24,7 +25,7 @@ class LandscapeLayout extends StatelessWidget {
               children: [
                 Obx(
                   () => SizedBox(
-                    width: !compactMode.value ? 400 : 80,
+                    width: !compactMode.value ? Get.width / 4 : 80,
                     child: Container(
                       decoration: BoxDecoration(
                         border: Border(
@@ -35,7 +36,8 @@ class LandscapeLayout extends StatelessWidget {
                         ),
                       ),
                       child: Menu(
-                          tools: tools, selectedIndex: selectedIndex.value),
+                          tools: tools,
+                          selectedToolName: selectedToolName.value),
                     ),
                   ),
                 ),

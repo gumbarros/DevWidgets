@@ -1,4 +1,4 @@
-import 'package:devtoys/domain/models/groups/category.dart';
+import 'package:devtoys/domain/models/groups/group.dart';
 import 'package:devtoys/domain/models/groups/text_group.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
@@ -11,7 +11,7 @@ class MarkdownPreviewTool implements Tool {
   IconData get icon => FontAwesomeIcons.markdown;
 
   @override
-  String get name => "markdown_preview".tr;
+  String get title => "markdown_preview".tr;
 
   @override
   String get route => Routes.markdownPreview;

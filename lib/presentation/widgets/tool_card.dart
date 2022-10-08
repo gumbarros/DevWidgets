@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:layout/layout.dart';
 
@@ -36,7 +37,7 @@ class ToolCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 60, bottom: 40, right: 40, left: 40),
+      padding: EdgeInsets.only(top: 60, bottom: 10, right: 40, left: 40),
       child: MouseRegion(
         cursor: SystemMouseCursors.click,
         onEnter: onHoverIn,
@@ -70,7 +71,11 @@ class ToolCard extends StatelessWidget {
                             color: Get.theme.hoverColor,
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(8.0))),
-                        child: Icon(tool.icon, size: 80)),
+                        child: Center(
+                            child: FaIcon(
+                          tool.icon,
+                          size: 80,
+                        ))),
                     Container(
                       width: context.layout.value(
                           xs: xsWidth,
@@ -87,7 +92,7 @@ class ToolCard extends StatelessWidget {
                       child: Column(
                         children: [
                           AutoSizeText(
-                            tool.name,
+                            tool.title,
                             style: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.bold),
                             textAlign: TextAlign.center,

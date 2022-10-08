@@ -1,5 +1,5 @@
 import 'package:devtoys/domain/helpers/formatters/xml_formatter.dart';
-import 'package:devtoys/domain/models/groups/category.dart';
+import 'package:devtoys/domain/models/groups/group.dart';
 import 'package:devtoys/domain/models/groups/formatters_group.dart';
 import 'package:devtoys/domain/models/tools/formatters/formatter_tool.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
@@ -13,10 +13,10 @@ class XmlFormatterTool extends FormatterTool implements Tool {
   XmlFormatterTool(this.formatter) : super(formatter);
 
   @override
-  IconData get icon => Icons.code;
+  IconData get icon => FontAwesomeIcons.code;
 
   @override
-  String get name => "xml_formatter".tr;
+  String get title => "xml_formatter".tr;
 
   @override
   String get route => Routes.xmlFormatter;

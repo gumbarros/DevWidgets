@@ -26,7 +26,7 @@ class ToolsBinding extends Bindings {
       TextDiffTool()
     ];
 
-    tools.sort((a, b) => a.name.compareTo(b.name));
+    tools.sort((a, b) => a.group.name.compareTo(b.group.name));
     tools.insert(0, HomeTool());
     return tools;
   }

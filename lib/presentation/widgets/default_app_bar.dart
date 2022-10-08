@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:devtoys/presentation/widgets/layout/landscape_layout.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -11,7 +12,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
         leading: IconButton(
-          icon: Icon(Icons.menu),
+          icon: FaIcon(FontAwesomeIcons.bars),
           onPressed: () {
             LandscapeLayout.compactMode.value =
                 !LandscapeLayout.compactMode.value;

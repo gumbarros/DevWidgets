@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
-import 'category.dart';
+import 'group.dart';
 
 class TextGroup implements Group {
   static final TextGroup _singleton = TextGroup._internal();
@@ -14,7 +14,7 @@ class TextGroup implements Group {
   TextGroup._internal();
 
   @override
-  IconData get icon => FontAwesomeIcons.textSlash;
+  IconData get icon => FontAwesomeIcons.quoteRight;
 
   @override
   String get name => "text".tr;

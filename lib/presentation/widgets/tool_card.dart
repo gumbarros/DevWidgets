@@ -6,21 +6,6 @@ import 'package:get/get.dart';
 import 'package:layout/layout.dart';
 
 class ToolCard extends StatelessWidget {
-  final double xsWidth = Get.width / 2;
-  final double xsHeight = Get.height / 3;
-
-  final double smWidth = Get.width / 10;
-  final double smHeight = Get.height / 10;
-
-  final double mdWidth = Get.width / 10;
-  final double mdHeight = Get.height / 5;
-
-  final double lgWidth = Get.width / 12;
-  final double lgHeight = Get.height / 8;
-
-  final double xlWidth = Get.width / 18;
-  final double xlHeight = Get.height / 10;
-
   final Tool tool;
   final Rx<Color> cardColor = Colors.transparent.obs;
 
@@ -37,7 +22,7 @@ class ToolCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 60, bottom: 10, right: 40, left: 40),
+      padding: EdgeInsets.only(top: 60, bottom: 40, right: 40, left: 40),
       child: MouseRegion(
         cursor: SystemMouseCursors.click,
         onEnter: onHoverIn,
@@ -56,17 +41,19 @@ class ToolCard extends StatelessWidget {
                   children: <Widget>[
                     Container(
                         width: context.layout.value(
-                            xs: xsWidth,
-                            sm: Get.width / 8,
-                            md: mdWidth,
-                            lg: xlWidth,
-                            xl: xlWidth),
+                          xs: Get.width / 7,
+                          sm: Get.width / 8,
+                          md: Get.width / 10,
+                          lg: Get.width / 15,
+                          xl: Get.width / 20,
+                        ),
                         height: context.layout.value(
-                            xs: xsHeight,
-                            sm: Get.height / 8,
-                            md: mdHeight,
-                            lg: lgHeight,
-                            xl: xlHeight),
+                          xs: Get.height / 10,
+                          sm: Get.height / 10,
+                          md: Get.height / 10,
+                          lg: Get.height / 10,
+                          xl: Get.height / 12,
+                        ),
                         decoration: BoxDecoration(
                             color: Get.theme.hoverColor,
                             borderRadius:
@@ -74,21 +61,23 @@ class ToolCard extends StatelessWidget {
                         child: Center(
                             child: FaIcon(
                           tool.icon,
-                          size: 80,
+                          size: 35,
                         ))),
                     Container(
                       width: context.layout.value(
-                          xs: xsWidth,
-                          sm: smWidth,
-                          md: mdWidth,
-                          lg: xlWidth,
-                          xl: xlWidth),
+                        xs: Get.width / 7,
+                        sm: Get.width / 7,
+                        md: Get.width / 7,
+                        lg: Get.width / 15,
+                        xl: Get.width / 20,
+                      ),
                       height: context.layout.value(
-                          xs: xsHeight,
-                          sm: smWidth,
-                          md: mdHeight,
-                          lg: lgHeight,
-                          xl: xlHeight),
+                        xs: Get.height / 7,
+                        sm: Get.height / 7,
+                        md: Get.height / 7,
+                        lg: Get.height / 7,
+                        xl: Get.height / 12,
+                      ),
                       child: Column(
                         children: [
                           AutoSizeText(

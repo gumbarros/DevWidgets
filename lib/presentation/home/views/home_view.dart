@@ -17,7 +17,7 @@ class HomeView extends GetView<HomeController> {
         itemCount: controller.tools.length,
         shrinkWrap: true,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            childAspectRatio: 2 / 3.5,
+            childAspectRatio: 2 / 3,
             crossAxisCount:
                 context.layout.value(xs: 1, sm: 2, md: 3, lg: 5, xl: 7)),
         itemBuilder: (BuildContext context, int index) {

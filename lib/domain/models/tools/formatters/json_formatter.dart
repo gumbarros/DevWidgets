@@ -1,5 +1,5 @@
 import 'package:devtoys/domain/helpers/formatters/json_formatter.dart';
-import 'package:devtoys/domain/models/groups/category.dart';
+import 'package:devtoys/domain/models/groups/group.dart';
 import 'package:devtoys/domain/models/groups/formatters_group.dart';
 import 'package:devtoys/domain/models/tools/formatters/formatter_tool.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
@@ -15,7 +15,7 @@ class JSONFormatterTool extends FormatterTool implements Tool {
   IconData get icon => FontAwesomeIcons.alignLeft;
 
   @override
-  String get name => "json_formatter".tr;
+  String get title => "json_formatter".tr;
 
   @override
   String get route => Routes.jsonFormatter;

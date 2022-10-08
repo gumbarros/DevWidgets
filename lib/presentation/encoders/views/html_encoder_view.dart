@@ -1,5 +1,6 @@
 import 'package:devtoys/domain/models/tools/encoders/encode_conversion_mode.dart';
 import 'package:devtoys/presentation/encoders/controllers/html_encoder_controller.dart';
+import 'package:devtoys/presentation/widgets/default_app_bar.dart';
 import 'package:devtoys/presentation/widgets/helpers.dart';
 import 'package:devtoys/presentation/widgets/io_editor/io_editor.dart';
 import 'package:flutter/material.dart';
@@ -13,11 +14,7 @@ class HTMLEncoderView extends GetView<HTMLEncoderController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-            title: Text(
-          controller.tool.name,
-          style: const TextStyle(fontSize: 24),
-        )),
+        appBar: DefaultAppBar(title: controller.tool.title),
         body: Container(
           height: Get.height - kToolbarHeight,
           child: ListView(
@@ -27,7 +24,7 @@ class HTMLEncoderView extends GetView<HTMLEncoderController> {
                 child: YaruSection(headline: "configuration".tr, children: [
                   YaruRow(
                     enabled: true,
-                    leadingWidget: Icon(FontAwesomeIcons.arrowRightArrowLeft),
+                    leadingWidget: FaIcon(FontAwesomeIcons.arrowRightArrowLeft),
                     trailingWidget: Padding(
                       child: ListTile(
                           title: Text("conversion".tr),

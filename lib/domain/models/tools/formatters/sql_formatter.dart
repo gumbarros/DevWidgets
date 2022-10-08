@@ -1,4 +1,4 @@
-import 'package:devtoys/domain/models/groups/category.dart';
+import 'package:devtoys/domain/models/groups/group.dart';
 import 'package:devtoys/domain/models/groups/formatters_group.dart';
 import 'package:devtoys/domain/models/tools/formatters/formatter_tool.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
@@ -14,7 +14,7 @@ class SQLFormatterTool extends FormatterTool implements Tool {
   IconData get icon => FontAwesomeIcons.database;
 
   @override
-  String get name => "sql_formatter".tr;
+  String get title => "sql_formatter".tr;
 
   @override
   Group get group => FormattersGroup();

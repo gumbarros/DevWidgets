@@ -16,7 +16,7 @@ class XMLFormatter implements Formatter {
     } on FormatException catch (_) {
       if (!Get.isSnackbarOpen)
         Get.snackbar("error".tr + "!", "invalid_xml_data".tr,
-            icon: Icon(FontAwesomeIcons.triangleExclamation),
+            icon: FaIcon(FontAwesomeIcons.triangleExclamation),
             snackPosition: SnackPosition.BOTTOM,
             backgroundColor: Colors.red);
     }

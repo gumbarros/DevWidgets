@@ -1,4 +1,4 @@
-import 'package:devtoys/domain/models/groups/category.dart';
+import 'package:devtoys/domain/models/groups/group.dart';
 import 'package:devtoys/domain/models/groups/converters_group.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
@@ -10,7 +10,7 @@ class JsonYamlConverterTool implements Tool {
   IconData get icon => Icons.data_object;
 
   @override
-  String get name => "json_yaml_converter".tr;
+  String get title => "json_yaml_converter".tr;
 
   @override
   String get route => Routes.jsonYamlConverter;

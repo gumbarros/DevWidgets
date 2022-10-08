@@ -1,6 +1,9 @@
-import 'package:devtoys/infrastructure/bindings/domains/tools_binding.dart';
+import 'package:devtoys/domain/models/tools/tool.dart';
+
+import 'package:devtoys/infrastructure/bindings/domains/initial_binding.dart';
 import 'package:devtoys/infrastructure/locale/translations.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
+import 'package:devtoys/presentation/widgets/layout/landscape_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:layout/layout.dart';
@@ -22,15 +25,20 @@ class Main extends StatelessWidget {
   Widget build(BuildContext context) {
     return Layout(
       child: GetMaterialApp(
-        useInheritedMediaQuery: true,
         initialRoute: initialRoute,
         debugShowCheckedModeBanner: false,
-        initialBinding: ToolsBinding(),
+        initialBinding: InitialBindings(),
         locale: Get.deviceLocale,
+        defaultTransition: Transition.fade,
         getPages: Navigation.pages,
         title: "app_name".tr,
         translations: DevToysTranslations(),
-        builder: ((context, child) => YaruTheme(child: child)),
+        builder: ((context, child) => YaruTheme(
+              child: LandscapeLayout(
+                child: child,
+                tools: Get.find<List<Tool>>(),
+              ),
+            )),
       ),
     );
   }

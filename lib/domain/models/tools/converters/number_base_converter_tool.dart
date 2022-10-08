@@ -1,4 +1,4 @@
-import 'package:devtoys/domain/models/groups/category.dart';
+import 'package:devtoys/domain/models/groups/group.dart';
 import 'package:devtoys/domain/models/groups/converters_group.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
@@ -10,7 +10,7 @@ class NumberBaseConverterTool implements Tool {
   IconData get icon => Icons.numbers;
 
   @override
-  String get name => "number_base_converter".tr;
+  String get title => "number_base_converter".tr;
 
   @override
   String get route => Routes.numberBase;

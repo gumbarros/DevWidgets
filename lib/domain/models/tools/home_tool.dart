@@ -1,4 +1,4 @@
-import 'package:devtoys/domain/models/groups/category.dart';
+import 'package:devtoys/domain/models/groups/group.dart';
 import 'package:devtoys/domain/models/groups/home_group.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
@@ -8,10 +8,10 @@ import 'package:get/get.dart';
 
 class HomeTool implements Tool {
   @override
-  IconData get icon => FontAwesomeIcons.alignLeft;
+  IconData get icon => FontAwesomeIcons.house;
 
   @override
-  String get name => "home".tr;
+  String get title => "home".tr;
 
   @override
   String get route => Routes.home;

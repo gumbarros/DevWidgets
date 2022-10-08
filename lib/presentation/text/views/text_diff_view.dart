@@ -1,4 +1,5 @@
 import 'package:devtoys/presentation/text/controllers/text_diff_controller.dart';
+import 'package:devtoys/presentation/widgets/default_app_bar.dart';
 import 'package:devtoys/presentation/widgets/io_editor/input_editor.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,11 +13,7 @@ class TextDiffView extends GetView<TextDiffController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-            title: Text(
-          controller.tool.name,
-          style: const TextStyle(fontSize: 24),
-        )),
+        appBar: DefaultAppBar(title: controller.tool.title),
         body: Container(
           height: Get.height - kToolbarHeight,
           child: ListView(

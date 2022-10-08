@@ -1,5 +1,6 @@
 import 'package:devtoys/domain/models/tools/formatters/indentation.dart';
 import 'package:devtoys/presentation/formatters/controllers/json_formatter_controller.dart';
+import 'package:devtoys/presentation/widgets/default_app_bar.dart';
 import 'package:devtoys/presentation/widgets/helpers.dart';
 import 'package:devtoys/presentation/widgets/io_editor/io_editor.dart';
 import 'package:flutter/material.dart';
@@ -13,11 +14,7 @@ class JSONFormatterView extends GetView<JSONFormatterController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-            title: Text(
-          controller.tool.name,
-          style: const TextStyle(fontSize: 24),
-        )),
+        appBar: DefaultAppBar(title: controller.tool.title),
         body: Container(
           height: Get.height - kToolbarHeight,
           child: ListView(
@@ -27,7 +24,7 @@ class JSONFormatterView extends GetView<JSONFormatterController> {
                 child: YaruSection(headline: "configuration".tr, children: [
                   YaruRow(
                       enabled: true,
-                      leadingWidget: Icon(FontAwesomeIcons.rightLong),
+                      leadingWidget: FaIcon(FontAwesomeIcons.rightLong),
                       trailingWidget: Padding(
                         child: Text(
                           "indentation".tr,
@@ -45,7 +42,7 @@ class JSONFormatterView extends GetView<JSONFormatterController> {
                       )),
                   YaruRow(
                     enabled: true,
-                    leadingWidget: Icon(FontAwesomeIcons.arrowDownAZ),
+                    leadingWidget: FaIcon(FontAwesomeIcons.arrowDownAZ),
                     trailingWidget: Padding(
                       child: Text(
                         "sort_json_properties_alphabetically".tr,

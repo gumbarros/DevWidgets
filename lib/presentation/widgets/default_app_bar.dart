@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:devtoys/presentation/layout/landscape_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 
 class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -18,6 +19,11 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
                 !LandscapeLayout.compactMode.value;
           },
         ),
+        actions: [
+          IconButton(
+              onPressed: () => Get.snackbar("PLACEHOLDER", "This is a W.I.P"),
+              icon: FaIcon(FontAwesomeIcons.gear))
+        ],
         title: AutoSizeText(
           title,
           style: const TextStyle(fontSize: 24),

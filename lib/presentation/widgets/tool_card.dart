@@ -80,10 +80,10 @@ class ToolCard extends StatelessWidget {
                       ),
                       child: Column(
                         children: [
-                          AutoSizeText(
+                          Text(
                             tool.homeTitle,
                             style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
+                                fontSize: 18, fontWeight: FontWeight.bold),
                             textAlign: TextAlign.center,
                           ),
                           Flexible(

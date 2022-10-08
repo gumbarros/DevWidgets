@@ -7,6 +7,14 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
 class HomeTool implements Tool {
+  static final HomeTool _singleton = HomeTool._internal();
+
+  factory HomeTool() {
+    return _singleton;
+  }
+
+  HomeTool._internal();
+
   @override
   IconData get icon => FontAwesomeIcons.house;
 

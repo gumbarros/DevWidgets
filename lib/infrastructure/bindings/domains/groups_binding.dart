@@ -17,7 +17,7 @@ class GroupsBinding extends Bindings {
     ];
 
     groups.sort((a, b) => a.name.compareTo(b.name));
-    groups.insert(0, HomeGroup());
+    // groups.insert(0, HomeGroup());
     return groups;
   }
 

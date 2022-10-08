@@ -12,6 +12,7 @@ class EnglishTranslations {
         "converters": "Converters",
         "copy": "Copy",
         "cron_parser": "Cron Parser",
+        "menu_search_bar_hint": "Type to search for tools...",
         "cron_parser_description":
             "Parse Cron expression to get scheduled dates",
         "current": "Current",

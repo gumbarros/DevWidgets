@@ -42,7 +42,10 @@ class MenuTile extends StatelessWidget {
                   shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(6.0)),
                   ),
-                  leading: FaIcon(icon),
+                  leading: FaIcon(
+                    icon,
+                    size: 18,
+                  ),
                   title:
                       !LandscapeLayout.compactMode.value ? _buildTitle() : null,
                   selected: selected,

@@ -33,7 +33,7 @@ class LandscapeLayout extends StatelessWidget {
                             md: Get.width / 5,
                             lg: Get.width / 6,
                             xl: Get.width / 7)
-                        : Get.width / 16,
+                        : 80,
                     child: Container(
                       decoration: BoxDecoration(
                         border: Border(

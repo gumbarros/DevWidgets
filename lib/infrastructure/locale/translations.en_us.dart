@@ -21,6 +21,7 @@ class EnglishTranslations {
         "four_spaces": "Four Spaces",
         "search_bar_hint": "Type to search for tools...",
         "new_text": "New text",
+        "home": "Home",
         "old_text": "Old text",
         "semantic_cleanup": "Semantic Cleanup",
         "efficiency_cleanup": "Efficiency Cleanup",

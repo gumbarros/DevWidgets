@@ -1,3 +1,4 @@
+import 'package:devtoys/domain/models/tools/tool.dart';
 import 'package:devtoys/infrastructure/bindings/domains/tools_binding.dart';
 import 'package:devtoys/infrastructure/locale/translations.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
@@ -28,18 +29,14 @@ class Main extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         initialBinding: ToolsBinding(),
         locale: Get.deviceLocale,
+        defaultTransition: Transition.fade,
         getPages: Navigation.pages,
         title: "app_name".tr,
         translations: DevToysTranslations(),
         builder: ((context, child) => YaruTheme(
               child: LandscapeLayout(
                 child: child,
-                iconBuilder: (context, index, selected) {
-                  return Icon(Icons.home);
-                },
-                titleBuilder: (context, index, selected) {
-                  return YaruPageItemTitle.text('YaruBanner');
-                },
+                tools: Get.find<List<Tool>>(),
               ),
             )),
       ),

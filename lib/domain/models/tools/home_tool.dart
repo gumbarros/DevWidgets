@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 
 class HomeTool implements Tool {
   @override
-  IconData get icon => FontAwesomeIcons.alignLeft;
+  IconData get icon => Icons.house;
 
   @override
   String get name => "home".tr;

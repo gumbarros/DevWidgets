@@ -14,15 +14,18 @@ import 'package:get/get.dart';
 
 class ToolsBinding extends Bindings {
   static List<Tool> getAllTools() {
-    return [
+    var tools = [
       HtmlEncoderTool(HTMLEncoder()),
       JSONFormatterTool(JSONFormatter()),
       SQLFormatterTool(SQLFormatter()),
       TextEscapeTool(TextEscaper()),
-      HomeTool(),
       MarkdownPreviewTool(),
       TextDiffTool()
     ];
+
+    tools.sort((a, b) => a.name.compareTo(b.name));
+    tools.insert(0, HomeTool());
+    return tools;
   }
 
   @override

@@ -2,8 +2,24 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:layout/layout.dart';
 
 class ToolCard extends StatelessWidget {
+  final double xsWidth = Get.width / 2;
+  final double xsHeight = Get.height / 3;
+
+  final double smWidth = Get.width / 10;
+  final double smHeight = Get.height / 10;
+
+  final double mdWidth = Get.width / 10;
+  final double mdHeight = Get.height / 5;
+
+  final double lgWidth = Get.width / 12;
+  final double lgHeight = Get.height / 8;
+
+  final double xlWidth = Get.width / 18;
+  final double xlHeight = Get.height / 10;
+
   final Tool tool;
   final Rx<Color> cardColor = Colors.transparent.obs;
 
@@ -20,7 +36,7 @@ class ToolCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 60, bottom: 80, right: 40, left: 40),
+      padding: EdgeInsets.only(top: 60, bottom: 40, right: 40, left: 40),
       child: MouseRegion(
         cursor: SystemMouseCursors.click,
         onEnter: onHoverIn,
@@ -35,25 +51,45 @@ class ToolCard extends StatelessWidget {
               () => Card(
                 surfaceTintColor: cardColor.value,
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     Container(
-                        width: Get.width / 15,
-                        height: Get.height / 10,
+                        width: context.layout.value(
+                            xs: xsWidth,
+                            sm: Get.width / 8,
+                            md: mdWidth,
+                            lg: xlWidth,
+                            xl: xlWidth),
+                        height: context.layout.value(
+                            xs: xsHeight,
+                            sm: Get.height / 8,
+                            md: mdHeight,
+                            lg: lgHeight,
+                            xl: xlHeight),
                         decoration: BoxDecoration(
                             color: Get.theme.hoverColor,
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(8.0))),
-                        child: Icon(tool.icon, size: 50)),
+                        child: Icon(tool.icon, size: 80)),
                     Container(
-                      width: Get.width / 10,
-                      height: Get.height / 5,
+                      width: context.layout.value(
+                          xs: xsWidth,
+                          sm: smWidth,
+                          md: mdWidth,
+                          lg: xlWidth,
+                          xl: xlWidth),
+                      height: context.layout.value(
+                          xs: xsHeight,
+                          sm: smWidth,
+                          md: mdHeight,
+                          lg: lgHeight,
+                          xl: xlHeight),
                       child: Column(
                         children: [
                           AutoSizeText(
                             tool.name,
                             style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold),
+                                fontSize: 20, fontWeight: FontWeight.bold),
                             textAlign: TextAlign.center,
                           ),
                           Flexible(

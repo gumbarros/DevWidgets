@@ -1,4 +1,5 @@
 import 'package:devtoys/presentation/text/controllers/markdown_preview_controller.dart';
+import 'package:devtoys/presentation/widgets/default_app_bar.dart';
 import 'package:devtoys/presentation/widgets/io_editor/io_editor.dart';
 import 'package:devtoys/presentation/widgets/io_editor/io_toolbar.dart';
 import 'package:flutter/material.dart';
@@ -11,11 +12,7 @@ class MarkdownPreviewView extends GetView<MarkdownPreviewController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-            title: Text(
-          controller.tool.name,
-          style: const TextStyle(fontSize: 24),
-        )),
+        appBar: DefaultAppBar(title: controller.tool.name),
         body: Container(
             height: Get.height - kToolbarHeight,
             child: SingleChildScrollView(

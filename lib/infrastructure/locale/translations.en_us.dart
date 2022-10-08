@@ -76,6 +76,7 @@ class EnglishTranslations {
         "sql_formatter": "SQL Formatter",
         "xml_formatter": "XML Formatter",
         "xml_formatter_description": "Indent or minify XML data",
+        "invalid_xml_data": "Invalid XML data.",
         "sql_formatter_description": "Indent SQL queries",
         "two_spaces": "Two Spaces"
       };

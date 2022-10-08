@@ -1,0 +1,11 @@
+{
+    "name": "devtoys",
+    "short_name": "devtoys",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#0175C2",
+    "theme_color": "#0175C2",
+    "description": "Cross-platform version of DevToys, a Swiss Army knife for developers. ",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false
+}

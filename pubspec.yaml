@@ -1,7 +1,7 @@
 name: devtoys
 version: 1.0.0+1
 publish_to: none
-description: A Swiss Army knife for developers.
+description: Cross-platform version of DevToys, a Swiss Army knife for developers. 
 environment: 
   sdk: '>=2.17.6 <3.0.0'
 

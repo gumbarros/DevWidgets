@@ -23,6 +23,5 @@ class TimestampConverterTool implements Tool {
   Group get group => ConvertersGroup();
 
   @override
-  // TODO: implement commandLineArgName
-  String get commandLineArgName => throw UnimplementedError();
+  String get commandLineArgName => "timestamp";
 }

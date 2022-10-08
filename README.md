@@ -7,7 +7,7 @@ This is a W.I.P Flutter port of [DevToys for Windows](https://github.com/veler/D
 
 1. Clone the repo from GitHub
 ```sh
-git clone https://github.com/gumbarros/DevToysLinux
+git clone https://github.com/gumbarros/DevToysFlutter
 ```
 2. Install [Flutter](https://docs.flutter.dev/get-started/install/linux)
 3. Restore the dependencies and build the project

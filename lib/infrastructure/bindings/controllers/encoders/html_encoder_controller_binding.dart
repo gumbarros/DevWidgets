@@ -7,8 +7,8 @@ class HTMLEncoderControllerBinding extends Bindings {
   @override
   void dependencies() {
     var tool = Get.find<List<Tool>>()
-            .firstWhere((element) => element.runtimeType == HtmlEncoderTool)
-        as HtmlEncoderTool;
+            .firstWhere((element) => element.runtimeType == HTMLEncoderTool)
+        as HTMLEncoderTool;
 
     Get.lazyPut<HTMLEncoderController>(() => HTMLEncoderController(tool));
   }

@@ -3,7 +3,7 @@ import 'package:devtoys/domain/models/tools/tool.dart';
 import 'package:devtoys/infrastructure/bindings/domains/initial_binding.dart';
 import 'package:devtoys/infrastructure/locale/translations.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
-import 'package:devtoys/presentation/widgets/layout/landscape_layout.dart';
+import 'package:devtoys/presentation/layout/landscape_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:layout/layout.dart';
@@ -31,7 +31,7 @@ class Main extends StatelessWidget {
         locale: Get.deviceLocale,
         defaultTransition: Transition.fade,
         getPages: Navigation.pages,
-        title: "app_name".tr,
+        title: "DevToys",
         translations: DevToysTranslations(),
         builder: ((context, child) => YaruTheme(
               child: LandscapeLayout(

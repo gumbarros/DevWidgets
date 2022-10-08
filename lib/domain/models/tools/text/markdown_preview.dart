@@ -11,7 +11,7 @@ class MarkdownPreviewTool implements Tool {
   IconData get icon => FontAwesomeIcons.markdown;
 
   @override
-  String get title => "markdown_preview".tr;
+  String get homeTitle => "markdown_preview".tr;
 
   @override
   String get route => Routes.markdownPreview;
@@ -24,4 +24,7 @@ class MarkdownPreviewTool implements Tool {
 
   @override
   String get commandLineArgName => "markdown";
+
+  @override
+  String get menuName => throw UnimplementedError();
 }

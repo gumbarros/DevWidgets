@@ -7,27 +7,27 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import '../tool.dart';
 
-class HTMLEncoderTool extends EncoderTool implements Tool {
-  HTMLEncoderTool(super.encoder);
+class URLEncoderTool extends EncoderTool implements Tool {
+  URLEncoderTool(super.encoder);
 
   @override
-  IconData get icon => FontAwesomeIcons.code;
+  IconData get icon => FontAwesomeIcons.link;
 
   @override
-  String get homeTitle => "html_encoder".tr;
+  String get homeTitle => "url_encoder".tr;
 
   @override
-  String get route => Routes.htmlEncoder;
+  String get route => Routes.urlEncoder;
 
   @override
-  String get description => "html_encoder_description".tr;
+  String get description => "url_encoder_description".tr;
 
   @override
   Group get group => EncodersGroup();
 
   @override
-  String get commandLineArgName => "html";
+  String get commandLineArgName => "url-encode";
 
   @override
-  String get menuName => throw UnimplementedError();
+  String get menuName => throw "url_encoder_menu_name";
 }

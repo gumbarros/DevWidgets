@@ -11,7 +11,7 @@ class HomeTool implements Tool {
   IconData get icon => FontAwesomeIcons.house;
 
   @override
-  String get title => "home".tr;
+  String get homeTitle => "home".tr;
 
   @override
   String get route => Routes.home;
@@ -24,4 +24,7 @@ class HomeTool implements Tool {
 
   @override
   String get commandLineArgName => "home";
+
+  @override
+  String get menuName => "home".tr;
 }

@@ -5,7 +5,6 @@ import 'package:devtoys/infrastructure/navigation/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-
 import '../tool.dart';
 
 class TextEscapeTool implements Tool {
@@ -13,7 +12,7 @@ class TextEscapeTool implements Tool {
   IconData get icon => FontAwesomeIcons.textSlash;
 
   @override
-  String get title => "text_escape".tr;
+  String get homeTitle => "text_escape".tr;
 
   @override
   String get route => Routes.textEscape;
@@ -26,6 +25,9 @@ class TextEscapeTool implements Tool {
 
   @override
   String get commandLineArgName => "escape";
+
+  @override
+  String get menuName => throw UnimplementedError();
 
   final TextEscaper escaper;
 

@@ -11,7 +11,7 @@ class CronParserTool implements Tool {
   IconData get icon => FontAwesomeIcons.clock;
 
   @override
-  String get title => "cron_parser".tr;
+  String get homeTitle => "cron_parser".tr;
 
   @override
   String get route => Routes.cronParser;
@@ -24,4 +24,7 @@ class CronParserTool implements Tool {
 
   @override
   String get commandLineArgName => "cron-parser";
+
+  @override
+  String get menuName => throw UnimplementedError();
 }

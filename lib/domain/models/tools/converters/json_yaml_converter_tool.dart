@@ -10,7 +10,7 @@ class JsonYamlConverterTool implements Tool {
   IconData get icon => Icons.data_object;
 
   @override
-  String get title => "json_yaml_converter".tr;
+  String get homeTitle => "json_yaml_converter".tr;
 
   @override
   String get route => Routes.jsonYamlConverter;
@@ -23,4 +23,7 @@ class JsonYamlConverterTool implements Tool {
 
   @override
   String get commandLineArgName => "json-yaml";
+
+  @override
+  String get menuName => throw UnimplementedError();
 }

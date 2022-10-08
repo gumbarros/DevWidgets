@@ -10,7 +10,7 @@ class NumberBaseConverterTool implements Tool {
   IconData get icon => Icons.numbers;
 
   @override
-  String get title => "number_base_converter".tr;
+  String get homeTitle => "number_base_converter".tr;
 
   @override
   String get route => Routes.numberBase;
@@ -23,4 +23,7 @@ class NumberBaseConverterTool implements Tool {
 
   @override
   String get commandLineArgName => "number-base";
+
+  @override
+  String get menuName => throw UnimplementedError();
 }

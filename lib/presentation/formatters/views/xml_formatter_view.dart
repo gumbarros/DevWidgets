@@ -15,7 +15,7 @@ class XMLFormatterView extends GetView<XMLFormatterController> {
     return Scaffold(
         appBar: AppBar(
             title: Text(
-          controller.tool.title,
+          controller.tool.homeTitle,
           style: const TextStyle(fontSize: 24),
         )),
         body: Container(

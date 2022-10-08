@@ -1,8 +1,9 @@
 import 'package:devtoys/domain/models/tools/home_tool.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
-import 'package:devtoys/presentation/widgets/layout/menu.dart';
+import 'package:devtoys/presentation/layout/menu.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:layout/layout.dart';
 
 class LandscapeLayout extends StatelessWidget {
   final Widget? child;
@@ -25,7 +26,14 @@ class LandscapeLayout extends StatelessWidget {
               children: [
                 Obx(
                   () => SizedBox(
-                    width: !compactMode.value ? Get.width / 4 : 80,
+                    width: !compactMode.value
+                        ? context.layout.value(
+                            xs: Get.width / 5,
+                            sm: Get.width / 5,
+                            md: Get.width / 5,
+                            lg: Get.width / 6,
+                            xl: Get.width / 7)
+                        : Get.width / 16,
                     child: Container(
                       decoration: BoxDecoration(
                         border: Border(

@@ -14,7 +14,7 @@ class SQLFormatterTool extends FormatterTool implements Tool {
   IconData get icon => FontAwesomeIcons.database;
 
   @override
-  String get title => "sql_formatter".tr;
+  String get homeTitle => "sql_formatter".tr;
 
   @override
   Group get group => FormattersGroup();
@@ -27,4 +27,7 @@ class SQLFormatterTool extends FormatterTool implements Tool {
 
   @override
   String get commandLineArgName => "sqlformat";
+
+  @override
+  String get menuName => throw UnimplementedError();
 }

@@ -11,7 +11,7 @@ class TimestampConverterTool implements Tool {
   IconData get icon => FontAwesomeIcons.clock;
 
   @override
-  String get title => "timestamp_converter".tr;
+  String get homeTitle => "timestamp_converter".tr;
 
   @override
   String get route => Routes.timestampConverter;
@@ -24,4 +24,7 @@ class TimestampConverterTool implements Tool {
 
   @override
   String get commandLineArgName => "timestamp";
+
+  @override
+  String get menuName => throw UnimplementedError();
 }

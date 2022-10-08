@@ -14,7 +14,7 @@ class JSONFormatterView extends GetView<JSONFormatterController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: DefaultAppBar(title: controller.tool.title),
+        appBar: DefaultAppBar(title: controller.tool.homeTitle),
         body: Container(
           height: Get.height - kToolbarHeight,
           child: ListView(

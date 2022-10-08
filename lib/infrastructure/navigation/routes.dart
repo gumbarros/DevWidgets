@@ -11,6 +11,7 @@ class Routes {
   static const textEscape = "/text/escape";
   static const markdownPreview = "/text/markdown";
   static const textDiff = "/text/diff";
+  static const urlEncoder = "/encoders/url";
 
   static var timestampConverter;
   static var jsonYamlConverter;

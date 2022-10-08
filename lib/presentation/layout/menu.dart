@@ -1,8 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:devtoys/domain/models/groups/group.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
-import 'package:devtoys/presentation/widgets/layout/landscape_layout.dart';
-import 'package:devtoys/presentation/widgets/layout/menu_tile.dart';
+import 'package:devtoys/presentation/layout/landscape_layout.dart';
+import 'package:devtoys/presentation/layout/menu_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -23,6 +23,7 @@ class Menu extends StatelessWidget {
         _calcScrollbarThicknessWithTrack(context);
 
     return ListView(
+      shrinkWrap: true,
       semanticChildCount: tools.length,
       padding: EdgeInsets.symmetric(
         horizontal: scrollbarThicknessWithTrack,
@@ -57,6 +58,7 @@ class Menu extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: AutoSizeText(
                           group.name,
+                          overflow: TextOverflow.fade,
                           style: TextStyle(fontSize: 17),
                         ),
                       )
@@ -67,7 +69,7 @@ class Menu extends StatelessWidget {
                   MenuTile(
                     selected: LandscapeLayout.selectedToolName.value ==
                         tool.runtimeType.toString(),
-                    title: YaruPageItemTitle.text(tool.title),
+                    title: YaruPageItemTitle.text(tool.homeTitle),
                     icon: tool.icon,
                     onTap: () {
                       LandscapeLayout.selectedToolName.value =

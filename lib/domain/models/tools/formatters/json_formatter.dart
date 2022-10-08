@@ -15,7 +15,7 @@ class JSONFormatterTool extends FormatterTool implements Tool {
   IconData get icon => FontAwesomeIcons.alignLeft;
 
   @override
-  String get title => "json_formatter".tr;
+  String get homeTitle => "json_formatter".tr;
 
   @override
   String get route => Routes.jsonFormatter;
@@ -31,4 +31,7 @@ class JSONFormatterTool extends FormatterTool implements Tool {
 
   @override
   String get commandLineArgName => "jsonformat";
+
+  @override
+  String get menuName => throw UnimplementedError();
 }

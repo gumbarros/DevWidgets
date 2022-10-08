@@ -16,7 +16,7 @@ class XmlFormatterTool extends FormatterTool implements Tool {
   IconData get icon => FontAwesomeIcons.code;
 
   @override
-  String get title => "xml_formatter".tr;
+  String get homeTitle => "xml_formatter".tr;
 
   @override
   String get route => Routes.xmlFormatter;
@@ -32,4 +32,7 @@ class XmlFormatterTool extends FormatterTool implements Tool {
 
   @override
   final XMLFormatter formatter;
+
+  @override
+  String get menuName => throw UnimplementedError();
 }

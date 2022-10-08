@@ -11,7 +11,7 @@ class TextDiffTool implements Tool {
   IconData get icon => FontAwesomeIcons.divide;
 
   @override
-  String get title => "text_diff".tr;
+  String get homeTitle => "text_diff".tr;
 
   @override
   String get route => Routes.textDiff;
@@ -26,4 +26,7 @@ class TextDiffTool implements Tool {
   String get commandLineArgName => "diff";
 
   TextDiffTool();
+
+  @override
+  String get menuName => throw UnimplementedError();
 }

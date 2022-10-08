@@ -7,12 +7,11 @@ import 'package:flutter_highlight/themes/vs2015.dart';
 import 'package:flutter_highlight/themes/vs.dart';
 
 class HTMLEncoderController extends GetxController {
-  final HtmlEncoderTool tool;
+  final HTMLEncoderTool tool;
   late CodeController inputController;
   late CodeController outputController;
 
   Rx<EncodeConversionMode?> conversionMode = EncodeConversionMode.Decode.obs;
-  Rx<bool> sortAlphabetically = false.obs;
 
   String? result;
 

@@ -1,4 +1,5 @@
 import 'package:devtoys/infrastructure/bindings/controllers/encoders/html_encoder_controller_binding.dart';
+import 'package:devtoys/infrastructure/bindings/controllers/encoders/url_encoder_controller_binding.dart';
 import 'package:devtoys/infrastructure/bindings/controllers/formatters/xml_formatter_controller_binding.dart';
 import 'package:devtoys/infrastructure/bindings/controllers/home_controller_binding.dart';
 import 'package:devtoys/infrastructure/bindings/controllers/formatters/json_formatter_controller_binding.dart';
@@ -7,6 +8,7 @@ import 'package:devtoys/infrastructure/bindings/controllers/text/markdown_previe
 import 'package:devtoys/infrastructure/bindings/controllers/text/text_diff_controller_binding.dart';
 import 'package:devtoys/infrastructure/bindings/controllers/text/text_escape_controller_binding.dart';
 import 'package:devtoys/presentation/encoders/views/html_encoder_view.dart';
+import 'package:devtoys/presentation/encoders/views/url_encoder_view.dart';
 import 'package:devtoys/presentation/formatters/views/xml_formatter_view.dart';
 import 'package:devtoys/presentation/home/views/home_view.dart';
 import 'package:devtoys/presentation/formatters/views/json_formatter_view.dart';
@@ -58,6 +60,11 @@ class Navigation {
       name: Routes.xmlFormatter,
       page: () => const XMLFormatterView(),
       binding: XMLFormatterControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.urlEncoder,
+      page: () => const URLEncoderView(),
+      binding: URLEncoderControllerBinding(),
     ),
   ];
 }

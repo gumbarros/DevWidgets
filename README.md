@@ -3,7 +3,7 @@ This is a W.I.P Flutter port of [DevToys for Windows](https://github.com/veler/D
 
 [Click here](https://gumbarros.github.io/DevToysFlutter) to try it from your browser 🌐!
 
-![image](https://user-images.githubusercontent.com/52143624/194722103-a0189544-9aab-4ca4-a91e-9c9f17b7e5e3.png)
+![image](https://user-images.githubusercontent.com/52143624/194762508-a4be570e-66cc-4dde-8c78-ba2f2ea53e6e.png)
 
 ## Getting Started
 

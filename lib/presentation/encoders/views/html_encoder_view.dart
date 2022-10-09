@@ -34,8 +34,7 @@ class HTMLEncoderView extends GetView<HTMLEncoderController> {
                     actionWidget: Obx(
                       () => DropdownButton<EncodeConversionMode>(
                           value: controller.conversionMode.value,
-                          items: Helpers.getDropdownMenuItems<
-                                  EncodeConversionMode>(
+                          items: getDropdownMenuItems<EncodeConversionMode>(
                               EncodeConversionMode.values),
                           onChanged: (selected) {
                             controller.conversionMode.value = selected;

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-class MenuSearchBox extends StatelessWidget {
-  const MenuSearchBox({super.key});
+class LinuxMenuSearchBox extends StatelessWidget {
+  const LinuxMenuSearchBox({super.key});
 
   @override
   Widget build(BuildContext context) {

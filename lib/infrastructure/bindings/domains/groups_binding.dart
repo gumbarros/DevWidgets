@@ -2,7 +2,6 @@ import 'package:devtoys/domain/models/groups/converters_group.dart';
 import 'package:devtoys/domain/models/groups/encoders_group.dart';
 import 'package:devtoys/domain/models/groups/formatters_group.dart';
 import 'package:devtoys/domain/models/groups/group.dart';
-import 'package:devtoys/domain/models/groups/home_group.dart';
 import 'package:devtoys/domain/models/groups/text_group.dart';
 
 import 'package:get/get.dart';
@@ -17,7 +16,6 @@ class GroupsBinding extends Bindings {
     ];
 
     groups.sort((a, b) => a.name.compareTo(b.name));
-    // groups.insert(0, HomeGroup());
     return groups;
   }
 

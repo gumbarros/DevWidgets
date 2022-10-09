@@ -34,5 +34,5 @@ class XmlFormatterTool extends FormatterTool implements Tool {
   final XMLFormatter formatter;
 
   @override
-  String get menuName => throw UnimplementedError();
+  String get menuName => "xml_formatter_menu_name".tr;
 }

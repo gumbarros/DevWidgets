@@ -2,19 +2,22 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:devtoys/domain/models/groups/group.dart';
 import 'package:devtoys/domain/models/tools/home_tool.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
-import 'package:devtoys/presentation/layout/landscape_layout.dart';
-import 'package:devtoys/presentation/layout/menu_search_box.dart';
-import 'package:devtoys/presentation/layout/menu_tile.dart';
+import 'package:devtoys/presentation/layout/linux/linux_layout.dart';
+import 'package:devtoys/presentation/layout/linux/linux_menu_search_box.dart';
+import 'package:devtoys/presentation/layout/linux/linux_menu_tile.dart';
+import 'package:devtoys/presentation/widgets/helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:layout/layout.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 const double _kScrollbarThickness = 8.0;
 const double _kScrollbarMargin = 2.0;
 
-class Menu extends StatelessWidget {
-  const Menu({super.key, required this.selectedToolName, required this.tools});
+class LinuxMenu extends StatelessWidget {
+  const LinuxMenu(
+      {super.key, required this.selectedToolName, required this.tools});
 
   final List<Tool> tools;
   final String selectedToolName;
@@ -31,25 +34,26 @@ class Menu extends StatelessWidget {
             horizontal: scrollbarThicknessWithTrack,
             vertical: 8.0,
           ),
-          child: MenuTile(
+          child: LinuxMenuTile(
             padding: EdgeInsets.zero,
-            selected: LandscapeLayout.selectedToolName.value ==
+            selected: LinuxLayout.selectedToolName.value ==
                 HomeTool().runtimeType.toString(),
-            title: YaruPageItemTitle.text(HomeTool().homeTitle),
+            title: YaruPageItemTitle.text(HomeTool().menuName),
             icon: HomeTool().icon,
             onTap: () {
-              LandscapeLayout.selectedToolName.value =
+              LinuxLayout.selectedToolName.value =
                   HomeTool().runtimeType.toString();
               Get.toNamed(HomeTool().route);
             },
           ),
         ),
         Visibility(
-          visible: !LandscapeLayout.compactMode.value,
+          visible: !context.layout.breakpoint.isSmall() &&
+              !LinuxLayout.compactMode.value,
           child: SizedBox(
               width: Get.width,
               height: Get.height / 20,
-              child: MenuSearchBox()),
+              child: LinuxMenuSearchBox()),
         ),
         Divider(),
         ListView(
@@ -62,7 +66,8 @@ class Menu extends StatelessWidget {
           children: [
             for (var group in Get.find<List<Group>>())
               Visibility(
-                visible: !LandscapeLayout.compactMode.value,
+                visible: !context.layout.breakpoint.isSmall() &&
+                    !LinuxLayout.compactMode.value,
                 replacement: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: IconButton(
@@ -79,9 +84,11 @@ class Menu extends StatelessWidget {
                   header: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Row(
-                        mainAxisAlignment: LandscapeLayout.compactMode.value
-                            ? MainAxisAlignment.center
-                            : MainAxisAlignment.start,
+                        mainAxisAlignment:
+                            !context.layout.breakpoint.isSmall() &&
+                                    !LinuxLayout.compactMode.value
+                                ? MainAxisAlignment.center
+                                : MainAxisAlignment.start,
                         children: [
                           FaIcon(
                             group.icon,
@@ -100,13 +107,13 @@ class Menu extends StatelessWidget {
                   child: Column(children: [
                     for (var tool
                         in tools.where((t) => t.group.name == group.name))
-                      MenuTile(
-                        selected: LandscapeLayout.selectedToolName.value ==
+                      LinuxMenuTile(
+                        selected: LinuxLayout.selectedToolName.value ==
                             tool.runtimeType.toString(),
-                        title: YaruPageItemTitle.text(tool.homeTitle),
+                        title: YaruPageItemTitle.text(tool.menuName),
                         icon: tool.icon,
                         onTap: () {
-                          LandscapeLayout.selectedToolName.value =
+                          LinuxLayout.selectedToolName.value =
                               tool.runtimeType.toString();
                           Get.toNamed(tool.route);
                         },

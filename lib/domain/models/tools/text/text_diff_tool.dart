@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 
 class TextDiffTool implements Tool {
   @override
-  IconData get icon => FontAwesomeIcons.divide;
+  IconData get icon => FontAwesomeIcons.plusMinus;
 
   @override
   String get homeTitle => "text_diff".tr;
@@ -28,5 +28,5 @@ class TextDiffTool implements Tool {
   TextDiffTool();
 
   @override
-  String get menuName => throw UnimplementedError();
+  String get menuName => "text_diff_menu_name".tr;
 }

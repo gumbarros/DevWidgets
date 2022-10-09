@@ -13,6 +13,12 @@ class EnglishTranslations {
         "copy": "Copy",
         "cron_parser": "Cron Parser",
         "menu_search_bar_hint": "Type to search for tools...",
+        "json_formatter_menu_name": "JSON",
+        "xml_formatter_menu_name": "XML",
+        "sql_formatter_menu_name": "SQL",
+        "html_encoder_menu_name": "HTML",
+        "url_encoder_menu_name": "URL",
+        "text_escape_menu_name": "Escape / Unescape",
         "cron_parser_description":
             "Parse Cron expression to get scheduled dates",
         "current": "Current",
@@ -34,7 +40,6 @@ class EnglishTranslations {
         "formatters": "Formatters",
         "four_spaces": "Four Spaces",
         "home": "Home",
-        "html": "HTML",
         "html_encoder": "HTML Encoder / Decoder",
         "html_encoder_description":
             "Encode or decode all the applicable characters to their corresponding HTML entities",
@@ -48,6 +53,7 @@ class EnglishTranslations {
         "json_yaml_converter_description":
             "Convert JSON data to YAML and vice versa",
         "markdown_preview": "Markdown Preview",
+        "markdown_preview_menu_name": "Markdown Preview",
         "markdown_preview_description": "Preview a Markdown document",
         "new_text": "New text",
         "no_cleanup": "No Cleanup",
@@ -69,9 +75,10 @@ class EnglishTranslations {
         "sql_formatter": "SQL Formatter",
         "sql_formatter_description": "Indent SQL queries",
         "text": "Text",
-        "text_diff": "Text Diff",
+        "text_diff": "Text Comparer",
         "text_diff_description": "Compare two texts",
-        "text_escape": "Escape / Unescape",
+        "text_escape": "Text Escape / Unescape",
+        "text_diff_menu_name": "Text Diff",
         "text_escape_description":
             "Escapes or unescapes a string, removing characters that could prevent parsing.",
         "timestamp_converter": "Timestamp Converter",

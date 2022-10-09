@@ -35,7 +35,7 @@ class JSONFormatterView extends GetView<JSONFormatterController> {
                       actionWidget: Obx(
                         () => DropdownButton<Indentation>(
                             value: controller.indentation.value,
-                            items: Helpers.getDropdownMenuItems<Indentation>(
+                            items: getDropdownMenuItems<Indentation>(
                                 Indentation.values),
                             onChanged: (selected) =>
                                 controller.indentation.value = selected),

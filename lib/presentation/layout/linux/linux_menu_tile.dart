@@ -1,11 +1,13 @@
-import 'package:devtoys/presentation/layout/landscape_layout.dart';
+import 'package:devtoys/presentation/layout/linux/linux_layout.dart';
+import 'package:devtoys/presentation/widgets/helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:layout/layout.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-class MenuTile extends StatelessWidget {
-  const MenuTile({
+class LinuxMenuTile extends StatelessWidget {
+  const LinuxMenuTile({
     required this.selected,
     required this.icon,
     required this.onTap,
@@ -29,7 +31,8 @@ class MenuTile extends StatelessWidget {
             : null,
       ),
       child: Obx(
-        () => !LandscapeLayout.compactMode.value
+        () => !context.layout.breakpoint.isSmall() &&
+                !LinuxLayout.compactMode.value
             ? Container(
                 padding: padding ?? const EdgeInsets.only(left: 20.0),
                 child: ListTile(
@@ -46,8 +49,7 @@ class MenuTile extends StatelessWidget {
                     icon,
                     size: 18,
                   ),
-                  title:
-                      !LandscapeLayout.compactMode.value ? _buildTitle() : null,
+                  title: !LinuxLayout.compactMode.value ? _buildTitle() : null,
                   selected: selected,
                   onTap: onTap,
                 ),

@@ -9,7 +9,7 @@ import '../tool.dart';
 
 class TextEscapeTool implements Tool {
   @override
-  IconData get icon => FontAwesomeIcons.textSlash;
+  IconData get icon => FontAwesomeIcons.slash;
 
   @override
   String get homeTitle => "text_escape".tr;
@@ -27,7 +27,7 @@ class TextEscapeTool implements Tool {
   String get commandLineArgName => "escape";
 
   @override
-  String get menuName => throw UnimplementedError();
+  String get menuName => "text_escape_menu_name".tr;
 
   final TextEscaper escaper;
 

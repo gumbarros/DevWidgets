@@ -3,7 +3,7 @@ import 'package:devtoys/domain/models/tools/tool.dart';
 import 'package:devtoys/infrastructure/bindings/domains/initial_binding.dart';
 import 'package:devtoys/infrastructure/locale/translations.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
-import 'package:devtoys/presentation/layout/landscape_layout.dart';
+import 'package:devtoys/presentation/layout/linux/linux_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:layout/layout.dart';
@@ -29,12 +29,13 @@ class Main extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         initialBinding: InitialBindings(),
         locale: Get.deviceLocale,
+        fallbackLocale: Locale("en", "US"),
         defaultTransition: Transition.fade,
         getPages: Navigation.pages,
         title: "DevToys",
         translations: DevToysTranslations(),
         builder: ((context, child) => YaruTheme(
-              child: LandscapeLayout(
+              child: LinuxLayout(
                 child: child,
                 tools: Get.find<List<Tool>>(),
               ),

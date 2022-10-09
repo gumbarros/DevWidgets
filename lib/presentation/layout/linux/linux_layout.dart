@@ -1,18 +1,19 @@
 import 'package:devtoys/domain/models/tools/home_tool.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
-import 'package:devtoys/presentation/layout/menu.dart';
+import 'package:devtoys/presentation/layout/linux/linux_menu.dart';
+import 'package:devtoys/presentation/widgets/helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:layout/layout.dart';
 
-class LandscapeLayout extends StatelessWidget {
+class LinuxLayout extends StatelessWidget {
   final Widget? child;
   final List<Tool> tools;
 
   static final Rx<bool> compactMode = false.obs;
   static final Rx<String> selectedToolName = (HomeTool).toString().obs;
 
-  const LandscapeLayout({super.key, required this.child, required this.tools});
+  const LinuxLayout({super.key, required this.child, required this.tools});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,8 @@ class LandscapeLayout extends StatelessWidget {
               children: [
                 Obx(
                   () => SizedBox(
-                    width: !compactMode.value
+                    width: !context.layout.breakpoint.isSmall() &&
+                            !compactMode.value
                         ? context.layout.value(
                             xs: Get.width / 5,
                             sm: Get.width / 5,
@@ -43,7 +45,7 @@ class LandscapeLayout extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: Menu(
+                      child: LinuxMenu(
                           tools: tools,
                           selectedToolName: selectedToolName.value),
                     ),

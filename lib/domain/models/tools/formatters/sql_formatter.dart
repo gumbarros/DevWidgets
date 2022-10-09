@@ -29,5 +29,5 @@ class SQLFormatterTool extends FormatterTool implements Tool {
   String get commandLineArgName => "sqlformat";
 
   @override
-  String get menuName => throw UnimplementedError();
+  String get menuName => "sql_formatter_menu_name".tr;
 }

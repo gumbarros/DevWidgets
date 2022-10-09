@@ -29,5 +29,5 @@ class HTMLEncoderTool extends EncoderTool implements Tool {
   String get commandLineArgName => "html";
 
   @override
-  String get menuName => throw UnimplementedError();
+  String get menuName => "html_encoder_menu_name".tr;
 }

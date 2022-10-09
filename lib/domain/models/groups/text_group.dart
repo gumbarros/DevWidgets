@@ -14,7 +14,7 @@ class TextGroup implements Group {
   TextGroup._internal();
 
   @override
-  IconData get icon => FontAwesomeIcons.quoteRight;
+  IconData get icon => FontAwesomeIcons.t;
 
   @override
   String get name => "text".tr;

@@ -1,13 +1,15 @@
 import 'package:devtoys/domain/models/described_enum.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:layout/layout.dart';
 
-class Helpers {
-  static List<DropdownMenuItem<T>>
-      getDropdownMenuItems<T extends DescribedEnum>(List<T> enums) {
-    return enums
-        .map(
-            (e) => DropdownMenuItem<T>(value: e, child: Text(e.description.tr)))
-        .toList();
-  }
+List<DropdownMenuItem<T>> getDropdownMenuItems<T extends DescribedEnum>(
+    List<T> enums) {
+  return enums
+      .map((e) => DropdownMenuItem<T>(value: e, child: Text(e.description.tr)))
+      .toList();
+}
+
+extension LayoutBreakpointExtensions on LayoutBreakpoint {
+  bool isSmall() => this.isXs || this.isS;
 }

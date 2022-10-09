@@ -34,8 +34,7 @@ class TextEscapeView extends GetView<TextEscapeController> {
                     actionWidget: Obx(
                       () => DropdownButton<EscapeConversionMode>(
                           value: controller.conversionMode.value,
-                          items: Helpers.getDropdownMenuItems<
-                                  EscapeConversionMode>(
+                          items: getDropdownMenuItems<EscapeConversionMode>(
                               EscapeConversionMode.values),
                           onChanged: (selected) {
                             controller.conversionMode.value = selected;

@@ -26,5 +26,5 @@ class MarkdownPreviewTool implements Tool {
   String get commandLineArgName => "markdown";
 
   @override
-  String get menuName => throw UnimplementedError();
+  String get menuName => "markdown_preview_menu_name".tr;
 }

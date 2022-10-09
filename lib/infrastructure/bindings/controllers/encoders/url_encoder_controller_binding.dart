@@ -1,4 +1,3 @@
-import 'package:devtoys/domain/models/tools/encoders/html_encoder_tool.dart';
 import 'package:devtoys/domain/models/tools/encoders/url_encoder_tool.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
 import 'package:devtoys/presentation/encoders/controllers/url_encoder_controller.dart';

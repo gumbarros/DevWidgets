@@ -4,7 +4,8 @@ class LinuxMenuItem {
 
   LinuxMenuItem(this.label, this.route);
 
-  String toLowerCase() {
-    return label.toLowerCase();
+  @override
+  String toString() {
+    return label;
   }
 }

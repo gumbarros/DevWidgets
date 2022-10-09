@@ -52,6 +52,7 @@ class EnglishTranslations {
         "json_yaml_converter": "JSON <> YAML",
         "json_yaml_converter_description":
             "Convert JSON data to YAML and vice versa",
+        "no_tools_found": "No tools found.",
         "markdown_preview": "Markdown Preview",
         "markdown_preview_menu_name": "Markdown Preview",
         "markdown_preview_description": "Preview a Markdown document",

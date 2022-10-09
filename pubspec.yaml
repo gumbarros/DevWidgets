@@ -21,7 +21,7 @@ dependencies:
   flutter_markdown: ^0.6.12
   pretty_diff_text: ^1.0.0
   xml: ^6.1.0
-  textfield_search: ^0.10.0
+  dropdown_search: ^5.0.3
 
 dev_dependencies: 
   flutter_test: 

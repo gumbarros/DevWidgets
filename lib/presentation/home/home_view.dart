@@ -1,5 +1,5 @@
 import 'package:devtoys/domain/models/tools/home_tool.dart';
-import 'package:devtoys/presentation/home/controllers/home_controller.dart';
+import 'package:devtoys/presentation/home/home_controller.dart';
 import 'package:devtoys/presentation/widgets/default_app_bar.dart';
 import 'package:devtoys/presentation/widgets/tool_card.dart';
 import 'package:flutter/material.dart';

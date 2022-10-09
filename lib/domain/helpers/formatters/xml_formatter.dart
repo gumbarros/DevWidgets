@@ -6,7 +6,7 @@ import 'package:xml/xml.dart';
 class XMLFormatter implements Formatter {
   @override
   String format(String input,
-      {Indentation indentation = Indentation.FourSpaces}) {
+      {Indentation indentation = Indentation.fourSpaces}) {
     XmlDocument? xml;
 
     try {
@@ -16,7 +16,7 @@ class XMLFormatter implements Formatter {
     }
 
     return xml.toXmlString(
-        pretty: indentation != Indentation.Compact,
+        pretty: indentation != Indentation.compact,
         indent: indentation.toString());
   }
 }

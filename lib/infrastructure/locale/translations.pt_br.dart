@@ -14,6 +14,8 @@ class BrazilianPortugueseTranslations {
         "json_formatter": "Formatador JSON",
         "json_formatter_description": "Indente ou minifique arquivos JSON",
         "json_yaml_converter": "JSON <> YAML",
+        "language": "Idioma",
+        "settings": "Configurações",
         "output": "Saída",
         "paste": "Colar",
         "error": "Erro",

@@ -44,6 +44,8 @@ class OutputEditor extends StatelessWidget {
                   ? CodeField(
                       wrap: true,
                       expands: true,
+                      //ReadOnly is not in this version of code_field
+                      //Check https://github.com/BertrandBev/code_field/issues/67
                       textStyle: textStyle,
                       controller: (outputController ?? CodeController())
                           as CodeController,
@@ -52,6 +54,7 @@ class OutputEditor extends StatelessWidget {
                       maxLines: null,
                       minLines: 10,
                       style: textStyle,
+                      readOnly: true,
                       controller: outputController,
                       keyboardType: TextInputType.multiline,
                     )),

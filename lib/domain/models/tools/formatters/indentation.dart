@@ -1,10 +1,10 @@
 import 'package:devtoys/domain/models/described_enum.dart';
 
 enum Indentation implements DescribedEnum {
-  OneTab("one_tab"),
-  TwoSpaces("two_spaces"),
-  FourSpaces("four_spaces"),
-  Compact("compact");
+  oneTab("one_tab"),
+  twoSpaces("two_spaces"),
+  fourSpaces("four_spaces"),
+  compact("compact");
 
   final String description;
   const Indentation(this.description);
@@ -12,11 +12,11 @@ enum Indentation implements DescribedEnum {
   @override
   String toString() {
     switch (this) {
-      case OneTab:
+      case oneTab:
         return "\t";
-      case Indentation.TwoSpaces:
+      case Indentation.twoSpaces:
         return "  ";
-      case Indentation.FourSpaces:
+      case Indentation.fourSpaces:
         return "    ";
       default:
         return "";

@@ -1,8 +1,8 @@
 import 'package:devtoys/domain/models/described_enum.dart';
 
 enum EncodeConversionMode implements DescribedEnum {
-  Encode("encode"),
-  Decode("decode");
+  encode("encode"),
+  decode("decode");
 
   final String description;
 

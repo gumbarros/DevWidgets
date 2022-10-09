@@ -2,11 +2,12 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:devtoys/domain/models/groups/group.dart';
 import 'package:devtoys/domain/models/tools/home_tool.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
+import 'package:devtoys/presentation/global_variables.dart';
 import 'package:devtoys/presentation/layout/linux/linux_layout.dart';
 import 'package:devtoys/presentation/layout/linux/linux_menu_item.dart';
 import 'package:devtoys/presentation/layout/linux/linux_menu_search_box.dart';
 import 'package:devtoys/presentation/layout/linux/linux_menu_tile.dart';
-import 'package:devtoys/presentation/widgets/helpers.dart';
+import 'package:devtoys/presentation/helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -37,12 +38,12 @@ class LinuxMenu extends StatelessWidget {
           ),
           child: LinuxMenuTile(
             padding: EdgeInsets.zero,
-            selected: LinuxLayout.selectedToolName.value ==
+            selected: GlobalVariables.selectedToolName.value ==
                 HomeTool().runtimeType.toString(),
             title: YaruPageItemTitle.text(HomeTool().menuName),
             icon: HomeTool().icon,
             onTap: () {
-              LinuxLayout.selectedToolName.value =
+              GlobalVariables.selectedToolName.value =
                   HomeTool().runtimeType.toString();
               Get.toNamed(HomeTool().route);
             },
@@ -50,7 +51,7 @@ class LinuxMenu extends StatelessWidget {
         ),
         Visibility(
           visible: !context.layout.breakpoint.isSmall() &&
-              !LinuxLayout.compactMode.value,
+              !GlobalVariables.compactMode.value,
           child: SizedBox(
               width: Get.width,
               height: Get.height / 20,
@@ -74,7 +75,7 @@ class LinuxMenu extends StatelessWidget {
             for (var group in Get.find<List<Group>>())
               Visibility(
                 visible: !context.layout.breakpoint.isSmall() &&
-                    !LinuxLayout.compactMode.value,
+                    !GlobalVariables.compactMode.value,
                 replacement: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: IconButton(
@@ -93,7 +94,7 @@ class LinuxMenu extends StatelessWidget {
                     child: Row(
                         mainAxisAlignment:
                             !context.layout.breakpoint.isSmall() &&
-                                    !LinuxLayout.compactMode.value
+                                    !GlobalVariables.compactMode.value
                                 ? MainAxisAlignment.center
                                 : MainAxisAlignment.start,
                         children: [
@@ -115,12 +116,12 @@ class LinuxMenu extends StatelessWidget {
                     for (var tool
                         in tools.where((t) => t.group.name == group.name))
                       LinuxMenuTile(
-                        selected: LinuxLayout.selectedToolName.value ==
+                        selected: GlobalVariables.selectedToolName.value ==
                             tool.runtimeType.toString(),
                         title: YaruPageItemTitle.text(tool.menuName),
                         icon: tool.icon,
                         onTap: () {
-                          LinuxLayout.selectedToolName.value =
+                          GlobalVariables.selectedToolName.value =
                               tool.runtimeType.toString();
                           Get.toNamed(tool.route);
                         },

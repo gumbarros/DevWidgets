@@ -1,5 +1,6 @@
+import 'package:devtoys/presentation/global_variables.dart';
 import 'package:devtoys/presentation/layout/linux/linux_layout.dart';
-import 'package:devtoys/presentation/widgets/helpers.dart';
+import 'package:devtoys/presentation/helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -32,7 +33,7 @@ class LinuxMenuTile extends StatelessWidget {
       ),
       child: Obx(
         () => !context.layout.breakpoint.isSmall() &&
-                !LinuxLayout.compactMode.value
+                !GlobalVariables.compactMode.value
             ? Container(
                 padding: padding ?? const EdgeInsets.only(left: 20.0),
                 child: ListTile(
@@ -49,7 +50,8 @@ class LinuxMenuTile extends StatelessWidget {
                     icon,
                     size: 18,
                   ),
-                  title: !LinuxLayout.compactMode.value ? _buildTitle() : null,
+                  title:
+                      !GlobalVariables.compactMode.value ? _buildTitle() : null,
                   selected: selected,
                   onTap: onTap,
                 ),

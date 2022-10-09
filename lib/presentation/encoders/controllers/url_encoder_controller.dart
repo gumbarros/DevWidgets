@@ -8,7 +8,7 @@ class URLEncoderController extends GetxController {
   late TextEditingController inputController;
   late TextEditingController outputController;
 
-  Rx<EncodeConversionMode?> conversionMode = EncodeConversionMode.Decode.obs;
+  Rx<EncodeConversionMode?> conversionMode = EncodeConversionMode.decode.obs;
 
   String? result;
 
@@ -23,7 +23,7 @@ class URLEncoderController extends GetxController {
     inputController.addListener(() {
       String result;
 
-      if (conversionMode.value == EncodeConversionMode.Encode) {
+      if (conversionMode.value == EncodeConversionMode.encode) {
         result = tool.encoder.encode(inputController.text);
       } else {
         result = tool.encoder.decode(inputController.text);

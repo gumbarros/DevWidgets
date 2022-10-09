@@ -11,7 +11,7 @@ class HTMLEncoderController extends GetxController {
   late CodeController inputController;
   late CodeController outputController;
 
-  Rx<EncodeConversionMode?> conversionMode = EncodeConversionMode.Decode.obs;
+  Rx<EncodeConversionMode?> conversionMode = EncodeConversionMode.decode.obs;
 
   String? result;
 
@@ -28,7 +28,7 @@ class HTMLEncoderController extends GetxController {
     inputController.addListener(() {
       String result;
 
-      if (conversionMode.value == EncodeConversionMode.Encode) {
+      if (conversionMode.value == EncodeConversionMode.encode) {
         result = tool.encoder.encode(inputController.text);
       } else {
         result = tool.encoder.decode(inputController.text);

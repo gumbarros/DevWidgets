@@ -1,6 +1,8 @@
+import 'package:devtoys/infrastructure/locale/supported_locale.dart';
 import 'package:devtoys/infrastructure/locale/translations.en_us.dart';
 import 'package:devtoys/infrastructure/locale/translations.pt_br.dart';
 import 'package:get/get.dart';
+import 'dart:ui' as ui;
 
 class DevToysTranslations extends Translations {
   @override
@@ -8,4 +10,9 @@ class DevToysTranslations extends Translations {
         'en_US': EnglishTranslations.keys,
         'pt_BR': BrazilianPortugueseTranslations.keys
       };
+
+  static List<SupportedLocale> get supportedLocales => [
+        SupportedLocale("English", "en_US"),
+        SupportedLocale("Brazilian Portuguese", "pt_BR")
+      ];
 }

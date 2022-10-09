@@ -11,7 +11,7 @@ class XMLFormatterController extends GetxController {
   late CodeController inputController;
   late CodeController outputController;
 
-  Rx<Indentation?> indentation = Indentation.FourSpaces.obs;
+  Rx<Indentation?> indentation = Indentation.fourSpaces.obs;
 
   String? result;
 

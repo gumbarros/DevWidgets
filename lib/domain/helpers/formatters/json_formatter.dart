@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 class JSONFormatter implements Formatter {
   @override
   String format(String json,
-      {Indentation indentation = Indentation.FourSpaces,
+      {Indentation indentation = Indentation.fourSpaces,
       bool sortAlphabetically = false}) {
     dynamic object;
 

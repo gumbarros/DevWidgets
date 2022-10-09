@@ -12,7 +12,7 @@ class Routes {
   static const markdownPreview = "/text/markdown";
   static const textDiff = "/text/diff";
   static const urlEncoder = "/encoders/url";
-
+  static const settings = "/settings";
   static var timestampConverter;
   static var jsonYamlConverter;
   static var cronParser;

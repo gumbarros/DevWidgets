@@ -11,7 +11,7 @@ class JSONFormatterController extends GetxController {
   late CodeController inputController;
   late CodeController outputController;
 
-  Rx<Indentation?> indentation = Indentation.FourSpaces.obs;
+  Rx<Indentation?> indentation = Indentation.fourSpaces.obs;
   Rx<bool> sortAlphabetically = false.obs;
 
   String? result;

@@ -22,6 +22,7 @@ dependencies:
   pretty_diff_text: ^1.0.0
   xml: ^6.1.0
   dropdown_search: ^5.0.3
+  get_storage: ^2.0.3
 
 dev_dependencies: 
   flutter_test: 

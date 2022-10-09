@@ -289,6 +289,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.4.12"
+  textfield_search:
+    dependency: "direct main"
+    description:
+      name: textfield_search
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.10.0"
   vector_math:
     dependency: transitive
     description:

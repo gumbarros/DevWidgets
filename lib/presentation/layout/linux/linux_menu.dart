@@ -3,6 +3,7 @@ import 'package:devtoys/domain/models/groups/group.dart';
 import 'package:devtoys/domain/models/tools/home_tool.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
 import 'package:devtoys/presentation/layout/linux/linux_layout.dart';
+import 'package:devtoys/presentation/layout/linux/linux_menu_item.dart';
 import 'package:devtoys/presentation/layout/linux/linux_menu_search_box.dart';
 import 'package:devtoys/presentation/layout/linux/linux_menu_tile.dart';
 import 'package:devtoys/presentation/widgets/helpers.dart';
@@ -53,7 +54,13 @@ class LinuxMenu extends StatelessWidget {
           child: SizedBox(
               width: Get.width,
               height: Get.height / 20,
-              child: LinuxMenuSearchBox()),
+              child: Center(
+                  child: LinuxMenuSearchBox(
+                tools: tools
+                    .map((t) => LinuxMenuItem(t.homeTitle, t.route))
+                    .toList(),
+                controller: new TextEditingController(),
+              ))),
         ),
         Divider(),
         ListView(

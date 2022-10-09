@@ -4,6 +4,7 @@ import 'package:devtoys/infrastructure/bindings/domains/initial_binding.dart';
 import 'package:devtoys/infrastructure/locale/translations.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
 import 'package:devtoys/presentation/layout/linux/linux_layout.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:layout/layout.dart';
@@ -34,11 +35,17 @@ class Main extends StatelessWidget {
         getPages: Navigation.pages,
         title: "DevToys",
         translations: DevToysTranslations(),
-        builder: ((context, child) => YaruTheme(
-              child: LinuxLayout(
-                child: child,
-                tools: Get.find<List<Tool>>(),
-              ),
+        builder: ((context, child) => Navigator(
+              onGenerateRoute: (_) {
+                return GetPageRoute(
+                  page: () => YaruTheme(
+                    child: LinuxLayout(
+                      child: child,
+                      tools: Get.find<List<Tool>>(),
+                    ),
+                  ),
+                );
+              },
             )),
       ),
     );

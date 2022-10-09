@@ -1,8 +1,6 @@
 import 'dart:convert';
 import 'package:devtoys/domain/helpers/formatters/formatter.dart';
 import 'package:devtoys/domain/models/tools/formatters/indentation.dart';
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
 class JSONFormatter implements Formatter {
@@ -15,11 +13,7 @@ class JSONFormatter implements Formatter {
     try {
       object = jsonDecode(json);
     } on FormatException catch (_) {
-      if (!Get.isSnackbarOpen)
-        Get.snackbar("error".tr + "!", "invalid_json_data".tr,
-            icon: FaIcon(FontAwesomeIcons.triangleExclamation),
-            snackPosition: SnackPosition.BOTTOM,
-            backgroundColor: Colors.red);
+      return "invalid_json_data".tr;
     }
     if (object != null) {
       if (sortAlphabetically) object = _sort(object);
@@ -42,20 +36,20 @@ class JSONFormatter implements Formatter {
         if (value is List || value is Map) json[i] = _sort(value);
       }
       return json;
-    } else if (json.value is Map) {
-      for (var entry in json.value.entries) {
-        if (entry.value is List || entry.value is Map)
+    } else if (json.route is Map) {
+      for (var entry in json.route.entries) {
+        if (entry.route is List || entry.route is Map)
           json[entry.key] = _sort(entry);
       }
-    } else if (json.value is List) {
-      for (var i = 0; i < json.value.length; i++) {
-        final value = json.value[i];
-        if (value is List || value is Map) json.value[i] = _sort(value);
+    } else if (json.route is List) {
+      for (var i = 0; i < json.route.length; i++) {
+        final value = json.route[i];
+        if (value is List || value is Map) json.route[i] = _sort(value);
       }
-      return json.value;
+      return json.route;
     }
 
-    return _sortKeys(json.value);
+    return _sortKeys(json.route);
   }
 
   _sortKeys(Map map) => Map.fromEntries(

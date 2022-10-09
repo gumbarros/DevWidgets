@@ -1,3 +1,4 @@
+import 'package:devtoys/domain/models/tools/home_tool.dart';
 import 'package:devtoys/presentation/home/controllers/home_controller.dart';
 import 'package:devtoys/presentation/widgets/default_app_bar.dart';
 import 'package:devtoys/presentation/widgets/tool_card.dart';
@@ -11,7 +12,7 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: DefaultAppBar(title: "all_tools".tr),
+      appBar: DefaultAppBar(title: HomeTool().homeTitle),
       body: SingleChildScrollView(
           child: GridView.builder(
         itemCount: controller.tools.length,

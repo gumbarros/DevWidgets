@@ -15,6 +15,7 @@ class GlobalSettings {
   static Rx<bool>? _highContrast;
   static Rx<YaruVariant>? _yaruVariant;
   static Rx<String?>? _textEditorTheme;
+  static Rx<double>? _textEditorFontSize;
 
   static Rx<ThemeMode> getThemeMode() {
     if (_themeMode == null) {
@@ -87,6 +88,20 @@ class GlobalSettings {
     _getStorage.write("textEditorTheme", theme);
 
     _textEditorTheme!.value = theme;
+  }
+
+  static Rx<double> getTextEditorFontSize() {
+    if (_textEditorFontSize == null) {
+      _textEditorFontSize =
+          ((_getStorage.read("textEditorFontSize") ?? 18) as double).obs;
+    }
+    return _textEditorFontSize!;
+  }
+
+  static Future setTextEditorFontSize(double fontSize) async {
+    _getStorage.write("textEditorFontSize", fontSize);
+
+    _textEditorFontSize!.value = fontSize;
   }
 }
 

@@ -17,6 +17,7 @@ class BrazilianPortugueseTranslations {
         "language": "Idioma",
         "settings": "Configurações",
         "output": "Saída",
+        "font_size": "Tamanho da Fonte",
         "paste": "Colar",
         "error": "Erro",
         "invalid_json_data": "Dados JSON invalidos.",

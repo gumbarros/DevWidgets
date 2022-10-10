@@ -4,6 +4,7 @@ import 'package:devtoys/presentation/global_settings.dart';
 import 'package:devtoys/presentation/settings/settings_controller.dart';
 import 'package:devtoys/presentation/widgets/default_app_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
@@ -141,6 +142,40 @@ class SettingsView extends GetView<SettingsController> {
                               controller.getTextEditorThemeDropdownMenuItems(),
                           onChanged: controller.setTextEditorTheme),
                     ),
+                  ),
+                  YaruRow(
+                    enabled: true,
+                    leadingWidget: FaIcon(FontAwesomeIcons.a),
+                    trailingWidget: Padding(
+                      child: Text(
+                        "font_size".tr,
+                        style: TextStyle(fontSize: 18),
+                      ),
+                      padding: const EdgeInsets.only(left: 8.0),
+                    ),
+                    actionWidget: SizedBox(
+                        width: Get.width / 20,
+                        height: Get.height / 20,
+                        child: TextField(
+                          inputFormatters: [
+                            FilteringTextInputFormatter.digitsOnly
+                          ],
+                          controller: TextEditingController(
+                              text: controller
+                                  .getTextEditorFontSize()
+                                  .toString()),
+                          decoration: InputDecoration(
+                            contentPadding: EdgeInsets.all(5),
+                          ),
+                          keyboardType:
+                              TextInputType.numberWithOptions(decimal: true),
+                          onChanged: (value) {
+                            if (value.isNotEmpty) {
+                              controller.setTextEditorFontSize(
+                                  double.tryParse(value));
+                            }
+                          },
+                        )),
                   ),
                 ]),
               ),

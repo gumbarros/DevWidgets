@@ -1,7 +1,9 @@
+import 'package:devtoys/presentation/global_settings.dart';
 import 'package:devtoys/presentation/text/controllers/text_diff_controller.dart';
 import 'package:devtoys/presentation/widgets/default_app_bar.dart';
 import 'package:devtoys/presentation/widgets/io_editor/input_editor.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:pretty_diff_text/pretty_diff_text.dart';
 import 'package:resizable_widget/resizable_widget.dart';
@@ -44,13 +46,15 @@ class TextDiffView extends GetView<TextDiffController> {
                                 height: 30,
                                 child: TextField(
                                   keyboardType: TextInputType.number,
+                                  inputFormatters: [
+                                    FilteringTextInputFormatter.digitsOnly
+                                  ],
                                   onChanged: (value) {
                                     controller.editCost.value =
                                         int.parse(value);
                                   },
                                   decoration: InputDecoration(
                                     contentPadding: EdgeInsets.all(5),
-                                    fillColor: Colors.white,
                                     border: OutlineInputBorder(),
                                   ),
                                 ))
@@ -84,12 +88,10 @@ class TextDiffView extends GetView<TextDiffController> {
                           toolbarTitle: "old_text".tr,
                           inputController: controller.oldTextController,
                           height: Get.height / 3,
-                          textStyle: Get.theme.textTheme.bodyText1!,
                           usesCodeControllers: false),
                       InputEditor(
                           toolbarTitle: "new_text".tr,
                           height: Get.height / 3,
-                          textStyle: Get.theme.textTheme.bodyText1!,
                           inputController: controller.newTextController,
                           usesCodeControllers: false),
                     ],
@@ -127,7 +129,11 @@ class TextDiffView extends GetView<TextDiffController> {
                               diffCleanupType:
                                   controller.diffCleanupType.value ??
                                       DiffCleanupType.SEMANTIC,
-                              defaultTextStyle: Get.theme.textTheme.bodyText1!,
+                              defaultTextStyle: TextStyle(
+                                  fontSize:
+                                      GlobalSettings.getTextEditorFontSize()
+                                          .value,
+                                  color: Get.theme.textTheme.bodyText1!.color),
                               newText: controller.newText.value,
                               oldText: controller.oldText.value),
                         ),

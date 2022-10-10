@@ -45,6 +45,7 @@ class EnglishTranslations {
         "text_editor": "Text Editor",
         "language": "Language",
         "error": "Error",
+        "font_size": "Font Size",
         "warning": "Warning",
         "high_contrast": "High Contrast",
         "restart_to_apply_changes":

@@ -1,4 +1,5 @@
 import 'package:code_text_field/code_text_field.dart';
+import 'package:devtoys/presentation/global_settings.dart';
 import 'package:devtoys/presentation/widgets/io_editor/input_toolbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -13,7 +14,6 @@ class InputEditor extends StatelessWidget {
     this.toolbarTitle,
     this.isVerticalLayout = false,
     this.usesCodeControllers = true,
-    this.textStyle,
   }) : super(key: key);
 
   final Widget? inputChild;
@@ -22,7 +22,6 @@ class InputEditor extends StatelessWidget {
   final String? toolbarTitle;
   final bool usesCodeControllers;
   final double? width;
-  final TextStyle? textStyle;
   final double? height;
 
   @override
@@ -44,16 +43,20 @@ class InputEditor extends StatelessWidget {
               child: usesCodeControllers
                   ? CodeField(
                       wrap: true,
-                      textStyle: textStyle,
+                      textStyle: TextStyle(
+                          fontSize:
+                              GlobalSettings.getTextEditorFontSize().value),
                       expands: true,
                       controller: (inputController ?? CodeController())
                           as CodeController,
                     )
                   : TextField(
                       maxLines: null,
+                      style: TextStyle(
+                          fontSize:
+                              GlobalSettings.getTextEditorFontSize().value),
                       minLines: 10,
                       enabled: true,
-                      style: textStyle,
                       controller: inputController,
                       keyboardType: TextInputType.multiline,
                     )),

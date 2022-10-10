@@ -122,7 +122,7 @@ class LinuxMenu extends StatelessWidget {
                         onTap: () {
                           GlobalSettings.selectedToolName.value =
                               tool.runtimeType.toString();
-                          Get.toNamed(tool.route);
+                          Get.offAllNamed(tool.route);
                         },
                       )
                   ]),

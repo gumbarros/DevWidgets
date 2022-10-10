@@ -27,41 +27,32 @@ class SettingsController extends GetxController {
         .toList();
   }
 
-  Future updateLocale(String? value) async {
-    await GlobalSettings.setLocale(value ?? "en_US");
-  }
+  Future updateLocale(String? value) async =>
+      await GlobalSettings.setLocale(value ?? "en_US");
 
-  ThemeMode getThemeMode() {
-    return GlobalSettings.getThemeMode().value;
-  }
+  ThemeMode getThemeMode() => GlobalSettings.getThemeMode().value;
 
-  Future setThemeMode(ThemeMode? value) async {
-    await GlobalSettings.setThemeMode(value ?? ThemeMode.system);
-  }
+  Future setThemeMode(ThemeMode? value) async =>
+      await GlobalSettings.setThemeMode(value ?? ThemeMode.system);
 
-  YaruVariant getYaruVariant() {
-    return GlobalSettings.getYaruVariant().value;
-  }
+  YaruVariant getYaruVariant() => GlobalSettings.getYaruVariant().value;
 
-  Future setYaruVariant(YaruVariant value) async {
-    await GlobalSettings.setYaruVariant(value);
-  }
+  Future setYaruVariant(YaruVariant value) async =>
+      await GlobalSettings.setYaruVariant(value);
 
-  bool getHighContrast() {
-    return GlobalSettings.getHighContrast().value;
-  }
+  bool getHighContrast() => GlobalSettings.getHighContrast().value;
 
-  Future setHighContrast(bool value) async {
-    await GlobalSettings.setHighContrast(value);
-  }
+  Future setHighContrast(bool value) async =>
+      await GlobalSettings.setHighContrast(value);
 
-  Future setTextEditorTheme(String? value) async {
-    await GlobalSettings.setTextEditorTheme(value);
-    Get.snackbar("warning".tr, "restart_to_apply_changes".tr,
-        backgroundColor: Get.theme.cardColor, icon: Icon(Icons.warning));
-  }
+  Future setTextEditorTheme(String? value) async =>
+      await GlobalSettings.setTextEditorTheme(value);
 
-  String? getTextEditorTheme() {
-    return GlobalSettings.getTextEditorTheme().value;
-  }
+  String? getTextEditorTheme() => GlobalSettings.getTextEditorTheme().value;
+
+  Future setTextEditorFontSize(double? value) async =>
+      await GlobalSettings.setTextEditorFontSize(value ?? 18);
+
+  double getTextEditorFontSize() =>
+      GlobalSettings.getTextEditorFontSize().value;
 }

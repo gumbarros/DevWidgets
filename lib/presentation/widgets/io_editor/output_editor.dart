@@ -1,20 +1,20 @@
 import 'package:code_text_field/code_text_field.dart';
+import 'package:devtoys/presentation/global_settings.dart';
 import 'package:devtoys/presentation/widgets/io_editor/output_toolbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class OutputEditor extends StatelessWidget {
-  const OutputEditor({
-    Key? key,
-    this.outputChild,
-    required this.outputController,
-    this.isVerticalLayout = false,
-    this.toolbarTitle,
-    this.usesCodeControllers = false,
-    this.width,
-    this.height,
-    this.textStyle,
-  }) : super(key: key);
+  const OutputEditor(
+      {Key? key,
+      this.outputChild,
+      required this.outputController,
+      this.isVerticalLayout = false,
+      this.toolbarTitle,
+      this.usesCodeControllers = false,
+      this.width,
+      this.height})
+      : super(key: key);
 
   final Widget? outputChild;
   final TextEditingController? outputController;
@@ -23,7 +23,6 @@ class OutputEditor extends StatelessWidget {
   final bool usesCodeControllers;
   final double? width;
   final double? height;
-  final TextStyle? textStyle;
   @override
   Widget build(BuildContext context) {
     return Visibility(
@@ -46,14 +45,18 @@ class OutputEditor extends StatelessWidget {
                       expands: true,
                       //ReadOnly is not in this version of code_field
                       //Check https://github.com/BertrandBev/code_field/issues/67
-                      textStyle: textStyle,
+                      textStyle: TextStyle(
+                          fontSize:
+                              GlobalSettings.getTextEditorFontSize().value),
                       controller: (outputController ?? CodeController())
                           as CodeController,
                     )
                   : TextField(
                       maxLines: null,
+                      style: TextStyle(
+                          fontSize:
+                              GlobalSettings.getTextEditorFontSize().value),
                       minLines: 10,
-                      style: textStyle,
                       readOnly: true,
                       controller: outputController,
                       keyboardType: TextInputType.multiline,

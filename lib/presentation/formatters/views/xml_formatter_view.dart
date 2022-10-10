@@ -1,6 +1,7 @@
 import 'package:devtoys/domain/models/tools/formatters/indentation.dart';
 import 'package:devtoys/presentation/formatters/controllers/xml_formatter_controller.dart';
 import 'package:devtoys/presentation/helpers.dart';
+import 'package:devtoys/presentation/widgets/default_app_bar.dart';
 import 'package:devtoys/presentation/widgets/io_editor/io_editor.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -13,11 +14,7 @@ class XMLFormatterView extends GetView<XMLFormatterController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-            title: Text(
-          controller.tool.homeTitle,
-          style: const TextStyle(fontSize: 24),
-        )),
+        appBar: DefaultAppBar(title: controller.tool.homeTitle),
         body: Container(
           height: Get.height - kToolbarHeight,
           child: ListView(

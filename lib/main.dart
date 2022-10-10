@@ -3,9 +3,8 @@ import 'dart:ui' as ui;
 import 'package:devtoys/infrastructure/bindings/domains/initial_binding.dart';
 import 'package:devtoys/infrastructure/locale/translations.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
-import 'package:devtoys/presentation/global_variables.dart';
+import 'package:devtoys/presentation/global_settings.dart';
 import 'package:devtoys/presentation/layout/linux/linux_layout.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -17,27 +16,12 @@ main(List<String> arguments) async {
   await GetStorage.init();
 
   final String initialRoute = Routes.getToolRouteByCommandLineArgs(arguments);
-  final Locale initialLocale =
-      Locale(GetStorage().read("locale") ?? ui.window.locale.languageCode);
-  final ThemeMode initialThemeMode = ThemeMode
-      .values[GetStorage().read("themeMode") ?? ThemeMode.system.index];
-
-  runApp(Main(
-      initialRoute: initialRoute,
-      locale: initialLocale,
-      themeMode: initialThemeMode));
+  runApp(Main(initialRoute: initialRoute));
 }
 
 class Main extends StatelessWidget {
   final String initialRoute;
-  final ThemeMode themeMode;
-  final Locale locale;
-  const Main(
-      {Key? key,
-      required this.initialRoute,
-      required this.locale,
-      required this.themeMode})
-      : super(key: key);
+  const Main({Key? key, required this.initialRoute}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +30,7 @@ class Main extends StatelessWidget {
         initialRoute: initialRoute,
         debugShowCheckedModeBanner: false,
         initialBinding: InitialBindings(),
-        locale: locale,
+        locale: GlobalSettings.getLocale(),
         fallbackLocale: Locale("en", "US"),
         defaultTransition: Transition.fade,
         getPages: Navigation.pages,
@@ -59,8 +43,8 @@ class Main extends StatelessWidget {
                 page: () => Obx(
                   () => YaruTheme(
                     data: YaruThemeData(
-                        variant: GlobalVariables.yaruVariant.value,
-                        themeMode: GlobalVariables.themeMode.value),
+                        variant: GlobalSettings.getYaruVariant().value,
+                        themeMode: GlobalSettings.getThemeMode().value),
                     child: LinuxLayout(
                       child: child,
                       tools: Get.find<List<Tool>>(),

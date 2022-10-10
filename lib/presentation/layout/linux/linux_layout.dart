@@ -1,6 +1,5 @@
-import 'package:devtoys/domain/models/tools/home_tool.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
-import 'package:devtoys/presentation/global_variables.dart';
+import 'package:devtoys/presentation/global_settings.dart';
 import 'package:devtoys/presentation/layout/linux/linux_menu.dart';
 import 'package:devtoys/presentation/helpers.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +25,7 @@ class LinuxLayout extends StatelessWidget {
                 Obx(
                   () => SizedBox(
                     width: !context.layout.breakpoint.isSmall() &&
-                            !GlobalVariables.compactMode.value
+                            !GlobalSettings.compactMode.value
                         ? context.layout.value(
                             xs: Get.width / 5,
                             sm: Get.width / 5,
@@ -46,7 +45,7 @@ class LinuxLayout extends StatelessWidget {
                       child: LinuxMenu(
                           tools: tools,
                           selectedToolName:
-                              GlobalVariables.selectedToolName.value),
+                              GlobalSettings.selectedToolName.value),
                     ),
                   ),
                 ),

@@ -1,6 +1,6 @@
 import 'package:devtoys/domain/models/tools/settings/settings_tool.dart';
 import 'package:devtoys/infrastructure/locale/translations.dart';
-import 'package:devtoys/presentation/global_variables.dart';
+import 'package:devtoys/presentation/global_settings.dart';
 import 'package:devtoys/presentation/settings/settings_controller.dart';
 import 'package:devtoys/presentation/widgets/default_app_bar.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +34,7 @@ class SettingsView extends GetView<SettingsController> {
                     ),
                     actionWidget: DropdownButton<String>(
                         value: DevToysTranslations.supportedLocales.any((e) =>
-                                e.locale.toString() == Get.locale.toString())
+                                e.localeKey.toString() == Get.locale.toString())
                             ? Get.locale.toString()
                             : "en_US",
                         items: controller.getLanguageDropdownMenuItems(),
@@ -52,7 +52,7 @@ class SettingsView extends GetView<SettingsController> {
                     ),
                     actionWidget: Obx(
                       () => DropdownButton<ThemeMode>(
-                          value: GlobalVariables.themeMode.value,
+                          value: GlobalSettings.getThemeMode().value,
                           items: [
                             DropdownMenuItem(
                               child: Text("system".tr),
@@ -67,7 +67,7 @@ class SettingsView extends GetView<SettingsController> {
                               value: ThemeMode.dark,
                             ),
                           ],
-                          onChanged: controller.updateThemeMode),
+                          onChanged: controller.setThemeMode),
                     ),
                   ),
                   YaruRow(
@@ -87,10 +87,11 @@ class SettingsView extends GetView<SettingsController> {
                         children: [
                           for (var variant in yaruVariantList)
                             YaruColorDisk(
-                              onPressed: () => controller.updateYaruVariant(variant),
+                              onPressed: () =>
+                                  controller.setYaruVariant(variant),
                               color: variant.color,
-                              selected:
-                                  GlobalVariables.yaruVariant.value == variant,
+                              selected: GlobalSettings.getYaruVariant().value ==
+                                  variant,
                             ),
                         ],
                       ),

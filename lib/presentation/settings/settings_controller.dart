@@ -1,5 +1,5 @@
 import 'package:devtoys/infrastructure/locale/translations.dart';
-import 'package:devtoys/presentation/global_variables.dart';
+import 'package:devtoys/presentation/global_settings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -12,24 +12,20 @@ class SettingsController extends GetxController {
     return DevToysTranslations.supportedLocales
         .map((l) => DropdownMenuItem(
               child: Text(l.name),
-              value: l.locale,
+              value: l.localeKey,
             ))
         .toList();
   }
 
   updateLocale(String? value) async {
-    await Get.updateLocale(Locale(value ?? "en_US"));
-    await storage.write("locale", value);
+    await GlobalSettings.setLocale(value ?? "en_US");
   }
 
-  updateThemeMode(ThemeMode? value) async {
-    GlobalVariables.themeMode.value = value ?? ThemeMode.system;
-    await storage.write("themeMode", value?.index);
+  setThemeMode(ThemeMode? value) async {
+    await GlobalSettings.setThemeMode(value ?? ThemeMode.system);
   }
 
-  updateYaruVariant(YaruVariant value) async {
-    GlobalVariables.yaruVariant.value = value;
-    //TODO: serialize yaruVariant
-    // await storage.write("yaruVariant", value);
+  setYaruVariant(YaruVariant value) async {
+    await GlobalSettings.setYaruVariant(value);
   }
 }

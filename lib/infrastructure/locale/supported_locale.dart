@@ -1,8 +1,9 @@
-import 'package:flutter/material.dart';
-
 class SupportedLocale {
+  ///Name displayed at Settings.
   final String name;
-  final String locale;
 
-  SupportedLocale(this.name, this.locale);
+  ///Example: pt_BR
+  final String localeKey;
+
+  SupportedLocale(this.name, this.localeKey);
 }

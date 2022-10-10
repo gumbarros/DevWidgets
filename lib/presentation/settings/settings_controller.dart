@@ -1,5 +1,6 @@
 import 'package:devtoys/infrastructure/locale/translations.dart';
 import 'package:devtoys/presentation/global_settings.dart';
+import 'package:devtoys/presentation/widgets/io_editor/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -8,7 +9,7 @@ import 'package:yaru/yaru.dart';
 class SettingsController extends GetxController {
   final storage = GetStorage();
 
-  getLanguageDropdownMenuItems() {
+  List<DropdownMenuItem<String>> getLanguageDropdownMenuItems() {
     return DevToysTranslations.supportedLocales
         .map((l) => DropdownMenuItem(
               child: Text(l.name),
@@ -17,15 +18,50 @@ class SettingsController extends GetxController {
         .toList();
   }
 
-  updateLocale(String? value) async {
+  List<DropdownMenuItem<String>> getTextEditorThemeDropdownMenuItems() {
+    return kTextEditorThemes.entries
+        .map((e) => DropdownMenuItem(
+              child: Text(e.key),
+              value: e.key,
+            ))
+        .toList();
+  }
+
+  Future updateLocale(String? value) async {
     await GlobalSettings.setLocale(value ?? "en_US");
   }
 
-  setThemeMode(ThemeMode? value) async {
+  ThemeMode getThemeMode() {
+    return GlobalSettings.getThemeMode().value;
+  }
+
+  Future setThemeMode(ThemeMode? value) async {
     await GlobalSettings.setThemeMode(value ?? ThemeMode.system);
   }
 
-  setYaruVariant(YaruVariant value) async {
+  YaruVariant getYaruVariant() {
+    return GlobalSettings.getYaruVariant().value;
+  }
+
+  Future setYaruVariant(YaruVariant value) async {
     await GlobalSettings.setYaruVariant(value);
+  }
+
+  bool getHighContrast() {
+    return GlobalSettings.getHighContrast().value;
+  }
+
+  Future setHighContrast(bool value) async {
+    await GlobalSettings.setHighContrast(value);
+  }
+
+  Future setTextEditorTheme(String? value) async {
+    await GlobalSettings.setTextEditorTheme(value);
+    Get.snackbar("warning".tr, "restart_to_apply_changes".tr,
+        backgroundColor: Get.theme.cardColor, icon: Icon(Icons.warning));
+  }
+
+  String? getTextEditorTheme() {
+    return GlobalSettings.getTextEditorTheme().value;
   }
 }

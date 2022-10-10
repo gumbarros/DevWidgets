@@ -52,7 +52,7 @@ class SettingsView extends GetView<SettingsController> {
                     ),
                     actionWidget: Obx(
                       () => DropdownButton<ThemeMode>(
-                          value: GlobalSettings.getThemeMode().value,
+                          value: controller.getThemeMode(),
                           items: [
                             DropdownMenuItem(
                               child: Text("system".tr),
@@ -72,31 +72,76 @@ class SettingsView extends GetView<SettingsController> {
                   ),
                   YaruRow(
                     enabled: true,
-                    leadingWidget: FaIcon(FontAwesomeIcons.brush),
+                    leadingWidget: FaIcon(FontAwesomeIcons.eye),
                     trailingWidget: Padding(
                       child: Text(
-                        "primary_color".tr,
+                        "high_contrast".tr,
                         style: TextStyle(fontSize: 18),
                       ),
                       padding: const EdgeInsets.only(left: 8.0),
                     ),
                     actionWidget: Obx(
-                      () => Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          for (var variant in yaruVariantList)
-                            YaruColorDisk(
-                              onPressed: () =>
-                                  controller.setYaruVariant(variant),
-                              color: variant.color,
-                              selected: GlobalSettings.getYaruVariant().value ==
-                                  variant,
-                            ),
-                        ],
+                      () => Switch(
+                        onChanged: controller.setHighContrast,
+                        value: controller.getHighContrast(),
+                      ),
+                    ),
+                  ),
+                  Obx(
+                    () => Visibility(
+                      visible: !controller.getHighContrast(),
+                      child: YaruRow(
+                        enabled: true,
+                        leadingWidget: FaIcon(FontAwesomeIcons.brush),
+                        trailingWidget: Padding(
+                          child: Text(
+                            "primary_color".tr,
+                            style: TextStyle(fontSize: 18),
+                          ),
+                          padding: const EdgeInsets.only(left: 8.0),
+                        ),
+                        actionWidget: Obx(
+                          () => Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              for (var variant in yaruVariantList)
+                                YaruColorDisk(
+                                  onPressed: () =>
+                                      controller.setYaruVariant(variant),
+                                  color: variant.color,
+                                  selected:
+                                      controller.getYaruVariant() == variant,
+                                ),
+                            ],
+                          ),
+                        ),
                       ),
                     ),
                   )
+                ]),
+              ),
+              Container(
+                margin: const EdgeInsets.all(8.0),
+                child: YaruSection(headline: "text_editor".tr, children: [
+                  YaruRow(
+                    enabled: true,
+                    leadingWidget: FaIcon(FontAwesomeIcons.pencil),
+                    trailingWidget: Padding(
+                      child: Text(
+                        "theme".tr,
+                        style: TextStyle(fontSize: 18),
+                      ),
+                      padding: const EdgeInsets.only(left: 8.0),
+                    ),
+                    actionWidget: Obx(
+                      () => DropdownButton<String?>(
+                          value: controller.getTextEditorTheme(),
+                          items:
+                              controller.getTextEditorThemeDropdownMenuItems(),
+                          onChanged: controller.setTextEditorTheme),
+                    ),
+                  ),
                 ]),
               ),
             ],

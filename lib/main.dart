@@ -1,5 +1,4 @@
 import 'package:devtoys/domain/models/tools/tool.dart';
-import 'dart:ui' as ui;
 import 'package:devtoys/infrastructure/bindings/domains/initial_binding.dart';
 import 'package:devtoys/infrastructure/locale/translations.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
@@ -43,6 +42,7 @@ class Main extends StatelessWidget {
                 page: () => Obx(
                   () => YaruTheme(
                     data: YaruThemeData(
+                        highContrast: GlobalSettings.getHighContrast().value,
                         variant: GlobalSettings.getYaruVariant().value,
                         themeMode: GlobalSettings.getThemeMode().value),
                     child: LinuxLayout(

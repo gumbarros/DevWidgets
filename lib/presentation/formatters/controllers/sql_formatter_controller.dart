@@ -1,9 +1,8 @@
 import 'package:code_text_field/code_text_field.dart';
 import 'package:devtoys/domain/models/tools/formatters/sql_formatter.dart';
+import 'package:devtoys/presentation/widgets/io_editor/code_controller_factory.dart';
 import 'package:get/get.dart';
 import 'package:highlight/languages/sql.dart';
-import 'package:flutter_highlight/themes/vs2015.dart';
-import 'package:flutter_highlight/themes/vs.dart';
 
 class SQLFormatterController extends GetxController {
   final SQLFormatterTool tool;
@@ -15,11 +14,9 @@ class SQLFormatterController extends GetxController {
 
   @override
   void onInit() {
-    inputController = CodeController(
-        language: sql, theme: Get.isDarkMode ? vs2015Theme : vsTheme);
+    inputController = CodeControllerFactory.getInstance(language: sql);
 
-    outputController = CodeController(
-        language: sql, theme: Get.isDarkMode ? vs2015Theme : vsTheme);
+    outputController = CodeControllerFactory.getInstance(language: sql);
 
     inputController.addListener(() {
       try {

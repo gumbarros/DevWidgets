@@ -12,7 +12,9 @@ class GlobalSettings {
   static final Rx<String> selectedToolName = (HomeTool).toString().obs;
 
   static Rx<ThemeMode>? _themeMode;
+  static Rx<bool>? _highContrast;
   static Rx<YaruVariant>? _yaruVariant;
+  static Rx<String?>? _textEditorTheme;
 
   static Rx<ThemeMode> getThemeMode() {
     if (_themeMode == null) {
@@ -23,7 +25,7 @@ class GlobalSettings {
     return _themeMode!;
   }
 
-  static setThemeMode(ThemeMode mode) async {
+  static Future setThemeMode(ThemeMode mode) async {
     await _getStorage.write("themeMode", mode.index);
 
     Get.changeThemeMode(mode);
@@ -41,10 +43,25 @@ class GlobalSettings {
     return _yaruVariant!;
   }
 
-  static setYaruVariant(YaruVariant variant) async {
+  static Future setYaruVariant(YaruVariant variant) async {
     _getStorage.write("yaruVariant", variant.index);
 
     _yaruVariant!.value = variant;
+  }
+
+  static Rx<bool> getHighContrast() {
+    if (_highContrast == null) {
+      final bool storedValue = _getStorage.read("highContrast") ?? false;
+      _highContrast = storedValue.obs;
+    }
+
+    return _highContrast!;
+  }
+
+  static Future setHighContrast(bool highContrast) async {
+    await _getStorage.write("highContrast", highContrast);
+
+    _highContrast!.value = highContrast;
   }
 
   static getLocale() {
@@ -54,9 +71,22 @@ class GlobalSettings {
     return Locale(localeCode);
   }
 
-  static setLocale(String locale) async {
+  static Future setLocale(String locale) async {
     await Get.updateLocale(Locale(locale));
     await _getStorage.write("locale", locale);
+  }
+
+  static Rx<String?> getTextEditorTheme() {
+    if (_textEditorTheme == null) {
+      _textEditorTheme = (_getStorage.read("textEditorTheme")?.toString()).obs;
+    }
+    return _textEditorTheme!;
+  }
+
+  static Future setTextEditorTheme(String? theme) async {
+    _getStorage.write("textEditorTheme", theme);
+
+    _textEditorTheme!.value = theme;
   }
 }
 

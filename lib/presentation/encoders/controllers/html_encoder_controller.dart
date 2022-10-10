@@ -1,10 +1,9 @@
 import 'package:code_text_field/code_text_field.dart';
 import 'package:devtoys/domain/models/tools/encoders/encode_conversion_mode.dart';
 import 'package:devtoys/domain/models/tools/encoders/html_encoder_tool.dart';
+import 'package:devtoys/presentation/widgets/io_editor/code_controller_factory.dart';
 import 'package:get/get.dart';
 import 'package:highlight/languages/xml.dart';
-import 'package:flutter_highlight/themes/vs2015.dart';
-import 'package:flutter_highlight/themes/vs.dart';
 
 class HTMLEncoderController extends GetxController {
   final HTMLEncoderTool tool;
@@ -19,11 +18,9 @@ class HTMLEncoderController extends GetxController {
 
   @override
   void onInit() {
-    inputController = CodeController(
-        language: xml, theme: Get.isDarkMode ? vs2015Theme : vsTheme);
+    inputController = CodeControllerFactory.getInstance(language: xml);
 
-    outputController = CodeController(
-        language: xml, theme: Get.isDarkMode ? vs2015Theme : vsTheme);
+    outputController = CodeControllerFactory.getInstance(language: xml);
 
     inputController.addListener(() {
       String result;

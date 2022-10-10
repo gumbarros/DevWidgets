@@ -1,10 +1,9 @@
 import 'package:code_text_field/code_text_field.dart';
 import 'package:devtoys/domain/models/tools/formatters/indentation.dart';
 import 'package:devtoys/domain/models/tools/formatters/json_formatter.dart';
+import 'package:devtoys/presentation/widgets/io_editor/code_controller_factory.dart';
 import 'package:get/get.dart';
 import 'package:highlight/languages/json.dart';
-import 'package:flutter_highlight/themes/vs2015.dart';
-import 'package:flutter_highlight/themes/vs.dart';
 
 class JSONFormatterController extends GetxController {
   final JSONFormatterTool tool;
@@ -20,11 +19,9 @@ class JSONFormatterController extends GetxController {
 
   @override
   void onInit() {
-    inputController = CodeController(
-        language: json, theme: Get.isDarkMode ? vs2015Theme : vsTheme);
+    inputController = CodeControllerFactory.getInstance(language: json);
 
-    outputController = CodeController(
-        language: json, theme: Get.isDarkMode ? vs2015Theme : vsTheme);
+    outputController = CodeControllerFactory.getInstance(language: json);
 
     inputController.addListener(() {
       var formattedText = tool.formatter.format(inputController.text,

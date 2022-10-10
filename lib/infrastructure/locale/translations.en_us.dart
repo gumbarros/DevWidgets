@@ -42,8 +42,13 @@ class EnglishTranslations {
         "encode": "Encode",
         "encoders_decoders": "Encoders / Decoders",
         "settings": "Settings",
+        "text_editor": "Text Editor",
         "language": "Language",
         "error": "Error",
+        "warning": "Warning",
+        "high_contrast": "High Contrast",
+        "restart_to_apply_changes":
+            "You may need to restart the app to apply changes to the editor.",
         "escape": "Escape",
         "formatters": "Formatters",
         "four_spaces": "Four Spaces",

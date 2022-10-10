@@ -15,7 +15,9 @@ class MarkdownPreviewController extends GetxController {
   @override
   void onInit() {
     inputController = CodeController(
-        language: markdown, theme: Get.isDarkMode ? vs2015Theme : vsTheme);
+        language: markdown,
+        theme: Get.isDarkMode ? vs2015Theme : vsTheme,
+        webSpaceFix: false);
     inputController.addListener(() {
       output.value = inputController.text;
     });

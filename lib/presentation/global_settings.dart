@@ -109,7 +109,8 @@ class GlobalSettings {
   static String getTextEditorFontFamily() {
     if (_textEditorFontFamily == null) {
       _textEditorFontFamily =
-          (_getStorage.read("textEditorFontFamily")?.toString() ?? "Lato").obs;
+          (_getStorage.read("textEditorFontFamily")?.toString() ?? "Fira Code")
+              .obs;
     }
     return _textEditorFontFamily!.value;
   }

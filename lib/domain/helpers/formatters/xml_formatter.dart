@@ -1,4 +1,5 @@
 import 'package:devtoys/domain/helpers/formatters/formatter.dart';
+import 'package:devtoys/domain/helpers/utils.dart';
 import 'package:devtoys/domain/models/tools/formatters/indentation.dart';
 import 'package:get/get.dart';
 import 'package:xml/xml.dart';
@@ -10,6 +11,7 @@ class XMLFormatter implements Formatter {
     XmlDocument? xml;
 
     try {
+      input = applyWebSpaceFix(input);
       xml = XmlDocument.parse(input);
     } on FormatException catch (_) {
       return "invalid_xml_data".tr;

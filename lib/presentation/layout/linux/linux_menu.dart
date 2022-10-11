@@ -36,7 +36,6 @@ class LinuxMenu extends StatelessWidget {
             vertical: 8.0,
           ),
           child: LinuxMenuTile(
-            padding: EdgeInsets.zero,
             selected: GlobalSettings.selectedToolName.value ==
                 HomeTool().runtimeType.toString(),
             title: YaruPageItemTitle.text(HomeTool().menuName),

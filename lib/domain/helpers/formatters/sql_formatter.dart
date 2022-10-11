@@ -2,6 +2,7 @@
 //This is just a POC, I need to implement a formatter foreach SQL dialect like the original DevToys.
 
 import 'package:devtoys/domain/helpers/formatters/formatter.dart';
+import 'package:devtoys/domain/helpers/utils.dart';
 
 class T {
   String str;
@@ -32,6 +33,7 @@ class SQLFormatter implements Formatter {
   static const String sep = '~::~';
 
   String format(String sql, {int numSpaces = 1}) {
+    sql = applyWebSpaceFix(sql);
     String tab = ' ' * numSpaces;
     List<String> splitByQuotes = transformString(sql, [
       (s) => s.replaceAll(new RegExp(r'\s+'), ' '),

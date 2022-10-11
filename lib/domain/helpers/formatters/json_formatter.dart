@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:devtoys/domain/helpers/formatters/formatter.dart';
+import 'package:devtoys/domain/helpers/utils.dart';
 import 'package:devtoys/domain/models/tools/formatters/indentation.dart';
 import 'package:get/get.dart';
 
@@ -11,6 +12,7 @@ class JSONFormatter implements Formatter {
     dynamic object;
 
     try {
+      json = applyWebSpaceFix(json);
       object = jsonDecode(json);
     } on FormatException catch (_) {
       return "invalid_json_data".tr;
@@ -36,20 +38,20 @@ class JSONFormatter implements Formatter {
         if (value is List || value is Map) json[i] = _sort(value);
       }
       return json;
-    } else if (json.route is Map) {
-      for (var entry in json.route.entries) {
-        if (entry.route is List || entry.route is Map)
+    } else if (json.value is Map) {
+      for (var entry in json.value.entries) {
+        if (entry.value is List || entry.value is Map)
           json[entry.key] = _sort(entry);
       }
-    } else if (json.route is List) {
-      for (var i = 0; i < json.route.length; i++) {
-        final value = json.route[i];
-        if (value is List || value is Map) json.route[i] = _sort(value);
+    } else if (json.value is List) {
+      for (var i = 0; i < json.value.length; i++) {
+        final value = json.value[i];
+        if (value is List || value is Map) json.value[i] = _sort(value);
       }
-      return json.route;
+      return json.value;
     }
 
-    return _sortKeys(json.route);
+    return _sortKeys(json.value);
   }
 
   _sortKeys(Map map) => Map.fromEntries(

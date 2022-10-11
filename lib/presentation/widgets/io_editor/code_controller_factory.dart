@@ -9,11 +9,11 @@ class CodeControllerFactory {
   static _getCodeControllerTheme() {
     var settingsRx = GlobalSettings.getTextEditorTheme();
 
-    if (settingsRx.value == null) {
+    if (settingsRx == null) {
       return (Get.isDarkMode ? vs2015Theme : vsTheme);
     }
 
-    return kTextEditorThemes[settingsRx.value];
+    return kTextEditorThemes[settingsRx];
   }
 
   static CodeController getInstance(

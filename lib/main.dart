@@ -7,13 +7,14 @@ import 'package:devtoys/presentation/layout/linux/linux_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:layout/layout.dart';
 import 'package:yaru/yaru.dart';
 import 'infrastructure/navigation/navigation.dart';
 
 main(List<String> arguments) async {
   await GetStorage.init();
-
+  GoogleFonts.config.allowRuntimeFetching = true;
   final String initialRoute = Routes.getToolRouteByCommandLineArgs(arguments);
   runApp(Main(initialRoute: initialRoute));
 }
@@ -42,9 +43,9 @@ class Main extends StatelessWidget {
                 page: () => Obx(
                   () => YaruTheme(
                     data: YaruThemeData(
-                        highContrast: GlobalSettings.getHighContrast().value,
-                        variant: GlobalSettings.getYaruVariant().value,
-                        themeMode: GlobalSettings.getThemeMode().value),
+                        highContrast: GlobalSettings.getHighContrast(),
+                        variant: GlobalSettings.getYaruVariant(),
+                        themeMode: GlobalSettings.getThemeMode()),
                     child: LinuxLayout(
                       child: child,
                       tools: Get.find<List<Tool>>(),

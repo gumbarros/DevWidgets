@@ -1,6 +1,6 @@
 import 'package:code_text_field/code_text_field.dart';
-import 'package:devtoys/presentation/global_settings.dart';
 import 'package:devtoys/presentation/widgets/io_editor/input_toolbar.dart';
+import 'package:devtoys/presentation/widgets/io_editor/io_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -43,18 +43,14 @@ class InputEditor extends StatelessWidget {
               child: usesCodeControllers
                   ? CodeField(
                       wrap: true,
-                      textStyle: TextStyle(
-                          fontSize:
-                              GlobalSettings.getTextEditorFontSize().value),
+                      textStyle: getTextStyleFromSettings(),
                       expands: true,
                       controller: (inputController ?? CodeController())
                           as CodeController,
                     )
                   : TextField(
                       maxLines: null,
-                      style: TextStyle(
-                          fontSize:
-                              GlobalSettings.getTextEditorFontSize().value),
+                      style: getTextStyleFromSettings(),
                       minLines: 10,
                       enabled: true,
                       controller: inputController,

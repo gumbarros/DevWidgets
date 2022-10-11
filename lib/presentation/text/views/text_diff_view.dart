@@ -131,8 +131,9 @@ class TextDiffView extends GetView<TextDiffController> {
                                       DiffCleanupType.SEMANTIC,
                               defaultTextStyle: TextStyle(
                                   fontSize:
-                                      GlobalSettings.getTextEditorFontSize()
-                                          .value,
+                                      GlobalSettings.getTextEditorFontSize(),
+                                  fontFamily:
+                                      GlobalSettings.getTextEditorFontFamily(),
                                   color: Get.theme.textTheme.bodyText1!.color),
                               newText: controller.newText.value,
                               oldText: controller.oldText.value),

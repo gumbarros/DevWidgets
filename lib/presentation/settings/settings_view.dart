@@ -177,6 +177,24 @@ class SettingsView extends GetView<SettingsController> {
                           },
                         )),
                   ),
+                  YaruRow(
+                    enabled: true,
+                    leadingWidget: FaIcon(FontAwesomeIcons.house),
+                    trailingWidget: Padding(
+                      child: Text(
+                        "font_family".tr,
+                        style: TextStyle(fontSize: 18),
+                      ),
+                      padding: const EdgeInsets.only(left: 8.0),
+                    ),
+                    actionWidget: Obx(
+                      () => DropdownButton<String?>(
+                          value: controller.getTextEditorFontFamily(),
+                          items: controller
+                              .getTextEditorFontFamilyDropdownMenuItems(),
+                          onChanged: controller.setTextEditorFontFamily),
+                    ),
+                  )
                 ]),
               ),
             ],

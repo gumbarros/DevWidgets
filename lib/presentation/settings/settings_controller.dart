@@ -4,6 +4,7 @@ import 'package:devtoys/presentation/widgets/io_editor/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:yaru/yaru.dart';
 
 class SettingsController extends GetxController {
@@ -27,32 +28,45 @@ class SettingsController extends GetxController {
         .toList();
   }
 
+  List<DropdownMenuItem<String>> getTextEditorFontFamilyDropdownMenuItems() {
+    return GoogleFonts.asMap()
+        .entries
+        .map((e) => DropdownMenuItem(
+              child: Text(e.key),
+              value: e.key,
+            ))
+        .toList();
+  }
+
   Future updateLocale(String? value) async =>
       await GlobalSettings.setLocale(value ?? "en_US");
 
-  ThemeMode getThemeMode() => GlobalSettings.getThemeMode().value;
+  ThemeMode getThemeMode() => GlobalSettings.getThemeMode();
 
   Future setThemeMode(ThemeMode? value) async =>
       await GlobalSettings.setThemeMode(value ?? ThemeMode.system);
 
-  YaruVariant getYaruVariant() => GlobalSettings.getYaruVariant().value;
+  YaruVariant getYaruVariant() => GlobalSettings.getYaruVariant();
 
   Future setYaruVariant(YaruVariant value) async =>
       await GlobalSettings.setYaruVariant(value);
 
-  bool getHighContrast() => GlobalSettings.getHighContrast().value;
+  bool getHighContrast() => GlobalSettings.getHighContrast();
 
   Future setHighContrast(bool value) async =>
       await GlobalSettings.setHighContrast(value);
 
+  String? getTextEditorTheme() => GlobalSettings.getTextEditorTheme();
   Future setTextEditorTheme(String? value) async =>
       await GlobalSettings.setTextEditorTheme(value);
 
-  String? getTextEditorTheme() => GlobalSettings.getTextEditorTheme().value;
+  double getTextEditorFontSize() => GlobalSettings.getTextEditorFontSize();
 
   Future setTextEditorFontSize(double? value) async =>
       await GlobalSettings.setTextEditorFontSize(value ?? 18);
 
-  double getTextEditorFontSize() =>
-      GlobalSettings.getTextEditorFontSize().value;
+  String getTextEditorFontFamily() => GlobalSettings.getTextEditorFontFamily();
+
+  Future setTextEditorFontFamily(String? value) async =>
+      await GlobalSettings.setTextEditorFontFamily(value);
 }

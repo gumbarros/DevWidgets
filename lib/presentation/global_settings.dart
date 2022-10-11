@@ -15,15 +15,17 @@ class GlobalSettings {
   static Rx<bool>? _highContrast;
   static Rx<YaruVariant>? _yaruVariant;
   static Rx<String?>? _textEditorTheme;
-  static Rx<double>? _textEditorFontSize;
 
-  static Rx<ThemeMode> getThemeMode() {
+  static Rx<double>? _textEditorFontSize;
+  static Rx<String>? _textEditorFontFamily;
+
+  static ThemeMode getThemeMode() {
     if (_themeMode == null) {
       final storedValue = _getStorage.read("themeMode");
       _themeMode = ThemeMode.values[storedValue ?? ThemeMode.system.index].obs;
     }
 
-    return _themeMode!;
+    return _themeMode!.value;
   }
 
   static Future setThemeMode(ThemeMode mode) async {
@@ -34,14 +36,14 @@ class GlobalSettings {
     _themeMode!.value = mode;
   }
 
-  static Rx<YaruVariant> getYaruVariant() {
+  static YaruVariant getYaruVariant() {
     if (_yaruVariant == null) {
       final storedValue = _getStorage.read("yaruVariant");
       _yaruVariant =
           YaruVariant.values[storedValue ?? YaruVariant.orange.index].obs;
     }
 
-    return _yaruVariant!;
+    return _yaruVariant!.value;
   }
 
   static Future setYaruVariant(YaruVariant variant) async {
@@ -50,13 +52,13 @@ class GlobalSettings {
     _yaruVariant!.value = variant;
   }
 
-  static Rx<bool> getHighContrast() {
+  static bool getHighContrast() {
     if (_highContrast == null) {
       final bool storedValue = _getStorage.read("highContrast") ?? false;
       _highContrast = storedValue.obs;
     }
 
-    return _highContrast!;
+    return _highContrast!.value;
   }
 
   static Future setHighContrast(bool highContrast) async {
@@ -77,11 +79,11 @@ class GlobalSettings {
     await _getStorage.write("locale", locale);
   }
 
-  static Rx<String?> getTextEditorTheme() {
+  static String? getTextEditorTheme() {
     if (_textEditorTheme == null) {
       _textEditorTheme = (_getStorage.read("textEditorTheme")?.toString()).obs;
     }
-    return _textEditorTheme!;
+    return _textEditorTheme!.value;
   }
 
   static Future setTextEditorTheme(String? theme) async {
@@ -90,18 +92,32 @@ class GlobalSettings {
     _textEditorTheme!.value = theme;
   }
 
-  static Rx<double> getTextEditorFontSize() {
+  static double getTextEditorFontSize() {
     if (_textEditorFontSize == null) {
       _textEditorFontSize =
-          ((_getStorage.read("textEditorFontSize") ?? 18) as double).obs;
+          ((_getStorage.read("textEditorFontSize") ?? 18.0) as double).obs;
     }
-    return _textEditorFontSize!;
+    return _textEditorFontSize!.value;
   }
 
   static Future setTextEditorFontSize(double fontSize) async {
     _getStorage.write("textEditorFontSize", fontSize);
 
     _textEditorFontSize!.value = fontSize;
+  }
+
+  static String getTextEditorFontFamily() {
+    if (_textEditorFontFamily == null) {
+      _textEditorFontFamily =
+          (_getStorage.read("textEditorFontFamily")?.toString() ?? "Lato").obs;
+    }
+    return _textEditorFontFamily!.value;
+  }
+
+  static Future setTextEditorFontFamily(String? fontFamily) async {
+    _getStorage.write("textEditorFontFamily", fontFamily);
+
+    _textEditorFontFamily!.value = fontFamily!;
   }
 }
 

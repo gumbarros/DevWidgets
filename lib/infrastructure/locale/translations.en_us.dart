@@ -46,6 +46,7 @@ class EnglishTranslations {
         "language": "Language",
         "error": "Error",
         "font_size": "Font Size",
+        "font_family": "Font Family",
         "warning": "Warning",
         "high_contrast": "High Contrast",
         "restart_to_apply_changes":

@@ -1,8 +1,12 @@
 import 'package:devtoys/presentation/global_settings.dart';
 import 'package:flutter/rendering.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-//TODO: I need help, the font family is not applying because of Yaru theme.
 TextStyle getTextStyleFromSettings() =>
     GoogleFonts.getFont(GlobalSettings.getTextEditorFontFamily(),
-        fontSize: GlobalSettings.getTextEditorFontSize());
+        textStyle: TextStyle(
+            fontSize: GlobalSettings.getTextEditorFontSize(),
+            color: Get.theme.textTheme.bodyMedium!.color,
+            inherit: false,
+            textBaseline: TextBaseline.alphabetic));

@@ -132,6 +132,8 @@ class TextDiffView extends GetView<TextDiffController> {
                               defaultTextStyle: TextStyle(
                                   fontSize:
                                       GlobalSettings.getTextEditorFontSize(),
+                                  inherit: false,
+                                  textBaseline: TextBaseline.alphabetic,
                                   fontFamily:
                                       GlobalSettings.getTextEditorFontFamily(),
                                   color: Get.theme.textTheme.bodyText1!.color),

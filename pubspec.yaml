@@ -21,6 +21,7 @@ dependencies:
   layout: ^1.0.3
   pretty_diff_text: ^1.0.0
   resizable_widget: ^1.0.5
+  uuid: ^3.0.6
   xml: ^6.1.0
   yaru: ^0.3.3
   yaru_colors: ^0.1.0

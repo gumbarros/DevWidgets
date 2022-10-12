@@ -63,7 +63,7 @@ class LipsumGeneratorView extends GetView<LipsumGeneratorController> {
                     leadingWidget: FaIcon(FontAwesomeIcons.hashtag),
                     trailingWidget: Padding(
                       child: ListTile(
-                        title: Text("lipsum_amount".tr),
+                        title: Text("amount".tr),
                         subtitle: Text("lipsum_amount_description".tr),
                       ),
                       padding: const EdgeInsets.only(left: 8.0),

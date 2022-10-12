@@ -5,21 +5,23 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class OutputEditor extends StatelessWidget {
-  const OutputEditor(
-      {Key? key,
-      this.outputChild,
-      required this.outputController,
-      this.isVerticalLayout = false,
-      this.toolbarTitle,
-      this.usesCodeControllers = false,
-      this.width,
-      this.height})
-      : super(key: key);
+  const OutputEditor({
+    Key? key,
+    this.outputChild,
+    required this.outputController,
+    this.isVerticalLayout = false,
+    this.toolbarTitle,
+    this.actionButtons,
+    this.usesCodeControllers = false,
+    this.width,
+    this.height,
+  }) : super(key: key);
 
   final Widget? outputChild;
   final TextEditingController? outputController;
   final bool isVerticalLayout;
   final String? toolbarTitle;
+  final List<Widget>? actionButtons;
   final bool usesCodeControllers;
   final double? width;
   final double? height;
@@ -33,7 +35,9 @@ class OutputEditor extends StatelessWidget {
           outputController != null
               ? OutputToolbar(
                   outputController: outputController!,
-                  toolbarTitle: toolbarTitle)
+                  toolbarTitle: toolbarTitle,
+                  actionButtons: actionButtons,
+                )
               : SizedBox.shrink(),
           Container(
               width: isVerticalLayout ? Get.width : Get.width / 1.5,

@@ -8,20 +8,27 @@ class OutputToolbar extends StatelessWidget {
   final TextEditingController outputController;
 
   final String? toolbarTitle;
+  final List<Widget>? actionButtons;
 
-  const OutputToolbar(
-      {super.key, required this.outputController, this.toolbarTitle});
+  const OutputToolbar({
+    super.key,
+    required this.outputController,
+    this.toolbarTitle,
+    this.actionButtons,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return IOToolbar(title: toolbarTitle ?? "output".tr, actions: [
+    final List<Widget> actions = [
       ElevatedButton.icon(
         icon: FaIcon(FontAwesomeIcons.copy),
         label: Text("copy".tr),
         onPressed: () async {
           await Clipboard.setData(ClipboardData(text: outputController.text));
         },
-      ),
-    ]);
+      )
+    ];
+    if (actionButtons != null) actions.addAll(actionButtons!);
+    return IOToolbar(title: toolbarTitle ?? "output".tr, actions: actions);
   }
 }

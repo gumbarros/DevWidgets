@@ -118,8 +118,18 @@ class EnglishTranslations {
         "lipsum_generator_mode_description":
             "Generate words, sentences or paragraphs with lorem ipsum text",
         "lipsum_start_with": "Start with 'Lorem ipsum dolor sit amet ...'",
-        "lipsum_amount": "Amount",
+        "amount": "Amount",
         "lipsum_amount_description":
-            "Amount of words, sentences or paragraphs to be generated"
+            "Amount of words, sentences or paragraphs to be generated",
+        "uuid_generator": "UUID Generator",
+        "uuid_generator_description": "Generate v1 and v4 uuids",
+        "uuid": "UUID",
+        "v1": "1",
+        "v4": "4 (GUID)",
+        "uuid_type": "UUID version",
+        "uuid_type_description": "The UUID version to be generated",
+        "uppercase": "Uppercase",
+        "hyphens": "Hyphens",
+        "generate": "Generate"
       };
 }

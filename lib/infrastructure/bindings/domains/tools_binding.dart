@@ -10,6 +10,7 @@ import 'package:devtoys/domain/models/tools/formatters/json_formatter.dart';
 import 'package:devtoys/domain/models/tools/formatters/sql_formatter.dart';
 import 'package:devtoys/domain/models/tools/formatters/xml_formatter.dart';
 import 'package:devtoys/domain/models/tools/generators/lipsum_generator_tool.dart';
+import 'package:devtoys/domain/models/tools/generators/uuid_generator_tool.dart';
 import 'package:devtoys/domain/models/tools/home_tool.dart';
 import 'package:devtoys/domain/models/tools/text/markdown_preview.dart';
 import 'package:devtoys/domain/models/tools/text/text_diff_tool.dart';
@@ -29,6 +30,7 @@ class ToolsBinding extends Bindings {
       TextDiffTool(),
       URLEncoderTool(URLEncoder()),
       LipsumGeneratorTool(),
+      UuidGeneratorTool(),
     ];
 
     tools.sort((a, b) => a.group.name.compareTo(b.group.name));

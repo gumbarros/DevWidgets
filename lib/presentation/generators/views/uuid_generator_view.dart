@@ -106,8 +106,6 @@ class UuidGeneratorView extends GetView<UuidGeneratorController> {
                           Flexible(
                             flex: 2,
                             child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.blue),
                               onPressed: () => controller.generateUuid(),
                               child: Text("generate".tr),
                             ),

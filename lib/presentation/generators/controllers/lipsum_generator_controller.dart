@@ -1,13 +1,11 @@
-import 'package:code_text_field/code_text_field.dart';
 import 'package:devtoys/domain/models/tools/generators/lipsum_generator_tool.dart';
 import 'package:devtoys/domain/models/tools/generators/lipsum_type.dart';
-import 'package:devtoys/presentation/widgets/io_editor/code_controller_factory.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:highlight/languages/json.dart';
 
 class LipsumGeneratorController extends GetxController {
   final LipsumGeneratorTool tool;
-  late CodeController outputController;
+  late TextEditingController outputController;
 
   Rx<LipsumType?> lipsumType = LipsumType.words.obs;
   Rx<bool> startWithLorem = true.obs;
@@ -15,21 +13,11 @@ class LipsumGeneratorController extends GetxController {
 
   LipsumGeneratorController(this.tool);
 
-  /// Regenerates the lorem ipsum text with passed in params
-  /// [lipsumType] [count] [startWithLorem]
-  ///
-  /// TODO: If the class fields are always up to date even when using a listener, these parameters could be removed
-  /// and the fields could be used. I've never used Getx before but in e.g. React,
-  /// the useState fields aren't updated until rebuild so you need to use the `prev` callback
-  void _regenerateLipsum({
-    required LipsumType lipsumType,
-    required int count,
-    required bool startWithLorem,
-  }) {
+  void _regenerateLipsum() {
     String generatedText = tool.generator.generate(
-      type: lipsumType,
-      count: count,
-      startWithLorem: startWithLorem,
+      type: lipsumType.value ?? LipsumType.words,
+      count: count.value,
+      startWithLorem: startWithLorem.value,
     );
 
     try {
@@ -41,38 +29,14 @@ class LipsumGeneratorController extends GetxController {
 
   @override
   void onInit() {
-    outputController = CodeControllerFactory.getInstance(language: json);
+    outputController = TextEditingController();
 
-    count.listen((newCount) {
-      _regenerateLipsum(
-        count: newCount,
-        lipsumType: lipsumType.value!,
-        startWithLorem: startWithLorem.value,
-      );
-    });
-
-    lipsumType.listen((newType) {
-      _regenerateLipsum(
-        count: count.value,
-        lipsumType: newType ?? LipsumType.words,
-        startWithLorem: startWithLorem.value,
-      );
-    });
-
-    startWithLorem.listen((newStart) {
-      _regenerateLipsum(
-        count: count.value,
-        lipsumType: lipsumType.value!,
-        startWithLorem: newStart,
-      );
-    });
+    ever(count, (_) => _regenerateLipsum());
+    ever(lipsumType, (_) => _regenerateLipsum());
+    ever(startWithLorem, (_) => _regenerateLipsum());
 
     /// Generate initial text
-    _regenerateLipsum(
-      count: count.value,
-      lipsumType: lipsumType.value!,
-      startWithLorem: startWithLorem.value,
-    );
+    _regenerateLipsum();
 
     super.onInit();
   }

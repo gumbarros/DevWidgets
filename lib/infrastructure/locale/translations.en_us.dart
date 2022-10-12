@@ -106,6 +106,30 @@ class EnglishTranslations {
         "url_encoder_description":
             "Encode or decode all the applicable characters to their corresponding URL entities",
         "xml_formatter": "XML Formatter",
-        "xml_formatter_description": "Indent or minify XML data"
+        "xml_formatter_description": "Indent or minify XML data",
+        "paragraphs": "Paragraphs",
+        "sentences": "Sentences",
+        "words": "Words",
+        "generators": "Generators",
+        "lipsum_generator": "Lorem Ipsum Generator",
+        "lipsum_generator_description": "Words, sentences and paragraphs",
+        "lipsum": "Lorem Ipsum",
+        "lipsum_generator_mode": "Generator mode",
+        "lipsum_generator_mode_description":
+            "Generate words, sentences or paragraphs with lorem ipsum text",
+        "lipsum_start_with": "Start with 'Lorem ipsum dolor sit amet ...'",
+        "amount": "Amount",
+        "lipsum_amount_description":
+            "Amount of words, sentences or paragraphs to be generated",
+        "uuid_generator": "UUID Generator",
+        "uuid_generator_description": "Generate v1 and v4 uuids",
+        "uuid": "UUID",
+        "v1": "1",
+        "v4": "4 (GUID)",
+        "uuid_type": "UUID version",
+        "uuid_type_description": "The UUID version to be generated",
+        "uppercase": "Uppercase",
+        "hyphens": "Hyphens",
+        "generate": "Generate"
       };
 }

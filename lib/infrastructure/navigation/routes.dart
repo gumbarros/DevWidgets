@@ -4,6 +4,8 @@ import 'package:devtoys/infrastructure/bindings/domains/tools_binding.dart';
 class Routes {
   static const home = '/home';
 
+  static const uuidGenerator = '/generators/uuid';
+  static const lipsumGenerator = '/generators/lipsum';
   static const sqlFormatter = '/formatters/sql';
   static const jsonFormatter = '/formatters/json';
   static const xmlFormatter = '/formatters/xml';

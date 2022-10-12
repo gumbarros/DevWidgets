@@ -106,6 +106,20 @@ class EnglishTranslations {
         "url_encoder_description":
             "Encode or decode all the applicable characters to their corresponding URL entities",
         "xml_formatter": "XML Formatter",
-        "xml_formatter_description": "Indent or minify XML data"
+        "xml_formatter_description": "Indent or minify XML data",
+        "paragraphs": "Paragraphs",
+        "sentences": "Sentences",
+        "words": "Words",
+        "generators": "Generators",
+        "lipsum_generator": "Lorem Ipsum Generator",
+        "lipsum_generator_description": "Words, sentences and paragraphs",
+        "lipsum": "Lorem Ipsum",
+        "lipsum_generator_mode": "Generator mode",
+        "lipsum_generator_mode_description":
+            "Generate words, sentences or paragraphs with lorem ipsum text",
+        "lipsum_start_with": "Start with 'Lorem ipsum dolor sit amet ...'",
+        "lipsum_amount": "Amount",
+        "lipsum_amount_description":
+            "Amount of words, sentences or paragraphs to be generated"
       };
 }

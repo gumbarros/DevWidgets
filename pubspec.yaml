@@ -1,33 +1,33 @@
 name: devtoys
 version: 1.0.0+1
 publish_to: none
-description: Cross-platform version of DevToys, a Swiss Army knife for developers. 
-environment: 
+description: Cross-platform version of DevToys, a Swiss Army knife for developers.
+environment:
   sdk: '>=2.17.6 <3.0.0'
 
-dependencies: 
-  flutter: 
-    sdk: flutter
-  yaru: ^0.3.3
-  yaru_widgets: ^1.1.2
-  get: ^4.6.5
-  layout: ^1.0.3
+dependencies:
   auto_size_text: ^3.0.0
-  font_awesome_flutter: ^10.2.1
   code_text_field: ^1.0.2
-  resizable_widget: ^1.0.5
-  yaru_colors: ^0.1.0
-  html_unescape: ^2.0.0
-  flutter_markdown: ^0.6.12
-  pretty_diff_text: ^1.0.0
-  xml: ^6.1.0
   dropdown_search: ^5.0.3
+  flutter:
+    sdk: flutter
+  flutter_markdown: ^0.6.12
+  font_awesome_flutter: ^10.2.1
+  get: ^4.6.5
   get_storage: ^2.0.3
   google_fonts: ^3.0.1
+  html_unescape: ^2.0.0
+  ipsum: ^1.0.1
+  layout: ^1.0.3
+  pretty_diff_text: ^1.0.0
+  resizable_widget: ^1.0.5
+  xml: ^6.1.0
+  yaru: ^0.3.3
+  yaru_colors: ^0.1.0
+  yaru_widgets: ^1.1.2
 
-dev_dependencies: 
-  flutter_test: 
+dev_dependencies:
+  flutter_test:
     sdk: flutter
-flutter: 
+flutter:
   uses-material-design: true
-

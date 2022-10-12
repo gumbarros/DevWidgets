@@ -200,6 +200,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.1"
+  ipsum:
+    dependency: "direct main"
+    description:
+      name: ipsum
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.1"
   layout:
     dependency: "direct main"
     description:
@@ -451,5 +458,5 @@ packages:
     source: hosted
     version: "1.1.2"
 sdks:
-  dart: ">=2.17.6 <3.0.0"
+  dart: ">=2.18.2 <3.0.0"
   flutter: ">=3.0.0"

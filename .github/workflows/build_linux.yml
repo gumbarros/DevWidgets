@@ -41,10 +41,10 @@ jobs:
         ./appimagetool-x86_64.AppImage DevToysFlutter.AppDir/
     
     - name: Automatic Releases
-        uses: marvinpinto/action-automatic-releases@latest
-        with: 
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
-          prerelease: true
-          title: "Continuous"
-          files: DevToys_Flutter-x86_64.AppImage
+      uses: marvinpinto/action-automatic-releases@latest
+      with: 
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        automatic_release_tag: "latest"
+        prerelease: true
+        title: "Continuous"
+        files: DevToys_Flutter-x86_64.AppImage

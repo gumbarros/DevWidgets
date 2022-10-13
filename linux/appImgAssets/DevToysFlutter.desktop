@@ -5,5 +5,5 @@ Type=Application
 Terminal=false
 Name=DevToys Flutter
 Exec=devtoys %u
-Icon=tux.png
+Icon=tux
 Categories=Utility;Development;

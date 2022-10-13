@@ -36,7 +36,7 @@ jobs:
     
     - name: Prepare AppImage Files
       run: |
-        cp -r build/linux/bundle DevToysFlutter.AppDir
+        cp -r build/linux/x64/release/bundle DevToysFlutter.AppDir
         wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
         chmod +x ./appimagetool-x86_64.AppImage
         cp -r linux/appImgAssets/* DevToysFlutter.AppDir/

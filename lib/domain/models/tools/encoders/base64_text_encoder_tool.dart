@@ -1,3 +1,4 @@
+import 'package:devtoys/domain/helpers/encoders/base_64_text_encoder.dart';
 import 'package:devtoys/domain/models/groups/group.dart';
 import 'package:devtoys/domain/models/groups/encoders_group.dart';
 import 'package:devtoys/domain/models/tools/encoders/encoder_tool.dart';
@@ -8,7 +9,7 @@ import 'package:get/get.dart';
 import '../tool.dart';
 
 class Base64TextEncoderTool extends EncoderTool implements Tool {
-  Base64TextEncoderTool(super.encoder);
+  Base64TextEncoderTool(this.encoder) : super(encoder);
 
   @override
   IconData get icon => FontAwesomeIcons.hashtag;
@@ -30,4 +31,7 @@ class Base64TextEncoderTool extends EncoderTool implements Tool {
 
   @override
   String get menuName => "base64_text_encoder_menu_name".tr;
+
+  @override
+  final Base64TextEncoder encoder;
 }

@@ -1,3 +1,4 @@
+import 'package:devtoys/domain/models/tools/encoders/base64_encoding_type.dart';
 import 'package:devtoys/domain/models/tools/encoders/encode_conversion_mode.dart';
 import 'package:devtoys/presentation/encoders/controllers/base64_text_encoder_controller.dart';
 import 'package:devtoys/presentation/widgets/default_app_bar.dart';
@@ -38,6 +39,26 @@ class Base64TextEncoderView extends GetView<Base64TextEncoderController> {
                               EncodeConversionMode.values),
                           onChanged: (selected) {
                             controller.conversionMode.value = selected;
+                            controller.update();
+                          }),
+                    ),
+                  ),
+                  YaruRow(
+                    enabled: true,
+                    leadingWidget: FaIcon(FontAwesomeIcons.arrowRightArrowLeft),
+                    trailingWidget: Padding(
+                      child: ListTile(
+                          title: Text("encoding".tr),
+                          subtitle: Text("encoding_description".tr)),
+                      padding: const EdgeInsets.only(left: 8.0),
+                    ),
+                    actionWidget: Obx(
+                      () => DropdownButton<Base64EncodingType>(
+                          value: controller.encodingType.value,
+                          items: getDropdownMenuItems<Base64EncodingType>(
+                              Base64EncodingType.values),
+                          onChanged: (selected) {
+                            controller.encodingType.value = selected;
                             controller.update();
                           }),
                     ),

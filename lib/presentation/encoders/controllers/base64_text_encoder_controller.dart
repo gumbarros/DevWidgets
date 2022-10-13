@@ -1,3 +1,4 @@
+import 'package:devtoys/domain/models/tools/encoders/base64_encoding_type.dart';
 import 'package:devtoys/domain/models/tools/encoders/base64_text_encoder_tool.dart';
 import 'package:devtoys/domain/models/tools/encoders/encode_conversion_mode.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +10,7 @@ class Base64TextEncoderController extends GetxController {
   late TextEditingController outputController;
 
   Rx<EncodeConversionMode?> conversionMode = EncodeConversionMode.encode.obs;
+  Rx<Base64EncodingType?> encodingType = Base64EncodingType.ascii.obs;
 
   String? result;
 
@@ -31,6 +33,11 @@ class Base64TextEncoderController extends GetxController {
       regenerateOutput();
     });
 
+    ever(encodingType, (_) {
+      inputController.text = "";
+      outputController.text = "";
+    });
+
     super.onInit();
   }
 
@@ -38,9 +45,11 @@ class Base64TextEncoderController extends GetxController {
     String result;
 
     if (conversionMode.value == EncodeConversionMode.encode) {
-      result = tool.encoder.encode(inputController.text);
+      result = tool.encoder
+          .encode(inputController.text, encodingType: encodingType.value);
     } else {
-      result = tool.encoder.decode(inputController.text);
+      result = tool.encoder
+          .decode(inputController.text, encodingType: encodingType.value);
     }
 
     try {

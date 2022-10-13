@@ -1,0 +1,53 @@
+name: Build Linux AppImage
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:  
+  buildLinux:
+    name: Build for Linux
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    
+    - name: Install Dependencies
+      run: sudo apt update && sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev
+      
+    - name: Install Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        channel: 'stable' 
+    
+    - name: Get dependencies
+      run: flutter pub get
+    
+    - name: Test project
+      run: flutter test
+      
+    - name: Build
+      run: flutter build linux --release
+    
+    - name: Prepare AppImage Files
+      run: |
+        cp -r build/linux/x64/release/bundle DevToysFlutter.AppDir
+        wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
+        chmod +x ./appimagetool-x86_64.AppImage
+        cp -r linux/appImgAssets/* DevToysFlutter.AppDir/
+        chmod +x DevToysFlutter.AppDir/AppRun
+        ./appimagetool-x86_64.AppImage DevToysFlutter.AppDir/
+    
+    - name: Automatic Releases
+      uses: marvinpinto/action-automatic-releases@latest
+      with: 
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        automatic_release_tag: "latest"
+        prerelease: true
+        title: "Continuous"
+        files: DevToys_Flutter-x86_64.AppImage

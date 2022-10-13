@@ -1,10 +1,7 @@
-import 'package:code_text_field/code_text_field.dart';
 import 'package:devtoys/domain/models/tools/generators/uuid_generator_tool.dart';
 import 'package:devtoys/domain/models/tools/generators/uuid_type.dart';
-import 'package:devtoys/presentation/widgets/io_editor/code_controller_factory.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:highlight/languages/json.dart';
 
 class UuidGeneratorController extends GetxController {
   final UuidGeneratorTool tool;

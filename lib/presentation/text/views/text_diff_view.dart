@@ -51,7 +51,7 @@ class TextDiffView extends GetView<TextDiffController> {
                                   ],
                                   onChanged: (value) {
                                     controller.editCost.value =
-                                        int.parse(value);
+                                        int.tryParse(value) ?? 4;
                                   },
                                   decoration: InputDecoration(
                                     contentPadding: EdgeInsets.all(5),

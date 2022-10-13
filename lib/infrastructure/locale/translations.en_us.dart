@@ -23,6 +23,11 @@ class EnglishTranslations {
             "Parse Cron expression to get scheduled dates",
         "current": "Current",
         "decode": "Decode",
+        "base64_text_encoder": "Base 64 Text Encoder / Decoder",
+        "base64_text_encoder_description": "Encode and Decode Base64 text data",
+        "base64_text_encoder_menu_name": "Base 64 Text",
+        "encoding": "Encoding",
+        "encoding_description": "Select which encoding you want to use",
         "diff_mode_efficiency":
             "Increase computational efficiency by factoring out short commonalities which are not worth the overhead.",
         "diff_mode_none": "No cleanup. Raw output.",

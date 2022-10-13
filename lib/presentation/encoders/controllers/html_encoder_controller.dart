@@ -10,7 +10,7 @@ class HTMLEncoderController extends GetxController {
   late CodeController inputController;
   late CodeController outputController;
 
-  Rx<EncodeConversionMode?> conversionMode = EncodeConversionMode.decode.obs;
+  Rx<EncodeConversionMode?> conversionMode = EncodeConversionMode.encode.obs;
 
   String? result;
 
@@ -22,21 +22,32 @@ class HTMLEncoderController extends GetxController {
 
     outputController = CodeControllerFactory.getInstance(language: xml);
 
-    inputController.addListener(() {
-      String result;
+    inputController.addListener(regenerateOutput);
 
-      if (conversionMode.value == EncodeConversionMode.encode) {
-        result = tool.encoder.encode(inputController.text);
-      } else {
-        result = tool.encoder.decode(inputController.text);
-      }
+    ever(conversionMode, (_) {
+      String input = inputController.text;
+      String output = outputController.text;
+      inputController.text = output;
+      outputController.text = input;
 
-      try {
-        outputController.text = result;
-      } catch (_) {
-        //Bug on code_text_field package.
-      }
+      regenerateOutput();
     });
     super.onInit();
+  }
+
+  void regenerateOutput() {
+    String result;
+
+    if (conversionMode.value == EncodeConversionMode.encode) {
+      result = tool.encoder.encode(inputController.text);
+    } else {
+      result = tool.encoder.decode(inputController.text);
+    }
+
+    try {
+      outputController.text = result;
+    } catch (_) {
+      //Bug on code_text_field package.
+    }
   }
 }

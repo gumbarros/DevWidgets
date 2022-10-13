@@ -15,6 +15,7 @@ class Routes {
   static const textDiff = "/text/diff";
   static const urlEncoder = "/encoders/url";
   static const settings = "/settings";
+  static const base64TextEncoder = '/encoders/base64text';
   static var timestampConverter;
   static var jsonYamlConverter;
   static var cronParser;

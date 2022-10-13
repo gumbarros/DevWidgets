@@ -28,7 +28,7 @@ class LinuxMenu extends StatelessWidget {
     final scrollbarThicknessWithTrack =
         _calcScrollbarThicknessWithTrack(context);
 
-    return Column(
+    return ListView(
       children: [
         Padding(
           padding: EdgeInsets.symmetric(
@@ -62,69 +62,69 @@ class LinuxMenu extends StatelessWidget {
               ))),
         ),
         Divider(),
-        ListView(
-          shrinkWrap: true,
-          semanticChildCount: tools.length,
-          padding: EdgeInsets.symmetric(
-            horizontal: scrollbarThicknessWithTrack,
-            vertical: 8.0,
-          ),
+        Column(
           children: [
             for (var group in Get.find<List<Group>>())
-              Visibility(
-                visible: !context.layout.breakpoint.isSmall() &&
-                    !GlobalSettings.compactMode.value,
-                replacement: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: IconButton(
-                      icon: FaIcon(
-                        group.icon,
-                        size: 18,
-                      ),
-                      onPressed: () {
-                        Get.toNamed('/home', arguments: [group.name]);
-                      }),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: scrollbarThicknessWithTrack,
+                  vertical: 8.0,
                 ),
-                child: YaruExpandable(
-                  isExpanded: true,
-                  header: Padding(
+                child: Visibility(
+                  visible: !context.layout.breakpoint.isSmall() &&
+                      !GlobalSettings.compactMode.value,
+                  replacement: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                        mainAxisAlignment:
-                            !context.layout.breakpoint.isSmall() &&
-                                    !GlobalSettings.compactMode.value
-                                ? MainAxisAlignment.center
-                                : MainAxisAlignment.start,
-                        children: [
-                          FaIcon(
-                            group.icon,
-                            size: 18,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: AutoSizeText(
-                              group.name,
-                              overflow: TextOverflow.fade,
-                              style: TextStyle(fontSize: 17),
-                            ),
-                          )
-                        ]),
+                    child: IconButton(
+                        icon: FaIcon(
+                          group.icon,
+                          size: 18,
+                        ),
+                        onPressed: () {
+                          Get.toNamed('/home', arguments: [group.name]);
+                        }),
                   ),
-                  child: Column(children: [
-                    for (var tool
-                        in tools.where((t) => t.group.name == group.name))
-                      LinuxMenuTile(
-                        selected: GlobalSettings.selectedToolName.value ==
-                            tool.runtimeType.toString(),
-                        title: YaruPageItemTitle.text(tool.menuName),
-                        icon: tool.icon,
-                        onTap: () {
-                          GlobalSettings.selectedToolName.value =
-                              tool.runtimeType.toString();
-                          Get.offAllNamed(tool.route);
-                        },
-                      )
-                  ]),
+                  child: YaruExpandable(
+                    isExpanded: true,
+                    header: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                          mainAxisAlignment:
+                              !context.layout.breakpoint.isSmall() &&
+                                      !GlobalSettings.compactMode.value
+                                  ? MainAxisAlignment.center
+                                  : MainAxisAlignment.start,
+                          children: [
+                            FaIcon(
+                              group.icon,
+                              size: 18,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: AutoSizeText(
+                                group.name,
+                                overflow: TextOverflow.fade,
+                                style: TextStyle(fontSize: 17),
+                              ),
+                            )
+                          ]),
+                    ),
+                    child: Column(children: [
+                      for (var tool
+                          in tools.where((t) => t.group.name == group.name))
+                        LinuxMenuTile(
+                          selected: GlobalSettings.selectedToolName.value ==
+                              tool.runtimeType.toString(),
+                          title: YaruPageItemTitle.text(tool.menuName),
+                          icon: tool.icon,
+                          onTap: () {
+                            GlobalSettings.selectedToolName.value =
+                                tool.runtimeType.toString();
+                            Get.offAllNamed(tool.route);
+                          },
+                        )
+                    ]),
+                  ),
                 ),
               )
           ],

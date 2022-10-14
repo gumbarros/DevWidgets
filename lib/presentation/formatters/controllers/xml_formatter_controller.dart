@@ -22,16 +22,21 @@ class XMLFormatterController extends GetxController {
 
     outputController = CodeControllerFactory.getInstance(language: xml);
 
-    inputController.addListener(() {
-      var formattedText = tool.formatter
-          .format(inputController.text, indentation: indentation.value!);
+    inputController.addListener(regenerateOutput);
 
-      try {
-        outputController.text = formattedText;
-      } catch (_) {
-        //Bug on code_text_field package.
-      }
-    });
+    ever(indentation, (_) => regenerateOutput());
+
     super.onInit();
+  }
+
+  regenerateOutput() {
+    var formattedText = tool.formatter
+        .format(inputController.text, indentation: indentation.value!);
+
+    try {
+      outputController.text = formattedText;
+    } catch (_) {
+      //Bug on code_text_field package.
+    }
   }
 }

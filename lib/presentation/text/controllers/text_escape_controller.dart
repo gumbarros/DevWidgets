@@ -19,17 +19,33 @@ class TextEscapeController extends GetxController {
     inputController = TextEditingController();
     outputController = TextEditingController();
 
-    inputController.addListener(() {
-      String result;
+    inputController.addListener(regenerateOutput);
 
-      if (conversionMode.value == EscapeConversionMode.Escape) {
-        result = tool.escaper.escape(inputController.text);
-      } else {
-        result = tool.escaper.unescape(inputController.text);
-      }
+    ever(conversionMode, (_) {
+      String input = inputController.text;
+      String output = outputController.text;
+      inputController.text = output;
+      outputController.text = input;
 
-      outputController.text = result;
+      regenerateOutput();
     });
+
     super.onInit();
+  }
+
+  void regenerateOutput() {
+    String result;
+
+    if (conversionMode.value == EscapeConversionMode.Escape) {
+      result = tool.escaper.escape(inputController.text);
+    } else {
+      result = tool.escaper.unescape(inputController.text);
+    }
+
+    try {
+      outputController.text = result;
+    } catch (_) {
+      //Bug on code_text_field package.
+    }
   }
 }

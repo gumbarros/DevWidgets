@@ -19,7 +19,9 @@ class JSONFormatter implements Formatter {
     }
     if (object != null) {
       if (sortAlphabetically) object = _sort(object);
-      return JsonEncoder.withIndent(indentation.toString()).convert(object);
+      if (indentation != Indentation.compact)
+        return JsonEncoder.withIndent(indentation.toString()).convert(object);
+      return JsonEncoder().convert(object);
     } else {
       return "";
     }

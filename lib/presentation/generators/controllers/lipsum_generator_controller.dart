@@ -31,9 +31,7 @@ class LipsumGeneratorController extends GetxController {
   void onInit() {
     outputController = TextEditingController();
 
-    ever(count, (_) => _regenerateLipsum());
-    ever(lipsumType, (_) => _regenerateLipsum());
-    ever(startWithLorem, (_) => _regenerateLipsum());
+    everAll([startWithLorem, lipsumType, count], (_) => _regenerateLipsum());
 
     /// Generate initial text
     _regenerateLipsum();

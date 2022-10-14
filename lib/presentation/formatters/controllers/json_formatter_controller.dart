@@ -23,17 +23,22 @@ class JSONFormatterController extends GetxController {
 
     outputController = CodeControllerFactory.getInstance(language: json);
 
-    inputController.addListener(() {
-      var formattedText = tool.formatter.format(inputController.text,
-          indentation: indentation.value!,
-          sortAlphabetically: sortAlphabetically.value);
+    inputController.addListener(regenerateOutput);
 
-      try {
-        outputController.text = formattedText;
-      } catch (_) {
-        //Bug on code_text_field package.
-      }
-    });
+    everAll([indentation, sortAlphabetically], (_) => regenerateOutput());
+
     super.onInit();
+  }
+
+  void regenerateOutput() {
+    var formattedText = tool.formatter.format(inputController.text,
+        indentation: indentation.value!,
+        sortAlphabetically: sortAlphabetically.value);
+
+    try {
+      outputController.text = formattedText;
+    } catch (_) {
+      //Bug on code_text_field package.
+    }
   }
 }

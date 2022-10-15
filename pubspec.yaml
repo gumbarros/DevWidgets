@@ -20,6 +20,7 @@ dependencies:
   html_unescape: ^2.0.0
   image_downloader_web: ^1.0.2
   ipsum: ^1.0.1
+  json_to_dart: ^1.0.5
   layout: ^1.0.3
   path_provider: ^2.0.11
   pretty_diff_text: ^1.0.0

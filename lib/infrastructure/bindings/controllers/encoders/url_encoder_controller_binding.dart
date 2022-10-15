@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 class URLEncoderControllerBinding extends Bindings {
   @override
   void dependencies() {
-    var tool = getTool<URLEncoderTool>();
+    final tool = getTool<URLEncoderTool>();
 
     Get.lazyPut<URLEncoderController>(() => URLEncoderController(tool));
   }

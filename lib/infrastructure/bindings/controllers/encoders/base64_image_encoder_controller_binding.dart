@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 class Base64ImageEncoderControllerBinding extends Bindings {
   @override
   void dependencies() {
-    var tool = getTool<Base64ImageEncoderTool>();
+    final tool = getTool<Base64ImageEncoderTool>();
 
     Get.lazyPut<Base64ImageEncoderController>(
         () => Base64ImageEncoderController(tool));

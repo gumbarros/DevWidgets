@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 class MarkdownPreviewControllerBinding extends Bindings {
   @override
   void dependencies() {
-    var tool = getTool<MarkdownPreviewTool>();
+    final tool = getTool<MarkdownPreviewTool>();
 
     Get.lazyPut<MarkdownPreviewController>(
         () => MarkdownPreviewController(tool));

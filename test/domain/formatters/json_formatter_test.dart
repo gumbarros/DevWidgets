@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('JSON Formatter', () {
-    var formatter = JSONFormatter();
+    var formatter = JsonFormatter();
     String input = "{\"name\":\"Gustavo\",\"age\":21}";
     test("Format JSON without sorting", () {
       String expectedResult = """

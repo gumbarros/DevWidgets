@@ -5,8 +5,8 @@ import 'package:devtoys/presentation/widgets/io_editor/code_controller_factory.d
 import 'package:get/get.dart';
 import 'package:highlight/languages/json.dart';
 
-class JSONFormatterController extends GetxController {
-  final JSONFormatterTool tool;
+class JsonFormatterController extends GetxController {
+  final JsonFormatterTool tool;
   late CodeController inputController;
   late CodeController outputController;
 
@@ -15,7 +15,7 @@ class JSONFormatterController extends GetxController {
 
   String? result;
 
-  JSONFormatterController(this.tool);
+  JsonFormatterController(this.tool);
 
   @override
   void onInit() {

@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 class SQLFormatterControllerBinding extends Bindings {
   @override
   void dependencies() {
-    var tool = getTool<SQLFormatterTool>();
+    final tool = getTool<SQLFormatterTool>();
 
     Get.lazyPut<SQLFormatterController>(() => SQLFormatterController(tool));
   }

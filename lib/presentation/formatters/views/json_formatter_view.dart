@@ -8,8 +8,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-class JSONFormatterView extends GetView<JSONFormatterController> {
-  const JSONFormatterView({Key? key}) : super(key: key);
+class JsonFormatterView extends GetView<JsonFormatterController> {
+  const JsonFormatterView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

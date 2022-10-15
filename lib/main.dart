@@ -1,5 +1,5 @@
 import 'package:devtoys/domain/models/tools/tool.dart';
-import 'package:devtoys/infrastructure/bindings/domains/initial_binding.dart';
+import 'package:devtoys/infrastructure/bindings/domains/initial_bindings.dart';
 import 'package:devtoys/infrastructure/locale/translations.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
 import 'package:devtoys/presentation/global_settings.dart';

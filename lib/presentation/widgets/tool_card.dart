@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:devtoys/domain/extensions/icon_data_extensions.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -59,10 +60,12 @@ class ToolCard extends StatelessWidget {
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(8.0))),
                         child: Center(
-                            child: FaIcon(
-                          tool.icon,
-                          size: 35,
-                        ))),
+                            child: !tool.icon.isMaterialIcon()
+                                ? FaIcon(
+                                    tool.icon,
+                                    size: 35,
+                                  )
+                                : Icon(tool.icon, size: 40))),
                     Container(
                       width: context.layout.value(
                         xs: Get.width / 7,

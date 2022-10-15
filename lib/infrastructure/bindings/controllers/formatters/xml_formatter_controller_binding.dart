@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 class XMLFormatterControllerBinding extends Bindings {
   @override
   void dependencies() {
-    var tool = getTool<XmlFormatterTool>();
+    final tool = getTool<XmlFormatterTool>();
 
     Get.lazyPut<XMLFormatterController>(() => XMLFormatterController(tool));
   }

@@ -6,6 +6,7 @@ import 'package:devtoys/domain/helpers/formatters/json_formatter.dart';
 import 'package:devtoys/domain/helpers/formatters/sql_formatter.dart';
 import 'package:devtoys/domain/helpers/formatters/xml_formatter.dart';
 import 'package:devtoys/domain/helpers/text/text_escaper.dart';
+import 'package:devtoys/domain/models/tools/converters/json_to_class_converter_tool.dart';
 import 'package:devtoys/domain/models/tools/encoders/base64_image_encoder_tool.dart';
 import 'package:devtoys/domain/models/tools/encoders/base64_text_encoder_tool.dart';
 import 'package:devtoys/domain/models/tools/encoders/html_encoder_tool.dart';
@@ -26,7 +27,7 @@ class ToolsBinding extends Bindings {
   static List<Tool> getAllTools() {
     var tools = [
       HTMLEncoderTool(HTMLEncoder()),
-      JSONFormatterTool(JSONFormatter()),
+      JsonFormatterTool(JsonFormatter()),
       SQLFormatterTool(SQLFormatter()),
       TextEscapeTool(TextEscaper()),
       XmlFormatterTool(XMLFormatter()),
@@ -36,7 +37,8 @@ class ToolsBinding extends Bindings {
       LipsumGeneratorTool(),
       UuidGeneratorTool(),
       Base64TextEncoderTool(Base64TextEncoder()),
-      Base64ImageEncoderTool(Base64ImageEncoder())
+      Base64ImageEncoderTool(Base64ImageEncoder()),
+      JsonToClassConverterTool()
     ];
 
     tools.sort((a, b) => a.group.name.compareTo(b.group.name));

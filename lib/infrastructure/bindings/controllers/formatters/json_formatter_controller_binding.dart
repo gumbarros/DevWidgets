@@ -3,11 +3,11 @@ import 'package:devtoys/infrastructure/bindings/controllers/get_tool.dart';
 import 'package:devtoys/presentation/formatters/controllers/json_formatter_controller.dart';
 import 'package:get/get.dart';
 
-class JSONFormatterControllerBinding extends Bindings {
+class JsonFormatterControllerBinding extends Bindings {
   @override
   void dependencies() {
-    var tool = getTool<JSONFormatterTool>();
+    final tool = getTool<JsonFormatterTool>();
 
-    Get.lazyPut<JSONFormatterController>(() => JSONFormatterController(tool));
+    Get.lazyPut<JsonFormatterController>(() => JsonFormatterController(tool));
   }
 }

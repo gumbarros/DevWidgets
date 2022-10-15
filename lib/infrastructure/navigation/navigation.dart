@@ -1,3 +1,4 @@
+import 'package:devtoys/infrastructure/bindings/controllers/converters/json_to_class_converter_controller_binding.dart';
 import 'package:devtoys/infrastructure/bindings/controllers/encoders/base64_image_encoder_controller_binding.dart';
 import 'package:devtoys/infrastructure/bindings/controllers/encoders/base64_text_encoder_controller_binding.dart';
 import 'package:devtoys/infrastructure/bindings/controllers/encoders/html_encoder_controller_binding.dart';
@@ -12,6 +13,7 @@ import 'package:devtoys/infrastructure/bindings/controllers/settings_controller_
 import 'package:devtoys/infrastructure/bindings/controllers/text/markdown_preview_controller_binding.dart';
 import 'package:devtoys/infrastructure/bindings/controllers/text/text_diff_controller_binding.dart';
 import 'package:devtoys/infrastructure/bindings/controllers/text/text_escape_controller_binding.dart';
+import 'package:devtoys/presentation/converters/views/json_to_class_converter_view.dart';
 import 'package:devtoys/presentation/encoders/views/base64_image_encoder_view.dart';
 import 'package:devtoys/presentation/encoders/views/base64_text_encoder_view.dart';
 import 'package:devtoys/presentation/encoders/views/html_encoder_view.dart';
@@ -42,9 +44,9 @@ class Navigation {
       binding: SQLFormatterControllerBinding(),
     ),
     GetPage(
-      name: Routes.jsonFormatter,
-      page: () => const JSONFormatterView(),
-      binding: JSONFormatterControllerBinding(),
+      name: Routes.JsonFormatter,
+      page: () => const JsonFormatterView(),
+      binding: JsonFormatterControllerBinding(),
     ),
     GetPage(
       name: Routes.htmlEncoder,
@@ -100,6 +102,11 @@ class Navigation {
       name: Routes.base64ImageEncoder,
       page: () => const Base64ImageEncoderView(),
       binding: Base64ImageEncoderControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.jsonToClass,
+      page: () => const JsonToClassConverterView(),
+      binding: JsonToClassConverterControllerBinding(),
     ),
   ];
 }

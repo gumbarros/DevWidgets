@@ -4,7 +4,7 @@ import 'package:devtoys/domain/helpers/utils.dart';
 import 'package:devtoys/domain/models/tools/formatters/indentation.dart';
 import 'package:get/get.dart';
 
-class JSONFormatter implements Formatter {
+class JsonFormatter implements Formatter {
   @override
   String format(String json,
       {Indentation indentation = Indentation.fourSpaces,

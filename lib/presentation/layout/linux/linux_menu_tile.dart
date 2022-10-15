@@ -1,3 +1,4 @@
+import 'package:devtoys/domain/extensions/icon_data_extensions.dart';
 import 'package:devtoys/presentation/global_settings.dart';
 import 'package:devtoys/presentation/helpers.dart';
 import 'package:flutter/material.dart';
@@ -41,10 +42,12 @@ class LinuxMenuTile extends StatelessWidget {
                 shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(6.0)),
                 ),
-                leading: FaIcon(
-                  icon,
-                  size: 18,
-                ),
+                leading: !icon.isMaterialIcon()
+                    ? FaIcon(
+                        icon,
+                        size: 20,
+                      )
+                    : Icon(icon, size: 25),
                 title: !GlobalSettings.compactMode.value ? _buildTitle() : null,
                 selected: selected,
                 onTap: onTap,

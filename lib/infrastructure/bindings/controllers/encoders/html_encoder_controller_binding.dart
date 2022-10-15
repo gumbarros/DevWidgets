@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 class HTMLEncoderControllerBinding extends Bindings {
   @override
   void dependencies() {
-    var tool = getTool<HTMLEncoderTool>();
+    final tool = getTool<HTMLEncoderTool>();
 
     Get.lazyPut<HTMLEncoderController>(() => HTMLEncoderController(tool));
   }

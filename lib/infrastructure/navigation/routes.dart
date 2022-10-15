@@ -7,7 +7,7 @@ class Routes {
   static const uuidGenerator = '/generators/uuid';
   static const lipsumGenerator = '/generators/lipsum';
   static const sqlFormatter = '/formatters/sql';
-  static const jsonFormatter = '/formatters/json';
+  static const JsonFormatter = '/formatters/json';
   static const xmlFormatter = '/formatters/xml';
   static const htmlEncoder = "/encoders/html";
   static const textEscape = "/text/escape";
@@ -17,6 +17,7 @@ class Routes {
   static const settings = "/settings";
   static const base64TextEncoder = '/encoders/base64text';
   static const base64ImageEncoder = '/encoder/base64image';
+  static const jsonToClass = '/converters/JsonToClass';
   static var timestampConverter;
   static var jsonYamlConverter;
   static var cronParser;

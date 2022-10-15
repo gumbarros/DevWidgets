@@ -75,6 +75,11 @@ class EnglishTranslations {
         "input": "Input",
         "invalid_json_data": "Invalid JSON data.",
         "invalid_xml_data": "Invalid XML data.",
+        "json_to_class": "JSON To Class",
+        "class_name": "Class name",
+        "programming_language": "Programming language",
+        "json_to_class_description":
+            "Convert JSON data to a programming language class.",
         "json_formatter": "JSON Formatter",
         "json_formatter_description": "Indent or minify JSON data",
         "json_yaml_converter": "JSON <> YAML",

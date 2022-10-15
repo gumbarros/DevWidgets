@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 class TextDiffControllerBinding extends Bindings {
   @override
   void dependencies() {
-    var tool = getTool<TextDiffTool>();
+    final tool = getTool<TextDiffTool>();
 
     Get.lazyPut<TextDiffController>(() => TextDiffController(tool));
   }

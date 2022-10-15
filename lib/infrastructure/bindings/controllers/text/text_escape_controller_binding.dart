@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 class TextEscapeControllerBinding extends Bindings {
   @override
   void dependencies() {
-    var tool = getTool<TextEscapeTool>();
+    final tool = getTool<TextEscapeTool>();
 
     Get.lazyPut<TextEscapeController>(() => TextEscapeController(tool));
   }

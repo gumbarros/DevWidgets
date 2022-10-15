@@ -1,4 +1,4 @@
 abstract class Encoder {
-  String encode(String content);
-  String decode(String content);
+  encode(content);
+  decode(content);
 }

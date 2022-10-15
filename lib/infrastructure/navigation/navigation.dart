@@ -1,3 +1,4 @@
+import 'package:devtoys/infrastructure/bindings/controllers/encoders/base64_image_encoder_controller_binding.dart';
 import 'package:devtoys/infrastructure/bindings/controllers/encoders/base64_text_encoder_controller_binding.dart';
 import 'package:devtoys/infrastructure/bindings/controllers/encoders/html_encoder_controller_binding.dart';
 import 'package:devtoys/infrastructure/bindings/controllers/encoders/url_encoder_controller_binding.dart';
@@ -11,6 +12,7 @@ import 'package:devtoys/infrastructure/bindings/controllers/settings_controller_
 import 'package:devtoys/infrastructure/bindings/controllers/text/markdown_preview_controller_binding.dart';
 import 'package:devtoys/infrastructure/bindings/controllers/text/text_diff_controller_binding.dart';
 import 'package:devtoys/infrastructure/bindings/controllers/text/text_escape_controller_binding.dart';
+import 'package:devtoys/presentation/encoders/views/base64_image_encoder_view.dart';
 import 'package:devtoys/presentation/encoders/views/base64_text_encoder_view.dart';
 import 'package:devtoys/presentation/encoders/views/html_encoder_view.dart';
 import 'package:devtoys/presentation/encoders/views/url_encoder_view.dart';
@@ -93,6 +95,11 @@ class Navigation {
       name: Routes.base64TextEncoder,
       page: () => const Base64TextEncoderView(),
       binding: Base64TextEncoderControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.base64ImageEncoder,
+      page: () => const Base64ImageEncoderView(),
+      binding: Base64ImageEncoderControllerBinding(),
     ),
   ];
 }

@@ -5,7 +5,7 @@ import 'package:devtoys/domain/models/tools/encoders/base64_encoding_type.dart';
 
 class Base64TextEncoder implements Encoder {
   @override
-  String decode(String content,
+  String decode(content,
       {Base64EncodingType? encodingType = Base64EncodingType.ascii}) {
     final bytes = base64.decode(content);
 
@@ -15,7 +15,7 @@ class Base64TextEncoder implements Encoder {
   }
 
   @override
-  String encode(String content,
+  String encode(content,
       {Base64EncodingType? encodingType = Base64EncodingType.ascii}) {
     final bytes = encodingType == Base64EncodingType.ascii
         ? ascii.encoder.convert(content)

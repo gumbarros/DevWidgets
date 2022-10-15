@@ -26,6 +26,14 @@ class EnglishTranslations {
         "base64_text_encoder": "Base 64 Text Encoder / Decoder",
         "base64_text_encoder_description": "Encode and Decode Base64 text data",
         "base64_text_encoder_menu_name": "Base 64 Text",
+        "base64_image_encoder": "Base 64 Image Encoder / Decoder",
+        "base64_image_encoder_description":
+            "Encode and Decode Base64 image data",
+        "base64_image_encoder_menu_name": "Base 64 Image",
+        "upload_image": "Upload Image",
+        "download_image": "Download Image",
+        "success": "Success !",
+        "file_saved_to_documents": "File saved to the documents folder.",
         "encoding": "Encoding",
         "encoding_description": "Select which encoding you want to use",
         "diff_mode_efficiency":

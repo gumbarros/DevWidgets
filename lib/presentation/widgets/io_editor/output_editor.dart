@@ -27,6 +27,9 @@ class OutputEditor extends StatelessWidget {
   final double? height;
   @override
   Widget build(BuildContext context) {
+    assert(outputChild == null || actionButtons == null,
+        "You cannot have both outputChild and actionButtons.");
+
     return Visibility(
       visible: outputChild == null,
       replacement: outputChild ?? SizedBox.shrink(),

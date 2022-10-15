@@ -1,3 +1,4 @@
+import 'package:devtoys/domain/helpers/encoders/base_64_image_encoder.dart';
 import 'package:devtoys/domain/helpers/encoders/base_64_text_encoder.dart';
 import 'package:devtoys/domain/helpers/encoders/html_encoder.dart';
 import 'package:devtoys/domain/helpers/encoders/url_encoder.dart';
@@ -5,6 +6,7 @@ import 'package:devtoys/domain/helpers/formatters/json_formatter.dart';
 import 'package:devtoys/domain/helpers/formatters/sql_formatter.dart';
 import 'package:devtoys/domain/helpers/formatters/xml_formatter.dart';
 import 'package:devtoys/domain/helpers/text/text_escaper.dart';
+import 'package:devtoys/domain/models/tools/encoders/base64_image_encoder_tool.dart';
 import 'package:devtoys/domain/models/tools/encoders/base64_text_encoder_tool.dart';
 import 'package:devtoys/domain/models/tools/encoders/html_encoder_tool.dart';
 import 'package:devtoys/domain/models/tools/encoders/url_encoder_tool.dart';
@@ -33,7 +35,8 @@ class ToolsBinding extends Bindings {
       URLEncoderTool(URLEncoder()),
       LipsumGeneratorTool(),
       UuidGeneratorTool(),
-      Base64TextEncoderTool(Base64TextEncoder())
+      Base64TextEncoderTool(Base64TextEncoder()),
+      Base64ImageEncoderTool(Base64ImageEncoder())
     ];
 
     tools.sort((a, b) => a.group.name.compareTo(b.group.name));

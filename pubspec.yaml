@@ -9,6 +9,7 @@ dependencies:
   auto_size_text: ^3.0.0
   code_text_field: ^1.0.2
   dropdown_search: ^5.0.3
+  file_picker: ^5.2.1
   flutter:
     sdk: flutter
   flutter_markdown: ^0.6.12
@@ -17,10 +18,13 @@ dependencies:
   get_storage: ^2.0.3
   google_fonts: ^3.0.1
   html_unescape: ^2.0.0
+  image_downloader_web: ^1.0.2
   ipsum: ^1.0.1
   layout: ^1.0.3
+  path_provider: ^2.0.11
   pretty_diff_text: ^1.0.0
   resizable_widget: ^1.0.5
+  screenshot: ^1.2.3
   uuid: ^3.0.6
   xml: ^6.1.0
   yaru: ^0.3.3

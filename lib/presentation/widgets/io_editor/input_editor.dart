@@ -5,16 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class InputEditor extends StatelessWidget {
-  const InputEditor({
-    Key? key,
-    this.inputChild,
-    required this.inputController,
-    this.width,
-    this.height,
-    this.toolbarTitle,
-    this.isVerticalLayout = false,
-    this.usesCodeControllers = true,
-  }) : super(key: key);
+  const InputEditor(
+      {Key? key,
+      this.inputChild,
+      required this.inputController,
+      this.width,
+      this.height,
+      this.toolbarTitle,
+      this.isVerticalLayout = false,
+      this.usesCodeControllers = true})
+      : super(key: key);
 
   final Widget? inputChild;
   final TextEditingController? inputController;

@@ -73,6 +73,7 @@ class EnglishTranslations {
             "Encode or decode all the applicable characters to their corresponding HTML entities",
         "indentation": "Indentation",
         "input": "Input",
+        "conversion_type": "Conversion type",
         "invalid_json_data": "Invalid JSON data.",
         "invalid_xml_data": "Invalid XML data.",
         "json_to_class": "JSON To Class",

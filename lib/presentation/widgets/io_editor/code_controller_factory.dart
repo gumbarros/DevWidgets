@@ -18,7 +18,7 @@ class CodeControllerFactory {
 
   static CodeController getInstance(
       {required language, bool useWebFix = true}) {
-    return CodeController(
+    return new CodeController(
         language: language,
         theme: _getCodeControllerTheme(),
         webSpaceFix: useWebFix);

@@ -1,3 +1,4 @@
+import 'package:devtoys/domain/helpers/converters/json_yaml_converter.dart';
 import 'package:devtoys/domain/models/groups/group.dart';
 import 'package:devtoys/domain/models/groups/converters_group.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
@@ -7,7 +8,7 @@ import 'package:get/get.dart';
 
 class JsonYamlConverterTool implements Tool {
   @override
-  IconData get icon => Icons.data_object;
+  IconData get icon => Icons.compare_arrows;
 
   @override
   String get homeTitle => "json_yaml_converter".tr;
@@ -22,8 +23,10 @@ class JsonYamlConverterTool implements Tool {
   Group get group => ConvertersGroup();
 
   @override
-  String get commandLineArgName => "json-yaml";
+  String get commandLineArgName => "jsonYaml";
 
   @override
-  String get menuName => throw UnimplementedError();
+  String get menuName => "json_yaml_converter".tr;
+
+  JsonYamlConverter get converter => JsonYamlConverter();
 }

@@ -1,4 +1,5 @@
 import 'package:devtoys/infrastructure/bindings/controllers/converters/json_to_class_converter_controller_binding.dart';
+import 'package:devtoys/infrastructure/bindings/controllers/converters/json_yaml_converter_controller.dart';
 import 'package:devtoys/infrastructure/bindings/controllers/encoders/base64_image_encoder_controller_binding.dart';
 import 'package:devtoys/infrastructure/bindings/controllers/encoders/base64_text_encoder_controller_binding.dart';
 import 'package:devtoys/infrastructure/bindings/controllers/encoders/html_encoder_controller_binding.dart';
@@ -14,6 +15,7 @@ import 'package:devtoys/infrastructure/bindings/controllers/text/markdown_previe
 import 'package:devtoys/infrastructure/bindings/controllers/text/text_diff_controller_binding.dart';
 import 'package:devtoys/infrastructure/bindings/controllers/text/text_escape_controller_binding.dart';
 import 'package:devtoys/presentation/converters/views/json_to_class_converter_view.dart';
+import 'package:devtoys/presentation/converters/views/json_yaml_converter_view.dart';
 import 'package:devtoys/presentation/encoders/views/base64_image_encoder_view.dart';
 import 'package:devtoys/presentation/encoders/views/base64_text_encoder_view.dart';
 import 'package:devtoys/presentation/encoders/views/html_encoder_view.dart';
@@ -107,6 +109,11 @@ class Navigation {
       name: Routes.jsonToClass,
       page: () => const JsonToClassConverterView(),
       binding: JsonToClassConverterControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.jsonYamlConverter,
+      page: () => const JsonYamlConverterView(),
+      binding: JsonYamlConverterControllerBinding(),
     ),
   ];
 }

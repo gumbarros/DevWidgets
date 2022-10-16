@@ -17,9 +17,9 @@ class Routes {
   static const settings = "/settings";
   static const base64TextEncoder = '/encoders/base64text';
   static const base64ImageEncoder = '/encoder/base64image';
-  static const jsonToClass = '/converters/JsonToClass';
+  static const jsonToClass = '/converters/jsonToClass';
+  static const jsonYamlConverter = '/converters/jsonYaml';
   static var timestampConverter;
-  static var jsonYamlConverter;
   static var cronParser;
   static var numberBase;
 

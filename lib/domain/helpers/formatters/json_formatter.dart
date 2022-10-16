@@ -42,8 +42,9 @@ class JsonFormatter implements Formatter {
       return json;
     } else if (json.value is Map) {
       for (var entry in json.value.entries) {
-        if (entry.value is List || entry.value is Map)
-          json[entry.key] = _sort(entry);
+        if (entry.value is List || entry.value is Map) {
+          json.value[entry.key] = _sort(entry);
+        }
       }
     } else if (json.value is List) {
       for (var i = 0; i < json.value.length; i++) {

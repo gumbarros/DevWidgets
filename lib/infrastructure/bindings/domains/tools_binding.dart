@@ -7,6 +7,7 @@ import 'package:devtoys/domain/helpers/formatters/sql_formatter.dart';
 import 'package:devtoys/domain/helpers/formatters/xml_formatter.dart';
 import 'package:devtoys/domain/helpers/text/text_escaper.dart';
 import 'package:devtoys/domain/models/tools/converters/json_to_class_converter_tool.dart';
+import 'package:devtoys/domain/models/tools/converters/json_yaml_converter_tool.dart';
 import 'package:devtoys/domain/models/tools/encoders/base64_image_encoder_tool.dart';
 import 'package:devtoys/domain/models/tools/encoders/base64_text_encoder_tool.dart';
 import 'package:devtoys/domain/models/tools/encoders/html_encoder_tool.dart';
@@ -38,7 +39,8 @@ class ToolsBinding extends Bindings {
       UuidGeneratorTool(),
       Base64TextEncoderTool(Base64TextEncoder()),
       Base64ImageEncoderTool(Base64ImageEncoder()),
-      JsonToClassConverterTool()
+      JsonToClassConverterTool(),
+      JsonYamlConverterTool()
     ];
 
     tools.sort((a, b) => a.group.name.compareTo(b.group.name));

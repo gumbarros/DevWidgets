@@ -5,7 +5,7 @@ import 'package:devtoys/domain/helpers/utils.dart';
 import 'package:devtoys/domain/models/tools/converters/programming_language.dart';
 import 'package:get/get.dart';
 
-class JsonToClass {
+class JsonToClassConverter {
   String convert(String data,
       {required String className, required ProgrammingLanguage language}) {
     try {

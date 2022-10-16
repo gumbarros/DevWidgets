@@ -1,4 +1,4 @@
-import 'package:devtoys/domain/helpers/converters/json_to_class/json_to_class.dart';
+import 'package:devtoys/domain/helpers/converters/json_to_class/json_to_class_converter.dart';
 import 'package:devtoys/domain/models/groups/converters_group.dart';
 import 'package:devtoys/domain/models/groups/group.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
@@ -28,5 +28,5 @@ class JsonToClassConverterTool implements Tool {
   @override
   String get menuName => "json_to_class".tr;
 
-  JsonToClass get converter => JsonToClass();
+  JsonToClassConverter get converter => JsonToClassConverter();
 }

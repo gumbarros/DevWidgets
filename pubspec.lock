@@ -303,6 +303,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.4"
+  json2yaml:
+    dependency: "direct main"
+    description:
+      name: json2yaml
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.0"
   json_ast:
     dependency: transitive
     description:
@@ -589,7 +596,7 @@ packages:
     source: hosted
     version: "6.1.0"
   yaml:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: yaml
       url: "https://pub.dartlang.org"

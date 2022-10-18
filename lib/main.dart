@@ -12,14 +12,14 @@ import 'package:responsive_framework/responsive_framework.dart';
 import 'package:yaru/yaru.dart';
 import 'infrastructure/navigation/navigation.dart';
 
-main(List<String> arguments) async {
+main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
   await GetStorage.init();
 
   if (GetPlatform.isDesktop)
     await DesktopWindow.setMinWindowSize(Size(1000, 800));
 
-  final String initialRoute = Routes.getToolRouteByCommandLineArgs(arguments);
+  final String initialRoute = Routes.getToolRouteByCommandLineArgs(args);
   runApp(Main(initialRoute: initialRoute));
 }
 
@@ -58,10 +58,15 @@ class Main extends StatelessWidget {
                       ),
                       defaultScale: true,
                       breakpoints: [
-                        ResponsiveBreakpoint.resize(480, name: MOBILE),
-                        ResponsiveBreakpoint.autoScale(800, name: TABLET),
-                        ResponsiveBreakpoint.resize(1000, name: DESKTOP),
-                        ResponsiveBreakpoint.autoScale(2460, name: '4K'),
+                        const ResponsiveBreakpoint.resize(360),
+                        const ResponsiveBreakpoint.resize(480, name: MOBILE),
+                        const ResponsiveBreakpoint.resize(640,
+                            name: 'MOBILE_LARGE'),
+                        const ResponsiveBreakpoint.autoScale(850, name: TABLET),
+                        const ResponsiveBreakpoint.resize(1080, name: DESKTOP),
+                        const ResponsiveBreakpoint.resize(1440,
+                            name: 'DESKTOP_LARGE'),
+                        const ResponsiveBreakpoint.autoScale(2460, name: '4k'),
                       ],
                     ));
           },

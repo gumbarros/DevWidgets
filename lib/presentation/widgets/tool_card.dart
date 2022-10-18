@@ -7,60 +7,45 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 
 class ToolCard extends StatelessWidget {
   final Tool tool;
-  final Rx<Color> cardColor = Colors.transparent.obs;
+  final RxBool isFavoriteVisible = false.obs;
 
   ToolCard(this.tool);
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: const BorderRadius.all(Radius.circular(8.0)),
-      ),
+    return Card(
+      surfaceTintColor: Colors.transparent,
       child: Obx(
-        () => Card(
-          surfaceTintColor: cardColor.value,
+        () => MouseRegion(
+          onEnter: (_) => isFavoriteVisible.value = true,
+          onExit: (_) => isFavoriteVisible.value = false,
           child: YaruSelectableContainer(
-            selected: false,
             onTap: () => Get.toNamed(tool.route),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
+            selected: false,
+            child: Stack(
+              children: <Widget>[
                 Container(
-                    width: 100,
-                    height: 100,
-                    // margin: const EdgeInsets.all(50.0),
-                    decoration: BoxDecoration(
-                        color: Get.theme.hoverColor,
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(8.0))),
-                    child: Center(
-                        child: !tool.icon.isMaterialIcon()
-                            ? FaIcon(
-                                tool.icon,
-                                size: 35,
-                              )
-                            : Icon(tool.icon, size: 40))),
-                SizedBox(
-                  width: Get.width / 7,
-                  height: Get.height / 7,
-                  child: Column(
-                    children: [
-                      Text(
-                        tool.homeTitle,
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
-                        textAlign: TextAlign.center,
-                      ),
-                      Flexible(
-                        child: Text(tool.description,
-                            style: TextStyle(
-                                fontSize: 14, fontWeight: FontWeight.normal),
-                            textAlign: TextAlign.center,
-                            overflow: TextOverflow.fade),
-                      ),
-                    ],
+                  height: 200,
+                  child: ListTile(
+                    leading: tool.icon.isMaterialIcon()
+                        ? Icon(tool.icon)
+                        : FaIcon(tool.icon),
+                    title: Text(tool.homeTitle),
+                    subtitle: Text(
+                      tool.description,
+                      overflow: TextOverflow.fade,
+                    ),
                   ),
-                )
+                ),
+                Visibility(
+                  visible: isFavoriteVisible.value,
+                  child: Align(
+                    alignment: Alignment.topRight,
+                    child: IconButton(
+                      icon: Icon(Icons.star_border),
+                      onPressed: () {},
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

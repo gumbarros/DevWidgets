@@ -18,14 +18,13 @@ class HomeView extends GetView<HomeController> {
           padding: EdgeInsets.all(8.0),
           shrinkWrap: true,
           gridDelegate: ResponsiveGridDelegate(
-            maxCrossAxisExtent: Get.width / 8,
-            crossAxisSpacing: Get.width / 50,
-            mainAxisSpacing: Get.height / 25,
-            childAspectRatio: 2 / 3,
-          ),
-          itemBuilder: (BuildContext context, int index) {
-            return ToolCard(controller.tools[index]);
-          },
+              crossAxisSpacing: 150,
+              mainAxisSpacing: 50,
+              childAspectRatio: 3 / 1.5,
+              maxCrossAxisExtent: 300,
+              minCrossAxisExtent: 300),
+          itemBuilder: (BuildContext context, int index) =>
+              ToolCard(controller.tools[index]),
         ));
   }
 }

@@ -1,7 +1,7 @@
 import 'package:devtoys/domain/models/described_enum.dart';
+import 'package:devtoys/presentation/global_settings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:layout/layout.dart';
 
 List<DropdownMenuItem<T>> getDropdownMenuItems<T extends DescribedEnum>(
     List<T> enums) {
@@ -10,6 +10,4 @@ List<DropdownMenuItem<T>> getDropdownMenuItems<T extends DescribedEnum>(
       .toList();
 }
 
-extension LayoutBreakpointExtensions on LayoutBreakpoint {
-  bool isSmall() => this.isXs || this.isS;
-}
+bool isCompactLayout(BuildContext context) => GlobalSettings.compactMode.value;

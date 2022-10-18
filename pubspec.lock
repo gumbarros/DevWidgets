@@ -29,13 +29,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.9.0"
-  auto_size_text:
-    dependency: "direct main"
-    description:
-      name: auto_size_text
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "3.0.0"
   boolean_selector:
     dependency: transitive
     description:
@@ -67,10 +60,12 @@ packages:
   code_text_field:
     dependency: "direct main"
     description:
-      name: code_text_field
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.2"
+      path: "."
+      ref: "66d4e56f14bc0073cd967149a929c6b670ffc74c"
+      resolved-ref: "66d4e56f14bc0073cd967149a929c6b670ffc74c"
+      url: "https://github.com/BertrandBev/code_field"
+    source: git
+    version: "1.0.3"
   collection:
     dependency: transitive
     description:
@@ -113,6 +108,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.7.8"
+  desktop_window:
+    dependency: "direct main"
+    description:
+      name: desktop_window
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.0"
   diff_match_patch:
     dependency: transitive
     description:
@@ -198,13 +200,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "10.2.1"
-  gap:
-    dependency: transitive
-    description:
-      name: gap
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.0.0"
   get:
     dependency: "direct main"
     description:
@@ -324,13 +319,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.5"
-  layout:
-    dependency: "direct main"
-    description:
-      name: layout
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.3"
   linked_scroll_controller:
     dependency: transitive
     description:
@@ -478,6 +466,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.5"
+  responsive_framework:
+    dependency: "direct main"
+    description:
+      name: responsive_framework
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.0"
   screenshot:
     dependency: "direct main"
     description:

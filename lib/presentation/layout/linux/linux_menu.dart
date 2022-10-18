@@ -1,4 +1,3 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:devtoys/domain/models/groups/group.dart';
 import 'package:devtoys/domain/models/tools/home_tool.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
@@ -10,7 +9,6 @@ import 'package:devtoys/presentation/helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:layout/layout.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 const double _kScrollbarThickness = 8.0;
@@ -48,8 +46,7 @@ class LinuxMenu extends StatelessWidget {
           ),
         ),
         Visibility(
-          visible: !context.layout.breakpoint.isSmall() &&
-              !GlobalSettings.compactMode.value,
+          visible: !isCompactLayout(context),
           child: SizedBox(
               width: Get.width,
               height: Get.height / 20,
@@ -71,8 +68,7 @@ class LinuxMenu extends StatelessWidget {
                   vertical: 8.0,
                 ),
                 child: Visibility(
-                  visible: !context.layout.breakpoint.isSmall() &&
-                      !GlobalSettings.compactMode.value,
+                  visible: !isCompactLayout(context),
                   replacement: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: IconButton(
@@ -86,14 +82,13 @@ class LinuxMenu extends StatelessWidget {
                   ),
                   child: YaruExpandable(
                     isExpanded: true,
+                    onChange: (_) => Get.toNamed('/home'),
                     header: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Row(
-                          mainAxisAlignment:
-                              !context.layout.breakpoint.isSmall() &&
-                                      !GlobalSettings.compactMode.value
-                                  ? MainAxisAlignment.center
-                                  : MainAxisAlignment.start,
+                          mainAxisAlignment: !isCompactLayout(context)
+                              ? MainAxisAlignment.center
+                              : MainAxisAlignment.start,
                           children: [
                             FaIcon(
                               group.icon,
@@ -101,7 +96,7 @@ class LinuxMenu extends StatelessWidget {
                             ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: AutoSizeText(
+                              child: Text(
                                 group.name,
                                 overflow: TextOverflow.fade,
                                 style: TextStyle(fontSize: 17),

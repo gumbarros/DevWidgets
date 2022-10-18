@@ -1,10 +1,9 @@
 import 'package:devtoys/domain/models/tools/tool.dart';
 import 'package:devtoys/presentation/global_settings.dart';
-import 'package:devtoys/presentation/layout/linux/linux_menu.dart';
 import 'package:devtoys/presentation/helpers.dart';
+import 'package:devtoys/presentation/layout/linux/linux_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:layout/layout.dart';
 
 class LinuxLayout extends StatelessWidget {
   final Widget? child;
@@ -24,15 +23,9 @@ class LinuxLayout extends StatelessWidget {
               children: [
                 Obx(
                   () => SizedBox(
-                    width: !context.layout.breakpoint.isSmall() &&
-                            !GlobalSettings.compactMode.value
-                        ? context.layout.value(
-                            xs: Get.width / 5,
-                            sm: Get.width / 5,
-                            md: Get.width / 5,
-                            lg: Get.width / 6,
-                            xl: Get.width / 7)
-                        : 80,
+                    width: isCompactLayout(context)
+                        ? Get.width / 12
+                        : Get.width / 6,
                     child: Container(
                       decoration: BoxDecoration(
                         border: Border(

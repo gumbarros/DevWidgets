@@ -4,7 +4,7 @@ import 'package:devtoys/presentation/widgets/default_app_bar.dart';
 import 'package:devtoys/presentation/widgets/tool_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:layout/layout.dart';
+import 'package:responsive_framework/responsive_grid.dart';
 
 class HomeView extends GetView<HomeController> {
   const HomeView({Key? key}) : super(key: key);
@@ -12,21 +12,20 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: DefaultAppBar(title: HomeTool().homeTitle),
-      body: SingleChildScrollView(
-          child: GridView.builder(
-        itemCount: controller.tools.length,
-        shrinkWrap: true,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisSpacing: 8,
-            mainAxisSpacing: 10,
-            childAspectRatio: .7,
-            crossAxisCount:
-                context.layout.value(xs: 1, sm: 2, md: 3, lg: 5, xl: 7)),
-        itemBuilder: (BuildContext context, int index) {
-          return ToolCard(controller.tools[index]);
-        },
-      )),
-    );
+        appBar: DefaultAppBar(title: HomeTool().homeTitle),
+        body: ResponsiveGridView.builder(
+          itemCount: controller.tools.length,
+          padding: EdgeInsets.all(8.0),
+          shrinkWrap: true,
+          gridDelegate: ResponsiveGridDelegate(
+            maxCrossAxisExtent: Get.width / 8,
+            crossAxisSpacing: Get.width / 50,
+            mainAxisSpacing: Get.height / 25,
+            childAspectRatio: 2 / 3,
+          ),
+          itemBuilder: (BuildContext context, int index) {
+            return ToolCard(controller.tools[index]);
+          },
+        ));
   }
 }

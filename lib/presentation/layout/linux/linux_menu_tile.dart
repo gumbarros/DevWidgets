@@ -4,7 +4,6 @@ import 'package:devtoys/presentation/helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:layout/layout.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 class LinuxMenuTile extends StatelessWidget {
@@ -30,8 +29,7 @@ class LinuxMenuTile extends StatelessWidget {
             : null,
       ),
       child: Obx(
-        () => !context.layout.breakpoint.isSmall() &&
-                !GlobalSettings.compactMode.value
+        () => !isCompactLayout(context)
             ? ListTile(
                 textColor: Theme.of(context).colorScheme.onSurface,
                 selectedColor: Theme.of(context).colorScheme.onSurface,

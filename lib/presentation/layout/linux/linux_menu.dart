@@ -1,7 +1,7 @@
 import 'package:devtoys/domain/models/groups/group.dart';
 import 'package:devtoys/domain/models/tools/home_tool.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
-import 'package:devtoys/presentation/global_settings.dart';
+import 'package:devtoys/infrastructure/global_settings.dart';
 import 'package:devtoys/presentation/layout/linux/linux_menu_item.dart';
 import 'package:devtoys/presentation/layout/linux/linux_menu_search_box.dart';
 import 'package:devtoys/presentation/layout/linux/linux_menu_tile.dart';
@@ -28,23 +28,6 @@ class LinuxMenu extends StatelessWidget {
 
     return ListView(
       children: [
-        Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: scrollbarThicknessWithTrack,
-            vertical: 8.0,
-          ),
-          child: LinuxMenuTile(
-            selected: GlobalSettings.selectedToolName.value ==
-                HomeTool().runtimeType.toString(),
-            title: YaruPageItemTitle.text(HomeTool().menuName),
-            icon: HomeTool().icon,
-            onTap: () {
-              GlobalSettings.selectedToolName.value =
-                  HomeTool().runtimeType.toString();
-              Get.toNamed(HomeTool().route);
-            },
-          ),
-        ),
         Visibility(
           visible: !isCompactLayout(context),
           child: SizedBox(
@@ -57,6 +40,33 @@ class LinuxMenu extends StatelessWidget {
                     .toList(),
                 controller: new TextEditingController(),
               ))),
+        ),
+        Obx(
+          () => Column(
+            children: <Widget>[
+              LinuxMenuTile(
+                selected: GlobalSettings.selectedToolName.value ==
+                    HomeTool().name.toString(),
+                title: YaruPageItemTitle.text(HomeTool().menuName),
+                icon: HomeTool().icon,
+                onTap: () {
+                  GlobalSettings.selectedToolName.value =
+                      HomeTool().name.toString();
+                  Get.toNamed(HomeTool().route);
+                },
+              ),
+              for (Tool tool in GlobalSettings.getFavoriteTools())
+                LinuxMenuTile(
+                  selected: GlobalSettings.selectedToolName.value == tool.name,
+                  title: YaruPageItemTitle.text(tool.menuName),
+                  icon: tool.icon,
+                  onTap: () {
+                    GlobalSettings.selectedToolName.value = tool.name;
+                    Get.toNamed(HomeTool().route);
+                  },
+                ),
+            ],
+          ),
         ),
         Divider(),
         Column(
@@ -72,10 +82,7 @@ class LinuxMenu extends StatelessWidget {
                   replacement: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: IconButton(
-                        icon: FaIcon(
-                          group.icon,
-                          size: 18,
-                        ),
+                        icon: FaIcon(group.icon),
                         onPressed: () {
                           Get.toNamed('/home', arguments: [group.name]);
                         }),
@@ -90,17 +97,11 @@ class LinuxMenu extends StatelessWidget {
                               ? MainAxisAlignment.center
                               : MainAxisAlignment.start,
                           children: [
-                            FaIcon(
-                              group.icon,
-                              size: 18,
-                            ),
+                            FaIcon(group.icon),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Text(
-                                group.name,
-                                overflow: TextOverflow.fade,
-                                style: TextStyle(fontSize: 17),
-                              ),
+                              child:
+                                  Text(group.name, overflow: TextOverflow.fade),
                             )
                           ]),
                     ),

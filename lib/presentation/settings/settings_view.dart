@@ -1,6 +1,6 @@
 import 'package:devtoys/domain/models/tools/settings/settings_tool.dart';
 import 'package:devtoys/infrastructure/locale/translations.dart';
-import 'package:devtoys/presentation/global_settings.dart';
+import 'package:devtoys/infrastructure/global_settings.dart';
 import 'package:devtoys/presentation/settings/settings_controller.dart';
 import 'package:devtoys/presentation/widgets/default_app_bar.dart';
 import 'package:flutter/material.dart';

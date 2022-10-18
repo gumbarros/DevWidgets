@@ -28,7 +28,7 @@ class XmlFormatterTool extends FormatterTool implements Tool {
   Group get group => FormattersGroup();
 
   @override
-  String get commandLineArgName => "xmlformat";
+  String get name => "xmlformat";
 
   @override
   final XMLFormatter formatter;

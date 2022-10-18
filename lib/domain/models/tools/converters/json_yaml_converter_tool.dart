@@ -23,7 +23,7 @@ class JsonYamlConverterTool implements Tool {
   Group get group => ConvertersGroup();
 
   @override
-  String get commandLineArgName => "jsonYaml";
+  String get name => "jsonYaml";
 
   @override
   String get menuName => "json_yaml_converter".tr;

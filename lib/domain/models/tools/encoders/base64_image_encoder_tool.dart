@@ -27,7 +27,7 @@ class Base64ImageEncoderTool extends EncoderTool implements Tool {
   Group get group => EncodersGroup();
 
   @override
-  String get commandLineArgName => "base64image";
+  String get name => "base64image";
 
   @override
   String get menuName => "base64_image_encoder_menu_name".tr;

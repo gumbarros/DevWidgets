@@ -26,7 +26,7 @@ class HTMLEncoderTool extends EncoderTool implements Tool {
   Group get group => EncodersGroup();
 
   @override
-  String get commandLineArgName => "html";
+  String get name => "html";
 
   @override
   String get menuName => "html_encoder_menu_name".tr;

@@ -23,7 +23,7 @@ class MarkdownPreviewTool implements Tool {
   Group get group => TextGroup();
 
   @override
-  String get commandLineArgName => "markdown";
+  String get name => "markdown";
 
   @override
   String get menuName => "markdown_preview_menu_name".tr;

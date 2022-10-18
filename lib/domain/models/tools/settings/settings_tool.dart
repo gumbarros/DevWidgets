@@ -31,7 +31,7 @@ class SettingsTool implements Tool {
   String get description => "settings_description".tr;
 
   @override
-  String get commandLineArgName => "settings";
+  String get name => "settings";
 
   @override
   String get menuName => "settings_menu_name".tr;

@@ -27,7 +27,7 @@ class Base64TextEncoderTool extends EncoderTool implements Tool {
   Group get group => EncodersGroup();
 
   @override
-  String get commandLineArgName => "base64text";
+  String get name => "base64text";
 
   @override
   String get menuName => "base64_text_encoder_menu_name".tr;

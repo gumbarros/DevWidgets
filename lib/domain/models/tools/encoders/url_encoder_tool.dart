@@ -26,7 +26,7 @@ class URLEncoderTool extends EncoderTool implements Tool {
   Group get group => EncodersGroup();
 
   @override
-  String get commandLineArgName => "url-encode";
+  String get name => "url-encode";
 
   @override
   String get menuName => "url_encoder_menu_name".tr;

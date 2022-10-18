@@ -1,4 +1,6 @@
 import 'package:devtoys/domain/models/tools/home_tool.dart';
+import 'package:devtoys/domain/models/tools/tool.dart';
+import 'package:devtoys/infrastructure/bindings/domains/tools_binding.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -10,6 +12,8 @@ class GlobalSettings {
 
   static final Rx<bool> compactMode = false.obs;
   static final Rx<String> selectedToolName = (HomeTool).toString().obs;
+
+  static RxList<String>? _favorites;
 
   static Rx<ThemeMode>? _themeMode;
   static Rx<bool>? _highContrast;
@@ -87,7 +91,7 @@ class GlobalSettings {
   }
 
   static Future setTextEditorTheme(String? theme) async {
-    _getStorage.write("textEditorTheme", theme);
+    await _getStorage.write("textEditorTheme", theme);
 
     _textEditorTheme!.value = theme;
   }
@@ -101,7 +105,7 @@ class GlobalSettings {
   }
 
   static Future setTextEditorFontSize(double fontSize) async {
-    _getStorage.write("textEditorFontSize", fontSize);
+    await _getStorage.write("textEditorFontSize", fontSize);
 
     _textEditorFontSize!.value = fontSize;
   }
@@ -116,9 +120,57 @@ class GlobalSettings {
   }
 
   static Future setTextEditorFontFamily(String? fontFamily) async {
-    _getStorage.write("textEditorFontFamily", fontFamily);
+    await _getStorage.write("textEditorFontFamily", fontFamily);
 
     _textEditorFontFamily!.value = fontFamily!;
+  }
+
+  static List<Tool> getFavoriteTools() {
+    if (_favorites == null) {
+      final List<String> storedValue =
+          (_getStorage.read("favorites") ?? <String>[]);
+
+      _favorites = storedValue.obs;
+    }
+
+    final List<Tool> tools = [];
+
+    for (var toolName in _favorites!) {
+      tools.add(ToolsBinding.getToolByName(toolName));
+    }
+
+    return tools;
+  }
+
+  static RxList<String> _getRxFavorites() {
+    if (_favorites == null) {
+      final List<String>? storedValue =
+          _getStorage.read("favorites")?.cast<String>();
+
+      _favorites = (storedValue ?? []).obs;
+    }
+    return _favorites!;
+  }
+
+  static Future addFavorite(String toolName) async {
+    _favorites ??= <String>[].obs;
+
+    _favorites!.add(toolName);
+    await _getStorage.write("favorites", _favorites);
+  }
+
+  static Future removeFavorite(String toolName) async {
+    _favorites ??= <String>[].obs;
+
+    _favorites!.remove(toolName);
+
+    await _getStorage.write("favorites", _favorites);
+  }
+
+  static bool isFavorite(String toolName) {
+    _favorites ??= _getRxFavorites();
+
+    return _favorites!.contains(toolName);
   }
 }
 

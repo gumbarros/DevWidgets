@@ -1,5 +1,5 @@
 import 'package:devtoys/domain/models/described_enum.dart';
-import 'package:devtoys/presentation/global_settings.dart';
+import 'package:devtoys/infrastructure/global_settings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

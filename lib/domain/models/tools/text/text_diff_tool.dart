@@ -23,7 +23,7 @@ class TextDiffTool implements Tool {
   Group get group => TextGroup();
 
   @override
-  String get commandLineArgName => "diff";
+  String get name => "diff";
 
   TextDiffTool();
 

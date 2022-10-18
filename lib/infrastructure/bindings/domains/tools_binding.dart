@@ -48,6 +48,11 @@ class ToolsBinding extends Bindings {
     return tools;
   }
 
+  static Tool getToolByName(String name) {
+    final tools = Get.find<List<Tool>>();
+    return tools.firstWhere((t) => t.name == name);
+  }
+
   @override
   void dependencies() {
     Get.lazyPut<List<Tool>>(() => getAllTools());

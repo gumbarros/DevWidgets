@@ -23,7 +23,7 @@ class CronParserTool implements Tool {
   Group get group => ConvertersGroup();
 
   @override
-  String get commandLineArgName => "cron-parser";
+  String get name => "cron-parser";
 
   @override
   String get menuName => throw UnimplementedError();

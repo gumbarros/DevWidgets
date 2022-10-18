@@ -24,7 +24,7 @@ class TextEscapeTool implements Tool {
   Group get group => TextGroup();
 
   @override
-  String get commandLineArgName => "escape";
+  String get name => "escape";
 
   @override
   String get menuName => "text_escape_menu_name".tr;

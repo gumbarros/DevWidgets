@@ -23,7 +23,7 @@ class TimestampConverterTool implements Tool {
   Group get group => ConvertersGroup();
 
   @override
-  String get commandLineArgName => "timestamp";
+  String get name => "timestamp";
 
   @override
   String get menuName => throw UnimplementedError();

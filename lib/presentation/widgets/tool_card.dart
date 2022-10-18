@@ -1,5 +1,6 @@
 import 'package:devtoys/domain/extensions/icon_data_extensions.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
+import 'package:devtoys/infrastructure/global_settings.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -32,7 +33,8 @@ class ToolCard extends StatelessWidget {
                     title: Text(tool.homeTitle),
                     subtitle: Text(
                       tool.description,
-                      overflow: TextOverflow.fade,
+                      maxLines: 3,
+                      overflow: TextOverflow.ellipsis,
                     ),
                   ),
                 ),
@@ -41,8 +43,16 @@ class ToolCard extends StatelessWidget {
                   child: Align(
                     alignment: Alignment.topRight,
                     child: IconButton(
-                      icon: Icon(Icons.star_border),
-                      onPressed: () {},
+                      icon: Icon(GlobalSettings.isFavorite(tool.name)
+                          ? Icons.star
+                          : Icons.star_border),
+                      onPressed: () async {
+                        if (GlobalSettings.isFavorite(tool.name)) {
+                          await GlobalSettings.removeFavorite(tool.name);
+                        } else {
+                          await GlobalSettings.addFavorite(tool.name);
+                        }
+                      },
                     ),
                   ),
                 ),

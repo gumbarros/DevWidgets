@@ -1,5 +1,5 @@
 import 'package:devtoys/infrastructure/navigation/routes.dart';
-import 'package:devtoys/presentation/global_settings.dart';
+import 'package:devtoys/infrastructure/global_settings.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -29,10 +29,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
               onPressed: () => Get.toNamed(Routes.settings),
               icon: FaIcon(FontAwesomeIcons.gear))
         ],
-        title: Text(
-          title,
-          style: const TextStyle(fontSize: 24),
-        ));
+        title: Text(title));
   }
 
   @override

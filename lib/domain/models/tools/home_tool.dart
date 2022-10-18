@@ -31,7 +31,7 @@ class HomeTool implements Tool {
   String get description => "json_formatter_description".tr;
 
   @override
-  String get commandLineArgName => "home";
+  String get name => "home";
 
   @override
   String get menuName => "all_tools".tr;

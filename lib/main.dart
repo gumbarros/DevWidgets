@@ -59,14 +59,15 @@ class Main extends StatelessWidget {
                       defaultScale: true,
                       breakpoints: [
                         const ResponsiveBreakpoint.resize(360),
-                        const ResponsiveBreakpoint.resize(480, name: MOBILE),
+                        const ResponsiveBreakpoint.autoScaleDown(480,
+                            name: MOBILE),
                         const ResponsiveBreakpoint.resize(640,
                             name: 'MOBILE_LARGE'),
-                        const ResponsiveBreakpoint.autoScale(850, name: TABLET),
+                        const ResponsiveBreakpoint.resize(850, name: TABLET),
                         const ResponsiveBreakpoint.resize(1080, name: DESKTOP),
                         const ResponsiveBreakpoint.resize(1440,
                             name: 'DESKTOP_LARGE'),
-                        const ResponsiveBreakpoint.autoScale(2460, name: '4k'),
+                        const ResponsiveBreakpoint.resize(2460, name: '4k'),
                       ],
                     ));
           },

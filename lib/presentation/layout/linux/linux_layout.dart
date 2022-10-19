@@ -25,9 +25,7 @@ class LinuxLayout extends StatelessWidget {
                   () => AnimatedSize(
                     duration: const Duration(milliseconds: 500),
                     child: SizedBox(
-                      width: isCompactLayout(context)
-                          ? Get.width / 12
-                          : Get.width / 5,
+                      width: isCompactLayout(context) ? 80 : Get.width / 5,
                       child: Container(
                         decoration: BoxDecoration(
                           border: Border(

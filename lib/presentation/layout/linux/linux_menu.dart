@@ -33,15 +33,15 @@ class LinuxMenu extends StatelessWidget {
           child: Container(
               width: Get.width,
               padding: const EdgeInsets.all(8.0),
-              height: Get.height / 15,
-              child: Center(
-                  child: LinuxMenuSearchBox(
+              height: 50,
+              child: LinuxMenuSearchBox(
                 tools: tools
                     .map((t) => LinuxMenuItem(t.homeTitle, t.route))
                     .toList(),
                 controller: new TextEditingController(),
-              ))),
+              )),
         ),
+        Visibility(visible: !isCompactLayout(context), child: Divider()),
         Obx(
           () => Padding(
             padding: const EdgeInsets.all(8.0),
@@ -66,10 +66,17 @@ class LinuxMenu extends StatelessWidget {
                     icon: tool.icon,
                     onTap: () {
                       GlobalSettings.selectedToolName.value = tool.name;
-                      Get.toNamed(HomeTool().route);
+                      Get.toNamed(tool.route);
                     },
                   ),
-              ],
+              ]
+                  .map((e) => Container(
+                        child: e,
+                        padding: isCompactLayout(context)
+                            ? EdgeInsets.all(8.0)
+                            : null,
+                      ))
+                  .toList(),
             ),
           ),
         ),
@@ -103,8 +110,8 @@ class LinuxMenu extends StatelessWidget {
                               : MainAxisAlignment.start,
                           children: [
                             Icon(group.icon),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
+                            Container(
+                              margin: const EdgeInsets.only(left: 8.0),
                               child:
                                   Text(group.name, overflow: TextOverflow.fade),
                             )

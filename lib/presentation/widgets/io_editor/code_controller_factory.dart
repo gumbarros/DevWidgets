@@ -20,6 +20,7 @@ class CodeControllerFactory {
       {required language, bool useWebFix = true}) {
     return new CodeController(
         language: language,
+        // ignore: deprecated_member_use
         theme: _getCodeControllerTheme(),
         webSpaceFix: useWebFix);
   }

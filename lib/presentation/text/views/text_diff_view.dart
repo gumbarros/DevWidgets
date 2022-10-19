@@ -2,11 +2,12 @@ import 'package:devtoys/infrastructure/global_settings.dart';
 import 'package:devtoys/presentation/text/controllers/text_diff_controller.dart';
 import 'package:devtoys/presentation/widgets/default_app_bar.dart';
 import 'package:devtoys/presentation/widgets/io_editor/input_editor.dart';
+import 'package:devtoys/presentation/widgets/muli_split_view_divider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:multi_split_view/multi_split_view.dart';
 import 'package:pretty_diff_text/pretty_diff_text.dart';
-import 'package:resizable_widget/resizable_widget.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 class TextDiffView extends GetView<TextDiffController> {
@@ -81,20 +82,27 @@ class TextDiffView extends GetView<TextDiffController> {
               ),
               Container(
                   height: Get.height / 3,
-                  child: ResizableWidget(
-                    isDisabledSmartHide: true,
-                    children: [
-                      InputEditor(
-                          toolbarTitle: "old_text".tr,
-                          inputController: controller.oldTextController,
-                          height: Get.height / 3,
-                          usesCodeControllers: false),
-                      InputEditor(
-                          toolbarTitle: "new_text".tr,
-                          height: Get.height / 3,
-                          inputController: controller.newTextController,
-                          usesCodeControllers: false),
-                    ],
+                  child: MultiSplitViewTheme(
+                    data: MultiSplitViewThemeData(dividerThickness: 5),
+                    child: MultiSplitView(
+                      dividerBuilder: (axis, index, resizable, dragging,
+                              highlighted, themeData) =>
+                          MultiSplitViewDivider(
+                              dragging: dragging, highlighted: highlighted),
+                      axis: Axis.horizontal,
+                      children: [
+                        InputEditor(
+                            toolbarTitle: "old_text".tr,
+                            inputController: controller.oldTextController,
+                            height: Get.height / 3,
+                            usesCodeControllers: false),
+                        InputEditor(
+                            toolbarTitle: "new_text".tr,
+                            height: Get.height / 3,
+                            inputController: controller.newTextController,
+                            usesCodeControllers: false),
+                      ],
+                    ),
                   )),
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,

@@ -1,7 +1,9 @@
+import 'package:devtoys/presentation/helpers.dart';
 import 'package:devtoys/presentation/widgets/io_editor/input_editor.dart';
 import 'package:devtoys/presentation/widgets/io_editor/output_editor.dart';
+import 'package:devtoys/presentation/widgets/muli_split_view_divider.dart';
 import 'package:flutter/material.dart';
-import 'package:resizable_widget/resizable_widget.dart';
+import 'package:multi_split_view/multi_split_view.dart';
 
 class IOEditor extends StatelessWidget {
   final bool usesCodeControllers;
@@ -24,20 +26,30 @@ class IOEditor extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ResizableWidget(
-      isHorizontalSeparator: isVerticalLayout,
-      children: [
-        InputEditor(
-            inputChild: inputChild,
-            inputController: inputController,
-            isVerticalLayout: isVerticalLayout,
-            usesCodeControllers: usesCodeControllers),
-        OutputEditor(
-            outputChild: outputChild,
-            outputController: outputController,
-            isVerticalLayout: isVerticalLayout,
-            usesCodeControllers: usesCodeControllers)
-      ],
+    return MultiSplitViewTheme(
+      data: MultiSplitViewThemeData(dividerThickness: 5),
+      child: MultiSplitView(
+        axis: isVerticalLayout ? Axis.vertical : Axis.horizontal,
+        dividerBuilder: (axis, index, resizable, dragging, highlighted,
+                themeData) =>
+            MultiSplitViewDivider(dragging: dragging, highlighted: highlighted),
+        initialAreas: [
+          Area(weight: 0.5, minimalWeight: 0.3),
+          Area(weight: 0.5, minimalWeight: 0.3)
+        ],
+        children: [
+          InputEditor(
+              inputChild: inputChild,
+              inputController: inputController,
+              isVerticalLayout: isVerticalLayout,
+              usesCodeControllers: usesCodeControllers),
+          OutputEditor(
+              outputChild: outputChild,
+              outputController: outputController,
+              isVerticalLayout: isVerticalLayout,
+              usesCodeControllers: usesCodeControllers)
+        ],
+      ),
     );
   }
 }

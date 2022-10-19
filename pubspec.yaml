@@ -21,13 +21,12 @@ dependencies:
   get_storage: ^2.0.3
   google_fonts: ^3.0.1
   html_unescape: ^2.0.0
-  image_downloader_web: ^1.0.2
   ipsum: ^1.0.1
   json2yaml: ^3.0.0
   json_to_dart: ^1.0.5
+  multi_split_view: ^2.1.0
   path_provider: ^2.0.11
   pretty_diff_text: ^1.0.0
-  resizable_widget: ^1.0.5
   responsive_framework: ^0.2.0
   screenshot: ^1.2.3
   uuid: ^3.0.6

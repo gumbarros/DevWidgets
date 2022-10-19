@@ -4,7 +4,7 @@ import 'package:devtoys/presentation/widgets/io_editor/io_editor.dart';
 import 'package:devtoys/presentation/widgets/io_editor/io_toolbar.dart';
 import 'package:devtoys/presentation/widgets/io_editor/output_editor.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:get/get.dart';
 import 'package:screenshot/screenshot.dart';
 
@@ -29,13 +29,13 @@ class Base64ImageEncoderView extends GetView<Base64ImageEncoderController> {
                         actions: [
                           ElevatedButton.icon(
                               onPressed: controller.uploadImage,
-                              icon: FaIcon(FontAwesomeIcons.image),
+                              icon: Icon(Icons.image),
                               label: Text("upload_image".tr)),
                           Visibility(
                             visible: !GetPlatform.isWeb,
                             child: ElevatedButton.icon(
                                 onPressed: controller.downloadImage,
-                                icon: FaIcon(FontAwesomeIcons.download),
+                                icon: Icon(Icons.download),
                                 label: Text("download_image".tr)),
                           )
                         ],

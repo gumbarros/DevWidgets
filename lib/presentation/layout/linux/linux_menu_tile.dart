@@ -1,11 +1,7 @@
-import 'package:devtoys/domain/extensions/icon_data_extensions.dart';
-import 'package:devtoys/presentation/global_settings.dart';
+import 'package:devtoys/infrastructure/global_settings.dart';
 import 'package:devtoys/presentation/helpers.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:layout/layout.dart';
-import 'package:yaru_widgets/yaru_widgets.dart';
 
 class LinuxMenuTile extends StatelessWidget {
   const LinuxMenuTile({
@@ -30,8 +26,7 @@ class LinuxMenuTile extends StatelessWidget {
             : null,
       ),
       child: Obx(
-        () => !context.layout.breakpoint.isSmall() &&
-                !GlobalSettings.compactMode.value
+        () => !isCompactLayout(context)
             ? ListTile(
                 textColor: Theme.of(context).colorScheme.onSurface,
                 selectedColor: Theme.of(context).colorScheme.onSurface,
@@ -42,34 +37,13 @@ class LinuxMenuTile extends StatelessWidget {
                 shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(6.0)),
                 ),
-                leading: !icon.isMaterialIcon()
-                    ? FaIcon(
-                        icon,
-                        size: 20,
-                      )
-                    : Icon(icon, size: 25),
-                title: !GlobalSettings.compactMode.value ? _buildTitle() : null,
+                leading: Icon(icon),
+                title: !GlobalSettings.compactMode.value ? title : null,
                 selected: selected,
                 onTap: onTap,
               )
-            : IconButton(onPressed: onTap, icon: FaIcon(icon)),
+            : IconButton(onPressed: onTap, icon: Icon(icon)),
       ),
     );
-  }
-
-  Widget? _buildTitle() {
-    if (title == null) {
-      return title;
-    }
-
-    if (title is YaruPageItemTitle) {
-      return DefaultTextStyle.merge(
-        child: title!,
-        maxLines: 1,
-        overflow: TextOverflow.ellipsis,
-      );
-    }
-
-    return title;
   }
 }

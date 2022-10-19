@@ -3,12 +3,12 @@ import 'package:devtoys/domain/models/groups/text_group.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:get/get.dart';
 
 class MarkdownPreviewTool implements Tool {
   @override
-  IconData get icon => FontAwesomeIcons.markdown;
+  IconData get icon => Icons.insert_drive_file_sharp;
 
   @override
   String get homeTitle => "markdown_preview".tr;
@@ -23,8 +23,8 @@ class MarkdownPreviewTool implements Tool {
   Group get group => TextGroup();
 
   @override
-  String get commandLineArgName => "markdown";
+  String get name => "markdown";
 
   @override
-  String get menuName => "markdown_preview_menu_name".tr;
+  String get menuTitle => "markdown_preview_menu_name".tr;
 }

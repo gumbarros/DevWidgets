@@ -1,5 +1,5 @@
 import 'package:code_text_field/code_text_field.dart';
-import 'package:devtoys/presentation/global_settings.dart';
+import 'package:devtoys/infrastructure/global_settings.dart';
 import 'package:devtoys/presentation/widgets/io_editor/themes.dart';
 import 'package:get/get.dart';
 import 'package:flutter_highlight/themes/vs2015.dart';

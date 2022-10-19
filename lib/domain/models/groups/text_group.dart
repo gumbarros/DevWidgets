@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:get/get.dart';
 
 import 'group.dart';
@@ -14,7 +14,7 @@ class TextGroup implements Group {
   TextGroup._internal();
 
   @override
-  IconData get icon => FontAwesomeIcons.t;
+  IconData get icon => Icons.format_size;
 
   @override
   String get name => "text".tr;

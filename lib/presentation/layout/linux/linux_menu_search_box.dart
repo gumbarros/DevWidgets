@@ -24,13 +24,15 @@ class LinuxMenuSearchBox extends StatelessWidget {
             dropdownSearchDecoration: InputDecoration(
           prefixIcon: Icon(
             Icons.search,
-            size: 20,
           ),
           prefixIconConstraints: BoxConstraints.expand(width: 40, height: 40),
           hintText: "menu_search_bar_hint".tr,
           enabledBorder: const UnderlineInputBorder(
-            borderSide: BorderSide(color: Colors.transparent),
-          ),
+              borderSide: BorderSide(
+                color: Colors.transparent,
+                style: BorderStyle.solid,
+              ),
+              borderRadius: BorderRadius.all(Radius.circular(50.0))),
           border: const UnderlineInputBorder(),
         )),
         onChanged: (tool) {

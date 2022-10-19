@@ -23,10 +23,10 @@ class LipsumGeneratorTool implements Tool {
   Group get group => GeneratorsGroup();
 
   @override
-  String get commandLineArgName => "lipsum";
+  String get name => "lipsum";
 
   @override
-  String get menuName => "lipsum".tr;
+  String get menuTitle => "lipsum".tr;
 
   LipsumGenerator get generator => LipsumGenerator();
 }

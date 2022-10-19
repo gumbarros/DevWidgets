@@ -1,10 +1,9 @@
 import 'package:devtoys/domain/models/tools/tool.dart';
-import 'package:devtoys/presentation/global_settings.dart';
-import 'package:devtoys/presentation/layout/linux/linux_menu.dart';
+import 'package:devtoys/infrastructure/global_settings.dart';
 import 'package:devtoys/presentation/helpers.dart';
+import 'package:devtoys/presentation/layout/linux/linux_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:layout/layout.dart';
 
 class LinuxLayout extends StatelessWidget {
   final Widget? child;
@@ -23,29 +22,24 @@ class LinuxLayout extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Obx(
-                  () => SizedBox(
-                    width: !context.layout.breakpoint.isSmall() &&
-                            !GlobalSettings.compactMode.value
-                        ? context.layout.value(
-                            xs: Get.width / 5,
-                            sm: Get.width / 5,
-                            md: Get.width / 5,
-                            lg: Get.width / 6,
-                            xl: Get.width / 7)
-                        : 80,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        border: Border(
-                          right: BorderSide(
-                            width: 1,
-                            color: Colors.black.withOpacity(0.1),
+                  () => AnimatedSize(
+                    duration: const Duration(milliseconds: 500),
+                    child: SizedBox(
+                      width: isCompactLayout(context) ? 80 : Get.width / 5,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border(
+                            right: BorderSide(
+                              width: 1,
+                              color: Colors.black.withOpacity(0.1),
+                            ),
                           ),
                         ),
+                        child: LinuxMenu(
+                            tools: tools,
+                            selectedToolName:
+                                GlobalSettings.selectedToolName.value),
                       ),
-                      child: LinuxMenu(
-                          tools: tools,
-                          selectedToolName:
-                              GlobalSettings.selectedToolName.value),
                     ),
                   ),
                 ),

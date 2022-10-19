@@ -1,10 +1,10 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
-import 'package:devtoys/presentation/global_settings.dart';
+import 'package:devtoys/infrastructure/global_settings.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:get/get.dart';
-import 'package:layout/layout.dart';
+import 'package:responsive_framework/responsive_framework.dart' as responsive;
+import 'package:responsive_framework/responsive_framework.dart';
 
 class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -14,11 +14,10 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-        leading: Visibility(
-          visible:
-              !context.layout.breakpoint.isS && !context.layout.breakpoint.isXs,
+        leading: responsive.ResponsiveVisibility(
+          hiddenWhen: [responsive.Condition.smallerThan(name: MOBILE)],
           child: IconButton(
-            icon: FaIcon(FontAwesomeIcons.bars),
+            icon: Icon(Icons.menu),
             onPressed: () {
               GlobalSettings.compactMode.value =
                   !GlobalSettings.compactMode.value;
@@ -28,12 +27,9 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
         actions: [
           IconButton(
               onPressed: () => Get.toNamed(Routes.settings),
-              icon: FaIcon(FontAwesomeIcons.gear))
+              icon: Icon(Icons.settings))
         ],
-        title: AutoSizeText(
-          title,
-          style: const TextStyle(fontSize: 24),
-        ));
+        title: Text(title));
   }
 
   @override

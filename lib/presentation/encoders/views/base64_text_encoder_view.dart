@@ -5,7 +5,7 @@ import 'package:devtoys/presentation/widgets/default_app_bar.dart';
 import 'package:devtoys/presentation/helpers.dart';
 import 'package:devtoys/presentation/widgets/io_editor/io_editor.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:get/get.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -25,7 +25,7 @@ class Base64TextEncoderView extends GetView<Base64TextEncoderController> {
                 child: YaruSection(headline: "configuration".tr, children: [
                   YaruRow(
                     enabled: true,
-                    leadingWidget: FaIcon(FontAwesomeIcons.arrowRightArrowLeft),
+                    leadingWidget: Icon(Icons.compare_arrows_sharp),
                     trailingWidget: Padding(
                       child: ListTile(
                           title: Text("conversion".tr),
@@ -45,7 +45,7 @@ class Base64TextEncoderView extends GetView<Base64TextEncoderController> {
                   ),
                   YaruRow(
                     enabled: true,
-                    leadingWidget: FaIcon(FontAwesomeIcons.arrowRightArrowLeft),
+                    leadingWidget: Icon(Icons.grid_3x3),
                     trailingWidget: Padding(
                       child: ListTile(
                           title: Text("encoding".tr),

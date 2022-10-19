@@ -4,7 +4,7 @@ import 'package:devtoys/presentation/helpers.dart';
 import 'package:devtoys/presentation/widgets/default_app_bar.dart';
 import 'package:devtoys/presentation/widgets/io_editor/io_editor.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:get/get.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -24,7 +24,7 @@ class XMLFormatterView extends GetView<XMLFormatterController> {
                 child: YaruSection(headline: "configuration".tr, children: [
                   YaruRow(
                       enabled: true,
-                      leadingWidget: FaIcon(FontAwesomeIcons.rightLong),
+                      leadingWidget: Icon(Icons.arrow_right_alt),
                       trailingWidget: Padding(
                         child: Text(
                           "indentation".tr,

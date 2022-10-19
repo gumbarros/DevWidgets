@@ -5,7 +5,7 @@ import 'package:devtoys/presentation/helpers.dart';
 import 'package:devtoys/presentation/widgets/io_editor/output_editor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:get/get.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -25,7 +25,7 @@ class LipsumGeneratorView extends GetView<LipsumGeneratorController> {
                 child: YaruSection(headline: "configuration".tr, children: [
                   YaruRow(
                       enabled: true,
-                      leadingWidget: FaIcon(FontAwesomeIcons.textWidth),
+                      leadingWidget: Icon(Icons.width_normal),
                       trailingWidget: Padding(
                         child: ListTile(
                             title: Text("lipsum_generator_mode".tr),
@@ -43,7 +43,7 @@ class LipsumGeneratorView extends GetView<LipsumGeneratorController> {
                       )),
                   YaruRow(
                     enabled: true,
-                    leadingWidget: FaIcon(FontAwesomeIcons.rightLong),
+                    leadingWidget: Icon(Icons.fork_right),
                     trailingWidget: Padding(
                       child: ListTile(
                         title: Text("lipsum_start_with".tr),
@@ -60,7 +60,7 @@ class LipsumGeneratorView extends GetView<LipsumGeneratorController> {
                   ),
                   YaruRow(
                     enabled: true,
-                    leadingWidget: FaIcon(FontAwesomeIcons.hashtag),
+                    leadingWidget: Icon(Icons.tag),
                     trailingWidget: Padding(
                       child: ListTile(
                         title: Text("amount".tr),

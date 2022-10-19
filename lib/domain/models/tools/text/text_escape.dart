@@ -3,13 +3,13 @@ import 'package:devtoys/domain/models/groups/group.dart';
 import 'package:devtoys/domain/models/groups/text_group.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:get/get.dart';
 import '../tool.dart';
 
 class TextEscapeTool implements Tool {
   @override
-  IconData get icon => FontAwesomeIcons.slash;
+  IconData get icon => Icons.text_format;
 
   @override
   String get homeTitle => "text_escape".tr;
@@ -24,10 +24,10 @@ class TextEscapeTool implements Tool {
   Group get group => TextGroup();
 
   @override
-  String get commandLineArgName => "escape";
+  String get name => "escape";
 
   @override
-  String get menuName => "text_escape_menu_name".tr;
+  String get menuTitle => "text_escape_menu_name".tr;
 
   final TextEscaper escaper;
 

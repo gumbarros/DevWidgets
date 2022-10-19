@@ -1,16 +1,14 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:devtoys/domain/models/groups/group.dart';
 import 'package:devtoys/domain/models/tools/home_tool.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
-import 'package:devtoys/presentation/global_settings.dart';
+import 'package:devtoys/infrastructure/global_settings.dart';
 import 'package:devtoys/presentation/layout/linux/linux_menu_item.dart';
 import 'package:devtoys/presentation/layout/linux/linux_menu_search_box.dart';
 import 'package:devtoys/presentation/layout/linux/linux_menu_tile.dart';
 import 'package:devtoys/presentation/helpers.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:get/get.dart';
-import 'package:layout/layout.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 const double _kScrollbarThickness = 8.0;
@@ -30,36 +28,57 @@ class LinuxMenu extends StatelessWidget {
 
     return ListView(
       children: [
-        Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: scrollbarThicknessWithTrack,
-            vertical: 8.0,
-          ),
-          child: LinuxMenuTile(
-            selected: GlobalSettings.selectedToolName.value ==
-                HomeTool().runtimeType.toString(),
-            title: YaruPageItemTitle.text(HomeTool().menuName),
-            icon: HomeTool().icon,
-            onTap: () {
-              GlobalSettings.selectedToolName.value =
-                  HomeTool().runtimeType.toString();
-              Get.toNamed(HomeTool().route);
-            },
-          ),
-        ),
         Visibility(
-          visible: !context.layout.breakpoint.isSmall() &&
-              !GlobalSettings.compactMode.value,
-          child: SizedBox(
+          visible: !isCompactLayout(context),
+          child: Container(
               width: Get.width,
-              height: Get.height / 20,
-              child: Center(
-                  child: LinuxMenuSearchBox(
+              padding: const EdgeInsets.all(8.0),
+              height: 50,
+              child: LinuxMenuSearchBox(
                 tools: tools
                     .map((t) => LinuxMenuItem(t.homeTitle, t.route))
                     .toList(),
                 controller: new TextEditingController(),
-              ))),
+              )),
+        ),
+        Visibility(visible: !isCompactLayout(context), child: Divider()),
+        Obx(
+          () => Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: <Widget>[
+                LinuxMenuTile(
+                  selected: GlobalSettings.selectedToolName.value ==
+                      HomeTool().name.toString(),
+                  title: YaruPageItemTitle.text(HomeTool().menuTitle),
+                  icon: HomeTool().icon,
+                  onTap: () {
+                    GlobalSettings.selectedToolName.value =
+                        HomeTool().name.toString();
+                    Get.toNamed(HomeTool().route);
+                  },
+                ),
+                for (Tool tool in GlobalSettings.getFavoriteTools())
+                  LinuxMenuTile(
+                    selected:
+                        GlobalSettings.selectedToolName.value == tool.name,
+                    title: Text(tool.menuTitle),
+                    icon: tool.icon,
+                    onTap: () {
+                      GlobalSettings.selectedToolName.value = tool.name;
+                      Get.toNamed(tool.route);
+                    },
+                  ),
+              ]
+                  .map((e) => Container(
+                        child: e,
+                        padding: isCompactLayout(context)
+                            ? EdgeInsets.all(8.0)
+                            : null,
+                      ))
+                  .toList(),
+            ),
+          ),
         ),
         Divider(),
         Column(
@@ -71,41 +90,30 @@ class LinuxMenu extends StatelessWidget {
                   vertical: 8.0,
                 ),
                 child: Visibility(
-                  visible: !context.layout.breakpoint.isSmall() &&
-                      !GlobalSettings.compactMode.value,
+                  visible: !isCompactLayout(context),
                   replacement: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: IconButton(
-                        icon: FaIcon(
-                          group.icon,
-                          size: 18,
-                        ),
+                        icon: Icon(group.icon),
                         onPressed: () {
                           Get.toNamed('/home', arguments: [group.name]);
                         }),
                   ),
                   child: YaruExpandable(
                     isExpanded: true,
+                    onChange: (_) => Get.toNamed('/home'),
                     header: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Row(
-                          mainAxisAlignment:
-                              !context.layout.breakpoint.isSmall() &&
-                                      !GlobalSettings.compactMode.value
-                                  ? MainAxisAlignment.center
-                                  : MainAxisAlignment.start,
+                          mainAxisAlignment: !isCompactLayout(context)
+                              ? MainAxisAlignment.center
+                              : MainAxisAlignment.start,
                           children: [
-                            FaIcon(
-                              group.icon,
-                              size: 18,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: AutoSizeText(
-                                group.name,
-                                overflow: TextOverflow.fade,
-                                style: TextStyle(fontSize: 17),
-                              ),
+                            Icon(group.icon),
+                            Container(
+                              margin: const EdgeInsets.only(left: 8.0),
+                              child:
+                                  Text(group.name, overflow: TextOverflow.fade),
                             )
                           ]),
                     ),
@@ -115,7 +123,7 @@ class LinuxMenu extends StatelessWidget {
                         LinuxMenuTile(
                           selected: GlobalSettings.selectedToolName.value ==
                               tool.runtimeType.toString(),
-                          title: YaruPageItemTitle.text(tool.menuName),
+                          title: YaruPageItemTitle.text(tool.menuTitle),
                           icon: tool.icon,
                           onTap: () {
                             GlobalSettings.selectedToolName.value =

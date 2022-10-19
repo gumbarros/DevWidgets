@@ -22,8 +22,8 @@ class NumberBaseConverterTool implements Tool {
   Group get group => ConvertersGroup();
 
   @override
-  String get commandLineArgName => "number-base";
+  String get name => "number-base";
 
   @override
-  String get menuName => throw UnimplementedError();
+  String get menuTitle => throw UnimplementedError();
 }

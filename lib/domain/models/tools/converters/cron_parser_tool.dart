@@ -3,12 +3,12 @@ import 'package:devtoys/domain/models/groups/converters_group.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:get/get.dart';
 
 class CronParserTool implements Tool {
   @override
-  IconData get icon => FontAwesomeIcons.clock;
+  IconData get icon => Icons.schedule;
 
   @override
   String get homeTitle => "cron_parser".tr;
@@ -23,8 +23,8 @@ class CronParserTool implements Tool {
   Group get group => ConvertersGroup();
 
   @override
-  String get commandLineArgName => "cron-parser";
+  String get name => "cron-parser";
 
   @override
-  String get menuName => throw UnimplementedError();
+  String get menuTitle => throw UnimplementedError();
 }

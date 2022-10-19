@@ -3,7 +3,7 @@ import 'package:devtoys/domain/models/groups/home_group.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:get/get.dart';
 
 class HomeTool implements Tool {
@@ -16,7 +16,7 @@ class HomeTool implements Tool {
   HomeTool._internal();
 
   @override
-  IconData get icon => FontAwesomeIcons.house;
+  IconData get icon => Icons.home;
 
   @override
   String get homeTitle => "all_tools".tr;
@@ -31,8 +31,8 @@ class HomeTool implements Tool {
   String get description => "json_formatter_description".tr;
 
   @override
-  String get commandLineArgName => "home";
+  String get name => "home";
 
   @override
-  String get menuName => "all_tools".tr;
+  String get menuTitle => "all_tools".tr;
 }

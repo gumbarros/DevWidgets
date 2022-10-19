@@ -27,7 +27,7 @@ class Routes {
     if (args.isNotEmpty) {
       var tools = ToolsBinding.getAllTools();
       return tools
-          .firstWhere((tool) => tool.commandLineArgName == args.first,
+          .firstWhere((tool) => tool.name == args.first,
               orElse: () => HomeTool())
           .route;
     }

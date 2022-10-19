@@ -23,10 +23,10 @@ class UuidGeneratorTool implements Tool {
   Group get group => GeneratorsGroup();
 
   @override
-  String get commandLineArgName => "uuid";
+  String get name => "uuid";
 
   @override
-  String get menuName => "uuid".tr;
+  String get menuTitle => "uuid".tr;
 
   UuidGenerator get generator => UuidGenerator();
 }

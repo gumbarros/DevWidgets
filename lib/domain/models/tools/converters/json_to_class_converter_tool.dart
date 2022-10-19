@@ -23,10 +23,10 @@ class JsonToClassConverterTool implements Tool {
   Group get group => ConvertersGroup();
 
   @override
-  String get commandLineArgName => "jsonToClass";
+  String get name => "jsonToClass";
 
   @override
-  String get menuName => "json_to_class".tr;
+  String get menuTitle => "json_to_class".tr;
 
   JsonToClassConverter get converter => JsonToClassConverter();
 }

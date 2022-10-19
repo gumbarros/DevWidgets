@@ -4,7 +4,7 @@ import 'package:devtoys/domain/models/groups/formatters_group.dart';
 import 'package:devtoys/domain/models/tools/formatters/formatter_tool.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:get/get.dart';
 
 import '../tool.dart';
@@ -13,7 +13,7 @@ class XmlFormatterTool extends FormatterTool implements Tool {
   XmlFormatterTool(this.formatter) : super(formatter);
 
   @override
-  IconData get icon => FontAwesomeIcons.code;
+  IconData get icon => Icons.code;
 
   @override
   String get homeTitle => "xml_formatter".tr;
@@ -34,5 +34,5 @@ class XmlFormatterTool extends FormatterTool implements Tool {
   final XMLFormatter formatter;
 
   @override
-  String get menuName => "xml_formatter_menu_name".tr;
+  String get menuTitle => "xml_formatter_menu_name".tr;
 }

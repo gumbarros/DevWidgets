@@ -32,5 +32,5 @@ class JsonFormatterTool extends FormatterTool implements Tool {
   String get name => "jsonformat";
 
   @override
-  String get menuName => "json_formatter_menu_name".tr;
+  String get menuTitle => "json_formatter_menu_name".tr;
 }

@@ -25,5 +25,5 @@ class NumberBaseConverterTool implements Tool {
   String get name => "number-base";
 
   @override
-  String get menuName => throw UnimplementedError();
+  String get menuTitle => throw UnimplementedError();
 }

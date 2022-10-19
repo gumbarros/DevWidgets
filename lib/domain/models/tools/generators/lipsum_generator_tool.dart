@@ -26,7 +26,7 @@ class LipsumGeneratorTool implements Tool {
   String get name => "lipsum";
 
   @override
-  String get menuName => "lipsum".tr;
+  String get menuTitle => "lipsum".tr;
 
   LipsumGenerator get generator => LipsumGenerator();
 }

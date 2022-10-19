@@ -5,7 +5,7 @@ import 'package:devtoys/presentation/helpers.dart';
 import 'package:devtoys/presentation/widgets/io_editor/output_editor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:get/get.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -25,7 +25,7 @@ class UuidGeneratorView extends GetView<UuidGeneratorController> {
                 child: YaruSection(headline: "configuration".tr, children: [
                   YaruRow(
                       enabled: true,
-                      leadingWidget: FaIcon(FontAwesomeIcons.hashtag),
+                      leadingWidget: Icon(Icons.tag),
                       trailingWidget: Padding(
                         child: ListTile(
                           title: Text("uuid_type".tr),
@@ -43,7 +43,7 @@ class UuidGeneratorView extends GetView<UuidGeneratorController> {
                       )),
                   YaruRow(
                     enabled: true,
-                    leadingWidget: FaIcon(FontAwesomeIcons.minus),
+                    leadingWidget: Icon(Icons.remove),
                     trailingWidget: Padding(
                       child: ListTile(
                         title: Text("hyphens".tr),
@@ -59,7 +59,7 @@ class UuidGeneratorView extends GetView<UuidGeneratorController> {
                   ),
                   YaruRow(
                     enabled: true,
-                    leadingWidget: FaIcon(FontAwesomeIcons.textHeight),
+                    leadingWidget: Icon(Icons.format_color_text),
                     trailingWidget: Padding(
                       child: ListTile(title: Text("uppercase".tr)),
                       padding: const EdgeInsets.only(left: 2.0),
@@ -74,7 +74,7 @@ class UuidGeneratorView extends GetView<UuidGeneratorController> {
                   ),
                   YaruRow(
                     enabled: true,
-                    leadingWidget: FaIcon(FontAwesomeIcons.hashtag),
+                    leadingWidget: Icon(Icons.format_list_numbered),
                     trailingWidget: Padding(
                       child: ListTile(title: Text("amount".tr)),
                       padding: const EdgeInsets.only(left: 8.0),
@@ -122,7 +122,7 @@ class UuidGeneratorView extends GetView<UuidGeneratorController> {
                     outputController: controller.outputController,
                     actionButtons: [
                       ElevatedButton.icon(
-                        icon: FaIcon(FontAwesomeIcons.xmark),
+                        icon: Icon(Icons.clear),
                         label: Text("clear".tr),
                         onPressed: () => controller.outputController.clear(),
                       ),

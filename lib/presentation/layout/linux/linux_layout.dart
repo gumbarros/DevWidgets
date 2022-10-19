@@ -22,23 +22,26 @@ class LinuxLayout extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Obx(
-                  () => SizedBox(
-                    width: isCompactLayout(context)
-                        ? Get.width / 12
-                        : Get.width / 6,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        border: Border(
-                          right: BorderSide(
-                            width: 1,
-                            color: Colors.black.withOpacity(0.1),
+                  () => AnimatedSize(
+                    duration: const Duration(milliseconds: 500),
+                    child: SizedBox(
+                      width: isCompactLayout(context)
+                          ? Get.width / 12
+                          : Get.width / 5,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border(
+                            right: BorderSide(
+                              width: 1,
+                              color: Colors.black.withOpacity(0.1),
+                            ),
                           ),
                         ),
+                        child: LinuxMenu(
+                            tools: tools,
+                            selectedToolName:
+                                GlobalSettings.selectedToolName.value),
                       ),
-                      child: LinuxMenu(
-                          tools: tools,
-                          selectedToolName:
-                              GlobalSettings.selectedToolName.value),
                     ),
                   ),
                 ),

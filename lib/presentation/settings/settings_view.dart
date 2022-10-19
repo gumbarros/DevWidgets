@@ -5,7 +5,6 @@ import 'package:devtoys/presentation/settings/settings_controller.dart';
 import 'package:devtoys/presentation/widgets/default_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -25,7 +24,7 @@ class SettingsView extends GetView<SettingsController> {
                 child: YaruSection(children: [
                   YaruRow(
                     enabled: true,
-                    leadingWidget: FaIcon(FontAwesomeIcons.globe),
+                    leadingWidget: Icon(Icons.public),
                     trailingWidget: Padding(
                       child: Text(
                         "language".tr,
@@ -43,7 +42,7 @@ class SettingsView extends GetView<SettingsController> {
                   ),
                   YaruRow(
                     enabled: true,
-                    leadingWidget: FaIcon(FontAwesomeIcons.moon),
+                    leadingWidget: Icon(Icons.dark_mode),
                     trailingWidget: Padding(
                       child: Text(
                         "brightness".tr,
@@ -73,7 +72,7 @@ class SettingsView extends GetView<SettingsController> {
                   ),
                   YaruRow(
                     enabled: true,
-                    leadingWidget: FaIcon(FontAwesomeIcons.eye),
+                    leadingWidget: Icon(Icons.accessibility),
                     trailingWidget: Padding(
                       child: Text(
                         "high_contrast".tr,
@@ -93,7 +92,7 @@ class SettingsView extends GetView<SettingsController> {
                       visible: !controller.getHighContrast(),
                       child: YaruRow(
                         enabled: true,
-                        leadingWidget: FaIcon(FontAwesomeIcons.brush),
+                        leadingWidget: Icon(Icons.brush),
                         trailingWidget: Padding(
                           child: Text(
                             "primary_color".tr,
@@ -127,7 +126,7 @@ class SettingsView extends GetView<SettingsController> {
                 child: YaruSection(headline: "text_editor".tr, children: [
                   YaruRow(
                     enabled: true,
-                    leadingWidget: FaIcon(FontAwesomeIcons.pencil),
+                    leadingWidget: Icon(Icons.edit),
                     trailingWidget: Padding(
                       child: Text(
                         "theme".tr,
@@ -145,7 +144,7 @@ class SettingsView extends GetView<SettingsController> {
                   ),
                   YaruRow(
                     enabled: true,
-                    leadingWidget: FaIcon(FontAwesomeIcons.a),
+                    leadingWidget: Icon(Icons.format_size),
                     trailingWidget: Padding(
                       child: Text(
                         "font_size".tr,
@@ -179,7 +178,7 @@ class SettingsView extends GetView<SettingsController> {
                   ),
                   YaruRow(
                     enabled: true,
-                    leadingWidget: FaIcon(FontAwesomeIcons.house),
+                    leadingWidget: Icon(Icons.house),
                     trailingWidget: Padding(
                       child: Text(
                         "font_family".tr,

@@ -18,7 +18,7 @@ class HomeView extends GetView<HomeController> {
           padding: EdgeInsets.all(8.0),
           shrinkWrap: true,
           gridDelegate: ResponsiveGridDelegate(
-              crossAxisSpacing: 150,
+              crossAxisSpacing: 100,
               mainAxisSpacing: 50,
               childAspectRatio: 3 / 1.5,
               maxCrossAxisExtent: 300,

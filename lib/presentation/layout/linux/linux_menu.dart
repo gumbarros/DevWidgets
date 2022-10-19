@@ -7,7 +7,7 @@ import 'package:devtoys/presentation/layout/linux/linux_menu_search_box.dart';
 import 'package:devtoys/presentation/layout/linux/linux_menu_tile.dart';
 import 'package:devtoys/presentation/helpers.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:get/get.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -30,9 +30,10 @@ class LinuxMenu extends StatelessWidget {
       children: [
         Visibility(
           visible: !isCompactLayout(context),
-          child: SizedBox(
+          child: Container(
               width: Get.width,
-              height: Get.height / 20,
+              padding: const EdgeInsets.all(8.0),
+              height: Get.height / 15,
               child: Center(
                   child: LinuxMenuSearchBox(
                 tools: tools
@@ -42,30 +43,34 @@ class LinuxMenu extends StatelessWidget {
               ))),
         ),
         Obx(
-          () => Column(
-            children: <Widget>[
-              LinuxMenuTile(
-                selected: GlobalSettings.selectedToolName.value ==
-                    HomeTool().name.toString(),
-                title: YaruPageItemTitle.text(HomeTool().menuName),
-                icon: HomeTool().icon,
-                onTap: () {
-                  GlobalSettings.selectedToolName.value =
-                      HomeTool().name.toString();
-                  Get.toNamed(HomeTool().route);
-                },
-              ),
-              for (Tool tool in GlobalSettings.getFavoriteTools())
+          () => Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: <Widget>[
                 LinuxMenuTile(
-                  selected: GlobalSettings.selectedToolName.value == tool.name,
-                  title: YaruPageItemTitle.text(tool.menuName),
-                  icon: tool.icon,
+                  selected: GlobalSettings.selectedToolName.value ==
+                      HomeTool().name.toString(),
+                  title: YaruPageItemTitle.text(HomeTool().menuTitle),
+                  icon: HomeTool().icon,
                   onTap: () {
-                    GlobalSettings.selectedToolName.value = tool.name;
+                    GlobalSettings.selectedToolName.value =
+                        HomeTool().name.toString();
                     Get.toNamed(HomeTool().route);
                   },
                 ),
-            ],
+                for (Tool tool in GlobalSettings.getFavoriteTools())
+                  LinuxMenuTile(
+                    selected:
+                        GlobalSettings.selectedToolName.value == tool.name,
+                    title: Text(tool.menuTitle),
+                    icon: tool.icon,
+                    onTap: () {
+                      GlobalSettings.selectedToolName.value = tool.name;
+                      Get.toNamed(HomeTool().route);
+                    },
+                  ),
+              ],
+            ),
           ),
         ),
         Divider(),
@@ -82,7 +87,7 @@ class LinuxMenu extends StatelessWidget {
                   replacement: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: IconButton(
-                        icon: FaIcon(group.icon),
+                        icon: Icon(group.icon),
                         onPressed: () {
                           Get.toNamed('/home', arguments: [group.name]);
                         }),
@@ -97,7 +102,7 @@ class LinuxMenu extends StatelessWidget {
                               ? MainAxisAlignment.center
                               : MainAxisAlignment.start,
                           children: [
-                            FaIcon(group.icon),
+                            Icon(group.icon),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                               child:
@@ -111,7 +116,7 @@ class LinuxMenu extends StatelessWidget {
                         LinuxMenuTile(
                           selected: GlobalSettings.selectedToolName.value ==
                               tool.runtimeType.toString(),
-                          title: YaruPageItemTitle.text(tool.menuName),
+                          title: YaruPageItemTitle.text(tool.menuTitle),
                           icon: tool.icon,
                           onTap: () {
                             GlobalSettings.selectedToolName.value =

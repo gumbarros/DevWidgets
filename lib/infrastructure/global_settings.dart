@@ -128,7 +128,7 @@ class GlobalSettings {
   static List<Tool> getFavoriteTools() {
     if (_favorites == null) {
       final List<String> storedValue =
-          (_getStorage.read("favorites") ?? <String>[]);
+          (_getStorage.read("favorites").cast<String>() ?? <String>[]);
 
       _favorites = storedValue.obs;
     }

@@ -26,7 +26,7 @@ class UuidGeneratorTool implements Tool {
   String get name => "uuid";
 
   @override
-  String get menuName => "uuid".tr;
+  String get menuTitle => "uuid".tr;
 
   UuidGenerator get generator => UuidGenerator();
 }

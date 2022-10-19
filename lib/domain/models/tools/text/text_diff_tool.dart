@@ -3,12 +3,12 @@ import 'package:devtoys/domain/models/groups/text_group.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:get/get.dart';
 
 class TextDiffTool implements Tool {
   @override
-  IconData get icon => FontAwesomeIcons.plusMinus;
+  IconData get icon => Icons.difference;
 
   @override
   String get homeTitle => "text_diff".tr;
@@ -28,5 +28,5 @@ class TextDiffTool implements Tool {
   TextDiffTool();
 
   @override
-  String get menuName => "text_diff_menu_name".tr;
+  String get menuTitle => "text_diff_menu_name".tr;
 }

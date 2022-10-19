@@ -1,8 +1,6 @@
-import 'package:devtoys/domain/extensions/icon_data_extensions.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
 import 'package:devtoys/infrastructure/global_settings.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -27,9 +25,7 @@ class ToolCard extends StatelessWidget {
                 Container(
                   height: 200,
                   child: ListTile(
-                    leading: tool.icon.isMaterialIcon()
-                        ? Icon(tool.icon)
-                        : FaIcon(tool.icon),
+                    leading: Icon(tool.icon),
                     title: Text(tool.homeTitle),
                     subtitle: Text(
                       tool.description,

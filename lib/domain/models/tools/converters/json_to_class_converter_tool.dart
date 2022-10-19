@@ -26,7 +26,7 @@ class JsonToClassConverterTool implements Tool {
   String get name => "jsonToClass";
 
   @override
-  String get menuName => "json_to_class".tr;
+  String get menuTitle => "json_to_class".tr;
 
   JsonToClassConverter get converter => JsonToClassConverter();
 }

@@ -7,11 +7,11 @@ abstract class Tool {
   final String name;
   final IconData icon;
   final String homeTitle;
-  final String menuName;
+  final String menuTitle;
   final String description;
   final Group group;
   final String route;
 
   Tool(this.icon, this.homeTitle, this.description, this.group, this.route,
-      this.name, this.menuName);
+      this.name, this.menuTitle);
 }

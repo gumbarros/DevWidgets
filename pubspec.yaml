@@ -17,7 +17,6 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_markdown: ^0.6.12
-  font_awesome_flutter: ^10.2.1
   get: ^4.6.5
   get_storage: ^2.0.3
   google_fonts: ^3.0.1

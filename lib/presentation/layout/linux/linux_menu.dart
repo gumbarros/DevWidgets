@@ -62,7 +62,7 @@ class LinuxMenu extends StatelessWidget {
                   LinuxMenuTile(
                     selected:
                         GlobalSettings.selectedToolName.value == tool.name,
-                    title: Text(tool.menuTitle),
+                    title: Text(tool.homeTitle),
                     icon: tool.icon,
                     onTap: () {
                       GlobalSettings.selectedToolName.value = tool.name;

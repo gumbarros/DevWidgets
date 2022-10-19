@@ -5,6 +5,7 @@ import 'package:devtoys/infrastructure/locale/translations.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
 import 'package:devtoys/infrastructure/global_settings.dart';
 import 'package:devtoys/presentation/layout/linux/linux_layout.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -16,8 +17,7 @@ main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
   await GetStorage.init();
 
-  if (GetPlatform.isDesktop)
-    await DesktopWindow.setMinWindowSize(Size(1000, 800));
+  if (!kIsWeb) await DesktopWindow.setMinWindowSize(Size(1000, 800));
 
   final String initialRoute = Routes.getToolRouteByCommandLineArgs(args);
   runApp(Main(initialRoute: initialRoute));

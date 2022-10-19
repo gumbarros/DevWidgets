@@ -29,7 +29,7 @@ class GlobalSettings {
       _themeMode = ThemeMode.values[storedValue ?? ThemeMode.system.index].obs;
     }
 
-    return _themeMode!.value;
+    return _themeMode?.value ?? ThemeMode.light;
   }
 
   static Future setThemeMode(ThemeMode mode) async {
@@ -128,7 +128,7 @@ class GlobalSettings {
   static List<Tool> getFavoriteTools() {
     if (_favorites == null) {
       final List<String> storedValue =
-          (_getStorage.read("favorites").cast<String>() ?? <String>[]);
+          (_getStorage.read("favorites")?.cast<String>() ?? <String>[]);
 
       _favorites = storedValue.obs;
     }

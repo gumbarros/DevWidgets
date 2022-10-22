@@ -15,7 +15,7 @@ class URLEncoderView extends GetView<URLEncoderController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: DefaultAppBar(title: controller.tool.homeTitle),
-        body: Container(
+        body: SizedBox(
           height: Get.height - kToolbarHeight,
           child: ListView(
             children: [
@@ -24,12 +24,12 @@ class URLEncoderView extends GetView<URLEncoderController> {
                 child: YaruSection(headline: "configuration".tr, children: [
                   YaruRow(
                     enabled: true,
-                    leadingWidget: Icon(Icons.compare_arrows_sharp),
+                    leadingWidget: const Icon(Icons.compare_arrows_sharp),
                     trailingWidget: Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
                       child: ListTile(
                           title: Text("conversion".tr),
                           subtitle: Text("conversion_mode".tr)),
-                      padding: const EdgeInsets.only(left: 8.0),
                     ),
                     actionWidget: Obx(
                       () => DropdownButton<EncodeConversionMode>(
@@ -44,7 +44,7 @@ class URLEncoderView extends GetView<URLEncoderController> {
                   )
                 ]),
               ),
-              Container(
+              SizedBox(
                   height: Get.height / 1.2,
                   child: IOEditor(
                     inputController: controller.inputController,

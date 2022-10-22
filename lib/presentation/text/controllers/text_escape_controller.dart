@@ -8,7 +8,7 @@ class TextEscapeController extends GetxController {
   late TextEditingController inputController;
   late TextEditingController outputController;
 
-  Rx<EscapeConversionMode?> conversionMode = EscapeConversionMode.Escape.obs;
+  Rx<EscapeConversionMode?> conversionMode = EscapeConversionMode.escape.obs;
 
   String? result;
 
@@ -36,7 +36,7 @@ class TextEscapeController extends GetxController {
   void regenerateOutput() {
     String result;
 
-    if (conversionMode.value == EscapeConversionMode.Escape) {
+    if (conversionMode.value == EscapeConversionMode.escape) {
       result = tool.escaper.escape(inputController.text);
     } else {
       result = tool.escaper.unescape(inputController.text);

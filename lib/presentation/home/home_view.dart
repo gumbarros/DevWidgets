@@ -15,9 +15,9 @@ class HomeView extends GetView<HomeController> {
         appBar: DefaultAppBar(title: HomeTool().homeTitle),
         body: ResponsiveGridView.builder(
           itemCount: controller.tools.length,
-          padding: EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8.0),
           shrinkWrap: true,
-          gridDelegate: ResponsiveGridDelegate(
+          gridDelegate: const ResponsiveGridDelegate(
               crossAxisSpacing: 100,
               mainAxisSpacing: 50,
               childAspectRatio: 3 / 1.5,

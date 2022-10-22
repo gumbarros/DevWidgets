@@ -6,10 +6,9 @@ import 'package:devtoys/infrastructure/navigation/routes.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import '../tool.dart';
 
-class Base64ImageEncoderTool extends EncoderTool implements Tool {
-  Base64ImageEncoderTool(this.encoder) : super(encoder);
+class Base64ImageEncoderTool implements EncoderTool {
+  Base64ImageEncoderTool(this.encoder);
 
   @override
   IconData get icon => Icons.image;

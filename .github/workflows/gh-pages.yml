@@ -25,6 +25,9 @@ jobs:
     - name: Get dependencies
       run: flutter pub get
     
+    - name: Analyze project
+      run: flutter analyze
+
     - name: Test project
       run: flutter test
     

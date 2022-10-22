@@ -6,6 +6,7 @@ enum Indentation implements DescribedEnum {
   fourSpaces("four_spaces"),
   compact("compact");
 
+  @override
   final String description;
   const Indentation(this.description);
 

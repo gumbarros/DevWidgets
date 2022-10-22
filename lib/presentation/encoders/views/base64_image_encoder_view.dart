@@ -15,9 +15,9 @@ class Base64ImageEncoderView extends GetView<Base64ImageEncoderController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: DefaultAppBar(title: controller.tool.homeTitle),
-        body: Container(
+        body: SizedBox(
             height: Get.height - kToolbarHeight,
-            child: Container(
+            child: SizedBox(
               height: Get.height / 1.2,
               child: IOEditor(
                   usesCodeControllers: false,
@@ -29,13 +29,13 @@ class Base64ImageEncoderView extends GetView<Base64ImageEncoderController> {
                         actions: [
                           ElevatedButton.icon(
                               onPressed: controller.uploadImage,
-                              icon: Icon(Icons.image),
+                              icon: const Icon(Icons.image),
                               label: Text("upload_image".tr)),
                           Visibility(
                             visible: !GetPlatform.isWeb,
                             child: ElevatedButton.icon(
                                 onPressed: controller.downloadImage,
-                                icon: Icon(Icons.download),
+                                icon: const Icon(Icons.download),
                                 label: Text("download_image".tr)),
                           )
                         ],
@@ -48,7 +48,7 @@ class Base64ImageEncoderView extends GetView<Base64ImageEncoderController> {
                               child: Image.memory(
                                 controller.imageBytes.value,
                                 errorBuilder: ((_, __, ___) =>
-                                    SizedBox.shrink()),
+                                    const SizedBox.shrink()),
                               ),
                             ),
                             usesCodeControllers: false,

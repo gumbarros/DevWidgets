@@ -16,7 +16,7 @@ class UuidGeneratorView extends GetView<UuidGeneratorController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: DefaultAppBar(title: controller.tool.homeTitle),
-        body: Container(
+        body: SizedBox(
           height: Get.height - kToolbarHeight,
           child: ListView(
             children: [
@@ -25,13 +25,13 @@ class UuidGeneratorView extends GetView<UuidGeneratorController> {
                 child: YaruSection(headline: "configuration".tr, children: [
                   YaruRow(
                       enabled: true,
-                      leadingWidget: Icon(Icons.tag),
+                      leadingWidget: const Icon(Icons.tag),
                       trailingWidget: Padding(
+                        padding: const EdgeInsets.only(left: 8.0),
                         child: ListTile(
                           title: Text("uuid_type".tr),
                           subtitle: Text("uuid_type_description".tr),
                         ),
-                        padding: const EdgeInsets.only(left: 8.0),
                       ),
                       actionWidget: Obx(
                         () => DropdownButton<UuidType>(
@@ -43,12 +43,12 @@ class UuidGeneratorView extends GetView<UuidGeneratorController> {
                       )),
                   YaruRow(
                     enabled: true,
-                    leadingWidget: Icon(Icons.remove),
+                    leadingWidget: const Icon(Icons.remove),
                     trailingWidget: Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
                       child: ListTile(
                         title: Text("hyphens".tr),
                       ),
-                      padding: const EdgeInsets.only(left: 8.0),
                     ),
                     actionWidget: Obx(
                       () => Switch(
@@ -59,10 +59,10 @@ class UuidGeneratorView extends GetView<UuidGeneratorController> {
                   ),
                   YaruRow(
                     enabled: true,
-                    leadingWidget: Icon(Icons.format_color_text),
+                    leadingWidget: const Icon(Icons.format_color_text),
                     trailingWidget: Padding(
-                      child: ListTile(title: Text("uppercase".tr)),
                       padding: const EdgeInsets.only(left: 2.0),
+                      child: ListTile(title: Text("uppercase".tr)),
                     ),
                     actionWidget: Obx(
                       () => Switch(
@@ -74,10 +74,10 @@ class UuidGeneratorView extends GetView<UuidGeneratorController> {
                   ),
                   YaruRow(
                     enabled: true,
-                    leadingWidget: Icon(Icons.format_list_numbered),
+                    leadingWidget: const Icon(Icons.format_list_numbered),
                     trailingWidget: Padding(
-                      child: ListTile(title: Text("amount".tr)),
                       padding: const EdgeInsets.only(left: 8.0),
+                      child: ListTile(title: Text("amount".tr)),
                     ),
                     actionWidget: Flexible(
                       child: Row(
@@ -96,7 +96,7 @@ class UuidGeneratorView extends GetView<UuidGeneratorController> {
                                 controller.count.value = int.tryParse(value) ??
                                     0; // e.g. if empty -> 0
                               },
-                              decoration: InputDecoration(
+                              decoration: const InputDecoration(
                                 contentPadding: EdgeInsets.all(10),
                                 border: OutlineInputBorder(),
                               ),
@@ -116,13 +116,13 @@ class UuidGeneratorView extends GetView<UuidGeneratorController> {
                   ),
                 ]),
               ),
-              Container(
+              SizedBox(
                   height: Get.height / 1.2,
                   child: OutputEditor(
                     outputController: controller.outputController,
                     actionButtons: [
                       ElevatedButton.icon(
-                        icon: Icon(Icons.clear),
+                        icon: const Icon(Icons.clear),
                         label: Text("clear".tr),
                         onPressed: () => controller.outputController.clear(),
                       ),

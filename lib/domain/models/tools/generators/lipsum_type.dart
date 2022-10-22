@@ -5,6 +5,7 @@ enum LipsumType implements DescribedEnum {
   sentences("sentences"),
   paragraphs("paragraphs");
 
+  @override
   final String description;
   const LipsumType(this.description);
 }

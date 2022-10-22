@@ -16,7 +16,7 @@ class Base64TextEncoderView extends GetView<Base64TextEncoderController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: DefaultAppBar(title: controller.tool.homeTitle),
-        body: Container(
+        body: SizedBox(
           height: Get.height - kToolbarHeight,
           child: ListView(
             children: [
@@ -25,12 +25,12 @@ class Base64TextEncoderView extends GetView<Base64TextEncoderController> {
                 child: YaruSection(headline: "configuration".tr, children: [
                   YaruRow(
                     enabled: true,
-                    leadingWidget: Icon(Icons.compare_arrows_sharp),
+                    leadingWidget: const Icon(Icons.compare_arrows_sharp),
                     trailingWidget: Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
                       child: ListTile(
                           title: Text("conversion".tr),
                           subtitle: Text("conversion_mode".tr)),
-                      padding: const EdgeInsets.only(left: 8.0),
                     ),
                     actionWidget: Obx(
                       () => DropdownButton<EncodeConversionMode>(
@@ -45,12 +45,12 @@ class Base64TextEncoderView extends GetView<Base64TextEncoderController> {
                   ),
                   YaruRow(
                     enabled: true,
-                    leadingWidget: Icon(Icons.grid_3x3),
+                    leadingWidget: const Icon(Icons.grid_3x3),
                     trailingWidget: Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
                       child: ListTile(
                           title: Text("encoding".tr),
                           subtitle: Text("encoding_description".tr)),
-                      padding: const EdgeInsets.only(left: 8.0),
                     ),
                     actionWidget: Obx(
                       () => DropdownButton<Base64EncodingType>(
@@ -65,7 +65,7 @@ class Base64TextEncoderView extends GetView<Base64TextEncoderController> {
                   )
                 ]),
               ),
-              Container(
+              SizedBox(
                   height: Get.height / 1.2,
                   child: IOEditor(
                     inputController: controller.inputController,

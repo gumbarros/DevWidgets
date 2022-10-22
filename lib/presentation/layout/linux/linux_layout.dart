@@ -44,7 +44,7 @@ class LinuxLayout extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  child: child ?? SizedBox.shrink(),
+                  child: child ?? const SizedBox.shrink(),
                 ),
               ],
             ),

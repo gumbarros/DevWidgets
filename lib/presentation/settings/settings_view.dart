@@ -15,7 +15,7 @@ class SettingsView extends GetView<SettingsController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: DefaultAppBar(title: SettingsTool().homeTitle),
-        body: Container(
+        body: SizedBox(
           height: Get.height - kToolbarHeight,
           child: ListView(
             children: [
@@ -24,13 +24,13 @@ class SettingsView extends GetView<SettingsController> {
                 child: YaruSection(children: [
                   YaruRow(
                     enabled: true,
-                    leadingWidget: Icon(Icons.public),
+                    leadingWidget: const Icon(Icons.public),
                     trailingWidget: Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
                       child: Text(
                         "language".tr,
-                        style: TextStyle(fontSize: 18),
+                        style: const TextStyle(fontSize: 18),
                       ),
-                      padding: const EdgeInsets.only(left: 8.0),
                     ),
                     actionWidget: DropdownButton<String>(
                         value: DevToysTranslations.supportedLocales.any((e) =>
@@ -42,29 +42,29 @@ class SettingsView extends GetView<SettingsController> {
                   ),
                   YaruRow(
                     enabled: true,
-                    leadingWidget: Icon(Icons.dark_mode),
+                    leadingWidget: const Icon(Icons.dark_mode),
                     trailingWidget: Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
                       child: Text(
                         "brightness".tr,
-                        style: TextStyle(fontSize: 18),
+                        style: const TextStyle(fontSize: 18),
                       ),
-                      padding: const EdgeInsets.only(left: 8.0),
                     ),
                     actionWidget: Obx(
                       () => DropdownButton<ThemeMode>(
                           value: controller.getThemeMode(),
                           items: [
                             DropdownMenuItem(
-                              child: Text("system".tr),
                               value: ThemeMode.system,
+                              child: Text("system".tr),
                             ),
                             DropdownMenuItem(
-                              child: Text("light".tr),
                               value: ThemeMode.light,
+                              child: Text("light".tr),
                             ),
                             DropdownMenuItem(
-                              child: Text("dark".tr),
                               value: ThemeMode.dark,
+                              child: Text("dark".tr),
                             ),
                           ],
                           onChanged: controller.setThemeMode),
@@ -72,13 +72,13 @@ class SettingsView extends GetView<SettingsController> {
                   ),
                   YaruRow(
                     enabled: true,
-                    leadingWidget: Icon(Icons.accessibility),
+                    leadingWidget: const Icon(Icons.accessibility),
                     trailingWidget: Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
                       child: Text(
                         "high_contrast".tr,
-                        style: TextStyle(fontSize: 18),
+                        style: const TextStyle(fontSize: 18),
                       ),
-                      padding: const EdgeInsets.only(left: 8.0),
                     ),
                     actionWidget: Obx(
                       () => Switch(
@@ -92,13 +92,13 @@ class SettingsView extends GetView<SettingsController> {
                       visible: !controller.getHighContrast(),
                       child: YaruRow(
                         enabled: true,
-                        leadingWidget: Icon(Icons.brush),
+                        leadingWidget: const Icon(Icons.brush),
                         trailingWidget: Padding(
+                          padding: const EdgeInsets.only(left: 8.0),
                           child: Text(
                             "primary_color".tr,
-                            style: TextStyle(fontSize: 18),
+                            style: const TextStyle(fontSize: 18),
                           ),
-                          padding: const EdgeInsets.only(left: 8.0),
                         ),
                         actionWidget: Obx(
                           () => Row(
@@ -126,13 +126,13 @@ class SettingsView extends GetView<SettingsController> {
                 child: YaruSection(headline: "text_editor".tr, children: [
                   YaruRow(
                     enabled: true,
-                    leadingWidget: Icon(Icons.edit),
+                    leadingWidget: const Icon(Icons.edit),
                     trailingWidget: Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
                       child: Text(
                         "theme".tr,
-                        style: TextStyle(fontSize: 18),
+                        style: const TextStyle(fontSize: 18),
                       ),
-                      padding: const EdgeInsets.only(left: 8.0),
                     ),
                     actionWidget: Obx(
                       () => DropdownButton<String?>(
@@ -144,13 +144,13 @@ class SettingsView extends GetView<SettingsController> {
                   ),
                   YaruRow(
                     enabled: true,
-                    leadingWidget: Icon(Icons.format_size),
+                    leadingWidget: const Icon(Icons.format_size),
                     trailingWidget: Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
                       child: Text(
                         "font_size".tr,
-                        style: TextStyle(fontSize: 18),
+                        style: const TextStyle(fontSize: 18),
                       ),
-                      padding: const EdgeInsets.only(left: 8.0),
                     ),
                     actionWidget: SizedBox(
                         width: Get.width / 20,
@@ -163,11 +163,11 @@ class SettingsView extends GetView<SettingsController> {
                               text: controller
                                   .getTextEditorFontSize()
                                   .toString()),
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             contentPadding: EdgeInsets.all(5),
                           ),
-                          keyboardType:
-                              TextInputType.numberWithOptions(decimal: true),
+                          keyboardType: const TextInputType.numberWithOptions(
+                              decimal: true),
                           onChanged: (value) {
                             if (value.isNotEmpty) {
                               controller.setTextEditorFontSize(
@@ -178,13 +178,13 @@ class SettingsView extends GetView<SettingsController> {
                   ),
                   YaruRow(
                     enabled: true,
-                    leadingWidget: Icon(Icons.house),
+                    leadingWidget: const Icon(Icons.house),
                     trailingWidget: Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
                       child: Text(
                         "font_family".tr,
-                        style: TextStyle(fontSize: 18),
+                        style: const TextStyle(fontSize: 18),
                       ),
-                      padding: const EdgeInsets.only(left: 8.0),
                     ),
                     actionWidget: Obx(
                       () => DropdownButton<String?>(

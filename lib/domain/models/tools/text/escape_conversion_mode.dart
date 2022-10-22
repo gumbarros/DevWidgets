@@ -1,9 +1,10 @@
 import 'package:devtoys/domain/models/described_enum.dart';
 
 enum EscapeConversionMode implements DescribedEnum {
-  Escape("escape"),
-  Unescape("unescape");
+  escape("escape"),
+  unescape("unescape");
 
+  @override
   final String description;
 
   const EscapeConversionMode(this.description);

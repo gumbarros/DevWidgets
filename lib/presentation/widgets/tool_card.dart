@@ -8,7 +8,7 @@ class ToolCard extends StatelessWidget {
   final Tool tool;
   final RxBool isFavoriteVisible = false.obs;
 
-  ToolCard(this.tool);
+  ToolCard(this.tool, {super.key});
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -22,7 +22,7 @@ class ToolCard extends StatelessWidget {
             selected: false,
             child: Stack(
               children: <Widget>[
-                Container(
+                SizedBox(
                   height: 200,
                   child: ListTile(
                     leading: Icon(tool.icon),

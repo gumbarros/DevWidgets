@@ -19,9 +19,10 @@ class JsonFormatter implements Formatter {
     }
     if (object != null) {
       if (sortAlphabetically) object = _sort(object);
-      if (indentation != Indentation.compact)
+      if (indentation != Indentation.compact) {
         return JsonEncoder.withIndent(indentation.toString()).convert(object);
-      return JsonEncoder().convert(object);
+      }
+      return const JsonEncoder().convert(object);
     } else {
       return "";
     }
@@ -30,8 +31,9 @@ class JsonFormatter implements Formatter {
   _sort(json) {
     if (json is Map) {
       for (var entry in json.entries) {
-        if (entry.value is List || entry.value is Map)
+        if (entry.value is List || entry.value is Map) {
           json[entry.key] = _sort(entry);
+        }
       }
       return _sortKeys(json);
     } else if (json is List) {

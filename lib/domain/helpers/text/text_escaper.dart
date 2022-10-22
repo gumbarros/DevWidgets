@@ -48,7 +48,7 @@ class TextEscaper {
     if (data == null || data.isEmpty) {
       return "";
     }
-    var decoded = new StringBuffer();
+    var decoded = StringBuffer();
 
     int i = 0;
     while (i < data.length) {

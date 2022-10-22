@@ -39,14 +39,14 @@ class Base64ImageEncoderController extends GetxController {
     var result = await FilePicker.platform.pickFiles(type: FileType.image);
 
     if (result != null) {
-      var bytes;
+      Uint8List? bytes;
       if (GetPlatform.isWeb) {
         bytes = result.files.single.bytes;
       } else {
         final file = File(result.files.single.path!);
         bytes = await file.readAsBytes();
       }
-      imageBytes.value = bytes;
+      imageBytes.value = bytes!;
       inputController.text = tool.encoder.encode(bytes);
     }
   }

@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 
 class LinuxMenuTile extends StatelessWidget {
   const LinuxMenuTile({
+    super.key,
     required this.selected,
     required this.icon,
     required this.onTap,

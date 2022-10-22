@@ -17,7 +17,7 @@ class TextDiffView extends GetView<TextDiffController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: DefaultAppBar(title: controller.tool.homeTitle),
-        body: Container(
+        body: SizedBox(
           height: Get.height - kToolbarHeight,
           child: ListView(
             children: [
@@ -38,10 +38,8 @@ class TextDiffView extends GetView<TextDiffController> {
                     () => RadioListTile(
                         title: Row(
                           children: [
-                            Text("efficiency_cleanup".tr +
-                                "." +
-                                "edit_cost".tr +
-                                ":"),
+                            Text(
+                                "${"efficiency_cleanup".tr}.${"edit_cost".tr}:"),
                             SizedBox(
                                 width: 40,
                                 height: 30,
@@ -54,7 +52,7 @@ class TextDiffView extends GetView<TextDiffController> {
                                     controller.editCost.value =
                                         int.tryParse(value) ?? 4;
                                   },
-                                  decoration: InputDecoration(
+                                  decoration: const InputDecoration(
                                     contentPadding: EdgeInsets.all(5),
                                     border: OutlineInputBorder(),
                                   ),
@@ -80,7 +78,7 @@ class TextDiffView extends GetView<TextDiffController> {
                   ),
                 ]),
               ),
-              Container(
+              SizedBox(
                   height: Get.height / 3,
                   child: MultiSplitViewTheme(
                     data: MultiSplitViewThemeData(dividerThickness: 5),
@@ -122,7 +120,7 @@ class TextDiffView extends GetView<TextDiffController> {
                         border: Border.all(
                           color: Get.theme.disabledColor,
                         ),
-                        borderRadius: BorderRadius.all(
+                        borderRadius: const BorderRadius.all(
                           Radius.circular(10),
                         ),
                       ),

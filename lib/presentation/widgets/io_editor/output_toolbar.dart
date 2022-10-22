@@ -21,7 +21,7 @@ class OutputToolbar extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<Widget> actions = [
       ElevatedButton.icon(
-        icon: Icon(Icons.copy),
+        icon: const Icon(Icons.copy),
         label: Text("copy".tr),
         onPressed: () async {
           await Clipboard.setData(ClipboardData(text: outputController.text));

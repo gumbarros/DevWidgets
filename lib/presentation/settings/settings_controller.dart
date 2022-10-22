@@ -13,8 +13,8 @@ class SettingsController extends GetxController {
   List<DropdownMenuItem<String>> getLanguageDropdownMenuItems() {
     return DevToysTranslations.supportedLocales
         .map((l) => DropdownMenuItem(
-              child: Text(l.name),
               value: l.localeKey,
+              child: Text(l.name),
             ))
         .toList();
   }
@@ -22,8 +22,8 @@ class SettingsController extends GetxController {
   List<DropdownMenuItem<String>> getTextEditorThemeDropdownMenuItems() {
     return kTextEditorThemes.entries
         .map((e) => DropdownMenuItem(
-              child: Text(e.key),
               value: e.key,
+              child: Text(e.key),
             ))
         .toList();
   }
@@ -32,8 +32,8 @@ class SettingsController extends GetxController {
     return GoogleFonts.asMap()
         .entries
         .map((e) => DropdownMenuItem(
-              child: Text(e.key),
               value: e.key,
+              child: Text(e.key),
             ))
         .toList();
   }

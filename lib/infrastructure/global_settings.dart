@@ -84,9 +84,7 @@ class GlobalSettings {
   }
 
   static String? getTextEditorTheme() {
-    if (_textEditorTheme == null) {
-      _textEditorTheme = (_getStorage.read("textEditorTheme")?.toString()).obs;
-    }
+    _textEditorTheme ??= (_getStorage.read("textEditorTheme")?.toString()).obs;
     return _textEditorTheme!.value;
   }
 
@@ -97,10 +95,8 @@ class GlobalSettings {
   }
 
   static double getTextEditorFontSize() {
-    if (_textEditorFontSize == null) {
-      _textEditorFontSize =
-          ((_getStorage.read("textEditorFontSize") ?? 18.0) as double).obs;
-    }
+    _textEditorFontSize ??=
+        ((_getStorage.read("textEditorFontSize") ?? 18.0) as double).obs;
     return _textEditorFontSize!.value;
   }
 
@@ -111,11 +107,9 @@ class GlobalSettings {
   }
 
   static String getTextEditorFontFamily() {
-    if (_textEditorFontFamily == null) {
-      _textEditorFontFamily =
-          (_getStorage.read("textEditorFontFamily")?.toString() ?? "Fira Code")
-              .obs;
-    }
+    _textEditorFontFamily ??=
+        (_getStorage.read("textEditorFontFamily")?.toString() ?? "Fira Code")
+            .obs;
     return _textEditorFontFamily!.value;
   }
 

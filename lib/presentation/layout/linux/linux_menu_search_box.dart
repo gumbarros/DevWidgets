@@ -22,10 +22,11 @@ class LinuxMenuSearchBox extends StatelessWidget {
         items: tools,
         dropdownDecoratorProps: DropDownDecoratorProps(
             dropdownSearchDecoration: InputDecoration(
-          prefixIcon: Icon(
+          prefixIcon: const Icon(
             Icons.search,
           ),
-          prefixIconConstraints: BoxConstraints.expand(width: 40, height: 40),
+          prefixIconConstraints:
+              const BoxConstraints.expand(width: 40, height: 40),
           hintText: "menu_search_bar_hint".tr,
           enabledBorder: const UnderlineInputBorder(
               borderSide: BorderSide(

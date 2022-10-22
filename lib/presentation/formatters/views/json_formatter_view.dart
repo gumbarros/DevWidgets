@@ -15,7 +15,7 @@ class JsonFormatterView extends GetView<JsonFormatterController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: DefaultAppBar(title: controller.tool.homeTitle),
-        body: Container(
+        body: SizedBox(
           height: Get.height - kToolbarHeight,
           child: ListView(
             children: [
@@ -24,13 +24,13 @@ class JsonFormatterView extends GetView<JsonFormatterController> {
                 child: YaruSection(headline: "configuration".tr, children: [
                   YaruRow(
                       enabled: true,
-                      leadingWidget: Icon(Icons.arrow_right_alt),
+                      leadingWidget: const Icon(Icons.arrow_right_alt),
                       trailingWidget: Padding(
+                        padding: const EdgeInsets.only(left: 8.0),
                         child: Text(
                           "indentation".tr,
-                          style: TextStyle(fontSize: 18),
+                          style: const TextStyle(fontSize: 18),
                         ),
-                        padding: const EdgeInsets.only(left: 8.0),
                       ),
                       actionWidget: Obx(
                         () => DropdownButton<Indentation>(
@@ -42,13 +42,13 @@ class JsonFormatterView extends GetView<JsonFormatterController> {
                       )),
                   YaruRow(
                     enabled: true,
-                    leadingWidget: Icon(Icons.sort_by_alpha),
+                    leadingWidget: const Icon(Icons.sort_by_alpha),
                     trailingWidget: Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
                       child: Text(
                         "sort_json_properties_alphabetically".tr,
-                        style: TextStyle(fontSize: 18),
+                        style: const TextStyle(fontSize: 18),
                       ),
-                      padding: const EdgeInsets.only(left: 8.0),
                     ),
                     actionWidget: Obx(
                       () => Switch(
@@ -60,7 +60,7 @@ class JsonFormatterView extends GetView<JsonFormatterController> {
                   )
                 ]),
               ),
-              Container(
+              SizedBox(
                   height: Get.height / 1.2,
                   child: IOEditor(
                     inputController: controller.inputController,

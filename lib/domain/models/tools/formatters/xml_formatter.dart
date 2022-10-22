@@ -4,13 +4,10 @@ import 'package:devtoys/domain/models/groups/formatters_group.dart';
 import 'package:devtoys/domain/models/tools/formatters/formatter_tool.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 
-import '../tool.dart';
-
-class XmlFormatterTool extends FormatterTool implements Tool {
-  XmlFormatterTool(this.formatter) : super(formatter);
+class XmlFormatterTool implements FormatterTool {
+  XmlFormatterTool(this.formatter);
 
   @override
   IconData get icon => Icons.code;

@@ -13,10 +13,10 @@ class MarkdownPreviewView extends GetView<MarkdownPreviewController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: DefaultAppBar(title: controller.tool.homeTitle),
-        body: Container(
+        body: SizedBox(
             height: Get.height - kToolbarHeight,
             child: SingleChildScrollView(
-              child: Container(
+              child: SizedBox(
                 height: Get.height / 1.2,
                 child: IOEditor(
                     inputController: controller.inputController,
@@ -24,7 +24,7 @@ class MarkdownPreviewView extends GetView<MarkdownPreviewController> {
                       IOToolbar(title: "preview".tr),
                       Container(
                         width: Get.width / 1.5,
-                        margin: EdgeInsets.all(8.0),
+                        margin: const EdgeInsets.all(8.0),
                         height: Get.height / 1.5,
                         child: Obx(() =>
                             Markdown(data: controller.output.value ?? "")),

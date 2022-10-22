@@ -15,7 +15,7 @@ class IOToolbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: Get.height / 20,
-      margin: EdgeInsets.all(8.0),
+      margin: const EdgeInsets.all(8.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

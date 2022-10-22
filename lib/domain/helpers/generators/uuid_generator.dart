@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:devtoys/domain/helpers/generators/generator.dart';
 import 'package:devtoys/domain/models/tools/generators/uuid_type.dart';
 import 'package:get/get.dart';

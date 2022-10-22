@@ -4,6 +4,7 @@ enum EncodeConversionMode implements DescribedEnum {
   encode("encode"),
   decode("decode");
 
+  @override
   final String description;
 
   const EncodeConversionMode(this.description);

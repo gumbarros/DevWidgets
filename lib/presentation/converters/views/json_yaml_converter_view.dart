@@ -16,7 +16,7 @@ class JsonYamlConverterView extends GetView<JsonYamlConverterController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: DefaultAppBar(title: controller.tool.homeTitle),
-        body: Container(
+        body: SizedBox(
           height: Get.height - kToolbarHeight,
           child: Obx(
             () => ListView(
@@ -26,16 +26,16 @@ class JsonYamlConverterView extends GetView<JsonYamlConverterController> {
                   child: YaruSection(headline: "configuration".tr, children: [
                     YaruRow(
                       enabled: true,
-                      leadingWidget: Icon(
+                      leadingWidget: const Icon(
                         Icons.data_array,
                         size: 25,
                       ),
                       trailingWidget: Padding(
+                        padding: const EdgeInsets.only(left: 8.0),
                         child: Text(
                           "conversion_type".tr,
-                          style: TextStyle(fontSize: 18),
+                          style: const TextStyle(fontSize: 18),
                         ),
-                        padding: const EdgeInsets.only(left: 8.0),
                       ),
                       actionWidget: DropdownButton<JsonYamlConversionType>(
                           value: controller.conversionType.value,
@@ -50,13 +50,13 @@ class JsonYamlConverterView extends GetView<JsonYamlConverterController> {
                         child: Column(children: [
                           YaruRow(
                               enabled: true,
-                              leadingWidget: Icon(Icons.arrow_right_alt),
+                              leadingWidget: const Icon(Icons.arrow_right_alt),
                               trailingWidget: Padding(
+                                padding: const EdgeInsets.only(left: 8.0),
                                 child: Text(
                                   "indentation".tr,
-                                  style: TextStyle(fontSize: 18),
+                                  style: const TextStyle(fontSize: 18),
                                 ),
-                                padding: const EdgeInsets.only(left: 8.0),
                               ),
                               actionWidget: Obx(
                                 () => DropdownButton<Indentation>(
@@ -68,13 +68,13 @@ class JsonYamlConverterView extends GetView<JsonYamlConverterController> {
                               )),
                           YaruRow(
                             enabled: true,
-                            leadingWidget: Icon(Icons.sort_by_alpha),
+                            leadingWidget: const Icon(Icons.sort_by_alpha),
                             trailingWidget: Padding(
+                              padding: const EdgeInsets.only(left: 8.0),
                               child: Text(
                                 "sort_json_properties_alphabetically".tr,
-                                style: TextStyle(fontSize: 18),
+                                style: const TextStyle(fontSize: 18),
                               ),
-                              padding: const EdgeInsets.only(left: 8.0),
                             ),
                             actionWidget: Obx(
                               () => Switch(
@@ -87,7 +87,7 @@ class JsonYamlConverterView extends GetView<JsonYamlConverterController> {
                         ]))
                   ]),
                 ),
-                Container(
+                SizedBox(
                     height: Get.height / 1.2,
                     child: controller.conversionType.value ==
                             JsonYamlConversionType.yamlToJson
@@ -97,8 +97,9 @@ class JsonYamlConverterView extends GetView<JsonYamlConverterController> {
                             outputController:
                                 controller.yamlToJsonOutputController,
                           )
+                        // ignore: avoid_unnecessary_containers
                         : Container(
-                            //I don't know why this needs a Container to work, maybe I need to open a issue at Flutter.
+                            //I don't know why this needs a Container to work, maybe I need to open a issue at GetX.
                             child: IOEditor(
                               inputController:
                                   controller.jsonToYamlInputController,

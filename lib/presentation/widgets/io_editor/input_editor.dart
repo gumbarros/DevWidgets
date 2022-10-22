@@ -28,16 +28,16 @@ class InputEditor extends StatelessWidget {
   Widget build(BuildContext context) {
     return Visibility(
       visible: inputChild == null,
-      replacement: inputChild ?? SizedBox.shrink(),
+      replacement: inputChild ?? const SizedBox.shrink(),
       child: ListView(
         children: [
           inputController != null
               ? InputToolBar(
                   inputController: inputController!, toolbarTitle: toolbarTitle)
-              : SizedBox.shrink(),
+              : const SizedBox.shrink(),
           Container(
               width: width ?? Get.width,
-              margin: EdgeInsets.all(8.0),
+              margin: const EdgeInsets.all(8.0),
               height: height ??
                   (isVerticalLayout ? Get.height / 3.5 : Get.height / 1.5),
               child: usesCodeControllers

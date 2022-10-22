@@ -7,7 +7,7 @@ class Routes {
   static const uuidGenerator = '/generators/uuid';
   static const lipsumGenerator = '/generators/lipsum';
   static const sqlFormatter = '/formatters/sql';
-  static const JsonFormatter = '/formatters/json';
+  static const jsonFormatter = '/formatters/json';
   static const xmlFormatter = '/formatters/xml';
   static const htmlEncoder = "/encoders/html";
   static const textEscape = "/text/escape";
@@ -19,9 +19,9 @@ class Routes {
   static const base64ImageEncoder = '/encoder/base64image';
   static const jsonToClass = '/converters/jsonToClass';
   static const jsonYamlConverter = '/converters/jsonYaml';
-  static var timestampConverter;
-  static var cronParser;
-  static var numberBase;
+  static const timestampConverter = '/converters/timestamp';
+  static const cronParser = '/converters/cronParser';
+  static const numberBase = '/converters/numberBase';
 
   static String getToolRouteByCommandLineArgs(List<String> args) {
     if (args.isNotEmpty) {

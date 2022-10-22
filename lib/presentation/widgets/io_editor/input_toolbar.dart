@@ -16,7 +16,7 @@ class InputToolBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return IOToolbar(title: toolbarTitle ?? "input".tr, actions: [
       ElevatedButton.icon(
-        icon: Icon(Icons.paste),
+        icon: const Icon(Icons.paste),
         label: Text("paste".tr),
         onPressed: () async {
           inputController.text = await Clipboard.getData("text/plain")
@@ -24,14 +24,14 @@ class InputToolBar extends StatelessWidget {
         },
       ),
       ElevatedButton.icon(
-        icon: Icon(Icons.copy),
+        icon: const Icon(Icons.copy),
         label: Text("copy".tr),
         onPressed: () async {
           await Clipboard.setData(ClipboardData(text: inputController.text));
         },
       ),
       ElevatedButton.icon(
-        icon: Icon(Icons.clear),
+        icon: const Icon(Icons.clear),
         label: Text("clear".tr),
         onPressed: () => inputController.clear(),
       ),

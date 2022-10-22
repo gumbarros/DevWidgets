@@ -15,9 +15,9 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
         leading: responsive.ResponsiveVisibility(
-          hiddenWhen: [responsive.Condition.smallerThan(name: MOBILE)],
+          hiddenWhen: const [responsive.Condition.smallerThan(name: MOBILE)],
           child: IconButton(
-            icon: Icon(Icons.menu),
+            icon: const Icon(Icons.menu),
             onPressed: () {
               GlobalSettings.compactMode.value =
                   !GlobalSettings.compactMode.value;
@@ -27,11 +27,11 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
         actions: [
           IconButton(
               onPressed: () => Get.toNamed(Routes.settings),
-              icon: Icon(Icons.settings))
+              icon: const Icon(Icons.settings))
         ],
         title: Text(title));
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

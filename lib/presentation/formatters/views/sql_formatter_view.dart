@@ -12,7 +12,7 @@ class SQLFormatterView extends GetView<SQLFormatterController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: DefaultAppBar(title: controller.tool.homeTitle),
-        body: Container(
+        body: SizedBox(
           height: Get.height - kToolbarHeight,
           child: ListView(
             children: [
@@ -21,11 +21,12 @@ class SQLFormatterView extends GetView<SQLFormatterController> {
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text("configuration".tr, style: TextStyle(fontSize: 20)),
-                      YaruSection(children: [])
+                      Text("configuration".tr,
+                          style: const TextStyle(fontSize: 20)),
+                      const YaruSection(children: [])
                     ]),
               ),
-              Container(
+              SizedBox(
                   height: Get.height / 1.2,
                   child: IOEditor(
                     inputController: controller.inputController,

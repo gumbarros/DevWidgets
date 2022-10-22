@@ -38,10 +38,10 @@ class LinuxMenu extends StatelessWidget {
                 tools: tools
                     .map((t) => LinuxMenuItem(t.homeTitle, t.route))
                     .toList(),
-                controller: new TextEditingController(),
+                controller: TextEditingController(),
               )),
         ),
-        Visibility(visible: !isCompactLayout(context), child: Divider()),
+        Visibility(visible: !isCompactLayout(context), child: const Divider()),
         Obx(
           () => Padding(
             padding: const EdgeInsets.all(8.0),
@@ -71,16 +71,16 @@ class LinuxMenu extends StatelessWidget {
                   ),
               ]
                   .map((e) => Container(
-                        child: e,
                         padding: isCompactLayout(context)
-                            ? EdgeInsets.all(8.0)
+                            ? const EdgeInsets.all(8.0)
                             : null,
+                        child: e,
                       ))
                   .toList(),
             ),
           ),
         ),
-        Divider(),
+        const Divider(),
         Column(
           children: [
             for (var group in Get.find<List<Group>>())

@@ -32,7 +32,7 @@ class OutputEditor extends StatelessWidget {
 
     return Visibility(
       visible: outputChild == null,
-      replacement: outputChild ?? SizedBox.shrink(),
+      replacement: outputChild ?? const SizedBox.shrink(),
       child: ListView(
         children: [
           outputController != null
@@ -41,10 +41,10 @@ class OutputEditor extends StatelessWidget {
                   toolbarTitle: toolbarTitle,
                   actionButtons: actionButtons,
                 )
-              : SizedBox.shrink(),
+              : const SizedBox.shrink(),
           Container(
               width: isVerticalLayout ? Get.width : Get.width / 1.5,
-              margin: EdgeInsets.all(8.0),
+              margin: const EdgeInsets.all(8.0),
               height: isVerticalLayout ? Get.height / 3.5 : Get.height / 1.5,
               child: usesCodeControllers
                   ? CodeField(

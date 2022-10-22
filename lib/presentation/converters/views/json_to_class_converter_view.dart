@@ -14,7 +14,7 @@ class JsonToClassConverterView extends GetView<JsonToClassConverterController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: DefaultAppBar(title: controller.tool.homeTitle),
-        body: Container(
+        body: SizedBox(
           height: Get.height - kToolbarHeight,
           child: ListView(
             children: [
@@ -23,16 +23,16 @@ class JsonToClassConverterView extends GetView<JsonToClassConverterController> {
                 child: YaruSection(headline: "configuration".tr, children: [
                   YaruRow(
                       enabled: true,
-                      leadingWidget: Icon(
+                      leadingWidget: const Icon(
                         Icons.title,
                         size: 25,
                       ),
                       trailingWidget: Padding(
+                        padding: const EdgeInsets.only(left: 8.0),
                         child: Text(
                           "class_name".tr,
-                          style: TextStyle(fontSize: 18),
+                          style: const TextStyle(fontSize: 18),
                         ),
-                        padding: const EdgeInsets.only(left: 8.0),
                       ),
                       actionWidget: Obx(
                         () => SizedBox(
@@ -43,7 +43,7 @@ class JsonToClassConverterView extends GetView<JsonToClassConverterController> {
                             onChanged: (value) {
                               controller.className.value = value;
                             },
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               contentPadding: EdgeInsets.all(10),
                               border: OutlineInputBorder(),
                             ),
@@ -52,16 +52,16 @@ class JsonToClassConverterView extends GetView<JsonToClassConverterController> {
                       )),
                   YaruRow(
                       enabled: true,
-                      leadingWidget: Icon(
+                      leadingWidget: const Icon(
                         Icons.data_array,
                         size: 25,
                       ),
                       trailingWidget: Padding(
+                        padding: const EdgeInsets.only(left: 8.0),
                         child: Text(
                           "programming_language".tr,
-                          style: TextStyle(fontSize: 18),
+                          style: const TextStyle(fontSize: 18),
                         ),
-                        padding: const EdgeInsets.only(left: 8.0),
                       ),
                       actionWidget: Obx(
                         () => DropdownButton<ProgrammingLanguage>(
@@ -74,7 +74,7 @@ class JsonToClassConverterView extends GetView<JsonToClassConverterController> {
                       )),
                 ]),
               ),
-              Container(
+              SizedBox(
                   height: Get.height / 1.2,
                   child: IOEditor(
                     inputController: controller.inputController,

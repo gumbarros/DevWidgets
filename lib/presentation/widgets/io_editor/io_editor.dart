@@ -1,4 +1,3 @@
-import 'package:devtoys/presentation/helpers.dart';
 import 'package:devtoys/presentation/widgets/io_editor/input_editor.dart';
 import 'package:devtoys/presentation/widgets/io_editor/output_editor.dart';
 import 'package:devtoys/presentation/widgets/muli_split_view_divider.dart';
@@ -15,7 +14,7 @@ class IOEditor extends StatelessWidget {
   ///When set to true, creates horizontal separators.
   final bool isVerticalLayout;
 
-  IOEditor(
+  const IOEditor(
       {super.key,
       this.usesCodeControllers = true,
       this.inputController,

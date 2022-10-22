@@ -15,7 +15,7 @@ class XMLFormatterView extends GetView<XMLFormatterController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: DefaultAppBar(title: controller.tool.homeTitle),
-        body: Container(
+        body: SizedBox(
           height: Get.height - kToolbarHeight,
           child: ListView(
             children: [
@@ -24,13 +24,13 @@ class XMLFormatterView extends GetView<XMLFormatterController> {
                 child: YaruSection(headline: "configuration".tr, children: [
                   YaruRow(
                       enabled: true,
-                      leadingWidget: Icon(Icons.arrow_right_alt),
+                      leadingWidget: const Icon(Icons.arrow_right_alt),
                       trailingWidget: Padding(
+                        padding: const EdgeInsets.only(left: 8.0),
                         child: Text(
                           "indentation".tr,
-                          style: TextStyle(fontSize: 18),
+                          style: const TextStyle(fontSize: 18),
                         ),
-                        padding: const EdgeInsets.only(left: 8.0),
                       ),
                       actionWidget: Obx(
                         () => DropdownButton<Indentation>(
@@ -42,7 +42,7 @@ class XMLFormatterView extends GetView<XMLFormatterController> {
                       ))
                 ]),
               ),
-              Container(
+              SizedBox(
                   height: Get.height / 1.2,
                   child: IOEditor(
                     inputController: controller.inputController,

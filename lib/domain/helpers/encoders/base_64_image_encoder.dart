@@ -6,11 +6,11 @@ import 'package:flutter/services.dart';
 class Base64ImageEncoder implements Encoder {
   @override
   String encode(content) {
-    return Base64Encoder().convert(content);
+    return const Base64Encoder().convert(content);
   }
 
   @override
   Uint8List decode(content) {
-    return Base64Decoder().convert(content);
+    return const Base64Decoder().convert(content);
   }
 }

@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:code_text_field/code_text_field.dart';
 import 'package:devtoys/infrastructure/global_settings.dart';
 import 'package:devtoys/presentation/widgets/io_editor/themes.dart';
@@ -17,11 +19,10 @@ class CodeControllerFactory {
   }
 
   static CodeController getInstance(
-      {required language, bool useWebFix = true}) {
-    return new CodeController(
-        language: language,
-        // ignore: deprecated_member_use
-        theme: _getCodeControllerTheme(),
-        webSpaceFix: useWebFix);
-  }
+          {required language, bool useWebFix = true}) =>
+      CodeController(
+          language: language,
+          // ignore: deprecated_member_use
+          theme: _getCodeControllerTheme(),
+          webSpaceFix: useWebFix);
 }

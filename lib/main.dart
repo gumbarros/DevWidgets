@@ -17,7 +17,7 @@ main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
   await GetStorage.init();
 
-  if (!kIsWeb) await DesktopWindow.setMinWindowSize(Size(1000, 800));
+  if (!kIsWeb) await DesktopWindow.setMinWindowSize(const Size(1000, 800));
 
   final String initialRoute = Routes.getToolRouteByCommandLineArgs(args);
   runApp(Main(initialRoute: initialRoute));
@@ -34,7 +34,7 @@ class Main extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialBinding: InitialBindings(),
       locale: GlobalSettings.getLocale(),
-      fallbackLocale: Locale("en", "US"),
+      fallbackLocale: const Locale("en", "US"),
       defaultTransition: Transition.fade,
       getPages: Navigation.pages,
       title: "DevToys",
@@ -51,8 +51,8 @@ class Main extends StatelessWidget {
                               variant: GlobalSettings.getYaruVariant(),
                               themeMode: GlobalSettings.getThemeMode()),
                           child: LinuxLayout(
-                            child: child,
                             tools: Get.find<List<Tool>>(),
+                            child: child,
                           ),
                         ),
                       ),

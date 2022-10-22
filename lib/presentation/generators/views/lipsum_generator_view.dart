@@ -16,7 +16,7 @@ class LipsumGeneratorView extends GetView<LipsumGeneratorController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: DefaultAppBar(title: controller.tool.homeTitle),
-        body: Container(
+        body: SizedBox(
           height: Get.height - kToolbarHeight,
           child: ListView(
             children: [
@@ -25,13 +25,13 @@ class LipsumGeneratorView extends GetView<LipsumGeneratorController> {
                 child: YaruSection(headline: "configuration".tr, children: [
                   YaruRow(
                       enabled: true,
-                      leadingWidget: Icon(Icons.width_normal),
+                      leadingWidget: const Icon(Icons.width_normal),
                       trailingWidget: Padding(
+                        padding: const EdgeInsets.only(left: 8.0),
                         child: ListTile(
                             title: Text("lipsum_generator_mode".tr),
                             subtitle:
                                 Text("lipsum_generator_mode_description".tr)),
-                        padding: const EdgeInsets.only(left: 8.0),
                       ),
                       actionWidget: Obx(
                         () => DropdownButton<LipsumType>(
@@ -43,12 +43,12 @@ class LipsumGeneratorView extends GetView<LipsumGeneratorController> {
                       )),
                   YaruRow(
                     enabled: true,
-                    leadingWidget: Icon(Icons.fork_right),
+                    leadingWidget: const Icon(Icons.fork_right),
                     trailingWidget: Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
                       child: ListTile(
                         title: Text("lipsum_start_with".tr),
                       ),
-                      padding: const EdgeInsets.only(left: 8.0),
                     ),
                     actionWidget: Obx(
                       () => Switch(
@@ -60,13 +60,13 @@ class LipsumGeneratorView extends GetView<LipsumGeneratorController> {
                   ),
                   YaruRow(
                     enabled: true,
-                    leadingWidget: Icon(Icons.tag),
+                    leadingWidget: const Icon(Icons.tag),
                     trailingWidget: Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
                       child: ListTile(
                         title: Text("amount".tr),
                         subtitle: Text("lipsum_amount_description".tr),
                       ),
-                      padding: const EdgeInsets.only(left: 8.0),
                     ),
                     actionWidget: Obx(
                       () => Flexible(
@@ -81,7 +81,7 @@ class LipsumGeneratorView extends GetView<LipsumGeneratorController> {
                             controller.count.value =
                                 int.tryParse(value) ?? 0; // e.g. if empty -> 0
                           },
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             contentPadding: EdgeInsets.all(10),
                             border: OutlineInputBorder(),
                           ),
@@ -91,7 +91,7 @@ class LipsumGeneratorView extends GetView<LipsumGeneratorController> {
                   ),
                 ]),
               ),
-              Container(
+              SizedBox(
                   height: Get.height / 1.2,
                   child: OutputEditor(
                     outputController: controller.outputController,

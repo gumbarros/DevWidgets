@@ -46,7 +46,7 @@ class Navigation {
       binding: SQLFormatterControllerBinding(),
     ),
     GetPage(
-      name: Routes.JsonFormatter,
+      name: Routes.jsonFormatter,
       page: () => const JsonFormatterView(),
       binding: JsonFormatterControllerBinding(),
     ),

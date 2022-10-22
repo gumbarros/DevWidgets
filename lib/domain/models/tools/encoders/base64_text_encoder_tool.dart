@@ -4,12 +4,10 @@ import 'package:devtoys/domain/models/groups/encoders_group.dart';
 import 'package:devtoys/domain/models/tools/encoders/encoder_tool.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-import '../tool.dart';
 
-class Base64TextEncoderTool extends EncoderTool implements Tool {
-  Base64TextEncoderTool(this.encoder) : super(encoder);
+class Base64TextEncoderTool implements EncoderTool {
+  Base64TextEncoderTool(this.encoder);
 
   @override
   IconData get icon => Icons.text_snippet_sharp;

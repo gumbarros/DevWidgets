@@ -5,10 +5,9 @@ import 'package:devtoys/domain/models/tools/formatters/formatter_tool.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../tool.dart';
 
-class JsonFormatterTool extends FormatterTool implements Tool {
-  JsonFormatterTool(this.formatter) : super(formatter);
+class JsonFormatterTool implements FormatterTool {
+  JsonFormatterTool(this.formatter);
 
   @override
   IconData get icon => Icons.data_object;
@@ -17,7 +16,7 @@ class JsonFormatterTool extends FormatterTool implements Tool {
   String get homeTitle => "json_formatter".tr;
 
   @override
-  String get route => Routes.JsonFormatter;
+  String get route => Routes.jsonFormatter;
 
   @override
   Group get group => FormattersGroup();

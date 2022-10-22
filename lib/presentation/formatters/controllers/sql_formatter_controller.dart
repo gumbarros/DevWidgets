@@ -1,16 +1,19 @@
 import 'package:code_text_field/code_text_field.dart';
-import 'package:devtoys/domain/models/tools/formatters/sql_formatter.dart';
+import 'package:devtoys/domain/models/tools/formatters/sql_formatter/sql_dialect.dart';
+import 'package:devtoys/domain/models/tools/formatters/sql_formatter/sql_formatter_tool.dart';
 import 'package:devtoys/presentation/widgets/io_editor/code_controller_factory.dart';
 import 'package:get/get.dart';
 import 'package:highlight/languages/sql.dart';
 
-class SQLFormatterController extends GetxController {
-  final SQLFormatterTool tool;
+class SqlFormatterController extends GetxController {
+  final SqlFormatterTool tool;
   late CodeController inputController;
   late CodeController outputController;
   String? result;
 
-  SQLFormatterController(this.tool);
+  final Rx<SqlDialect> dialect = SqlDialect.generic.obs;
+
+  SqlFormatterController(this.tool);
 
   @override
   void onInit() {
@@ -20,7 +23,8 @@ class SQLFormatterController extends GetxController {
 
     inputController.addListener(() {
       try {
-        outputController.text = tool.formatter.format(inputController.text);
+        outputController.text =
+            tool.formatter.format(inputController.text, dialect: dialect.value);
       } catch (_) {
         //Bug on code_text_field package.
       }

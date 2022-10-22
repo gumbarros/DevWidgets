@@ -77,8 +77,8 @@ class Navigation {
     ),
     GetPage(
       name: Routes.urlEncoder,
-      page: () => const URLEncoderView(),
-      binding: URLEncoderControllerBinding(),
+      page: () => const UrlEncoderView(),
+      binding: UrlEncoderControllerBinding(),
     ),
     GetPage(
       name: Routes.settings,

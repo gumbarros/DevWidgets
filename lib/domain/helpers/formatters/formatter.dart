@@ -1,3 +1,3 @@
 abstract class Formatter {
-  String format(String content);
+  String format(String data);
 }

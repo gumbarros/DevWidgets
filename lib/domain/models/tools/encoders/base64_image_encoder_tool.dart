@@ -1,15 +1,13 @@
 import 'package:devtoys/domain/helpers/encoders/base_64_image_encoder.dart';
 import 'package:devtoys/domain/models/groups/group.dart';
 import 'package:devtoys/domain/models/groups/encoders_group.dart';
-import 'package:devtoys/domain/models/tools/encoders/encoder_tool.dart';
+import 'package:devtoys/domain/models/tools/tool.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-class Base64ImageEncoderTool implements EncoderTool {
-  Base64ImageEncoderTool(this.encoder);
-
+class Base64ImageEncoderTool implements Tool {
   @override
   IconData get icon => Icons.image;
 
@@ -31,6 +29,5 @@ class Base64ImageEncoderTool implements EncoderTool {
   @override
   String get menuTitle => "base64_image_encoder_menu_name".tr;
 
-  @override
-  final Base64ImageEncoder encoder;
+  Base64ImageEncoder get encoder => Base64ImageEncoder();
 }

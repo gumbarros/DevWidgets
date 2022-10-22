@@ -3,11 +3,11 @@ import 'package:devtoys/infrastructure/bindings/controllers/get_tool.dart';
 import 'package:devtoys/presentation/encoders/controllers/url_encoder_controller.dart';
 import 'package:get/get.dart';
 
-class URLEncoderControllerBinding extends Bindings {
+class UrlEncoderControllerBinding extends Bindings {
   @override
   void dependencies() {
-    final tool = getTool<URLEncoderTool>();
+    final tool = getTool<UrlEncoderTool>();
 
-    Get.lazyPut<URLEncoderController>(() => URLEncoderController(tool));
+    Get.lazyPut<UrlEncoderController>(() => UrlEncoderController(tool));
   }
 }

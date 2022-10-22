@@ -10,6 +10,8 @@ class EnglishTranslations {
             "Select which conversion mode you want to use",
         "conversion_mode": "Select which conversion mode you want to use",
         "converters": "Converters",
+        "dialect": "Dialect",
+        "generic_sql": "Generic SQL",
         "copy": "Copy",
         "cron_parser": "Cron Parser",
         "menu_search_bar_hint": "Type to search for tools...",

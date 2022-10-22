@@ -1,7 +1,6 @@
 //Based on https://github.com/mrdziuban/sql-formatter/blob/e8065c29af8c8fa4af7318a46b01205f6389e6c9/dart/src/sql_formatter.dart;
-//This is just a POC, I need to implement a formatter foreach SQL dialect like the original DevToys.
 
-import 'package:devtoys/domain/helpers/formatters/formatter.dart';
+import 'package:devtoys/domain/helpers/formatters/sql_formatter/sql_formatter_provider.dart';
 import 'package:devtoys/domain/helpers/utils.dart';
 
 class T {
@@ -29,7 +28,7 @@ class Replacement {
   Replacement(this.pattern, this.replacement);
 }
 
-class SQLFormatter implements Formatter {
+class GenericSqlFormatterProvider implements SqlFormatterProvider {
   static const String sep = '~::~';
 
   @override

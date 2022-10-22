@@ -1,15 +1,13 @@
+import 'package:devtoys/domain/helpers/formatters/sql_formatter/sql_formatter.dart';
 import 'package:devtoys/domain/models/groups/group.dart';
 import 'package:devtoys/domain/models/groups/formatters_group.dart';
-import 'package:devtoys/domain/models/tools/formatters/formatter_tool.dart';
 import 'package:devtoys/domain/models/tools/tool.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-class SQLFormatterTool extends FormatterTool implements Tool {
-  SQLFormatterTool(super.formatter);
-
+class SqlFormatterTool implements Tool {
   @override
   IconData get icon => Icons.storage;
 
@@ -30,4 +28,6 @@ class SQLFormatterTool extends FormatterTool implements Tool {
 
   @override
   String get menuTitle => "sql_formatter_menu_name".tr;
+
+  SqlFormatter get formatter => SqlFormatter();
 }

@@ -1,15 +1,13 @@
+import 'package:devtoys/domain/helpers/encoders/encoder.dart';
+import 'package:devtoys/domain/helpers/encoders/html_encoder.dart';
 import 'package:devtoys/domain/models/groups/group.dart';
 import 'package:devtoys/domain/models/groups/encoders_group.dart';
-import 'package:devtoys/domain/models/tools/encoders/encoder_tool.dart';
 import 'package:devtoys/infrastructure/navigation/routes.dart';
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 import '../tool.dart';
 
-class HTMLEncoderTool extends EncoderTool implements Tool {
-  HTMLEncoderTool(super.encoder);
-
+class HtmlEncoderTool implements Tool {
   @override
   IconData get icon => Icons.code;
 
@@ -30,4 +28,6 @@ class HTMLEncoderTool extends EncoderTool implements Tool {
 
   @override
   String get menuTitle => "html_encoder_menu_name".tr;
+
+  Encoder get encoder => HtmlEncoder();
 }

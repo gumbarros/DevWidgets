@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('HTML Encoder', () {
-    var encoder = HTMLEncoder();
+    var encoder = HtmlEncoder();
     test("Encode HTML", () {
       String input = "<h1>test</h1>";
       String expectedResult = "&lt;h1&gt;test&lt;&#47;h1&gt;";

@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import 'package:highlight/languages/xml.dart';
 
 class HTMLEncoderController extends GetxController {
-  final HTMLEncoderTool tool;
+  final HtmlEncoderTool tool;
   late CodeController inputController;
   late CodeController outputController;
 

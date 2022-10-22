@@ -8,8 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-class URLEncoderView extends GetView<URLEncoderController> {
-  const URLEncoderView({Key? key}) : super(key: key);
+class UrlEncoderView extends GetView<UrlEncoderController> {
+  const UrlEncoderView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

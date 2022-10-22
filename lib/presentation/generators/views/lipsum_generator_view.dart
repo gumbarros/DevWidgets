@@ -1,4 +1,4 @@
-import 'package:devtoys/domain/models/tools/generators/lipsum_type.dart';
+import 'package:devtoys/domain/models/tools/generators/lipsum/lipsum_type.dart';
 import 'package:devtoys/presentation/generators/controllers/lipsum_generator_controller.dart';
 import 'package:devtoys/presentation/widgets/default_app_bar.dart';
 import 'package:devtoys/presentation/helpers.dart';

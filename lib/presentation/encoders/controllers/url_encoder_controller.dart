@@ -3,8 +3,8 @@ import 'package:devtoys/domain/models/tools/encoders/url_encoder_tool.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class URLEncoderController extends GetxController {
-  final URLEncoderTool tool;
+class UrlEncoderController extends GetxController {
+  final UrlEncoderTool tool;
   late TextEditingController inputController;
   late TextEditingController outputController;
 
@@ -12,7 +12,7 @@ class URLEncoderController extends GetxController {
 
   String? result;
 
-  URLEncoderController(this.tool);
+  UrlEncoderController(this.tool);
 
   @override
   void onInit() {

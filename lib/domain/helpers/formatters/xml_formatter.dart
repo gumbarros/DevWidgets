@@ -4,7 +4,7 @@ import 'package:devtoys/domain/models/tools/formatters/indentation.dart';
 import 'package:get/get.dart';
 import 'package:xml/xml.dart';
 
-class XMLFormatter implements Formatter {
+class XmlFormatter implements Formatter {
   @override
   String format(String input,
       {Indentation indentation = Indentation.fourSpaces}) {

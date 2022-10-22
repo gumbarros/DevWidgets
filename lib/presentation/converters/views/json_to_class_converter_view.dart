@@ -53,7 +53,7 @@ class JsonToClassConverterView extends GetView<JsonToClassConverterController> {
                   YaruRow(
                       enabled: true,
                       leadingWidget: const Icon(
-                        Icons.data_array,
+                        Icons.code,
                         size: 25,
                       ),
                       trailingWidget: Padding(

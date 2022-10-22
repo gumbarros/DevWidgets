@@ -1,6 +1,6 @@
 import 'package:devtoys/domain/helpers/encoders/encoder.dart';
 
-class URLEncoder implements Encoder {
+class UrlEncoder implements Encoder {
   @override
   String decode(content) {
     return Uri.decodeComponent(content);

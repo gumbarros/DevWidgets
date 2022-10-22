@@ -1,4 +1,4 @@
-import 'package:devtoys/domain/models/tools/text/escape_conversion_mode.dart';
+import 'package:devtoys/domain/models/tools/text/text_escape/escape_conversion_mode.dart';
 import 'package:devtoys/presentation/text/controllers/text_escape_controller.dart';
 import 'package:devtoys/presentation/widgets/default_app_bar.dart';
 import 'package:devtoys/presentation/helpers.dart';

@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:devtoys/domain/helpers/encoders/encoder.dart';
 import 'package:html_unescape/html_unescape_small.dart';
 
-class HTMLEncoder implements Encoder {
+class HtmlEncoder implements Encoder {
   @override
   String decode(content) {
     var unescape = HtmlUnescape();

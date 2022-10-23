@@ -8,11 +8,11 @@ const RESOURCES = {
 "canvaskit/canvaskit.js": "2bc454a691c631b07a9307ac4ca47797",
 "canvaskit/profiling/canvaskit.wasm": "95a45378b69e77af5ed2bc72b2209b94",
 "canvaskit/profiling/canvaskit.js": "38164e5a72bdad0faa4ce740c9b8e564",
-"favicon.ico": "5b04a15c57dc0cd20ddcb0a2975333de",
+"favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "flutter.js": "f85e6fb278b0fd20c349186fb46ae36d",
-"index.html": "f3bdca15aa4aa8fc85c6278f11250e14",
-"/": "f3bdca15aa4aa8fc85c6278f11250e14",
-"manifest.json": "65fcec70d00068dae9bc76976154e727",
+"index.html": "ac53e38c4e245a03deea9011454704cb",
+"/": "ac53e38c4e245a03deea9011454704cb",
+"manifest.json": "a008991b4f65fff59647666a5aa6df89",
 "main.dart.js": "4959549e7143bc8bf8ed5a586320dce7",
 "assets/AssetManifest.json": "c824bd9fb2199080810781dda863b932",
 "assets/FontManifest.json": "841bb3562f7c8442bee1ecbdfadc727f",
@@ -27,7 +27,11 @@ const RESOURCES = {
 "assets/packages/yaru/src/text/fonts/Ubuntu-RI.ttf": "6da3b4e2adcbcf2889e59c81d2326a43",
 "assets/packages/yaru/src/text/fonts/Ubuntu-R.ttf": "7f0b42d1d6a4d3e646c558185f6711ea",
 "assets/packages/yaru_widgets/assets/ubuntu_logo.png": "1cd87df893e3c75b7df2e850e0dfc1d7",
-"assets/shaders/ink_sparkle.frag": "e35b6596de523db6d8ed141b1569cb7a"
+"assets/shaders/ink_sparkle.frag": "e35b6596de523db6d8ed141b1569cb7a",
+"icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
+"icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
+"icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
+"icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1"
 };
 
 // The application shell files that are downloaded before a service worker can

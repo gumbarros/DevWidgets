@@ -28,6 +28,7 @@ class LinuxMenuSearchBox extends StatelessWidget {
           prefixIconConstraints:
               const BoxConstraints.expand(width: 40, height: 40),
           hintText: "menu_search_bar_hint".tr,
+          hintStyle: const TextStyle(fontSize: 15),
           enabledBorder: const UnderlineInputBorder(
               borderSide: BorderSide(
                 color: Colors.transparent,

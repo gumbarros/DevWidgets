@@ -43,41 +43,37 @@ class LinuxMenu extends StatelessWidget {
         ),
         Visibility(visible: !isCompactLayout(context), child: const Divider()),
         Obx(
-          () => Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: <Widget>[
+          () => Column(
+            children: <Widget>[
+              LinuxMenuTile(
+                selected: GlobalSettings.selectedToolName.value ==
+                    HomeTool().name.toString(),
+                title: YaruPageItemTitle.text(HomeTool().menuTitle),
+                icon: HomeTool().icon,
+                onTap: () {
+                  GlobalSettings.selectedToolName.value =
+                      HomeTool().name.toString();
+                  Get.toNamed(HomeTool().route);
+                },
+              ),
+              for (Tool tool in GlobalSettings.getFavoriteTools())
                 LinuxMenuTile(
-                  selected: GlobalSettings.selectedToolName.value ==
-                      HomeTool().name.toString(),
-                  title: YaruPageItemTitle.text(HomeTool().menuTitle),
-                  icon: HomeTool().icon,
+                  selected: GlobalSettings.selectedToolName.value == tool.name,
+                  title: Text(tool.homeTitle),
+                  icon: tool.icon,
                   onTap: () {
-                    GlobalSettings.selectedToolName.value =
-                        HomeTool().name.toString();
-                    Get.toNamed(HomeTool().route);
+                    GlobalSettings.selectedToolName.value = tool.name;
+                    Get.toNamed(tool.route);
                   },
                 ),
-                for (Tool tool in GlobalSettings.getFavoriteTools())
-                  LinuxMenuTile(
-                    selected:
-                        GlobalSettings.selectedToolName.value == tool.name,
-                    title: Text(tool.homeTitle),
-                    icon: tool.icon,
-                    onTap: () {
-                      GlobalSettings.selectedToolName.value = tool.name;
-                      Get.toNamed(tool.route);
-                    },
-                  ),
-              ]
-                  .map((e) => Container(
-                        padding: isCompactLayout(context)
-                            ? const EdgeInsets.all(8.0)
-                            : null,
-                        child: e,
-                      ))
-                  .toList(),
-            ),
+            ]
+                .map((e) => Container(
+                      padding: isCompactLayout(context)
+                          ? const EdgeInsets.all(8.0)
+                          : null,
+                      child: e,
+                    ))
+                .toList(),
           ),
         ),
         const Divider(),

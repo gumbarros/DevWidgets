@@ -90,7 +90,7 @@ class EnglishTranslations {
         "conversion_type": "Conversion type",
         "invalid_json_data": "Invalid JSON data.",
         "invalid_xml_data": "Invalid XML data.",
-        "json_to_class": "JSON To Class",
+        "json_to_class": "JSON -> Class",
         "class_name": "Class name",
         "programming_language": "Programming language",
         "json_to_class_description":

@@ -1,8 +1,8 @@
-import 'package:devtoys/domain/models/tools/settings/settings_tool.dart';
-import 'package:devtoys/infrastructure/locale/translations.dart';
-import 'package:devtoys/infrastructure/global_settings.dart';
-import 'package:devtoys/presentation/settings/settings_controller.dart';
-import 'package:devtoys/presentation/widgets/default_app_bar.dart';
+import 'package:dev_widgets/domain/models/tools/settings/settings_tool.dart';
+import 'package:dev_widgets/infrastructure/locale/translations.dart';
+import 'package:dev_widgets/infrastructure/global_settings.dart';
+import 'package:dev_widgets/presentation/settings/settings_controller.dart';
+import 'package:dev_widgets/presentation/widgets/default_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -33,8 +33,10 @@ class SettingsView extends GetView<SettingsController> {
                       ),
                     ),
                     actionWidget: DropdownButton<String>(
-                        value: DevToysTranslations.supportedLocales.any((e) =>
-                                e.localeKey.toString() == Get.locale.toString())
+                        value: DevWidgetsTranslations.supportedLocales.any(
+                                (e) =>
+                                    e.localeKey.toString() ==
+                                    Get.locale.toString())
                             ? Get.locale.toString()
                             : "en_US",
                         items: controller.getLanguageDropdownMenuItems(),

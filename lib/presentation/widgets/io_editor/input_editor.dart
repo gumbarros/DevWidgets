@@ -1,6 +1,6 @@
 import 'package:code_text_field/code_text_field.dart';
-import 'package:devtoys/presentation/widgets/io_editor/input_toolbar.dart';
-import 'package:devtoys/presentation/widgets/io_editor/io_text_style.dart';
+import 'package:dev_widgets/presentation/widgets/io_editor/input_toolbar.dart';
+import 'package:dev_widgets/presentation/widgets/io_editor/io_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

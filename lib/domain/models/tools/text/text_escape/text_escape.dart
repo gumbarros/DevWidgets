@@ -1,8 +1,8 @@
-import 'package:devtoys/domain/helpers/text/text_escaper.dart';
-import 'package:devtoys/domain/models/groups/group.dart';
-import 'package:devtoys/domain/models/groups/text_group.dart';
-import 'package:devtoys/domain/models/tools/tool.dart';
-import 'package:devtoys/infrastructure/navigation/routes.dart';
+import 'package:dev_widgets/domain/helpers/text/text_escaper.dart';
+import 'package:dev_widgets/domain/models/groups/group.dart';
+import 'package:dev_widgets/domain/models/groups/text_group.dart';
+import 'package:dev_widgets/domain/models/tools/tool.dart';
+import 'package:dev_widgets/infrastructure/navigation/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

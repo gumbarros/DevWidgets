@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:devtoys/domain/helpers/encoders/encoder.dart';
-import 'package:devtoys/domain/models/tools/encoders/base64_encoding_type.dart';
+import 'package:dev_widgets/domain/helpers/encoders/encoder.dart';
+import 'package:dev_widgets/domain/models/tools/encoders/base64_encoding_type.dart';
 
 class Base64TextEncoder implements Encoder {
   @override

@@ -1,7 +1,7 @@
 class BrazilianPortugueseTranslations {
   static Map<String, String> get keys => {
         "all_tools": "Todas as ferramentas",
-        "app_name": "DevToys",
+        "app_name": "DevWidgets",
         "clear": "Limpar",
         "compact": "Compacta",
         "converters": "Conversores",
@@ -11,6 +11,7 @@ class BrazilianPortugueseTranslations {
         "html": "HTML",
         "input": "Entrada",
         "text": "Texto",
+        "brazil": "Brasil",
         "json_formatter": "Formatador JSON",
         "json_formatter_description": "Indente ou minifique arquivos JSON",
         "json_yaml_converter": "JSON <> YAML",

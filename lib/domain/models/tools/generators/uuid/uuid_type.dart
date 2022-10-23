@@ -1,4 +1,4 @@
-import 'package:devtoys/domain/models/described_enum.dart';
+import 'package:dev_widgets/domain/models/described_enum.dart';
 
 enum UuidType implements DescribedEnum {
   v1("v1"),

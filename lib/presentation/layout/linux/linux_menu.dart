@@ -1,11 +1,11 @@
-import 'package:devtoys/domain/models/groups/group.dart';
-import 'package:devtoys/domain/models/tools/home_tool.dart';
-import 'package:devtoys/domain/models/tools/tool.dart';
-import 'package:devtoys/infrastructure/global_settings.dart';
-import 'package:devtoys/presentation/layout/linux/linux_menu_item.dart';
-import 'package:devtoys/presentation/layout/linux/linux_menu_search_box.dart';
-import 'package:devtoys/presentation/layout/linux/linux_menu_tile.dart';
-import 'package:devtoys/presentation/helpers.dart';
+import 'package:dev_widgets/domain/models/groups/group.dart';
+import 'package:dev_widgets/domain/models/tools/home_tool.dart';
+import 'package:dev_widgets/domain/models/tools/tool.dart';
+import 'package:dev_widgets/infrastructure/global_settings.dart';
+import 'package:dev_widgets/presentation/layout/linux/linux_menu_item.dart';
+import 'package:dev_widgets/presentation/layout/linux/linux_menu_search_box.dart';
+import 'package:dev_widgets/presentation/layout/linux/linux_menu_tile.dart';
+import 'package:dev_widgets/presentation/helpers.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';

@@ -1,6 +1,6 @@
-import 'package:devtoys/domain/models/tools/home_tool.dart';
-import 'package:devtoys/domain/models/tools/tool.dart';
-import 'package:devtoys/infrastructure/bindings/domains/tools_binding.dart';
+import 'package:dev_widgets/domain/models/tools/home_tool.dart';
+import 'package:dev_widgets/domain/models/tools/tool.dart';
+import 'package:dev_widgets/infrastructure/bindings/domains/tools_binding.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';

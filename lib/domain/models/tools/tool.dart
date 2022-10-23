@@ -1,4 +1,4 @@
-import 'package:devtoys/domain/models/groups/group.dart';
+import 'package:dev_widgets/domain/models/groups/group.dart';
 
 import 'package:flutter/material.dart';
 

@@ -33,12 +33,12 @@ jobs:
     
     - name: Prepare AppImage Files
       run: |
-        cp -r build/linux/x64/release/bundle DevToysFlutter.AppDir
+        cp -r build/linux/x64/release/bundle DevWidgets.AppDir
         wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
         chmod +x ./appimagetool-x86_64.AppImage
-        cp -r linux/appImgAssets/* DevToysFlutter.AppDir/
-        chmod +x DevToysFlutter.AppDir/AppRun
-        ./appimagetool-x86_64.AppImage DevToysFlutter.AppDir/
+        cp -r linux/appImgAssets/* DevWidgets.AppDir/
+        chmod +x DevWidgets.AppDir/AppRun
+        ./appimagetool-x86_64.AppImage DevWidgets.AppDir/
     
     - name: Automatic Releases
       uses: marvinpinto/action-automatic-releases@latest
@@ -47,4 +47,4 @@ jobs:
         automatic_release_tag: "latest"
         prerelease: true
         title: "Latest Build"
-        files: DevToys_Flutter-x86_64.AppImage
+        files: DevWidgets-x86_64.AppImage

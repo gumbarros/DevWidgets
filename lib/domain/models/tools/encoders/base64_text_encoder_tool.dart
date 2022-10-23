@@ -1,8 +1,8 @@
-import 'package:devtoys/domain/helpers/encoders/base_64_text_encoder.dart';
-import 'package:devtoys/domain/models/groups/group.dart';
-import 'package:devtoys/domain/models/groups/encoders_group.dart';
-import 'package:devtoys/domain/models/tools/tool.dart';
-import 'package:devtoys/infrastructure/navigation/routes.dart';
+import 'package:dev_widgets/domain/helpers/encoders/base_64_text_encoder.dart';
+import 'package:dev_widgets/domain/models/groups/group.dart';
+import 'package:dev_widgets/domain/models/groups/encoders_group.dart';
+import 'package:dev_widgets/domain/models/tools/tool.dart';
+import 'package:dev_widgets/infrastructure/navigation/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

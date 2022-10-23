@@ -1,7 +1,7 @@
 class EnglishTranslations {
   static Map<String, String> get keys => {
         "all_tools": "All Tools",
-        "app_name": "DevToys",
+        "app_name": "DevWidgets",
         "clear": "Clear",
         "compact": "Compact",
         "configuration": "Configuration",
@@ -13,6 +13,14 @@ class EnglishTranslations {
         "dialect": "Dialect",
         "generic_sql": "Generic SQL",
         "copy": "Copy",
+        "generator": "Generator",
+        "formatter": "Formatter",
+        "validator": "Validator",
+        "cpf": "CPF",
+        "brazil": "Brazil",
+        "cpf_format": "Format",
+        "cpf_menu_name": "CPF Generator",
+        "cpf_description": "Generate brazilian CPFs",
         "cron_parser": "Cron Parser",
         "menu_search_bar_hint": "Type to search for tools...",
         "json_formatter_menu_name": "JSON",
@@ -82,7 +90,7 @@ class EnglishTranslations {
         "class_name": "Class name",
         "programming_language": "Programming language",
         "json_to_class_description":
-            "Convert JSON data to a programming language class.",
+            "Convert JSON data to a programming language class",
         "json_formatter": "JSON Formatter",
         "json_formatter_description": "Indent or minify JSON data",
         "json_yaml_converter": "JSON <> YAML",

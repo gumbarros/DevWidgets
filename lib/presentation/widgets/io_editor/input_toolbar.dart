@@ -1,4 +1,4 @@
-import 'package:devtoys/presentation/widgets/io_editor/io_toolbar.dart';
+import 'package:dev_widgets/presentation/widgets/io_editor/io_toolbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

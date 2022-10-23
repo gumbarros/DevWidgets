@@ -1,7 +1,7 @@
-import 'package:devtoys/domain/models/tools/home_tool.dart';
-import 'package:devtoys/presentation/home/home_controller.dart';
-import 'package:devtoys/presentation/widgets/default_app_bar.dart';
-import 'package:devtoys/presentation/widgets/tool_card.dart';
+import 'package:dev_widgets/domain/models/tools/home_tool.dart';
+import 'package:dev_widgets/presentation/home/home_controller.dart';
+import 'package:dev_widgets/presentation/widgets/default_app_bar.dart';
+import 'package:dev_widgets/presentation/widgets/tool_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:responsive_framework/responsive_grid.dart';

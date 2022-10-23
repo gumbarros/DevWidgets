@@ -1,5 +1,5 @@
-import 'package:devtoys/infrastructure/bindings/domains/groups_binding.dart';
-import 'package:devtoys/infrastructure/bindings/domains/tools_binding.dart';
+import 'package:dev_widgets/infrastructure/bindings/domains/groups_binding.dart';
+import 'package:dev_widgets/infrastructure/bindings/domains/tools_binding.dart';
 import 'package:get/get.dart';
 
 class InitialBindings extends Bindings {

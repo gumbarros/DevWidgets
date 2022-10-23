@@ -1,5 +1,5 @@
-import 'package:devtoys/domain/models/tools/text/text_escape/escape_conversion_mode.dart';
-import 'package:devtoys/domain/models/tools/text/text_escape/text_escape.dart';
+import 'package:dev_widgets/domain/models/tools/text/text_escape/escape_conversion_mode.dart';
+import 'package:dev_widgets/domain/models/tools/text/text_escape/text_escape.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -1,5 +1,5 @@
-import 'package:devtoys/domain/models/tools/generators/uuid/uuid_generator_tool.dart';
-import 'package:devtoys/domain/models/tools/generators/uuid/uuid_type.dart';
+import 'package:dev_widgets/domain/models/tools/generators/uuid/uuid_generator_tool.dart';
+import 'package:dev_widgets/domain/models/tools/generators/uuid/uuid_type.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

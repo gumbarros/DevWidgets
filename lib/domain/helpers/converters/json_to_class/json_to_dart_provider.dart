@@ -1,4 +1,4 @@
-import 'package:devtoys/domain/helpers/converters/json_to_class/json_to_class_provider.dart';
+import 'package:dev_widgets/domain/helpers/converters/json_to_class/json_to_class_provider.dart';
 import 'package:json_to_dart/json_to_dart.dart';
 
 class JsonToDartProvider implements JsonToClassProvider {

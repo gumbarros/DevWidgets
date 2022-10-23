@@ -1,6 +1,6 @@
-import 'package:devtoys/domain/models/tools/generators/lipsum/lipsum_generator_tool.dart';
-import 'package:devtoys/infrastructure/bindings/controllers/get_tool.dart';
-import 'package:devtoys/presentation/generators/controllers/lipsum_generator_controller.dart';
+import 'package:dev_widgets/domain/models/tools/generators/lipsum/lipsum_generator_tool.dart';
+import 'package:dev_widgets/infrastructure/bindings/controllers/get_tool.dart';
+import 'package:dev_widgets/presentation/generators/controllers/lipsum_generator_controller.dart';
 import 'package:get/get.dart';
 
 class LipsumGeneratorControllerBinding extends Bindings {

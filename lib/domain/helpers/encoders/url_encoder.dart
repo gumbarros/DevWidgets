@@ -1,4 +1,4 @@
-import 'package:devtoys/domain/helpers/encoders/encoder.dart';
+import 'package:dev_widgets/domain/helpers/encoders/encoder.dart';
 
 class UrlEncoder implements Encoder {
   @override

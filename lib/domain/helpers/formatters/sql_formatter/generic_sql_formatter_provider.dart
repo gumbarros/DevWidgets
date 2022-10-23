@@ -1,7 +1,7 @@
 //Based on https://github.com/mrdziuban/sql-formatter/blob/e8065c29af8c8fa4af7318a46b01205f6389e6c9/dart/src/sql_formatter.dart;
 
-import 'package:devtoys/domain/helpers/formatters/sql_formatter/sql_formatter_provider.dart';
-import 'package:devtoys/domain/helpers/utils.dart';
+import 'package:dev_widgets/domain/helpers/formatters/sql_formatter/sql_formatter_provider.dart';
+import 'package:dev_widgets/domain/helpers/utils.dart';
 
 class T {
   String str;
@@ -55,7 +55,7 @@ class GenericSqlFormatterProvider implements SqlFormatterProvider {
     String originalEl = acc.arr[i];
     int parensLevel = subqueryLevel(originalEl, acc.parensLevel);
     List<String> arr = List<String>.from(acc.arr);
-    if (originalEl.contains(RegExp(r'SELECT|SET'))) {
+    if (originalEl.contains(RegExp('SELECT|SET'))) {
       arr[i] =
           originalEl.replaceAll(RegExp(r'\,\s+'), ',\n${acc.tab}${acc.tab}');
     }
@@ -66,7 +66,8 @@ class GenericSqlFormatterProvider implements SqlFormatterProvider {
             el.contains("'")
                 ? '${acc.str}$el'
                 : '${acc.str}${acc.shiftArr[acc.deep]}$el',
-            parensLevel < 1 && acc.deep != 0 ? acc.deep - 1 : acc.deep);
+            parensLevel < 1 && acc.deep != 0 ? acc.deep - 1 : acc.deep,
+          );
 
     return T(out.str, acc.shiftArr, acc.tab, arr, parensLevel, out.deep);
   }
@@ -77,10 +78,10 @@ class GenericSqlFormatterProvider implements SqlFormatterProvider {
   List<String> createShiftArr(String tab) =>
       List<String>.generate(100, (int i) => '\n${tab * i}');
   List<String> genArray(List<String> splitByQuotes, String tab) {
-    return List<List<String>>.generate(splitByQuotes.length,
-            (int i) => splitIfEven(i, splitByQuotes[i], tab))
-        .expand((x) => x)
-        .toList();
+    return List<List<String>>.generate(
+      splitByQuotes.length,
+      (int i) => splitIfEven(i, splitByQuotes[i], tab),
+    ).expand((x) => x).toList();
   }
 
   int subqueryLevel(String str, int level) {
@@ -90,51 +91,69 @@ class GenericSqlFormatterProvider implements SqlFormatterProvider {
 
   List<Replacement> allReplacements(String tab) {
     return [
-      Replacement(RegExp(r' AND ', caseSensitive: false), '$sep${tab}AND '),
+      Replacement(RegExp(' AND ', caseSensitive: false), '$sep${tab}AND '),
       Replacement(
-          RegExp(r' BETWEEN ', caseSensitive: false), '$sep${tab}BETWEEN '),
-      Replacement(RegExp(r' CASE ', caseSensitive: false), '$sep${tab}CASE '),
-      Replacement(RegExp(r' ELSE ', caseSensitive: false), '$sep${tab}ELSE '),
-      Replacement(RegExp(r' END ', caseSensitive: false), '$sep${tab}END '),
-      Replacement(RegExp(r' FROM ', caseSensitive: false), '${sep}FROM '),
+        RegExp(' BETWEEN ', caseSensitive: false),
+        '$sep${tab}BETWEEN ',
+      ),
+      Replacement(RegExp(' CASE ', caseSensitive: false), '$sep${tab}CASE '),
+      Replacement(RegExp(' ELSE ', caseSensitive: false), '$sep${tab}ELSE '),
+      Replacement(RegExp(' END ', caseSensitive: false), '$sep${tab}END '),
+      Replacement(RegExp(' FROM ', caseSensitive: false), '${sep}FROM '),
       Replacement(
-          RegExp(r' GROUP\s+BY ', caseSensitive: false), '${sep}GROUP BY '),
-      Replacement(RegExp(r' HAVING ', caseSensitive: false), '${sep}HAVING '),
-      Replacement(RegExp(r' IN ', caseSensitive: false), ' IN '),
-      Replacement(RegExp(r' JOIN ', caseSensitive: false), '${sep}JOIN '),
-      Replacement(RegExp(r' CROSS(~::~)+JOIN ', caseSensitive: false),
-          '${sep}CROSS JOIN '),
-      Replacement(RegExp(r' INNER(~::~)+JOIN ', caseSensitive: false),
-          '${sep}INNER JOIN '),
-      Replacement(RegExp(r' LEFT(~::~)+JOIN ', caseSensitive: false),
-          '${sep}LEFT JOIN '),
-      Replacement(RegExp(r' RIGHT(~::~)+JOIN ', caseSensitive: false),
-          '${sep}RIGHT JOIN '),
-      Replacement(RegExp(r' ON ', caseSensitive: false), '$sep${tab}ON '),
-      Replacement(RegExp(r' OR ', caseSensitive: false), '$sep${tab}OR '),
+        RegExp(r' GROUP\s+BY ', caseSensitive: false),
+        '${sep}GROUP BY ',
+      ),
+      Replacement(RegExp(' HAVING ', caseSensitive: false), '${sep}HAVING '),
+      Replacement(RegExp(' IN ', caseSensitive: false), ' IN '),
+      Replacement(RegExp(' JOIN ', caseSensitive: false), '${sep}JOIN '),
       Replacement(
-          RegExp(r' ORDER\s+BY ', caseSensitive: false), '${sep}ORDER BY '),
-      Replacement(RegExp(r' OVER ', caseSensitive: false), '$sep${tab}OVER '),
+        RegExp(' CROSS(~::~)+JOIN ', caseSensitive: false),
+        '${sep}CROSS JOIN ',
+      ),
       Replacement(
-          RegExp(r'\(\s*SELECT ', caseSensitive: false), '$sep(SELECT '),
+        RegExp(' INNER(~::~)+JOIN ', caseSensitive: false),
+        '${sep}INNER JOIN ',
+      ),
       Replacement(
-          RegExp(r'\)\s*SELECT ', caseSensitive: false), ')${sep}SELECT '),
-      Replacement(RegExp(r' THEN ', caseSensitive: false), ' THEN$sep$tab'),
-      Replacement(RegExp(r' UNION ', caseSensitive: false), '${sep}UNION$sep'),
-      Replacement(RegExp(r' USING ', caseSensitive: false), '${sep}USING '),
-      Replacement(RegExp(r' WHEN ', caseSensitive: false), '$sep${tab}WHEN '),
-      Replacement(RegExp(r' WHERE ', caseSensitive: false), '${sep}WHERE '),
-      Replacement(RegExp(r' WITH ', caseSensitive: false), '${sep}WITH '),
-      Replacement(RegExp(r' SET ', caseSensitive: false), '${sep}SET '),
-      Replacement(RegExp(r' ALL ', caseSensitive: false), ' ALL '),
-      Replacement(RegExp(r' AS ', caseSensitive: false), ' AS '),
-      Replacement(RegExp(r' ASC ', caseSensitive: false), ' ASC '),
-      Replacement(RegExp(r' DESC ', caseSensitive: false), ' DESC '),
-      Replacement(RegExp(r' DISTINCT ', caseSensitive: false), ' DISTINCT '),
-      Replacement(RegExp(r' EXISTS ', caseSensitive: false), ' EXISTS '),
-      Replacement(RegExp(r' NOT ', caseSensitive: false), ' NOT '),
-      Replacement(RegExp(r' NULL ', caseSensitive: false), ' NULL '),
-      Replacement(RegExp(r' LIKE ', caseSensitive: false), ' LIKE '),
+        RegExp(' LEFT(~::~)+JOIN ', caseSensitive: false),
+        '${sep}LEFT JOIN ',
+      ),
+      Replacement(
+        RegExp(' RIGHT(~::~)+JOIN ', caseSensitive: false),
+        '${sep}RIGHT JOIN ',
+      ),
+      Replacement(RegExp(' ON ', caseSensitive: false), '$sep${tab}ON '),
+      Replacement(RegExp(' OR ', caseSensitive: false), '$sep${tab}OR '),
+      Replacement(
+        RegExp(r' ORDER\s+BY ', caseSensitive: false),
+        '${sep}ORDER BY ',
+      ),
+      Replacement(RegExp(' OVER ', caseSensitive: false), '$sep${tab}OVER '),
+      Replacement(
+        RegExp(r'\(\s*SELECT ', caseSensitive: false),
+        '$sep(SELECT ',
+      ),
+      Replacement(
+        RegExp(r'\)\s*SELECT ', caseSensitive: false),
+        ')${sep}SELECT ',
+      ),
+      Replacement(RegExp(' THEN ', caseSensitive: false), ' THEN$sep$tab'),
+      Replacement(RegExp(' UNION ', caseSensitive: false), '${sep}UNION$sep'),
+      Replacement(RegExp(' USING ', caseSensitive: false), '${sep}USING '),
+      Replacement(RegExp(' WHEN ', caseSensitive: false), '$sep${tab}WHEN '),
+      Replacement(RegExp(' WHERE ', caseSensitive: false), '${sep}WHERE '),
+      Replacement(RegExp(' WITH ', caseSensitive: false), '${sep}WITH '),
+      Replacement(RegExp(' SET ', caseSensitive: false), '${sep}SET '),
+      Replacement(RegExp(' ALL ', caseSensitive: false), ' ALL '),
+      Replacement(RegExp(' AS ', caseSensitive: false), ' AS '),
+      Replacement(RegExp(' ASC ', caseSensitive: false), ' ASC '),
+      Replacement(RegExp(' DESC ', caseSensitive: false), ' DESC '),
+      Replacement(RegExp(' DISTINCT ', caseSensitive: false), ' DISTINCT '),
+      Replacement(RegExp(' EXISTS ', caseSensitive: false), ' EXISTS '),
+      Replacement(RegExp(' NOT ', caseSensitive: false), ' NOT '),
+      Replacement(RegExp(' NULL ', caseSensitive: false), ' NULL '),
+      Replacement(RegExp(' LIKE ', caseSensitive: false), ' LIKE '),
       Replacement(RegExp(r'\s*SELECT ', caseSensitive: false), 'SELECT '),
       Replacement(RegExp(r'\s*UPDATE ', caseSensitive: false), 'UPDATE '),
       Replacement(RegExp(r'\s*DELETE ', caseSensitive: false), 'DELETE '),

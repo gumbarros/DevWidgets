@@ -1,5 +1,5 @@
-import 'package:devtoys/domain/models/tools/home_tool.dart';
-import 'package:devtoys/infrastructure/bindings/domains/tools_binding.dart';
+import 'package:dev_widgets/domain/models/tools/home_tool.dart';
+import 'package:dev_widgets/infrastructure/bindings/domains/tools_binding.dart';
 
 class Routes {
   static const home = '/home';
@@ -22,6 +22,7 @@ class Routes {
   static const timestampConverter = '/converters/timestamp';
   static const cronParser = '/converters/cronParser';
   static const numberBase = '/converters/numberBase';
+  static const cpf = '/brazil/cpf';
 
   static String getToolRouteByCommandLineArgs(List<String> args) {
     if (args.isNotEmpty) {

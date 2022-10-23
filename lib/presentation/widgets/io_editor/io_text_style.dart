@@ -1,4 +1,4 @@
-import 'package:devtoys/infrastructure/global_settings.dart';
+import 'package:dev_widgets/infrastructure/global_settings.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';

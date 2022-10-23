@@ -1,5 +1,5 @@
-import 'package:devtoys/domain/models/tools/tool.dart';
-import 'package:devtoys/infrastructure/global_settings.dart';
+import 'package:dev_widgets/domain/models/tools/tool.dart';
+import 'package:dev_widgets/infrastructure/global_settings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';

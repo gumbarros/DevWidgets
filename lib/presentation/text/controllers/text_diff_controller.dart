@@ -1,4 +1,4 @@
-import 'package:devtoys/domain/models/tools/text/text_diff_tool.dart';
+import 'package:dev_widgets/domain/models/tools/text/text_diff_tool.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pretty_diff_text/pretty_diff_text.dart';

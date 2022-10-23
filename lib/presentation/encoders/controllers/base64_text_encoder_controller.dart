@@ -1,6 +1,6 @@
-import 'package:devtoys/domain/models/tools/encoders/base64_encoding_type.dart';
-import 'package:devtoys/domain/models/tools/encoders/base64_text_encoder_tool.dart';
-import 'package:devtoys/domain/models/tools/encoders/encode_conversion_mode.dart';
+import 'package:dev_widgets/domain/models/tools/encoders/base64_encoding_type.dart';
+import 'package:dev_widgets/domain/models/tools/encoders/base64_text_encoder_tool.dart';
+import 'package:dev_widgets/domain/models/tools/encoders/encode_conversion_mode.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

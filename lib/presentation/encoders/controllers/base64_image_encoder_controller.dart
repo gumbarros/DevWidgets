@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'dart:typed_data';
-import 'package:devtoys/domain/models/tools/encoders/base64_image_encoder_tool.dart';
+import 'package:dev_widgets/domain/models/tools/encoders/base64_image_encoder_tool.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -55,7 +55,7 @@ class Base64ImageEncoderController extends GetxController {
     var docsFolder = await getApplicationDocumentsDirectory();
     await screenshotController.captureAndSave(docsFolder.absolute.path,
         pixelRatio: Get.pixelRatio,
-        fileName: "DevToysBase64Encoder_${DateTime.now()}");
+        fileName: "DevWidgetsBase64Encoder_${DateTime.now()}");
     Get.snackbar("success".tr, "file_saved_to_documents".tr,
         backgroundColor: Colors.green);
   }

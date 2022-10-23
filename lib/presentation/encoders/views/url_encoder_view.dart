@@ -1,8 +1,8 @@
-import 'package:devtoys/domain/models/tools/encoders/encode_conversion_mode.dart';
-import 'package:devtoys/presentation/encoders/controllers/url_encoder_controller.dart';
-import 'package:devtoys/presentation/widgets/default_app_bar.dart';
-import 'package:devtoys/presentation/helpers.dart';
-import 'package:devtoys/presentation/widgets/io_editor/io_editor.dart';
+import 'package:dev_widgets/domain/models/tools/encoders/encode_conversion_mode.dart';
+import 'package:dev_widgets/presentation/encoders/controllers/url_encoder_controller.dart';
+import 'package:dev_widgets/presentation/widgets/default_app_bar.dart';
+import 'package:dev_widgets/presentation/helpers.dart';
+import 'package:dev_widgets/presentation/widgets/io_editor/io_editor.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';

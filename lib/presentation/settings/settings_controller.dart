@@ -1,6 +1,6 @@
-import 'package:devtoys/infrastructure/locale/translations.dart';
-import 'package:devtoys/infrastructure/global_settings.dart';
-import 'package:devtoys/presentation/widgets/io_editor/themes.dart';
+import 'package:dev_widgets/infrastructure/locale/translations.dart';
+import 'package:dev_widgets/infrastructure/global_settings.dart';
+import 'package:dev_widgets/presentation/widgets/io_editor/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -11,7 +11,7 @@ class SettingsController extends GetxController {
   final storage = GetStorage();
 
   List<DropdownMenuItem<String>> getLanguageDropdownMenuItems() {
-    return DevToysTranslations.supportedLocales
+    return DevWidgetsTranslations.supportedLocales
         .map((l) => DropdownMenuItem(
               value: l.localeKey,
               child: Text(l.name),

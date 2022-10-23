@@ -1,7 +1,7 @@
 import 'package:code_text_field/code_text_field.dart';
-import 'package:devtoys/domain/models/tools/converters/programming_language.dart';
-import 'package:devtoys/domain/models/tools/converters/json_to_class_converter_tool.dart';
-import 'package:devtoys/presentation/widgets/io_editor/code_controller_factory.dart';
+import 'package:dev_widgets/domain/models/tools/converters/programming_language.dart';
+import 'package:dev_widgets/domain/models/tools/converters/json_to_class_converter_tool.dart';
+import 'package:dev_widgets/presentation/widgets/io_editor/code_controller_factory.dart';
 import 'package:get/get.dart';
 import 'package:highlight/languages/dart.dart';
 import 'package:highlight/languages/json.dart';

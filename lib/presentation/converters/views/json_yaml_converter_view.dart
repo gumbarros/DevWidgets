@@ -1,9 +1,9 @@
-import 'package:devtoys/domain/models/tools/converters/json_yaml_conversion_type.dart';
-import 'package:devtoys/domain/models/tools/formatters/indentation.dart';
-import 'package:devtoys/presentation/converters/controllers/json_yaml_converter_controller.dart';
-import 'package:devtoys/presentation/helpers.dart';
-import 'package:devtoys/presentation/widgets/default_app_bar.dart';
-import 'package:devtoys/presentation/widgets/io_editor/io_editor.dart';
+import 'package:dev_widgets/domain/models/tools/converters/json_yaml_conversion_type.dart';
+import 'package:dev_widgets/domain/models/tools/formatters/indentation.dart';
+import 'package:dev_widgets/presentation/converters/controllers/json_yaml_converter_controller.dart';
+import 'package:dev_widgets/presentation/helpers.dart';
+import 'package:dev_widgets/presentation/widgets/default_app_bar.dart';
+import 'package:dev_widgets/presentation/widgets/io_editor/io_editor.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -27,7 +27,7 @@ class JsonYamlConverterView extends GetView<JsonYamlConverterController> {
                     YaruRow(
                       enabled: true,
                       leadingWidget: const Icon(
-                        Icons.data_array,
+                        Icons.compare_arrows_sharp,
                         size: 25,
                       ),
                       trailingWidget: Padding(

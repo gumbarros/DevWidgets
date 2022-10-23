@@ -1,7 +1,7 @@
-import 'package:devtoys/domain/models/tools/tool.dart';
-import 'package:devtoys/infrastructure/global_settings.dart';
-import 'package:devtoys/presentation/helpers.dart';
-import 'package:devtoys/presentation/layout/linux/linux_menu.dart';
+import 'package:dev_widgets/domain/models/tools/tool.dart';
+import 'package:dev_widgets/infrastructure/global_settings.dart';
+import 'package:dev_widgets/presentation/helpers.dart';
+import 'package:dev_widgets/presentation/layout/linux/linux_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

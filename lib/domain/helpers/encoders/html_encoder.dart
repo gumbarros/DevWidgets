@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:devtoys/domain/helpers/encoders/encoder.dart';
+import 'package:dev_widgets/domain/helpers/encoders/encoder.dart';
 import 'package:html_unescape/html_unescape_small.dart';
 
 class HtmlEncoder implements Encoder {

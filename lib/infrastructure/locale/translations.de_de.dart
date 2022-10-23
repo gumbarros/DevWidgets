@@ -1,7 +1,7 @@
 class GermanTranslations {
   static Map<String, String> get keys => {
         "all_tools": "Alle Tools",
-        "app_name": "DevToys",
+        "app_name": "DevWidgets",
         "clear": "Leeren",
         "compact": "Kompakt",
         "configuration": "Konfiguration",

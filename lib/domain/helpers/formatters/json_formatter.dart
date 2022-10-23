@@ -1,7 +1,7 @@
 import 'dart:convert';
-import 'package:devtoys/domain/helpers/formatters/formatter.dart';
-import 'package:devtoys/domain/helpers/utils.dart';
-import 'package:devtoys/domain/models/tools/formatters/indentation.dart';
+import 'package:dev_widgets/domain/helpers/formatters/formatter.dart';
+import 'package:dev_widgets/domain/helpers/utils.dart';
+import 'package:dev_widgets/domain/models/tools/formatters/indentation.dart';
 import 'package:get/get.dart';
 
 class JsonFormatter implements Formatter {
@@ -43,7 +43,7 @@ class JsonFormatter implements Formatter {
       }
       return json;
     } else if (json.value is Map) {
-      for (var entry in json.value.entries) {
+      for (final entry in json.value.entries) {
         if (entry.value is List || entry.value is Map) {
           json.value[entry.key] = _sort(entry);
         }

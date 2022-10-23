@@ -3,7 +3,7 @@
 Version=1.0
 Type=Application
 Terminal=false
-Name=DevToys Flutter
-Exec=devtoys %u
+Name=DevWidgets
+Exec=devwidgets %u
 Icon=tux
 Categories=Utility;Development;

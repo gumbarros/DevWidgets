@@ -11,3 +11,10 @@ List<DropdownMenuItem<T>> getDropdownMenuItems<T extends DescribedEnum>(
 }
 
 bool isCompactLayout(BuildContext context) => GlobalSettings.compactMode.value;
+
+const List<String> supportedFontFamilies = [
+  "FiraCode",
+  "Hack",
+  "Monocraft",
+  "JetBrains Mono"
+];

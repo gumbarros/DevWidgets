@@ -108,8 +108,7 @@ class GlobalSettings {
 
   static String getTextEditorFontFamily() {
     _textEditorFontFamily ??=
-        (_getStorage.read("textEditorFontFamily")?.toString() ?? "Fira Code")
-            .obs;
+        (_getStorage.read("textEditorFontFamily")?.toString() ?? "Hack").obs;
     return _textEditorFontFamily!.value;
   }
 

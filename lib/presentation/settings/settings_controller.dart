@@ -1,10 +1,10 @@
 import 'package:dev_widgets/infrastructure/locale/translations.dart';
 import 'package:dev_widgets/infrastructure/global_settings.dart';
+import 'package:dev_widgets/presentation/helpers.dart';
 import 'package:dev_widgets/presentation/widgets/io_editor/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:yaru/yaru.dart';
 
 class SettingsController extends GetxController {
@@ -29,11 +29,10 @@ class SettingsController extends GetxController {
   }
 
   List<DropdownMenuItem<String>> getTextEditorFontFamilyDropdownMenuItems() {
-    return GoogleFonts.asMap()
-        .entries
-        .map((e) => DropdownMenuItem(
-              value: e.key,
-              child: Text(e.key),
+    return supportedFontFamilies
+        .map((family) => DropdownMenuItem(
+              value: family,
+              child: Text(family),
             ))
         .toList();
   }

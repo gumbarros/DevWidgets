@@ -19,7 +19,6 @@ class GroupsBinding extends Bindings {
       BrazilGroup()
     ];
 
-    groups.sort((a, b) => a.name.compareTo(b.name));
     return groups;
   }
 

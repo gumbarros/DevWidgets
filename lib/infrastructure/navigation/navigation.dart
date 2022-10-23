@@ -1,3 +1,4 @@
+import 'package:dev_widgets/infrastructure/bindings/controllers/brazil/cnpj_generator_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/brazil/cpf_generator_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/converters/json_to_class_converter_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/converters/json_yaml_converter_controller_binding.dart';
@@ -15,6 +16,7 @@ import 'package:dev_widgets/infrastructure/bindings/controllers/settings_control
 import 'package:dev_widgets/infrastructure/bindings/controllers/text/markdown_preview_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/text/text_diff_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/text/text_escape_controller_binding.dart';
+import 'package:dev_widgets/presentation/brazil/views/cpf/cnpj_generator_view.dart';
 import 'package:dev_widgets/presentation/brazil/views/cpf/cpf_generator_view.dart';
 import 'package:dev_widgets/presentation/converters/views/json_to_class_converter_view.dart';
 import 'package:dev_widgets/presentation/converters/views/json_yaml_converter_view.dart';
@@ -121,6 +123,11 @@ class Navigation {
       name: Routes.cpf,
       page: () => const CpfGeneratorView(),
       binding: CpfGeneratorControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.cnpj,
+      page: () => const CnpjGeneratorView(),
+      binding: CnpjGeneratorControllerBinding(),
     ),
   ];
 }

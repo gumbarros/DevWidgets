@@ -5,25 +5,25 @@ import 'package:dev_widgets/infrastructure/navigation/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CpfGeneratorTool implements Tool {
+class CnpjGeneratorTool implements Tool {
   @override
-  IconData get icon => Icons.person;
+  IconData get icon => Icons.business;
 
   @override
-  String get homeTitle => "cpf".tr;
+  String get homeTitle => "cnpj".tr;
 
   @override
-  String get route => Routes.cpf;
+  String get route => Routes.cnpj;
 
   @override
-  String get description => "cpf_description".tr;
+  String get description => "cnpj_description".tr;
 
   @override
   Group get group => BrazilGroup();
 
   @override
-  String get name => "cpf";
+  String get name => "cnpj";
 
   @override
-  String get menuTitle => "cpf_menu_name".tr;
+  String get menuTitle => "cnpj_menu_name".tr;
 }

@@ -1,3 +1,4 @@
+import 'package:dev_widgets/domain/models/tools/brazil/cnpj_generator_tool.dart';
 import 'package:dev_widgets/domain/models/tools/brazil/cpf_generator_tool.dart';
 import 'package:dev_widgets/domain/models/tools/converters/json_to_class_converter_tool.dart';
 import 'package:dev_widgets/domain/models/tools/converters/json_yaml_converter_tool.dart';
@@ -19,7 +20,7 @@ import 'package:get/get.dart';
 
 class ToolsBinding extends Bindings {
   static List<Tool> getAllTools() {
-    var tools = [
+    final tools = [
       HtmlEncoderTool(),
       JsonFormatterTool(),
       SqlFormatterTool(),
@@ -28,13 +29,14 @@ class ToolsBinding extends Bindings {
       MarkdownPreviewTool(),
       TextDiffTool(),
       UrlEncoderTool(),
-      CpfTool(),
+      CpfGeneratorTool(),
       LipsumGeneratorTool(),
       UuidGeneratorTool(),
       Base64TextEncoderTool(),
       Base64ImageEncoderTool(),
       JsonToClassConverterTool(),
-      JsonYamlConverterTool()
+      JsonYamlConverterTool(),
+      CnpjGeneratorTool(),
     ];
 
     tools.sort((a, b) => a.group.name.compareTo(b.group.name));

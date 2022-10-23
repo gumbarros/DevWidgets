@@ -23,6 +23,7 @@ class Routes {
   static const cronParser = '/converters/cronParser';
   static const numberBase = '/converters/numberBase';
   static const cpf = '/brazil/cpf';
+  static const cnpj = '/brazil/cnpj';
 
   static String getToolRouteByCommandLineArgs(List<String> args) {
     if (args.isNotEmpty) {

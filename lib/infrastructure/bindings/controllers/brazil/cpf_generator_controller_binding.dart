@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 class CpfGeneratorControllerBinding extends Bindings {
   @override
   void dependencies() {
-    final tool = getTool<CpfTool>();
+    final tool = getTool<CpfGeneratorTool>();
 
     Get.lazyPut<CpfGeneratorController>(() => CpfGeneratorController(tool));
   }

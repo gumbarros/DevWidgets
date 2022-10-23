@@ -4,7 +4,7 @@
 [![Flutter Responsive](https://img.shields.io/badge/flutter-responsive-brightgreen.svg)](https://github.com/Codelessly/ResponsiveFramework)
 [![Download](https://img.shields.io/badge/Download-22272e?logo=github)](https://github.com/gumbarros/DevToysFlutter/releases/tag/latest)
 
-DevWidgets is a flutter application with several tools such as generators, formatters and converters for developers.
+DevWidgets is a Flutter application with several tools such as generators, formatters and converters for developers.
 
 [Clicking here](https://gumbarros.github.io/dev_widgets) you can try it directly from your browser 🌐!
 

@@ -12,6 +12,7 @@ import 'package:dev_widgets/domain/models/tools/formatters/xml_formatter_tool.da
 import 'package:dev_widgets/domain/models/tools/generators/lipsum/lipsum_generator_tool.dart';
 import 'package:dev_widgets/domain/models/tools/generators/uuid/uuid_generator_tool.dart';
 import 'package:dev_widgets/domain/models/tools/home_tool.dart';
+import 'package:dev_widgets/domain/models/tools/text/html_preview.dart';
 import 'package:dev_widgets/domain/models/tools/text/markdown_preview.dart';
 import 'package:dev_widgets/domain/models/tools/text/text_diff_tool.dart';
 import 'package:dev_widgets/domain/models/tools/text/text_escape/text_escape.dart';
@@ -37,6 +38,7 @@ class ToolsBinding extends Bindings {
       JsonToClassConverterTool(),
       JsonYamlConverterTool(),
       CnpjGeneratorTool(),
+      HtmlPreviewTool()
     ];
 
     tools.sort((a, b) => a.group.name.compareTo(b.group.name));

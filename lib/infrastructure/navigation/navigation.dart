@@ -13,6 +13,7 @@ import 'package:dev_widgets/infrastructure/bindings/controllers/home_controller_
 import 'package:dev_widgets/infrastructure/bindings/controllers/formatters/json_formatter_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/formatters/sql_formatter_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/settings_controller_binding.dart';
+import 'package:dev_widgets/infrastructure/bindings/controllers/text/html_preview_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/text/markdown_preview_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/text/text_diff_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/text/text_escape_controller_binding.dart';
@@ -31,6 +32,7 @@ import 'package:dev_widgets/presentation/home/home_view.dart';
 import 'package:dev_widgets/presentation/formatters/views/json_formatter_view.dart';
 import 'package:dev_widgets/presentation/formatters/views/sql_formatter_view.dart';
 import 'package:dev_widgets/presentation/settings/settings_view.dart';
+import 'package:dev_widgets/presentation/text/views/html_preview_view.dart';
 import 'package:dev_widgets/presentation/text/views/markdown_preview_view.dart';
 import 'package:dev_widgets/presentation/text/views/text_diff_view.dart';
 import 'package:dev_widgets/presentation/text/views/text_escape_view.dart';
@@ -128,6 +130,11 @@ class Navigation {
       name: Routes.cnpj,
       page: () => const CnpjGeneratorView(),
       binding: CnpjGeneratorControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.htmlPreview,
+      page: () => const HtmlPreviewView(),
+      binding: HtmlPreviewControllerBinding(),
     ),
   ];
 }

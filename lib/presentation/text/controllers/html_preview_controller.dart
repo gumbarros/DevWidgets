@@ -1,20 +1,20 @@
 import 'package:code_text_field/code_text_field.dart';
-import 'package:dev_widgets/domain/models/tools/text/markdown_preview.dart';
+import 'package:dev_widgets/domain/models/tools/text/html_preview.dart';
 import 'package:dev_widgets/presentation/widgets/io_editor/code_controller_factory.dart';
 import 'package:get/get.dart';
-import 'package:highlight/languages/markdown.dart';
+import 'package:highlight/languages/xml.dart';
 
-class MarkdownPreviewController extends GetxController {
-  final MarkdownPreviewTool tool;
+class HtmlPreviewController extends GetxController {
+  final HtmlPreviewTool tool;
   late CodeController inputController;
   Rx<String> output = "".obs;
 
-  MarkdownPreviewController(this.tool);
+  HtmlPreviewController(this.tool);
 
   @override
   void onInit() {
     inputController =
-        CodeControllerFactory.getInstance(language: markdown, useWebFix: false);
+        CodeControllerFactory.getInstance(language: xml, useWebFix: false);
     inputController.addListener(() {
       output.value = inputController.text;
     });

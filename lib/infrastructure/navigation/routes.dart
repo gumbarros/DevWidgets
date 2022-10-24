@@ -11,6 +11,7 @@ class Routes {
   static const xmlFormatter = '/formatters/xml';
   static const htmlEncoder = "/encoders/html";
   static const textEscape = "/text/escape";
+  static const htmlPreview = '/text/htmlPreview';
   static const markdownPreview = "/text/markdown";
   static const textDiff = "/text/diff";
   static const urlEncoder = "/encoders/url";

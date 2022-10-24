@@ -50,6 +50,10 @@ class EnglishTranslations {
         "success": "Success !",
         "file_saved_to_documents": "File saved to the documents folder.",
         "encoding": "Encoding",
+        "html_preview": "HTML Preview",
+        "html": "HTML",
+        "html_preview_menu_name": "HTML Preview",
+        "html_preview_description": "Preview a HTML document",
         "encoding_description": "Select which encoding you want to use",
         "diff_mode_efficiency":
             "Increase computational efficiency by factoring out short commonalities which are not worth the overhead.",

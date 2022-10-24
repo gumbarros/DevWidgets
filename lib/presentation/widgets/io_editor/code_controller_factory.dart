@@ -9,13 +9,13 @@ import 'package:flutter_highlight/themes/vs.dart';
 
 class CodeControllerFactory {
   static _getCodeControllerTheme() {
-    var settingsRx = GlobalSettings.getTextEditorTheme();
+    final theme = GlobalSettings.getTextEditorTheme();
 
-    if (settingsRx == null) {
+    if (theme == null) {
       return (Get.isDarkMode ? vs2015Theme : vsTheme);
     }
 
-    return kTextEditorThemes[settingsRx];
+    return textEditorThemes[theme];
   }
 
   static CodeController getInstance(

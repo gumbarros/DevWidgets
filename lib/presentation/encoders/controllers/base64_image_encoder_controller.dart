@@ -1,12 +1,14 @@
-import 'dart:io';
+import 'package:dev_widgets/presentation/helpers.dart';
+import 'package:screenshot/screenshot.dart';
 import 'dart:typed_data';
 import 'package:dev_widgets/domain/models/tools/encoders/base64_image_encoder_tool.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:screenshot/screenshot.dart';
+import 'package:path/path.dart' as path;
+import 'package:path_provider/path_provider.dart' as path_provider;
+import 'dart:io' as io;
 
 class Base64ImageEncoderController extends GetxController {
   final Base64ImageEncoderTool tool;
@@ -43,7 +45,7 @@ class Base64ImageEncoderController extends GetxController {
       if (GetPlatform.isWeb) {
         bytes = result.files.single.bytes;
       } else {
-        final file = File(result.files.single.path!);
+        final file = io.File(result.files.single.path!);
         bytes = await file.readAsBytes();
       }
       imageBytes.value = bytes!;
@@ -52,11 +54,14 @@ class Base64ImageEncoderController extends GetxController {
   }
 
   void downloadImage() async {
-    var docsFolder = await getApplicationDocumentsDirectory();
-    await screenshotController.captureAndSave(docsFolder.absolute.path,
+    var docsFolder =
+        (await path_provider.getApplicationDocumentsDirectory()).path;
+
+    var devWidgetsFolder = path.join(docsFolder, 'DevWidgets');
+
+    await screenshotController.captureAndSave(devWidgetsFolder,
         pixelRatio: Get.pixelRatio,
         fileName: "DevWidgetsBase64Encoder_${DateTime.now()}");
-    Get.snackbar("success".tr, "file_saved_to_documents".tr,
-        backgroundColor: Colors.green);
+    successSnackbar("file_saved_to_documents".tr);
   }
 }

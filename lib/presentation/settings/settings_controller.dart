@@ -4,12 +4,10 @@ import 'package:dev_widgets/presentation/helpers.dart';
 import 'package:dev_widgets/presentation/widgets/io_editor/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
+
 import 'package:yaru/yaru.dart';
 
 class SettingsController extends GetxController {
-  final storage = GetStorage();
-
   List<DropdownMenuItem<String>> getLanguageDropdownMenuItems() {
     return DevWidgetsTranslations.supportedLocales
         .map((l) => DropdownMenuItem(
@@ -20,7 +18,7 @@ class SettingsController extends GetxController {
   }
 
   List<DropdownMenuItem<String>> getTextEditorThemeDropdownMenuItems() {
-    return kTextEditorThemes.entries
+    return textEditorThemes.entries
         .map((e) => DropdownMenuItem(
               value: e.key,
               child: Text(e.key),

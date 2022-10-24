@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'package:dev_widgets/domain/helpers/converters/json_to_class/json_to_class_provider.dart';
 import 'package:dev_widgets/domain/helpers/converters/json_to_class/json_to_dart_provider.dart';
-import 'package:dev_widgets/domain/helpers/utils.dart';
 import 'package:dev_widgets/domain/models/tools/converters/programming_language.dart';
+import 'package:dev_widgets/presentation/helpers.dart';
 import 'package:get/get.dart';
 
 class JsonToClassConverter {

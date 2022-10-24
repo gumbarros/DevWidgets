@@ -8,7 +8,7 @@ import 'package:yaru/yaru.dart';
 import 'dart:ui' as ui;
 
 class GlobalSettings {
-  static final GetStorage _getStorage = GetStorage();
+  static final GetStorage _getStorage = GetStorage("DevWidgets/settings");
 
   static final Rx<bool> compactMode = false.obs;
   static final Rx<String> selectedToolName = (HomeTool).toString().obs;
@@ -73,7 +73,7 @@ class GlobalSettings {
 
   static getLocale() {
     String localeCode =
-        GetStorage().read("locale") ?? ui.window.locale.languageCode;
+        _getStorage.read("locale") ?? ui.window.locale.languageCode;
 
     return Locale(localeCode);
   }

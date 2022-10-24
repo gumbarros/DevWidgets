@@ -1,7 +1,7 @@
 //Based on https://github.com/mrdziuban/sql-formatter/blob/e8065c29af8c8fa4af7318a46b01205f6389e6c9/dart/src/sql_formatter.dart;
 
 import 'package:dev_widgets/domain/helpers/formatters/sql_formatter/sql_formatter_provider.dart';
-import 'package:dev_widgets/domain/helpers/utils.dart';
+import 'package:dev_widgets/presentation/helpers.dart';
 
 class T {
   String str;

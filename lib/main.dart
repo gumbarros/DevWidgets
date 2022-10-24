@@ -13,7 +13,7 @@ import 'infrastructure/navigation/navigation.dart';
 
 main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
-  await GetStorage.init();
+  await GetStorage.init("DevWidgets/settings");
 
   final String initialRoute = Routes.getToolRouteByCommandLineArgs(args);
   runApp(Main(initialRoute: initialRoute));
@@ -31,8 +31,8 @@ class Main extends StatelessWidget {
       initialBinding: InitialBindings(),
       locale: GlobalSettings.getLocale(),
       fallbackLocale: const Locale("en", "US"),
-      defaultTransition: Transition.fade,
       getPages: Navigation.pages,
+      defaultTransition: Transition.fade,
       title: "DevWidgets",
       translations: DevWidgetsTranslations(),
       builder: ((context, child) {

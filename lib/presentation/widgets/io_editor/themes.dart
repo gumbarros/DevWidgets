@@ -91,7 +91,7 @@ import 'package:flutter_highlight/themes/xcode.dart';
 import 'package:flutter_highlight/themes/xt256.dart';
 import 'package:flutter_highlight/themes/zenburn.dart';
 
-const kTextEditorThemes = {
+const textEditorThemes = {
   'a11y-dark': a11yDarkTheme,
   'a11y-light': a11yLightTheme,
   'agate': agateTheme,

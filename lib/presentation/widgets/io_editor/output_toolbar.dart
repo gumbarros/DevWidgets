@@ -1,7 +1,6 @@
+import 'package:dev_widgets/presentation/helpers.dart';
 import 'package:dev_widgets/presentation/widgets/io_editor/io_toolbar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
 import 'package:get/get.dart';
 
 class OutputToolbar extends StatelessWidget {
@@ -23,9 +22,7 @@ class OutputToolbar extends StatelessWidget {
       ElevatedButton.icon(
         icon: const Icon(Icons.copy),
         label: Text("copy".tr),
-        onPressed: () async {
-          await Clipboard.setData(ClipboardData(text: outputController.text));
-        },
+        onPressed: () async => await copyToClipboard(outputController.text),
       )
     ];
     if (actionButtons != null) actions.addAll(actionButtons!);

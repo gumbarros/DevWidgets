@@ -1,5 +1,4 @@
-import 'package:code_text_field/code_text_field.dart';
-import 'package:dev_widgets/presentation/widgets/io_editor/io_text_style.dart';
+import 'package:dev_widgets/presentation/widgets/io_editor/code_editor_wrapper.dart';
 import 'package:dev_widgets/presentation/widgets/io_editor/output_toolbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -43,26 +42,14 @@ class OutputEditor extends StatelessWidget {
                 )
               : const SizedBox.shrink(),
           Container(
-              width: isVerticalLayout ? Get.width : Get.width / 1.5,
-              margin: const EdgeInsets.all(8.0),
-              height: isVerticalLayout ? Get.height / 3.5 : Get.height / 1.5,
-              child: usesCodeControllers
-                  ? CodeField(
-                      wrap: true,
-                      expands: true,
-                      readOnly: true,
-                      textStyle: getTextStyleFromSettings(),
-                      controller: (outputController ?? CodeController())
-                          as CodeController,
-                    )
-                  : TextField(
-                      maxLines: null,
-                      style: getTextStyleFromSettings(),
-                      minLines: 10,
-                      readOnly: true,
-                      controller: outputController,
-                      keyboardType: TextInputType.multiline,
-                    )),
+            width: isVerticalLayout ? Get.width : Get.width / 1.5,
+            margin: const EdgeInsets.all(8.0),
+            height: isVerticalLayout ? Get.height / 3.5 : Get.height / 1.5,
+            child: CodeEditorWrapper(
+                usesCodeControllers: usesCodeControllers,
+                readOnly: true,
+                textEditingController: outputController),
+          )
         ],
       ),
     );

@@ -17,6 +17,7 @@ class EnglishTranslations {
         "formatter": "Formatter",
         "validator": "Validator",
         "cpf": "CPF",
+        "copied_to_the_clipboard": "Copied to the clipboard.",
         "brazil": "Brazil",
         "cpf_format": "Format",
         "cpf_menu_name": "CPF Generator",

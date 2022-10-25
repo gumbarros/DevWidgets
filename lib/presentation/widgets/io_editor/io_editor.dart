@@ -1,6 +1,6 @@
 import 'package:dev_widgets/presentation/widgets/io_editor/input_editor.dart';
 import 'package:dev_widgets/presentation/widgets/io_editor/output_editor.dart';
-import 'package:dev_widgets/presentation/widgets/muli_split_view_divider.dart';
+import 'package:dev_widgets/presentation/widgets/multi_split_view_divider.dart';
 import 'package:flutter/material.dart';
 import 'package:multi_split_view/multi_split_view.dart';
 

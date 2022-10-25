@@ -2,7 +2,7 @@ import 'package:dev_widgets/infrastructure/global_settings.dart';
 import 'package:dev_widgets/presentation/text/controllers/text_diff_controller.dart';
 import 'package:dev_widgets/presentation/widgets/default_app_bar.dart';
 import 'package:dev_widgets/presentation/widgets/io_editor/input_editor.dart';
-import 'package:dev_widgets/presentation/widgets/muli_split_view_divider.dart';
+import 'package:dev_widgets/presentation/widgets/multi_split_view_divider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';

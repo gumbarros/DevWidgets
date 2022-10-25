@@ -7,7 +7,7 @@
 ![image](https://user-images.githubusercontent.com/52143624/197393871-c90f9511-abac-4564-bcfb-fe114667753c.png)
 
 
-DevWidgets is a Flutter application with several tools such as generators, formatters and converters for developers.
+DevWidgets is a W.I.P Flutter application with several tools such as generators, formatters and converters for developers.
 
 [Clicking here](https://gumbarros.github.io/dev_widgets) you can try it directly from your browser 🌐!
 

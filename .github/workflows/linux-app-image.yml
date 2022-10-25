@@ -3,7 +3,7 @@ name: Build Linux AppImage
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:  
   build_linux:

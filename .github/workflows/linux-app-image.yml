@@ -1,9 +1,9 @@
-name: Build Linux AppImage
+name: Build a Linux AppImage
 
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:  
   build_linux:

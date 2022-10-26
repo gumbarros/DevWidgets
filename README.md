@@ -7,16 +7,43 @@
 ![image](https://user-images.githubusercontent.com/52143624/197393871-c90f9511-abac-4564-bcfb-fe114667753c.png)
 
 
-DevWidgets is a Flutter application with several tools such as generators, formatters and converters for developers.
+DevWidgets is a W.I.P Flutter application with several tools such as generators, formatters and converters for developers.
 
 [Clicking here](https://gumbarros.github.io/dev_widgets) you can try it directly from your browser 🌐!
+
+<details>
+  <summary>Click here to see all features</summary>
+  
+### Converters
+- JSON -> Class
+- JSON <> YAML
+### Encoders / Decoders
+- HTML
+- URL
+- Base 64 Image
+- Base 64 Text
+### Formatters
+- JSON
+- SQL
+- XML
+### Generators
+- Lorem Ipsum
+- UUID
+### Text
+- Text Diff
+- Escape / Unescape
+- HTML Preview
+- Markdown Preview
+### Brazilian Utilities
+- CPF Generator
+- CNPJ Generator
+</details>
 
 ---
 ## Getting Started
 
 ### Download from Releases
 You can download a nightly build for Linux from the lattest commit from [here](https://github.com/gumbarros/dev_widgets/releases).
-
 
 ### Building from source
 

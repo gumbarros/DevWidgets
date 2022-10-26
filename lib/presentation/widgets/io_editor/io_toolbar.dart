@@ -13,19 +13,22 @@ class IOToolbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: Get.height / 20,
-      margin: const EdgeInsets.all(8.0),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(title, style: Get.theme.textTheme.titleMedium),
-          Row(
-            children: actions
-                    ?.map(
-                        (element) => element.marginOnly(left: 8.0, right: 8.0))
-                    .toList() ??
-                [],
+          Flexible(
+            child: Wrap(
+              spacing: 8.0, // gap between adjacent chips
+              runSpacing: 4.0,
+              children: actions
+                      ?.map((element) =>
+                          element.marginOnly(left: 8.0, right: 8.0))
+                      .toList() ??
+                  [],
+            ),
           )
         ],
       ),

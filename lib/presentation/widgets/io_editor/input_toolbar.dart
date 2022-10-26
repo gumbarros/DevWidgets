@@ -1,8 +1,9 @@
 import 'package:dev_widgets/presentation/helpers.dart';
 import 'package:dev_widgets/presentation/widgets/io_editor/io_toolbar.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+import 'dart:io' as io;
 import 'package:get/get.dart';
 
 class InputToolBar extends StatelessWidget {
@@ -28,6 +29,25 @@ class InputToolBar extends StatelessWidget {
         icon: const Icon(Icons.copy),
         label: Text("copy".tr),
         onPressed: () async => await copyToClipboard(inputController.text),
+      ),
+      Visibility(
+        visible: !GetPlatform.isWeb,
+        child: ElevatedButton.icon(
+          icon: const Icon(Icons.upload),
+          label: Text("upload_file".tr),
+          onPressed: () async {
+            var result = await FilePicker.platform.pickFiles();
+            if (result != null) {
+              if (GetPlatform.isWeb) {
+                inputController.text =
+                    String.fromCharCodes(result.files.first.bytes!);
+              } else {
+                final file = io.File(result.files.single.path!);
+                inputController.text = await file.readAsString();
+              }
+            }
+          },
+        ),
       ),
       ElevatedButton.icon(
         icon: const Icon(Icons.clear),

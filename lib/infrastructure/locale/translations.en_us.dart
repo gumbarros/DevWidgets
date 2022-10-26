@@ -97,6 +97,7 @@ class EnglishTranslations {
         "invalid_xml_data": "Invalid XML data.",
         "json_to_class": "JSON -> Class",
         "class_name": "Class name",
+        "upload_file": "Upload File",
         "programming_language": "Programming language",
         "json_to_class_description":
             "Convert JSON data to a programming language class",

@@ -40,7 +40,7 @@ class SettingsController extends GetxController {
 
   ThemeMode getThemeMode() => GlobalSettings.getThemeMode();
 
-  Future setThemeMode(ThemeMode? value) async =>
+  setThemeMode(ThemeMode? value) async =>
       await GlobalSettings.setThemeMode(value ?? ThemeMode.system);
 
   YaruVariant getYaruVariant() => GlobalSettings.getYaruVariant();

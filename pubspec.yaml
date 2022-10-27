@@ -17,9 +17,11 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_markdown: ^0.6.12
+  flutter_riverpod: ^2.0.2
   flutter_widget_from_html: ^0.8.5
   get: ^4.6.5
   get_storage: ^2.0.3
+  hive_flutter: ^1.1.0
   html_unescape: ^2.0.0
   ipsum: ^1.0.1
   json2yaml: ^3.0.0

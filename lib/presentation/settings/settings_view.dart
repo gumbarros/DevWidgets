@@ -1,18 +1,49 @@
 import 'package:dev_widgets/domain/models/tools/settings/settings_tool.dart';
 import 'package:dev_widgets/infrastructure/locale/translations.dart';
 import 'package:dev_widgets/infrastructure/global_settings.dart';
-import 'package:dev_widgets/presentation/settings/settings_controller.dart';
+import 'package:dev_widgets/presentation/helpers.dart';
+
 import 'package:dev_widgets/presentation/widgets/default_app_bar.dart';
+import 'package:dev_widgets/presentation/widgets/io_editor/themes.dart';
+import 'package:dev_widgets/src/settings/settings_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-class SettingsView extends GetView<SettingsController> {
+class SettingsView extends ConsumerWidget {
   const SettingsView({Key? key}) : super(key: key);
 
+  List<DropdownMenuItem<String>> getLanguageDropdownMenuItems() {
+    return DevWidgetsTranslations.supportedLocales
+        .map((l) => DropdownMenuItem(
+              value: l.localeKey,
+              child: Text(l.name),
+            ))
+        .toList();
+  }
+
+  List<DropdownMenuItem<String>> getTextEditorThemeDropdownMenuItems() {
+    return textEditorThemes.entries
+        .map((e) => DropdownMenuItem(
+              value: e.key,
+              child: Text(e.key),
+            ))
+        .toList();
+  }
+
+  List<DropdownMenuItem<String>> getTextEditorFontFamilyDropdownMenuItems() {
+    return supportedFontFamilies
+        .map((family) => DropdownMenuItem(
+              value: family,
+              child: Text(family),
+            ))
+        .toList();
+  }
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
     return Scaffold(
         appBar: DefaultAppBar(title: SettingsTool().homeTitle),
         body: SizedBox(
@@ -39,8 +70,8 @@ class SettingsView extends GetView<SettingsController> {
                                     Get.locale.toString())
                             ? Get.locale.toString()
                             : "en_US",
-                        items: controller.getLanguageDropdownMenuItems(),
-                        onChanged: controller.updateLocale),
+                        onChanged: (v) {},
+                        items: getLanguageDropdownMenuItems()),
                   ),
                   YaruRow(
                     enabled: true,
@@ -52,24 +83,29 @@ class SettingsView extends GetView<SettingsController> {
                         style: const TextStyle(fontSize: 18),
                       ),
                     ),
-                    actionWidget: Obx(
-                      () => DropdownButton<ThemeMode>(
-                          value: controller.getThemeMode(),
-                          items: [
-                            DropdownMenuItem(
-                              value: ThemeMode.system,
-                              child: Text("system".tr),
-                            ),
-                            DropdownMenuItem(
-                              value: ThemeMode.light,
-                              child: Text("light".tr),
-                            ),
-                            DropdownMenuItem(
-                              value: ThemeMode.dark,
-                              child: Text("dark".tr),
-                            ),
-                          ],
-                          onChanged: controller.setThemeMode),
+                    actionWidget: Consumer(
+                      builder: (context, ref, child) =>
+                          DropdownButton<ThemeMode>(
+                              value: ref.watch(settingsProvider).themeMode,
+                              items: [
+                                DropdownMenuItem(
+                                  value: ThemeMode.system,
+                                  child: Text("system".tr),
+                                ),
+                                DropdownMenuItem(
+                                  value: ThemeMode.light,
+                                  child: Text("light".tr),
+                                ),
+                                DropdownMenuItem(
+                                  value: ThemeMode.dark,
+                                  child: Text("dark".tr),
+                                ),
+                              ],
+                              onChanged: (value) {
+                                ref
+                                    .read(settingsProvider.notifier)
+                                    .setThemeMode(value ?? ThemeMode.system);
+                              }),
                     ),
                   ),
                   YaruRow(
@@ -82,45 +118,37 @@ class SettingsView extends GetView<SettingsController> {
                         style: const TextStyle(fontSize: 18),
                       ),
                     ),
-                    actionWidget: Obx(
-                      () => Switch(
-                        onChanged: controller.setHighContrast,
-                        value: controller.getHighContrast(),
+                    actionWidget: Switch(
+                      onChanged: (_) {},
+                      value: false,
+                    ),
+                  ),
+                  Visibility(
+                    visible: true,
+                    child: YaruRow(
+                      enabled: true,
+                      leadingWidget: const Icon(Icons.brush),
+                      trailingWidget: Padding(
+                        padding: const EdgeInsets.only(left: 8.0),
+                        child: Text(
+                          "primary_color".tr,
+                          style: const TextStyle(fontSize: 18),
+                        ),
+                      ),
+                      actionWidget: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          for (var variant in yaruVariantList)
+                            YaruColorDisk(
+                              onPressed: () {},
+                              color: variant.color,
+                              selected: false,
+                            ),
+                        ],
                       ),
                     ),
                   ),
-                  Obx(
-                    () => Visibility(
-                      visible: !controller.getHighContrast(),
-                      child: YaruRow(
-                        enabled: true,
-                        leadingWidget: const Icon(Icons.brush),
-                        trailingWidget: Padding(
-                          padding: const EdgeInsets.only(left: 8.0),
-                          child: Text(
-                            "primary_color".tr,
-                            style: const TextStyle(fontSize: 18),
-                          ),
-                        ),
-                        actionWidget: Obx(
-                          () => Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              for (var variant in yaruVariantList)
-                                YaruColorDisk(
-                                  onPressed: () =>
-                                      controller.setYaruVariant(variant),
-                                  color: variant.color,
-                                  selected:
-                                      controller.getYaruVariant() == variant,
-                                ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  )
                 ]),
               ),
               Container(
@@ -136,13 +164,10 @@ class SettingsView extends GetView<SettingsController> {
                         style: const TextStyle(fontSize: 18),
                       ),
                     ),
-                    actionWidget: Obx(
-                      () => DropdownButton<String?>(
-                          value: controller.getTextEditorTheme(),
-                          items:
-                              controller.getTextEditorThemeDropdownMenuItems(),
-                          onChanged: controller.setTextEditorTheme),
-                    ),
+                    actionWidget: DropdownButton<String?>(
+                        value: "vs",
+                        items: getTextEditorThemeDropdownMenuItems(),
+                        onChanged: (_) {}),
                   ),
                   YaruRow(
                     enabled: true,
@@ -161,20 +186,14 @@ class SettingsView extends GetView<SettingsController> {
                           inputFormatters: [
                             FilteringTextInputFormatter.digitsOnly
                           ],
-                          controller: TextEditingController(
-                              text: controller
-                                  .getTextEditorFontSize()
-                                  .toString()),
+                          controller: TextEditingController(text: "18"),
                           decoration: const InputDecoration(
                             contentPadding: EdgeInsets.all(5),
                           ),
                           keyboardType: const TextInputType.numberWithOptions(
                               decimal: true),
                           onChanged: (value) {
-                            if (value.isNotEmpty) {
-                              controller.setTextEditorFontSize(
-                                  double.tryParse(value));
-                            }
+                            if (value.isNotEmpty) {}
                           },
                         )),
                   ),
@@ -188,13 +207,10 @@ class SettingsView extends GetView<SettingsController> {
                         style: const TextStyle(fontSize: 18),
                       ),
                     ),
-                    actionWidget: Obx(
-                      () => DropdownButton<String?>(
-                          value: controller.getTextEditorFontFamily(),
-                          items: controller
-                              .getTextEditorFontFamilyDropdownMenuItems(),
-                          onChanged: controller.setTextEditorFontFamily),
-                    ),
+                    actionWidget: DropdownButton<String?>(
+                        value: "Hack",
+                        items: getTextEditorFontFamilyDropdownMenuItems(),
+                        onChanged: (_) {}),
                   )
                 ]),
               ),

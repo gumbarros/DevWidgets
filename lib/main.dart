@@ -1,22 +1,17 @@
-import 'package:dev_widgets/domain/models/tools/tool.dart';
+import 'package:dev_widgets/src/impl/layout/yaru/ui/yaru_layout.dart';
+import 'package:dev_widgets/src/models/tools/tool.dart';
 import 'package:dev_widgets/infrastructure/bindings/domains/initial_bindings.dart';
 import 'package:dev_widgets/infrastructure/locale/translations.dart';
 import 'package:dev_widgets/infrastructure/navigation/routes.dart';
-import 'package:dev_widgets/infrastructure/global_settings.dart';
-import 'package:dev_widgets/presentation/layout/linux/linux_layout.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-
 import 'infrastructure/navigation/navigation.dart';
 
 main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
-  await GetStorage.init("DevWidgets/settings");
   await Hive.initFlutter();
   await Hive.openBox('settings');
 
@@ -35,7 +30,7 @@ class Main extends StatelessWidget {
         initialRoute: initialRoute,
         debugShowCheckedModeBanner: false,
         initialBinding: InitialBindings(),
-        locale: GlobalSettings.getLocale(),
+        locale: const Locale("en", "US"),
         fallbackLocale: const Locale("en", "US"),
         getPages: Navigation.pages,
         defaultTransition: Transition.fade,
@@ -46,7 +41,7 @@ class Main extends StatelessWidget {
             onGenerateRoute: (_) {
               return GetPageRoute(
                   page: () => ResponsiveWrapper.builder(
-                        LinuxLayout(
+                        YaruLayout(
                           tools: Get.find<List<Tool>>(),
                           child: child,
                         ),

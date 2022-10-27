@@ -1,7 +1,7 @@
 import 'package:dev_widgets/domain/helpers/formatters/formatter.dart';
 import 'package:dev_widgets/domain/helpers/formatters/sql_formatter/generic_sql_formatter_provider.dart';
 import 'package:dev_widgets/domain/helpers/formatters/sql_formatter/sql_formatter_provider.dart';
-import 'package:dev_widgets/domain/models/tools/formatters/sql_formatter/sql_dialect.dart';
+import 'package:dev_widgets/src/models/tools/formatters/sql_formatter/sql_dialect.dart';
 import 'package:dev_widgets/presentation/helpers.dart';
 
 class SqlFormatter implements Formatter {

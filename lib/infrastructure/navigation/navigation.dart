@@ -12,7 +12,6 @@ import 'package:dev_widgets/infrastructure/bindings/controllers/generators/uuid_
 import 'package:dev_widgets/infrastructure/bindings/controllers/home_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/formatters/json_formatter_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/formatters/sql_formatter_controller_binding.dart';
-import 'package:dev_widgets/infrastructure/bindings/controllers/settings_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/text/html_preview_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/text/markdown_preview_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/text/text_diff_controller_binding.dart';
@@ -31,11 +30,11 @@ import 'package:dev_widgets/presentation/generators/views/uuid_generator_view.da
 import 'package:dev_widgets/presentation/home/home_view.dart';
 import 'package:dev_widgets/presentation/formatters/views/json_formatter_view.dart';
 import 'package:dev_widgets/presentation/formatters/views/sql_formatter_view.dart';
-import 'package:dev_widgets/presentation/settings/settings_view.dart';
 import 'package:dev_widgets/presentation/text/views/html_preview_view.dart';
 import 'package:dev_widgets/presentation/text/views/markdown_preview_view.dart';
-import 'package:dev_widgets/presentation/text/views/text_diff_view.dart';
 import 'package:dev_widgets/presentation/text/views/text_escape_view.dart';
+import 'package:dev_widgets/src/impl/settings/settings_page.dart';
+import 'package:dev_widgets/src/impl/text/text_diff/text_diff_page.dart';
 import 'package:get/get.dart';
 import 'routes.dart';
 
@@ -73,7 +72,7 @@ class Navigation {
     ),
     GetPage(
       name: Routes.textDiff,
-      page: () => const TextDiffView(),
+      page: () => const TextDiffPage(),
       binding: TextDiffControllerBinding(),
     ),
     GetPage(
@@ -86,11 +85,7 @@ class Navigation {
       page: () => const UrlEncoderView(),
       binding: UrlEncoderControllerBinding(),
     ),
-    GetPage(
-      name: Routes.settings,
-      page: () => const SettingsView(),
-      binding: SettingsControllerBinding(),
-    ),
+    GetPage(name: Routes.settings, page: () => const SettingsPage()),
     GetPage(
       name: Routes.lipsumGenerator,
       page: () => const LipsumGeneratorView(),

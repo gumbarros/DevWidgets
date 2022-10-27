@@ -1,7 +1,7 @@
 import 'package:dev_widgets/presentation/text/controllers/html_preview_controller.dart';
-import 'package:dev_widgets/presentation/widgets/default_app_bar.dart';
-import 'package:dev_widgets/presentation/widgets/io_editor/io_editor.dart';
-import 'package:dev_widgets/presentation/widgets/io_editor/io_toolbar.dart';
+import 'package:dev_widgets/src/impl/widgets/default_app_bar.dart';
+import 'package:dev_widgets/src/impl/widgets/io_editor/io_editor.dart';
+import 'package:dev_widgets/src/impl/widgets/io_editor/io_toolbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:get/get.dart';

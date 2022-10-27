@@ -1,7 +1,7 @@
 import 'package:code_text_field/code_text_field.dart';
-import 'package:dev_widgets/domain/models/tools/encoders/encode_conversion_mode.dart';
-import 'package:dev_widgets/domain/models/tools/encoders/html_encoder_tool.dart';
-import 'package:dev_widgets/presentation/widgets/io_editor/code_controller_factory.dart';
+import 'package:dev_widgets/src/models/tools/encoders/encode_conversion_mode.dart';
+import 'package:dev_widgets/src/models/tools/encoders/html_encoder_tool.dart';
+import 'package:dev_widgets/src/impl/widgets/io_editor/code_controller_factory.dart';
 import 'package:get/get.dart';
 import 'package:highlight/languages/xml.dart';
 

@@ -1,5 +1,5 @@
 import 'package:dev_widgets/domain/helpers/generators/generator.dart';
-import 'package:dev_widgets/domain/models/tools/generators/lipsum/lipsum_type.dart';
+import 'package:dev_widgets/src/models/tools/generators/lipsum/lipsum_type.dart';
 import 'package:ipsum/ipsum.dart';
 import 'package:get/get.dart';
 

@@ -1,5 +1,5 @@
-import 'package:dev_widgets/domain/models/tools/home_tool.dart';
-import 'package:dev_widgets/infrastructure/bindings/domains/tools_binding.dart';
+import 'package:dev_widgets/src/impl/layout/yaru/providers/tools_provider.dart';
+import 'package:dev_widgets/src/models/tools/home/home_tool.dart';
 
 class Routes {
   static const home = '/home';
@@ -28,7 +28,6 @@ class Routes {
 
   static String getToolRouteByCommandLineArgs(List<String> args) {
     if (args.isNotEmpty) {
-      var tools = ToolsBinding.getAllTools();
       return tools
           .firstWhere((tool) => tool.name == args.first,
               orElse: () => HomeTool())

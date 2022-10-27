@@ -1,10 +1,10 @@
-import 'package:dev_widgets/domain/models/groups/brazil_group.dart';
-import 'package:dev_widgets/domain/models/groups/converters_group.dart';
-import 'package:dev_widgets/domain/models/groups/encoders_group.dart';
-import 'package:dev_widgets/domain/models/groups/formatters_group.dart';
-import 'package:dev_widgets/domain/models/groups/generators_group.dart';
-import 'package:dev_widgets/domain/models/groups/group.dart';
-import 'package:dev_widgets/domain/models/groups/text_group.dart';
+import 'package:dev_widgets/src/models/groups/brazil_group.dart';
+import 'package:dev_widgets/src/models/groups/converters_group.dart';
+import 'package:dev_widgets/src/models/groups/encoders_group.dart';
+import 'package:dev_widgets/src/models/groups/formatters_group.dart';
+import 'package:dev_widgets/src/models/groups/generators_group.dart';
+import 'package:dev_widgets/src/models/groups/group.dart';
+import 'package:dev_widgets/src/models/groups/text_group.dart';
 
 import 'package:get/get.dart';
 

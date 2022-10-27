@@ -1,5 +1,4 @@
-import 'package:dev_widgets/domain/models/described_enum.dart';
-import 'package:dev_widgets/infrastructure/global_settings.dart';
+import 'package:dev_widgets/src/models/described_enum.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -11,8 +10,6 @@ List<DropdownMenuItem<T>> getDropdownMenuItems<T extends DescribedEnum>(
       .map((e) => DropdownMenuItem<T>(value: e, child: Text(e.description.tr)))
       .toList();
 }
-
-bool isCompactLayout(BuildContext context) => GlobalSettings.compactMode.value;
 
 const List<String> supportedFontFamilies = [
   "FiraCode",

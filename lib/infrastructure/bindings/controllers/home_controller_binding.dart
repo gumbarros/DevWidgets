@@ -1,4 +1,4 @@
-import 'package:dev_widgets/domain/models/tools/tool.dart';
+import 'package:dev_widgets/src/models/tools/tool.dart';
 import 'package:dev_widgets/infrastructure/navigation/routes.dart';
 import 'package:dev_widgets/presentation/home/home_controller.dart';
 import 'package:get/get.dart';

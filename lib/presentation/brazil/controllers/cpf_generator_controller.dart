@@ -1,5 +1,5 @@
 import 'package:brazil/brazil.dart';
-import 'package:dev_widgets/domain/models/tools/brazil/cpf_generator_tool.dart';
+import 'package:dev_widgets/src/models/tools/brazil/cpf_generator_tool.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

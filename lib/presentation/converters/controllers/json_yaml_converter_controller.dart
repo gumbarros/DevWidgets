@@ -1,8 +1,8 @@
 import 'package:code_text_field/code_text_field.dart';
-import 'package:dev_widgets/domain/models/tools/converters/json_yaml_conversion_type.dart';
-import 'package:dev_widgets/domain/models/tools/converters/json_yaml_converter_tool.dart';
-import 'package:dev_widgets/domain/models/tools/formatters/indentation.dart';
-import 'package:dev_widgets/presentation/widgets/io_editor/code_controller_factory.dart';
+import 'package:dev_widgets/src/models/tools/converters/json_yaml_conversion_type.dart';
+import 'package:dev_widgets/src/models/tools/converters/json_yaml_converter_tool.dart';
+import 'package:dev_widgets/src/models/tools/formatters/indentation.dart';
+import 'package:dev_widgets/src/impl/widgets/io_editor/code_controller_factory.dart';
 import 'package:get/get.dart';
 import 'package:highlight/languages/yaml.dart';
 import 'package:highlight/languages/json.dart';

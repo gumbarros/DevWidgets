@@ -1,7 +1,7 @@
 import 'package:dev_widgets/presentation/helpers.dart';
 import 'package:screenshot/screenshot.dart';
 import 'dart:typed_data';
-import 'package:dev_widgets/domain/models/tools/encoders/base64_image_encoder_tool.dart';
+import 'package:dev_widgets/src/models/tools/encoders/base64_image_encoder_tool.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';

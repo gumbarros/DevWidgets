@@ -1,6 +1,6 @@
 import 'package:dev_widgets/presentation/brazil/controllers/cpf_generator_controller.dart';
-import 'package:dev_widgets/presentation/widgets/default_app_bar.dart';
-import 'package:dev_widgets/presentation/widgets/io_editor/output_editor.dart';
+import 'package:dev_widgets/src/impl/widgets/default_app_bar.dart';
+import 'package:dev_widgets/src/impl/widgets/io_editor/output_editor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';

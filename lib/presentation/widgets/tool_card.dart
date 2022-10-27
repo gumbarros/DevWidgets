@@ -25,6 +25,7 @@ class ToolCard extends StatelessWidget {
                 SizedBox(
                   height: 200,
                   child: ListTile(
+                    mouseCursor: SystemMouseCursors.click,
                     leading: Icon(tool.icon),
                     title: Text(tool.homeTitle),
                     subtitle: Text(

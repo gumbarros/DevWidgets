@@ -1,8 +1,6 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:dev_widgets/domain/helpers/generators/generator.dart';
 import 'package:dev_widgets/src/models/tools/generators/uuid/uuid_type.dart';
-import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:uuid/uuid.dart';
 
 class UuidGenerator implements Generator {
@@ -12,7 +10,7 @@ class UuidGenerator implements Generator {
     bool uppercase = false,
     bool hyphens = true,
   }) {
-    Uuid uuid = Uuid();
+    const uuid = Uuid();
     String result = "";
 
     try {
@@ -28,7 +26,7 @@ class UuidGenerator implements Generator {
           break;
       }
     } on Exception catch (_) {
-      return "error".tr;
+      return "error".tr();
     }
 
     if (uppercase) result = result.toUpperCase();

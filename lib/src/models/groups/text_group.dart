@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 import 'group.dart';
 
@@ -17,5 +16,5 @@ class TextGroup implements Group {
   IconData get icon => Icons.format_size;
 
   @override
-  String get name => "text".tr;
+  String get name => "text".tr();
 }

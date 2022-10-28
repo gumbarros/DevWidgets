@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'group.dart';
 
 class ConvertersGroup implements Group {
@@ -15,5 +15,5 @@ class ConvertersGroup implements Group {
   IconData get icon => Icons.compare_arrows;
 
   @override
-  String get name => "converters".tr;
+  String get name => "converters".tr();
 }

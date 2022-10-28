@@ -3,6 +3,7 @@ import 'package:dev_widgets/src/models/tools/formatters/indentation.dart';
 import 'package:dev_widgets/src/models/tools/formatters/json_formatter_tool.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/code_controller_factory.dart';
 import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:highlight/languages/json.dart';
 
 class JsonFormatterController extends GetxController {

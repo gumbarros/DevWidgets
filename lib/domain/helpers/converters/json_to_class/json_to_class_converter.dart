@@ -3,7 +3,7 @@ import 'package:dev_widgets/domain/helpers/converters/json_to_class/json_to_clas
 import 'package:dev_widgets/domain/helpers/converters/json_to_class/json_to_dart_provider.dart';
 import 'package:dev_widgets/src/models/tools/converters/programming_language.dart';
 import 'package:dev_widgets/presentation/helpers.dart';
-import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class JsonToClassConverter {
   String convert(String data,
@@ -16,7 +16,7 @@ class JsonToClassConverter {
 
       return provider.convert(className, data);
     } on FormatException catch (_) {
-      return "invalid_json_data".tr;
+      return "invalid_json_data".tr();
     }
   }
 

@@ -3,6 +3,7 @@ import 'package:dev_widgets/src/models/tools/encoders/encode_conversion_mode.dar
 import 'package:dev_widgets/src/models/tools/encoders/html_encoder_tool.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/code_controller_factory.dart';
 import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:highlight/languages/xml.dart';
 
 class HTMLEncoderController extends GetxController {

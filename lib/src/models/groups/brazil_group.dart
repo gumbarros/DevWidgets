@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'group.dart';
 
 class BrazilGroup implements Group {
@@ -15,5 +15,5 @@ class BrazilGroup implements Group {
   IconData get icon => Icons.public;
 
   @override
-  String get name => "brazil".tr;
+  String get name => "brazil".tr();
 }

@@ -1,7 +1,6 @@
 import 'package:dev_widgets/src/impl/widgets/io_editor/code_editor_wrapper.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/output_toolbar.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class OutputEditor extends StatelessWidget {
   const OutputEditor({
@@ -42,9 +41,13 @@ class OutputEditor extends StatelessWidget {
                 )
               : const SizedBox.shrink(),
           Container(
-            width: isVerticalLayout ? Get.width : Get.width / 1.5,
+            width: isVerticalLayout
+                ? MediaQuery.of(context).size.width
+                : MediaQuery.of(context).size.width / 1.5,
             margin: const EdgeInsets.all(8.0),
-            height: isVerticalLayout ? Get.height / 3.5 : Get.height / 1.5,
+            height: isVerticalLayout
+                ? MediaQuery.of(context).size.height / 3.5
+                : MediaQuery.of(context).size.height / 1.5,
             child: CodeEditorWrapper(
                 usesCodeControllers: usesCodeControllers,
                 readOnly: true,

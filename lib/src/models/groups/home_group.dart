@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'group.dart';
 
 class HomeGroup implements Group {
@@ -16,5 +15,5 @@ class HomeGroup implements Group {
   IconData get icon => Icons.house;
 
   @override
-  String get name => "all_tools".tr;
+  String get name => "all_tools".tr();
 }

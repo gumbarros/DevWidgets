@@ -3,6 +3,7 @@ import 'package:dev_widgets/src/impl/layout/yaru/providers/compact_mode_provider
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get.dart';
+
 import 'package:responsive_framework/responsive_framework.dart' as responsive;
 import 'package:responsive_framework/responsive_framework.dart';
 

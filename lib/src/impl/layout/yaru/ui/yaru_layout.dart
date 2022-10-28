@@ -5,7 +5,7 @@ import 'package:dev_widgets/src/impl/layout/yaru/ui/yaru_menu.dart';
 import 'package:dev_widgets/src/impl/settings/settings_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:get/get.dart';
+
 import 'package:yaru/yaru.dart';
 
 class YaruLayout extends ConsumerWidget {
@@ -34,8 +34,9 @@ class YaruLayout extends ConsumerWidget {
                   AnimatedSize(
                     duration: const Duration(milliseconds: 500),
                     child: SizedBox(
-                      width:
-                          ref.watch(isCompactModeProvider) ? 80 : Get.width / 5,
+                      width: ref.watch(isCompactModeProvider)
+                          ? 80
+                          : MediaQuery.of(context).size.width / 5,
                       child: Container(
                         decoration: BoxDecoration(
                           border: Border(

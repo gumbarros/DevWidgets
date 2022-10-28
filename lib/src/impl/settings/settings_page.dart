@@ -1,13 +1,13 @@
 import 'package:dev_widgets/src/models/tools/settings/settings_tool.dart';
-import 'package:dev_widgets/infrastructure/locale/translations.dart';
 import 'package:dev_widgets/presentation/helpers.dart';
 import 'package:dev_widgets/src/impl/widgets/default_app_bar.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/themes.dart';
 import 'package:dev_widgets/src/impl/settings/settings_provider.dart';
+import 'package:dev_widgets/src/supported_locales.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:get/get.dart';
 import 'package:yaru/yaru.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -21,7 +21,7 @@ class SettingsPage extends ConsumerWidget {
     return Scaffold(
         appBar: DefaultAppBar(title: SettingsTool().homeTitle),
         body: SizedBox(
-          height: Get.height - kToolbarHeight,
+          height: MediaQuery.of(context).size.height - kToolbarHeight,
           child: ListView(
             children: [
               Container(
@@ -33,21 +33,15 @@ class SettingsPage extends ConsumerWidget {
                     trailingWidget: Padding(
                       padding: const EdgeInsets.only(left: 8.0),
                       child: Text(
-                        "language".tr,
+                        "language".tr(),
                         style: const TextStyle(fontSize: 18),
                       ),
                     ),
-                    actionWidget: DropdownButton<String>(
-                        value: DevWidgetsTranslations.supportedLocales.any(
-                                (e) =>
-                                    e.localeKey.toString() ==
-                                    Get.locale.toString())
-                            ? Get.locale.toString()
-                            : "en_US",
+                    actionWidget: DropdownButton<Locale>(
+                        value: context.locale,
                         onChanged: (value) {
-                          ref
-                              .read(settingsProvider.notifier)
-                              .setLanguage(value ?? "en_US");
+                          ref.read(settingsProvider.notifier).setLocale(
+                              context, value ?? const Locale("en_US"));
                         },
                         items: _getLanguageDropdownMenuItems()),
                   ),
@@ -57,7 +51,7 @@ class SettingsPage extends ConsumerWidget {
                     trailingWidget: Padding(
                       padding: const EdgeInsets.only(left: 8.0),
                       child: Text(
-                        "brightness".tr,
+                        "brightness".tr(),
                         style: const TextStyle(fontSize: 18),
                       ),
                     ),
@@ -66,15 +60,15 @@ class SettingsPage extends ConsumerWidget {
                         items: [
                           DropdownMenuItem(
                             value: ThemeMode.system,
-                            child: Text("system".tr),
+                            child: Text("system".tr()),
                           ),
                           DropdownMenuItem(
                             value: ThemeMode.light,
-                            child: Text("light".tr),
+                            child: Text("light".tr()),
                           ),
                           DropdownMenuItem(
                             value: ThemeMode.dark,
-                            child: Text("dark".tr),
+                            child: Text("dark".tr()),
                           ),
                         ],
                         onChanged: (value) {
@@ -89,7 +83,7 @@ class SettingsPage extends ConsumerWidget {
                     trailingWidget: Padding(
                       padding: const EdgeInsets.only(left: 8.0),
                       child: Text(
-                        "high_contrast".tr,
+                        "high_contrast".tr(),
                         style: const TextStyle(fontSize: 18),
                       ),
                     ),
@@ -110,7 +104,7 @@ class SettingsPage extends ConsumerWidget {
                       trailingWidget: Padding(
                         padding: const EdgeInsets.only(left: 8.0),
                         child: Text(
-                          "primary_color".tr,
+                          "primary_color".tr(),
                           style: const TextStyle(fontSize: 18),
                         ),
                       ),
@@ -136,14 +130,14 @@ class SettingsPage extends ConsumerWidget {
               ),
               Container(
                 margin: const EdgeInsets.all(8.0),
-                child: YaruSection(headline: "text_editor".tr, children: [
+                child: YaruSection(headline: "text_editor".tr(), children: [
                   YaruRow(
                     enabled: true,
                     leadingWidget: const Icon(Icons.edit),
                     trailingWidget: Padding(
                       padding: const EdgeInsets.only(left: 8.0),
                       child: Text(
-                        "theme".tr,
+                        "theme".tr(),
                         style: const TextStyle(fontSize: 18),
                       ),
                     ),
@@ -162,13 +156,13 @@ class SettingsPage extends ConsumerWidget {
                     trailingWidget: Padding(
                       padding: const EdgeInsets.only(left: 8.0),
                       child: Text(
-                        "font_size".tr,
+                        "font_size".tr(),
                         style: const TextStyle(fontSize: 18),
                       ),
                     ),
                     actionWidget: SizedBox(
-                        width: Get.width / 20,
-                        height: Get.height / 20,
+                        width: MediaQuery.of(context).size.width / 20,
+                        height: MediaQuery.of(context).size.height / 20,
                         child: TextField(
                           inputFormatters: [
                             FilteringTextInputFormatter.digitsOnly
@@ -196,7 +190,7 @@ class SettingsPage extends ConsumerWidget {
                     trailingWidget: Padding(
                       padding: const EdgeInsets.only(left: 8.0),
                       child: Text(
-                        "font_family".tr,
+                        "font_family".tr(),
                         style: const TextStyle(fontSize: 18),
                       ),
                     ),
@@ -216,10 +210,10 @@ class SettingsPage extends ConsumerWidget {
         ));
   }
 
-  List<DropdownMenuItem<String>> _getLanguageDropdownMenuItems() {
-    return DevWidgetsTranslations.supportedLocales
+  List<DropdownMenuItem<Locale>> _getLanguageDropdownMenuItems() {
+    return supportedLocales
         .map((l) => DropdownMenuItem(
-              value: l.localeKey,
+              value: l.locale,
               child: Text(l.name),
             ))
         .toList();

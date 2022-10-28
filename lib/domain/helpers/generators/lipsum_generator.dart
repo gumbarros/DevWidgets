@@ -1,7 +1,8 @@
 import 'package:dev_widgets/domain/helpers/generators/generator.dart';
 import 'package:dev_widgets/src/models/tools/generators/lipsum/lipsum_type.dart';
 import 'package:ipsum/ipsum.dart';
-import 'package:get/get.dart';
+
+import 'package:easy_localization/easy_localization.dart';
 
 class LipsumGenerator implements Generator {
   @override
@@ -24,7 +25,7 @@ class LipsumGenerator implements Generator {
           return "";
       }
     } on Exception catch (_) {
-      return "error".tr;
+      return "error".tr();
     }
   }
 }

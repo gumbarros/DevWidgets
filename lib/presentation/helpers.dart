@@ -2,12 +2,14 @@ import 'package:dev_widgets/src/models/described_enum.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 
 List<DropdownMenuItem<T>> getDropdownMenuItems<T extends DescribedEnum>(
     List<T> enums) {
   return enums
-      .map((e) => DropdownMenuItem<T>(value: e, child: Text(e.description.tr)))
+      .map((e) => DropdownMenuItem<T>(
+          value: e, child: Text(StringTranslateExtension(e.description).tr())))
       .toList();
 }
 
@@ -28,12 +30,12 @@ String applyWebSpaceFix(String string) {
 
 successSnackbar(String message) {
   if (!Get.isSnackbarOpen) {
-    Get.snackbar("success".tr, message,
+    Get.snackbar(StringTranslateExtension("success").tr(), message,
         icon: const Icon(Icons.check), backgroundColor: Colors.green);
   }
 }
 
 copyToClipboard(String text) async {
   await Clipboard.setData(ClipboardData(text: applyWebSpaceFix(text)));
-  successSnackbar("copied_to_the_clipboard".tr);
+  successSnackbar(StringTranslateExtension("copied_to_the_clipboard").tr());
 }

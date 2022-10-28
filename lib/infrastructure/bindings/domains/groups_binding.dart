@@ -7,6 +7,7 @@ import 'package:dev_widgets/src/models/groups/group.dart';
 import 'package:dev_widgets/src/models/groups/text_group.dart';
 
 import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class GroupsBinding extends Bindings {
   static List<Group> _getAllGroups() {

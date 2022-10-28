@@ -1,4 +1,5 @@
 import 'package:dev_widgets/src/models/tools/settings/settings.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/adapters.dart';
@@ -11,7 +12,6 @@ Settings loadSettingsFromBox() {
       textEditorFontFamily: _settingsBox.get("textEditorFontFamily"),
       highContrast: _settingsBox.get("highContrast"),
       textEditorFontSize: _settingsBox.get("textEditorFontSize"),
-      language: _settingsBox.get("language"),
       textEditorTheme: _settingsBox.get("textEditorTheme"),
       favorites: _settingsBox.get("favorites", defaultValue: <String>[]),
       themeMode:
@@ -55,9 +55,9 @@ class SettingsNotifer extends StateNotifier<Settings> {
     state = state.copyWith(highContrast: isHighContrast);
   }
 
-  void setLanguage(String language) {
-    _settingsBox.put("language", language);
-    state = state.copyWith(language: language);
+  void setLocale(BuildContext context, Locale locale) {
+    context.setLocale(locale);
+    state = state.copyWith(locale: locale);
   }
 
   void addFavorite(String name) {

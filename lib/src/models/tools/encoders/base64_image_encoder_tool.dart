@@ -5,20 +5,20 @@ import 'package:dev_widgets/src/models/tools/tool.dart';
 import 'package:dev_widgets/infrastructure/navigation/routes.dart';
 import 'package:flutter/material.dart';
 
-import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class Base64ImageEncoderTool implements Tool {
   @override
   IconData get icon => Icons.image;
 
   @override
-  String get homeTitle => "base64_image_encoder".tr;
+  String get homeTitle => "base64_image_encoder".tr();
 
   @override
   String get route => Routes.base64ImageEncoder;
 
   @override
-  String get description => "base64_image_encoder_description".tr;
+  String get description => "base64_image_encoder_description".tr();
 
   @override
   Group get group => EncodersGroup();
@@ -27,7 +27,7 @@ class Base64ImageEncoderTool implements Tool {
   String get name => "base64image";
 
   @override
-  String get menuTitle => "base64_image_encoder_menu_name".tr;
+  String get menuTitle => "base64_image_encoder_menu_name".tr();
 
   Base64ImageEncoder get encoder => Base64ImageEncoder();
 }

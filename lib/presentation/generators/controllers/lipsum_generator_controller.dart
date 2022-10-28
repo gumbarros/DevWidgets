@@ -2,6 +2,7 @@ import 'package:dev_widgets/src/models/tools/generators/lipsum/lipsum_generator_
 import 'package:dev_widgets/src/models/tools/generators/lipsum/lipsum_type.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class LipsumGeneratorController extends GetxController {
   final LipsumGeneratorTool tool;

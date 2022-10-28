@@ -3,6 +3,7 @@ import 'package:dev_widgets/src/models/tools/encoders/base64_text_encoder_tool.d
 import 'package:dev_widgets/src/models/tools/encoders/encode_conversion_mode.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class Base64TextEncoderController extends GetxController {
   final Base64TextEncoderTool tool;

@@ -2,6 +2,7 @@ import 'package:dev_widgets/src/models/tools/text/text_escape/escape_conversion_
 import 'package:dev_widgets/src/models/tools/text/text_escape/text_escape.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class TextEscapeController extends GetxController {
   final TextEscapeTool tool;

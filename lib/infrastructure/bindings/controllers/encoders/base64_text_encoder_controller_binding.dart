@@ -2,6 +2,7 @@ import 'package:dev_widgets/src/models/tools/encoders/base64_text_encoder_tool.d
 import 'package:dev_widgets/infrastructure/bindings/controllers/get_tool.dart';
 import 'package:dev_widgets/presentation/encoders/controllers/base64_text_encoder_controller.dart';
 import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class Base64TextEncoderControllerBinding extends Bindings {
   @override

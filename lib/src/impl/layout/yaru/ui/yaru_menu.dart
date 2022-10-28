@@ -10,6 +10,7 @@ import 'package:dev_widgets/src/impl/settings/settings_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 const double _kScrollbarThickness = 8.0;
@@ -32,7 +33,7 @@ class YaruMenu extends ConsumerWidget {
         Visibility(
           visible: !ref.watch(isCompactModeProvider),
           child: Container(
-              width: Get.width,
+              width: MediaQuery.of(context).size.width,
               padding: const EdgeInsets.all(8.0),
               height: 50,
               child: YaruMenuSearchBox(

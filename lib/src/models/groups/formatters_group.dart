@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'group.dart';
 
 class FormattersGroup implements Group {
@@ -16,5 +15,5 @@ class FormattersGroup implements Group {
   IconData get icon => Icons.notes;
 
   @override
-  String get name => "formatters".tr;
+  String get name => "formatters".tr();
 }

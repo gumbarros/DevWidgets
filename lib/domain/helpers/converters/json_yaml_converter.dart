@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:dev_widgets/domain/helpers/formatters/json_formatter.dart';
 import 'package:dev_widgets/src/models/tools/formatters/indentation.dart';
 import 'package:dev_widgets/presentation/helpers.dart';
-import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:json2yaml/json2yaml.dart';
 import 'package:yaml/yaml.dart';
 
@@ -14,7 +14,7 @@ class JsonYamlConverter {
       final json = jsonDecode(text);
       return json2yaml(json);
     } on FormatException catch (_) {
-      return "invalid_json_data".tr;
+      return "invalid_json_data".tr();
     }
   }
 
@@ -29,7 +29,7 @@ class JsonYamlConverter {
       return formatter.format(jsonEncode(yaml),
           indentation: indentation!, sortAlphabetically: sortAlphabetically);
     } on YamlException catch (_) {
-      return "invalid_yaml_data".tr;
+      return "invalid_yaml_data".tr();
     }
   }
 }

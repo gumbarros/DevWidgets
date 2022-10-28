@@ -3,6 +3,7 @@ import 'package:dev_widgets/src/models/tools/brazil/cpf_generator_tool.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class CpfGeneratorController extends GetxController {
   final CpfGeneratorTool tool;

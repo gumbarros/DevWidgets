@@ -2,6 +2,7 @@ import 'package:dev_widgets/src/models/tools/generators/uuid/uuid_generator_tool
 import 'package:dev_widgets/src/models/tools/generators/uuid/uuid_type.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class UuidGeneratorController extends GetxController {
   final UuidGeneratorTool tool;

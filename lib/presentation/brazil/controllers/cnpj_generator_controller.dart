@@ -2,6 +2,7 @@ import 'package:brazil/brazil.dart';
 import 'package:dev_widgets/src/models/tools/brazil/cnpj_generator_tool.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class CnpjGeneratorController extends GetxController {
   final CnpjGeneratorTool tool;

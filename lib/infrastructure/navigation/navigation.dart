@@ -12,9 +12,7 @@ import 'package:dev_widgets/infrastructure/bindings/controllers/generators/uuid_
 import 'package:dev_widgets/infrastructure/bindings/controllers/home_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/formatters/json_formatter_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/formatters/sql_formatter_controller_binding.dart';
-import 'package:dev_widgets/infrastructure/bindings/controllers/text/html_preview_controller_binding.dart';
-import 'package:dev_widgets/infrastructure/bindings/controllers/text/markdown_preview_controller_binding.dart';
-import 'package:dev_widgets/infrastructure/bindings/controllers/text/text_diff_controller_binding.dart';
+
 import 'package:dev_widgets/infrastructure/bindings/controllers/text/text_escape_controller_binding.dart';
 import 'package:dev_widgets/presentation/brazil/views/cpf/cnpj_generator_view.dart';
 import 'package:dev_widgets/presentation/brazil/views/cpf/cpf_generator_view.dart';
@@ -30,12 +28,14 @@ import 'package:dev_widgets/presentation/generators/views/uuid_generator_view.da
 import 'package:dev_widgets/presentation/home/home_view.dart';
 import 'package:dev_widgets/presentation/formatters/views/json_formatter_view.dart';
 import 'package:dev_widgets/presentation/formatters/views/sql_formatter_view.dart';
-import 'package:dev_widgets/presentation/text/views/html_preview_view.dart';
-import 'package:dev_widgets/presentation/text/views/markdown_preview_view.dart';
+
+import 'package:dev_widgets/src/impl/text/html_preview/html_preview_page.dart';
+import 'package:dev_widgets/src/impl/text/markdown_preview/markdown_preview_page.dart';
 import 'package:dev_widgets/presentation/text/views/text_escape_view.dart';
 import 'package:dev_widgets/src/impl/settings/settings_page.dart';
 import 'package:dev_widgets/src/impl/text/text_diff/text_diff_page.dart';
 import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'routes.dart';
 
 class Navigation {
@@ -66,14 +66,10 @@ class Navigation {
       binding: TextEscapeControllerBinding(),
     ),
     GetPage(
-      name: Routes.markdownPreview,
-      page: () => const MarkdownPreviewView(),
-      binding: MarkdownPreviewControllerBinding(),
-    ),
+        name: Routes.markdownPreview, page: () => const MarkdownPreviewPage()),
     GetPage(
       name: Routes.textDiff,
       page: () => const TextDiffPage(),
-      binding: TextDiffControllerBinding(),
     ),
     GetPage(
       name: Routes.xmlFormatter,
@@ -128,8 +124,7 @@ class Navigation {
     ),
     GetPage(
       name: Routes.htmlPreview,
-      page: () => const HtmlPreviewView(),
-      binding: HtmlPreviewControllerBinding(),
+      page: () => const HtmlPreviewPage(),
     ),
   ];
 }

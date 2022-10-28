@@ -4,6 +4,7 @@ import 'package:dev_widgets/src/impl/widgets/default_app_bar.dart';
 import 'package:dev_widgets/src/impl/home/tool_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:responsive_framework/responsive_grid.dart';
 
 class HomeView extends GetView<HomeController> {

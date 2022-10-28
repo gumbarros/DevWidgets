@@ -1,4 +1,4 @@
-import 'package:dev_widgets/src/impl/layout/yaru/providers/tools_provider.dart';
+import 'package:dev_widgets/src/tools_provider.dart';
 import 'package:dev_widgets/src/models/tools/home/home_tool.dart';
 
 class Routes {

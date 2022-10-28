@@ -4,7 +4,7 @@ import 'package:dev_widgets/src/models/tools/tool.dart';
 import 'package:dev_widgets/infrastructure/navigation/routes.dart';
 import 'package:flutter/material.dart';
 
-import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class SettingsTool implements Tool {
   static final SettingsTool _singleton = SettingsTool._internal();
@@ -19,7 +19,7 @@ class SettingsTool implements Tool {
   IconData get icon => Icons.settings;
 
   @override
-  String get homeTitle => "settings".tr;
+  String get homeTitle => "settings".tr();
 
   @override
   String get route => Routes.settings;
@@ -28,11 +28,11 @@ class SettingsTool implements Tool {
   Group get group => HomeGroup();
 
   @override
-  String get description => "settings_description".tr;
+  String get description => "settings_description".tr();
 
   @override
   String get name => "settings";
 
   @override
-  String get menuTitle => "settings_menu_name".tr;
+  String get menuTitle => "settings_menu_name".tr();
 }

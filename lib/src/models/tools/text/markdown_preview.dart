@@ -4,20 +4,20 @@ import 'package:dev_widgets/src/models/tools/tool.dart';
 import 'package:dev_widgets/infrastructure/navigation/routes.dart';
 import 'package:flutter/material.dart';
 
-import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class MarkdownPreviewTool implements Tool {
   @override
   IconData get icon => Icons.insert_drive_file_sharp;
 
   @override
-  String get homeTitle => "markdown_preview".tr;
+  String get homeTitle => "markdown_preview".tr();
 
   @override
   String get route => Routes.markdownPreview;
 
   @override
-  String get description => "markdown_preview_description".tr;
+  String get description => "markdown_preview_description".tr();
 
   @override
   Group get group => TextGroup();
@@ -26,5 +26,5 @@ class MarkdownPreviewTool implements Tool {
   String get name => "markdown";
 
   @override
-  String get menuTitle => "markdown_preview_menu_name".tr;
+  String get menuTitle => "markdown_preview_menu_name".tr();
 }

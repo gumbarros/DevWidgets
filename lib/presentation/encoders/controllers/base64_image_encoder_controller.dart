@@ -6,6 +6,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:path/path.dart' as path;
 import 'package:path_provider/path_provider.dart' as path_provider;
 import 'dart:io' as io;
@@ -62,6 +63,6 @@ class Base64ImageEncoderController extends GetxController {
     await screenshotController.captureAndSave(devWidgetsFolder,
         pixelRatio: Get.pixelRatio,
         fileName: "DevWidgetsBase64Encoder_${DateTime.now()}");
-    successSnackbar("file_saved_to_documents".tr);
+    successSnackbar(StringTranslateExtension("file_saved_to_documents").tr());
   }
 }

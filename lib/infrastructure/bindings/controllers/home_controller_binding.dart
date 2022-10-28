@@ -2,6 +2,7 @@ import 'package:dev_widgets/src/models/tools/tool.dart';
 import 'package:dev_widgets/infrastructure/navigation/routes.dart';
 import 'package:dev_widgets/presentation/home/home_controller.dart';
 import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class HomeControllerBinding extends Bindings {
   @override

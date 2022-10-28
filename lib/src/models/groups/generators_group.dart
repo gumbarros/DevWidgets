@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'group.dart';
 
 class GeneratorsGroup implements Group {
@@ -16,5 +15,5 @@ class GeneratorsGroup implements Group {
   IconData get icon => Icons.copy;
 
   @override
-  String get name => "generators".tr;
+  String get name => "generators".tr();
 }

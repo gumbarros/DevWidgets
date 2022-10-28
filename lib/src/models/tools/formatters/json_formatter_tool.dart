@@ -4,7 +4,8 @@ import 'package:dev_widgets/src/models/groups/formatters_group.dart';
 import 'package:dev_widgets/src/models/tools/tool.dart';
 import 'package:dev_widgets/infrastructure/navigation/routes.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+
+import 'package:easy_localization/easy_localization.dart';
 
 class JsonFormatterTool implements Tool {
   JsonFormatterTool();
@@ -13,7 +14,7 @@ class JsonFormatterTool implements Tool {
   IconData get icon => Icons.data_object;
 
   @override
-  String get homeTitle => "json_formatter".tr;
+  String get homeTitle => "json_formatter".tr();
 
   @override
   String get route => Routes.jsonFormatter;
@@ -22,7 +23,7 @@ class JsonFormatterTool implements Tool {
   Group get group => FormattersGroup();
 
   @override
-  String get description => "json_formatter_description".tr;
+  String get description => "json_formatter_description".tr();
 
   JsonFormatter get formatter => JsonFormatter();
 
@@ -30,5 +31,5 @@ class JsonFormatterTool implements Tool {
   String get name => "jsonformat";
 
   @override
-  String get menuTitle => "json_formatter_menu_name".tr;
+  String get menuTitle => "json_formatter_menu_name".tr();
 }

@@ -3,6 +3,7 @@ import 'package:dev_widgets/src/impl/layout/yaru/models/yaru_menu_item.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class YaruMenuSearchBox extends StatelessWidget {
   final TextEditingController controller;
@@ -16,7 +17,8 @@ class YaruMenuSearchBox extends StatelessWidget {
         popupProps: PopupProps.menu(
           showSearchBox: true,
           emptyBuilder: (context, searchEntry) {
-            return Center(child: Text("no_tools_found".tr));
+            return Center(
+                child: Text(StringTranslateExtension("no_tools_found").tr()));
           },
         ),
         items: tools,
@@ -27,7 +29,7 @@ class YaruMenuSearchBox extends StatelessWidget {
           ),
           prefixIconConstraints:
               const BoxConstraints.expand(width: 40, height: 40),
-          hintText: "menu_search_bar_hint".tr,
+          hintText: StringTranslateExtension("menu_search_bar_hint").tr(),
           hintStyle: const TextStyle(fontSize: 15),
           enabledBorder: const UnderlineInputBorder(
               borderSide: BorderSide(

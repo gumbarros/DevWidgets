@@ -12,6 +12,6 @@ abstract class Tool {
   final Group group;
   final String route;
 
-  Tool(this.icon, this.homeTitle, this.description, this.group, this.route,
-      this.name, this.menuTitle);
+  const Tool(this.icon, this.homeTitle, this.description, this.group,
+      this.route, this.name, this.menuTitle);
 }

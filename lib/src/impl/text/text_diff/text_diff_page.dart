@@ -14,12 +14,14 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class TextDiffPage extends ConsumerWidget {
-  const TextDiffPage({Key? key}) : super(key: key);
+  final Tool tool;
+
+  const TextDiffPage(this.tool, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, ref) {
     return Scaffold(
-        appBar: DefaultAppBar(title: TextDiffTool().homeTitle),
+        appBar: DefaultAppBar(title: tool.homeTitle),
         body: SizedBox(
           height: MediaQuery.of(context).size.height - kToolbarHeight,
           child: ListView(

@@ -7,13 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class SettingsTool implements Tool {
-  static final SettingsTool _singleton = SettingsTool._internal();
-
-  factory SettingsTool() {
-    return _singleton;
-  }
-
-  SettingsTool._internal();
+  const SettingsTool() : super();
 
   @override
   IconData get icon => Icons.settings;

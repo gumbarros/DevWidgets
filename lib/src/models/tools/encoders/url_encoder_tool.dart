@@ -9,6 +9,8 @@ import 'package:easy_localization/easy_localization.dart';
 import '../tool.dart';
 
 class UrlEncoderTool implements Tool {
+  const UrlEncoderTool() : super();
+
   @override
   IconData get icon => Icons.link;
 

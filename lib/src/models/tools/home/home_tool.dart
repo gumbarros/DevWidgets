@@ -7,13 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class HomeTool implements Tool {
-  static final HomeTool _singleton = HomeTool._internal();
-
-  factory HomeTool() {
-    return _singleton;
-  }
-
-  HomeTool._internal();
+  const HomeTool() : super();
 
   @override
   IconData get icon => Icons.home;

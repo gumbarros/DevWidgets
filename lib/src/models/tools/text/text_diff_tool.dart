@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class TextDiffTool implements Tool {
+  const TextDiffTool() : super();
+
   @override
   IconData get icon => Icons.difference;
 
@@ -24,8 +26,6 @@ class TextDiffTool implements Tool {
 
   @override
   String get name => "diff";
-
-  TextDiffTool();
 
   @override
   String get menuTitle => "text_diff_menu_name".tr();

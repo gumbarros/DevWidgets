@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class MarkdownPreviewTool implements Tool {
+  const MarkdownPreviewTool() : super();
+
   @override
   IconData get icon => Icons.insert_drive_file_sharp;
 

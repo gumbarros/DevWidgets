@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class JsonFormatterTool implements Tool {
-  JsonFormatterTool();
+  const JsonFormatterTool() : super();
 
   @override
   IconData get icon => Icons.data_object;

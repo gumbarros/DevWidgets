@@ -12,8 +12,8 @@ export 'package:dev_widgets/src/models/tools/formatters/xml_formatter_tool.dart'
 export 'package:dev_widgets/src/models/tools/generators/lipsum/lipsum_generator_tool.dart';
 export 'package:dev_widgets/src/models/tools/generators/uuid/uuid_generator_tool.dart';
 export 'package:dev_widgets/src/models/tools/home/home_tool.dart';
-export 'package:dev_widgets/src/models/tools/text/html_preview.dart';
-export 'package:dev_widgets/src/models/tools/text/markdown_preview.dart';
+export 'package:dev_widgets/src/models/tools/text/html_preview_tool.dart';
+export 'package:dev_widgets/src/models/tools/text/markdown_preview_tool.dart';
 export 'package:dev_widgets/src/models/tools/text/text_diff_tool.dart';
 export 'package:dev_widgets/src/models/tools/text/text_escape/text_escape.dart';
 export 'package:dev_widgets/src/models/tools/tool.dart';

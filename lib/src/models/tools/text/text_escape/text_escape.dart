@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class TextEscapeTool implements Tool {
+  const TextEscapeTool() : super();
+
   @override
   IconData get icon => Icons.text_format;
 

@@ -9,6 +9,8 @@ import 'package:easy_localization/easy_localization.dart';
 import '../tool.dart';
 
 class HtmlEncoderTool implements Tool {
+  const HtmlEncoderTool() : super();
+
   @override
   IconData get icon => Icons.code;
 

@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class JsonYamlConverterTool implements Tool {
+  const JsonYamlConverterTool() : super();
+
   @override
   IconData get icon => Icons.compare_arrows;
 

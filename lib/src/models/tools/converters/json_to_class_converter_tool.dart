@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class JsonToClassConverterTool implements Tool {
+  const JsonToClassConverterTool() : super();
+
   @override
   IconData get icon => Icons.data_object;
 

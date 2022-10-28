@@ -2,14 +2,14 @@
 # DevWidgets
 
 [![Flutter Responsive](https://img.shields.io/badge/flutter-responsive-brightgreen.svg)](https://github.com/Codelessly/ResponsiveFramework)
-[![Download](https://img.shields.io/badge/Download-22272e?logo=github)](https://github.com/gumbarros/DevToysFlutter/releases/tag/latest)
+[![Download](https://img.shields.io/badge/Download-22272e?logo=github)](https://github.com/gumbarros/DevWidgets/releases/tag/latest)
 
 ![image](https://user-images.githubusercontent.com/52143624/197393871-c90f9511-abac-4564-bcfb-fe114667753c.png)
 
 
 DevWidgets is a W.I.P Flutter application with several tools such as generators, formatters and converters for developers.
 
-[Clicking here](https://gumbarros.github.io/dev_widgets) you can try it directly from your browser 🌐!
+[Clicking here](https://gumbarros.github.io/DevWidgets) you can try it directly from your browser 🌐!
 
 <details>
   <summary>Click here to see all features</summary>
@@ -43,23 +43,23 @@ DevWidgets is a W.I.P Flutter application with several tools such as generators,
 ## Getting Started
 
 ### Download from Releases
-You can download a nightly build for Linux from the lattest commit from [here](https://github.com/gumbarros/dev_widgets/releases).
+You can download a nightly build for Linux from the latest commit from [here](https://github.com/gumbarros/DevWidgets/releases).
 
 ### Building from source
 
 1. Clone the repo from GitHub
-```sh
-git clone https://github.com/gumbarros/dev_widgets
+```bash
+git clone https://github.com/gumbarros/DevWidgets
 ```
 2. Install [Flutter](https://docs.flutter.dev/get-started/install/linux)
 3. Restore the dependencies and build the project
-```dart
+```bash
 flutter pub get
 flutter run
 ```
 ---
 ## Contributing
-Check [CONTRIBUTING.MD](https://github.com/gumbarros/dev_widgets/blob/master/CONTRIBUTING.md).
+Check [CONTRIBUTING.MD](https://github.com/gumbarros/DevWidgets/blob/main/CONTRIBUTING.md).
 
 ---
 ## Motivation

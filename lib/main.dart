@@ -36,45 +36,45 @@ class Main extends StatelessWidget {
   Widget build(BuildContext context) {
     return ProviderScope(
       child: Consumer(
-        builder: (context, ref, _) => GetMaterialApp(
-          initialRoute: initialRoute,
-          debugShowCheckedModeBanner: false,
-          localizationsDelegates: context.localizationDelegates,
-          supportedLocales: context.supportedLocales,
-          locale: ref.watch(settingsProvider).locale,
-          initialBinding: InitialBindings(),
-          getPages: Navigation.pages,
-          defaultTransition: Transition.fade,
-          title: "DevWidgets",
-          builder: ((context, child) {
-            return Navigator(
-              onGenerateRoute: (_) {
-                return GetPageRoute(
-                    page: () => ResponsiveWrapper.builder(
-                          YaruLayout(
-                            tools: Get.find<List<Tool>>(),
-                            child: child,
-                          ),
-                          breakpoints: [
-                            const ResponsiveBreakpoint.autoScale(360),
-                            const ResponsiveBreakpoint.autoScale(480,
-                                name: MOBILE),
-                            const ResponsiveBreakpoint.resize(640,
-                                name: 'MOBILE_LARGE'),
-                            const ResponsiveBreakpoint.resize(850,
-                                name: TABLET),
-                            const ResponsiveBreakpoint.resize(1080,
-                                name: DESKTOP),
-                            const ResponsiveBreakpoint.resize(1440,
-                                name: 'DESKTOP_LARGE'),
-                            const ResponsiveBreakpoint.resize(2460, name: '4k'),
-                          ],
-                        ));
-              },
-            );
-          }),
-        ),
-      ),
+          builder: (context, ref, _) => GetMaterialApp(
+                initialRoute: initialRoute,
+                debugShowCheckedModeBanner: false,
+                localizationsDelegates: context.localizationDelegates,
+                supportedLocales: context.supportedLocales,
+                locale: ref.watch(settingsProvider).locale,
+                initialBinding: InitialBindings(),
+                getPages: Navigation.pages,
+                defaultTransition: Transition.fade,
+                title: "DevWidgets",
+                builder: ((context, child) {
+                  return Navigator(
+                    onGenerateRoute: (_) {
+                      return GetPageRoute(
+                          page: () => ResponsiveWrapper.builder(
+                                YaruLayout(
+                                  tools: Get.find<List<Tool>>(),
+                                  child: child,
+                                ),
+                                breakpoints: [
+                                  const ResponsiveBreakpoint.autoScale(360),
+                                  const ResponsiveBreakpoint.autoScale(480,
+                                      name: MOBILE),
+                                  const ResponsiveBreakpoint.resize(640,
+                                      name: 'MOBILE_LARGE'),
+                                  const ResponsiveBreakpoint.resize(850,
+                                      name: TABLET),
+                                  const ResponsiveBreakpoint.resize(1080,
+                                      name: DESKTOP),
+                                  const ResponsiveBreakpoint.resize(1440,
+                                      name: 'DESKTOP_LARGE'),
+                                  const ResponsiveBreakpoint.resize(2460,
+                                      name: '4k'),
+                                ],
+                              ));
+                    },
+                  );
+                }),
+              )),
     );
   }
 }

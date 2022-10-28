@@ -9,10 +9,12 @@ final _settingsBox = Hive.box("settings");
 
 Settings loadSettingsFromBox() {
   final settings = Settings(
-      textEditorFontFamily: _settingsBox.get("textEditorFontFamily"),
-      highContrast: _settingsBox.get("highContrast"),
-      textEditorFontSize: _settingsBox.get("textEditorFontSize"),
-      textEditorTheme: _settingsBox.get("textEditorTheme"),
+      textEditorFontFamily:
+          _settingsBox.get("textEditorFontFamily", defaultValue: 'Hack'),
+      highContrast: _settingsBox.get("highContrast", defaultValue: false),
+      textEditorFontSize:
+          _settingsBox.get("textEditorFontSize", defaultValue: 18.0),
+      textEditorTheme: _settingsBox.get("textEditorTheme", defaultValue: "vs"),
       favorites: _settingsBox.get("favorites", defaultValue: <String>[]),
       themeMode:
           ThemeMode.values[_settingsBox.get("themeMode", defaultValue: 0)],

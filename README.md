@@ -48,12 +48,12 @@ You can download a nightly build for Linux from the latest commit from [here](ht
 ### Building from source
 
 1. Clone the repo from GitHub
-```sh
-git clone https://github.com/gumbarros/dev_widgets
+```bash
+git clone https://github.com/gumbarros/DevWidgets
 ```
 2. Install [Flutter](https://docs.flutter.dev/get-started/install/linux)
 3. Restore the dependencies and build the project
-```dart
+```bash
 flutter pub get
 flutter run
 ```

@@ -1,5 +1,5 @@
-import 'package:dev_widgets/src/impl/layout/yaru/ui/yaru_layout.dart';
-import 'package:dev_widgets/src/impl/settings/settings_provider.dart';
+import 'package:dev_widgets/src/impl/presentation/layout/yaru/ui/yaru_layout.dart';
+import 'package:dev_widgets/src/impl/presentation/settings/settings_provider.dart';
 import 'package:dev_widgets/src/models/tools/tool.dart';
 import 'package:dev_widgets/infrastructure/bindings/domains/initial_bindings.dart';
 import 'package:dev_widgets/src/supported_locales.dart';

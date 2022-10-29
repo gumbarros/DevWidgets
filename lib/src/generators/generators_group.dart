@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
-import '../group.dart';
+import '../models/group.dart';
 
 class GeneratorsGroup implements Group {
   static final GeneratorsGroup _singleton = GeneratorsGroup._internal();

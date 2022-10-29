@@ -444,7 +444,7 @@ packages:
     source: hosted
     version: "0.2.5"
   highlight:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: highlight
       url: "https://pub.dartlang.org"

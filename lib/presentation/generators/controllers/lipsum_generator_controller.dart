@@ -1,5 +1,5 @@
-import 'package:dev_widgets/src/models/tools/generators/lipsum/lipsum_generator_tool.dart';
-import 'package:dev_widgets/src/models/tools/generators/lipsum/lipsum_type.dart';
+import 'package:dev_widgets/src/generators/lipsum/lipsum_generator_tool.dart';
+import 'package:dev_widgets/src/generators/lipsum/lipsum_type.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:easy_localization/easy_localization.dart';

@@ -1,6 +1,6 @@
-import 'package:dev_widgets/src/impl/domain/formatters/xml_formatter.dart';
+import 'package:dev_widgets/src/formatters/xml_formatter/xml_formatter.dart';
 import 'package:dev_widgets/src/models/group.dart';
-import 'package:dev_widgets/src/models/groups/formatters_group.dart';
+import 'package:dev_widgets/src/formatters/formatters_group.dart';
 import 'package:dev_widgets/src/models/tool.dart';
 import 'package:dev_widgets/infrastructure/navigation/routes.dart';
 import 'package:flutter/material.dart';

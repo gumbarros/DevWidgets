@@ -1,4 +1,4 @@
-import 'package:dev_widgets/src/impl/domain/formatters/sql_formatter/sql_formatter.dart';
+import 'package:dev_widgets/src/formatters/sql_formatter/formatter/sql_formatter.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -7,9 +7,7 @@ void main() {
       const String input = """SELECT * FROM         TABLE""";
       const String expectedResult = """SELECT *\nFROM TABLE""";
 
-      final formatter = SqlFormatter();
-
-      final String result = formatter.format(input);
+      final String result = formatSql(input);
 
       expect(expectedResult, result);
     });

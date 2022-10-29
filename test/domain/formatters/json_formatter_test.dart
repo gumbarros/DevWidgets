@@ -1,9 +1,8 @@
-import 'package:dev_widgets/src/impl/domain/formatters/json_formatter.dart';
+import 'package:dev_widgets/src/formatters/json_formatter/json_formatter.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('JSON Formatter', () {
-    var formatter = JsonFormatter();
     String input = "{\"name\":\"Gustavo\",\"age\":21}";
     test("Format JSON without sorting", () {
       String expectedResult = """
@@ -12,7 +11,7 @@ void main() {
     "age": 21
 }""";
 
-      String result = formatter.format(input);
+      String result = formatJson(input);
 
       expect(expectedResult, result);
     });
@@ -23,7 +22,7 @@ void main() {
     "name": "Gustavo"
 }""";
 
-      String result = formatter.format(input, sortAlphabetically: true);
+      String result = formatJson(input, sortAlphabetically: true);
 
       expect(expectedResult, result);
     });

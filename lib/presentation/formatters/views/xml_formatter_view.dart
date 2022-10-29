@@ -1,4 +1,4 @@
-import 'package:dev_widgets/src/models/tools/formatters/indentation.dart';
+import 'package:dev_widgets/src/formatters/indentation.dart';
 import 'package:dev_widgets/presentation/formatters/controllers/xml_formatter_controller.dart';
 import 'package:dev_widgets/src/helpers.dart';
 import 'package:dev_widgets/src/widgets/default_app_bar.dart';
@@ -9,8 +9,8 @@ import 'package:get/get.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-class XMLFormatterView extends GetView<XMLFormatterController> {
-  const XMLFormatterView({Key? key}) : super(key: key);
+class XmlFormatterPage extends GetView<XMLFormatterController> {
+  const XmlFormatterPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

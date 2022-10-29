@@ -1,52 +1,31 @@
-import 'package:dev_widgets/src/converters/json_yaml/json_yaml_converter_providers.dart';
-import 'package:dev_widgets/src/converters/json_yaml/json_yaml_conversion_type.dart';
+import 'package:code_text_field/code_text_field.dart';
 import 'package:dev_widgets/src/formatters/indentation.dart';
-import 'package:dev_widgets/src/helpers.dart';
+import 'package:dev_widgets/src/formatters/json_formatter/json_formatter_providers.dart';
 import 'package:dev_widgets/src/widgets/default_app_bar.dart';
+import 'package:dev_widgets/src/helpers.dart';
 import 'package:dev_widgets/src/widgets/io_editor/io_editor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
+import 'package:highlight/languages/json.dart';
 
-class JsonYamlConverterPage extends ConsumerWidget {
-  const JsonYamlConverterPage({Key? key}) : super(key: key);
+class JsonFormatterPage extends ConsumerWidget {
+  const JsonFormatterPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, ref) {
     return Scaffold(
-        appBar: DefaultAppBar(title: "json_yaml_converter".tr()),
+        appBar: DefaultAppBar(title: "json_formatter".tr()),
         body: SizedBox(
           height: MediaQuery.of(context).size.height - kToolbarHeight,
-          child: ListView(children: [
-            Container(
-              margin: const EdgeInsets.all(8.0),
-              child: YaruSection(headline: "configuration".tr(), children: [
-                YaruRow(
-                  enabled: true,
-                  leadingWidget: const Icon(
-                    Icons.compare_arrows_sharp,
-                    size: 25,
-                  ),
-                  trailingWidget: Padding(
-                    padding: const EdgeInsets.only(left: 8.0),
-                    child: Text(
-                      "conversion_type".tr(),
-                      style: const TextStyle(fontSize: 18),
-                    ),
-                  ),
-                  actionWidget: DropdownButton<JsonYamlConversionType>(
-                      value: ref.watch(conversionTypeProvider),
-                      items: getDropdownMenuItems<JsonYamlConversionType>(
-                          JsonYamlConversionType.values),
-                      onChanged: (selected) => ref
-                          .watch(conversionTypeProvider.notifier)
-                          .state = selected!),
-                ),
-                Visibility(
-                    visible: ref.watch(conversionTypeProvider) ==
-                        JsonYamlConversionType.yamlToJson,
-                    child: Column(children: [
+          child: ListView(
+            children: [
+              Container(
+                margin: const EdgeInsets.all(8.0),
+                child: YaruSection(
+                    headline: StringTranslateExtension("configuration").tr(),
+                    children: [
                       YaruRow(
                         enabled: true,
                         leadingWidget: const Icon(Icons.arrow_right_alt),
@@ -82,15 +61,17 @@ class JsonYamlConverterPage extends ConsumerWidget {
                               .state = value,
                         ),
                       )
-                    ]))
-              ]),
-            ),
-            SizedBox(
-                height: MediaQuery.of(context).size.height / 1.2,
-                child: IOEditor(
+                    ]),
+              ),
+              SizedBox(
+                  height: MediaQuery.of(context).size.height / 1.2,
+                  child: IOEditor(
                     inputController: ref.watch(inputControllerProvider),
-                    outputController: ref.watch(outputControllerProvider)))
-          ]),
+                    outputController: CodeController(
+                        language: json, text: ref.watch(outputTextProvider)),
+                  )),
+            ],
+          ),
         ));
   }
 }

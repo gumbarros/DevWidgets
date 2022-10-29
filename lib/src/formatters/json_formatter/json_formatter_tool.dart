@@ -1,10 +1,8 @@
-import 'package:dev_widgets/src/impl/domain/formatters/json_formatter.dart';
 import 'package:dev_widgets/src/models/group.dart';
-import 'package:dev_widgets/src/models/groups/formatters_group.dart';
+import 'package:dev_widgets/src/formatters/formatters_group.dart';
 import 'package:dev_widgets/src/models/tool.dart';
 import 'package:dev_widgets/infrastructure/navigation/routes.dart';
 import 'package:flutter/material.dart';
-
 import 'package:easy_localization/easy_localization.dart';
 
 class JsonFormatterTool implements Tool {
@@ -24,8 +22,6 @@ class JsonFormatterTool implements Tool {
 
   @override
   String get description => "json_formatter_description".tr();
-
-  JsonFormatter get formatter => JsonFormatter();
 
   @override
   String get name => "jsonformat";

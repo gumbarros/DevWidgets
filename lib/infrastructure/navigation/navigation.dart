@@ -4,8 +4,6 @@ import 'package:dev_widgets/infrastructure/bindings/controllers/encoders/url_enc
 import 'package:dev_widgets/infrastructure/bindings/controllers/formatters/xml_formatter_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/generators/lipsum_generator_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/generators/uuid_generator_controller_binding.dart.dart';
-import 'package:dev_widgets/infrastructure/bindings/controllers/formatters/json_formatter_controller_binding.dart';
-import 'package:dev_widgets/infrastructure/bindings/controllers/formatters/sql_formatter_controller_binding.dart';
 import 'package:dev_widgets/src/brazil/cpf_cnpj/cpf_cnpj_generation_mode.dart';
 import 'package:dev_widgets/src/brazil/cpf_cnpj/cpf_cnpj_generator_page.dart';
 import 'package:dev_widgets/src/converters/json_class/json_to_class_converter_page.dart';
@@ -17,9 +15,9 @@ import 'package:dev_widgets/presentation/encoders/views/url_encoder_view.dart';
 import 'package:dev_widgets/presentation/formatters/views/xml_formatter_view.dart';
 import 'package:dev_widgets/presentation/generators/views/lipsum_generator_view.dart';
 import 'package:dev_widgets/presentation/generators/views/uuid_generator_view.dart';
+import 'package:dev_widgets/src/formatters/json_formatter/json_formatter_page.dart';
 import 'package:dev_widgets/src/home/home_page.dart';
-import 'package:dev_widgets/presentation/formatters/views/json_formatter_view.dart';
-import 'package:dev_widgets/presentation/formatters/views/sql_formatter_view.dart';
+import 'package:dev_widgets/src/formatters/sql_formatter/sql_formatter_page.dart';
 import 'package:dev_widgets/src/text/html_preview/html_preview_page.dart';
 import 'package:dev_widgets/src/text/markdown_preview/markdown_preview_page.dart';
 import 'package:dev_widgets/src/settings/settings_page.dart';
@@ -31,16 +29,8 @@ import 'routes.dart';
 class Navigation {
   static List<GetPage> pages = [
     GetPage(name: Routes.home, page: () => const HomePage()),
-    GetPage(
-      name: Routes.sqlFormatter,
-      page: () => const SQLFormatterView(),
-      binding: SQLFormatterControllerBinding(),
-    ),
-    GetPage(
-      name: Routes.jsonFormatter,
-      page: () => const JsonFormatterView(),
-      binding: JsonFormatterControllerBinding(),
-    ),
+    GetPage(name: Routes.sqlFormatter, page: () => const SqlFormatterPage()),
+    GetPage(name: Routes.jsonFormatter, page: () => const JsonFormatterPage()),
     GetPage(
       name: Routes.htmlEncoder,
       page: () => const HTMLEncoderView(),
@@ -55,7 +45,7 @@ class Navigation {
     ),
     GetPage(
       name: Routes.xmlFormatter,
-      page: () => const XMLFormatterView(),
+      page: () => const XmlFormatterPage(),
       binding: XMLFormatterControllerBinding(),
     ),
     GetPage(

@@ -1,5 +1,5 @@
 import 'package:dev_widgets/src/impl/domain/generators/uuid_generator.dart';
-import 'package:dev_widgets/src/models/groups/generators_group.dart';
+import 'package:dev_widgets/src/generators/generators_group.dart';
 import 'package:dev_widgets/src/models/group.dart';
 import 'package:dev_widgets/src/models/tool.dart';
 import 'package:dev_widgets/infrastructure/navigation/routes.dart';

@@ -3,7 +3,7 @@ import 'package:highlight/languages/yaml.dart';
 import 'package:highlight/languages/json.dart';
 import 'package:code_text_field/code_text_field.dart';
 import 'package:dev_widgets/src/converters/json_yaml/json_yaml_conversion_type.dart';
-import 'package:dev_widgets/src/models/tools/formatters/indentation.dart';
+import 'package:dev_widgets/src/formatters/indentation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final sortAlphabeticallyProvider = StateProvider<bool>((ref) {

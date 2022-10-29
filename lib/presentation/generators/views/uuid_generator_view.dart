@@ -1,4 +1,4 @@
-import 'package:dev_widgets/src/models/tools/generators/uuid/uuid_type.dart';
+import 'package:dev_widgets/src/generators/uuid/uuid_type.dart';
 import 'package:dev_widgets/presentation/generators/controllers/uuid_generator_controller.dart';
 import 'package:dev_widgets/src/widgets/default_app_bar.dart';
 import 'package:dev_widgets/src/helpers.dart';

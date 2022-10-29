@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
-import '../group.dart';
+import '../models/group.dart';
 
 class FormattersGroup implements Group {
   static final FormattersGroup _singleton = FormattersGroup._internal();

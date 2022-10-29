@@ -1,6 +1,6 @@
 //Based on https://github.com/mrdziuban/sql-formatter/blob/e8065c29af8c8fa4af7318a46b01205f6389e6c9/dart/src/sql_formatter.dart;
 
-import 'package:dev_widgets/src/impl/domain/formatters/sql_formatter/sql_formatter_provider.dart';
+import 'package:dev_widgets/src/formatters/sql_formatter/formatter/sql_formatter.dart';
 import 'package:dev_widgets/src/helpers.dart';
 
 class T {
@@ -28,7 +28,7 @@ class Replacement {
   Replacement(this.pattern, this.replacement);
 }
 
-class GenericSqlFormatterProvider implements SqlFormatterProvider {
+class GenericSqlFormatter implements SqlFormatter {
   static const String sep = '~::~';
 
   @override

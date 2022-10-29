@@ -1,8 +1,8 @@
 import 'package:dev_widgets/src/brazil/brazil_group.dart';
 import 'package:dev_widgets/src/converters/converters_group.dart';
 import 'package:dev_widgets/src/encoders/encoders_group.dart';
-import 'package:dev_widgets/src/models/groups/formatters_group.dart';
-import 'package:dev_widgets/src/models/groups/generators_group.dart';
+import 'package:dev_widgets/src/formatters/formatters_group.dart';
+import 'package:dev_widgets/src/generators/generators_group.dart';
 import 'package:dev_widgets/src/models/group.dart';
 import 'package:dev_widgets/src/text/text_group.dart';
 

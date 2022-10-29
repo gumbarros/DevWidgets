@@ -1,6 +1,6 @@
 import 'dart:convert';
-import 'package:dev_widgets/src/impl/domain/formatters/json_formatter.dart';
-import 'package:dev_widgets/src/models/tools/formatters/indentation.dart';
+import 'package:dev_widgets/src/formatters/json_formatter/json_formatter.dart';
+import 'package:dev_widgets/src/formatters/indentation.dart';
 import 'package:dev_widgets/src/helpers.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:json2yaml/json2yaml.dart';
@@ -23,9 +23,8 @@ String convertYamlToJson(String text,
 
   try {
     final yaml = loadYaml(text);
-    final formatter = JsonFormatter();
 
-    return formatter.format(jsonEncode(yaml),
+    return formatJson(jsonEncode(yaml),
         indentation: indentation!, sortAlphabetically: sortAlphabetically);
   } on YamlException catch (_) {
     return "invalid_yaml_data".tr();

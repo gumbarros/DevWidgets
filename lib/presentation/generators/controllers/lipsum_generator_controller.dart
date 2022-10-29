@@ -15,17 +15,17 @@ class LipsumGeneratorController extends GetxController {
   LipsumGeneratorController(this.tool);
 
   void _regenerateLipsum() {
-    String generatedText = tool.generator.generate(
-      type: lipsumType.value ?? LipsumType.words,
-      count: count.value,
-      startWithLorem: startWithLorem.value,
-    );
+    // String generatedText = tool.generator.generate(
+    //   type: lipsumType.value ?? LipsumType.words,
+    //   count: count.value,
+    //   startWithLorem: startWithLorem.value,
+    // );
 
-    try {
-      outputController.text = generatedText;
-    } catch (_) {
-      //Bug on code_text_field package.
-    }
+    // try {
+    //   outputController.text = generatedText;
+    // } catch (_) {
+    //   //Bug on code_text_field package.
+    // }
   }
 
   @override

@@ -32,6 +32,7 @@ dependencies:
   json2yaml: ^3.0.0
   json_to_dart: ^1.0.5
   multi_split_view: ^2.1.0
+  path: ^1.8.2
   path_provider: ^2.0.11
   pretty_diff_text: ^1.0.0
   responsive_framework: ^0.2.0

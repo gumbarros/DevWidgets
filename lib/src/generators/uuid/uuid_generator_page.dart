@@ -1,21 +1,21 @@
+import 'package:dev_widgets/src/generators/uuid/uuid_generator_providers.dart';
 import 'package:dev_widgets/src/generators/uuid/uuid_type.dart';
-import 'package:dev_widgets/presentation/generators/controllers/uuid_generator_controller.dart';
 import 'package:dev_widgets/src/widgets/default_app_bar.dart';
 import 'package:dev_widgets/src/helpers.dart';
 import 'package:dev_widgets/src/widgets/io_editor/output_editor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-class UuidGeneratorView extends GetView<UuidGeneratorController> {
-  const UuidGeneratorView({Key? key}) : super(key: key);
+class UuidGeneratorPage extends ConsumerWidget {
+  const UuidGeneratorPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
     return Scaffold(
-        appBar: DefaultAppBar(title: controller.tool.homeTitle),
+        appBar: DefaultAppBar(title: "uuid_generator".tr()),
         body: SizedBox(
           height: MediaQuery.of(context).size.height - kToolbarHeight,
           child: ListView(
@@ -26,42 +26,39 @@ class UuidGeneratorView extends GetView<UuidGeneratorController> {
                     headline: StringTranslateExtension("configuration").tr(),
                     children: [
                       YaruRow(
-                          enabled: true,
-                          leadingWidget: const Icon(Icons.tag),
-                          trailingWidget: Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
-                            child: ListTile(
-                              title: Text(
-                                  StringTranslateExtension("uuid_type").tr()),
-                              subtitle: Text(StringTranslateExtension(
-                                      "uuid_type_description")
-                                  .tr()),
-                            ),
+                        enabled: true,
+                        leadingWidget: const Icon(Icons.tag),
+                        trailingWidget: Padding(
+                          padding: const EdgeInsets.only(left: 8.0),
+                          child: ListTile(
+                            title: Text(
+                                StringTranslateExtension("uuid_type").tr()),
+                            subtitle: Text(StringTranslateExtension(
+                                    "uuid_type_description")
+                                .tr()),
                           ),
-                          actionWidget: Obx(
-                            () => DropdownButton<UuidType>(
-                                value: controller.uuidType.value,
-                                items: getDropdownMenuItems<UuidType>(
-                                    UuidType.values),
-                                onChanged: (selected) =>
-                                    controller.uuidType.value = selected),
-                          )),
+                        ),
+                        actionWidget: DropdownButton<UuidType>(
+                            value: ref.watch(uuidTypeProvider),
+                            items:
+                                getDropdownMenuItems<UuidType>(UuidType.values),
+                            onChanged: (selected) => ref
+                                .read(uuidTypeProvider.notifier)
+                                .state = selected!),
+                      ),
                       YaruRow(
                         enabled: true,
                         leadingWidget: const Icon(Icons.remove),
                         trailingWidget: Padding(
                           padding: const EdgeInsets.only(left: 8.0),
                           child: ListTile(
-                            title:
-                                Text(StringTranslateExtension("hyphens").tr()),
+                            title: Text("hyphens".tr()),
                           ),
                         ),
-                        actionWidget: Obx(
-                          () => Switch(
-                            onChanged: (value) =>
-                                controller.hyphens.value = value,
-                            value: controller.hyphens.value,
-                          ),
+                        actionWidget: Switch(
+                          onChanged: (value) =>
+                              ref.read(hiphensProvider.notifier).state = value,
+                          value: ref.watch(hiphensProvider),
                         ),
                       ),
                       YaruRow(
@@ -69,16 +66,13 @@ class UuidGeneratorView extends GetView<UuidGeneratorController> {
                         leadingWidget: const Icon(Icons.format_color_text),
                         trailingWidget: Padding(
                           padding: const EdgeInsets.only(left: 2.0),
-                          child: ListTile(
-                              title: Text(
-                                  StringTranslateExtension("uppercase").tr())),
+                          child: ListTile(title: Text("uppercase".tr())),
                         ),
-                        actionWidget: Obx(
-                          () => Switch(
-                            onChanged: (value) =>
-                                controller.uppercase.value = value,
-                            value: controller.uppercase.value,
-                          ),
+                        actionWidget: Switch(
+                          onChanged: (value) => ref
+                              .read(uppercaseProvider.notifier)
+                              .state = value,
+                          value: ref.watch(uppercaseProvider),
                         ),
                       ),
                       YaruRow(
@@ -103,11 +97,10 @@ class UuidGeneratorView extends GetView<UuidGeneratorController> {
                                   ],
                                   textAlign: TextAlign.end,
                                   initialValue:
-                                      controller.count.value.toString(),
+                                      ref.watch(amountProvider).toString(),
                                   onChanged: (value) {
-                                    controller.count.value =
-                                        int.tryParse(value) ??
-                                            0; // e.g. if empty -> 0
+                                    ref.read(amountProvider.notifier).state =
+                                        int.tryParse(value) ?? 0;
                                   },
                                   decoration: const InputDecoration(
                                     contentPadding: EdgeInsets.all(10),
@@ -119,7 +112,9 @@ class UuidGeneratorView extends GetView<UuidGeneratorController> {
                               Flexible(
                                 flex: 2,
                                 child: ElevatedButton(
-                                  onPressed: () => controller.generateUuid(),
+                                  onPressed: () => ref
+                                      .read(uuidGeneratorProvider.notifier)
+                                      .generate(),
                                   child: Text(
                                       StringTranslateExtension("generate")
                                           .tr()),
@@ -134,12 +129,14 @@ class UuidGeneratorView extends GetView<UuidGeneratorController> {
               SizedBox(
                   height: MediaQuery.of(context).size.height / 1.2,
                   child: OutputEditor(
-                    outputController: controller.outputController,
+                    outputController: TextEditingController(
+                        text: ref.watch(uuidGeneratorProvider)),
                     actionButtons: [
                       ElevatedButton.icon(
                         icon: const Icon(Icons.clear),
-                        label: Text(StringTranslateExtension("clear").tr()),
-                        onPressed: () => controller.outputController.clear(),
+                        label: Text("clear".tr()),
+                        onPressed: () =>
+                            ref.read(uuidGeneratorProvider.notifier).clear(),
                       ),
                     ],
                   )),

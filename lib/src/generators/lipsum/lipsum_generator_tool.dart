@@ -1,4 +1,3 @@
-import 'package:dev_widgets/src/impl/domain/generators/lipsum_generator.dart';
 import 'package:dev_widgets/src/generators/generators_group.dart';
 import 'package:dev_widgets/src/models/group.dart';
 import 'package:dev_widgets/src/models/tool.dart';
@@ -30,6 +29,4 @@ class LipsumGeneratorTool implements Tool {
 
   @override
   String get menuTitle => "lipsum".tr();
-
-  LipsumGenerator get generator => LipsumGenerator();
 }

@@ -2,7 +2,6 @@ import 'package:dev_widgets/infrastructure/bindings/controllers/encoders/base64_
 import 'package:dev_widgets/infrastructure/bindings/controllers/encoders/html_encoder_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/encoders/url_encoder_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/generators/lipsum_generator_controller_binding.dart';
-import 'package:dev_widgets/infrastructure/bindings/controllers/generators/uuid_generator_controller_binding.dart.dart';
 import 'package:dev_widgets/src/brazil/cpf_cnpj/cpf_cnpj_generation_mode.dart';
 import 'package:dev_widgets/src/brazil/cpf_cnpj/cpf_cnpj_generator_page.dart';
 import 'package:dev_widgets/src/converters/json_class/json_to_class_converter_page.dart';
@@ -13,7 +12,7 @@ import 'package:dev_widgets/presentation/encoders/views/html_encoder_view.dart';
 import 'package:dev_widgets/presentation/encoders/views/url_encoder_view.dart';
 import 'package:dev_widgets/src/formatters/xml_formatter/xml_formatter_page.dart';
 import 'package:dev_widgets/presentation/generators/views/lipsum_generator_view.dart';
-import 'package:dev_widgets/presentation/generators/views/uuid_generator_view.dart';
+import 'package:dev_widgets/src/generators/uuid/uuid_generator_page.dart';
 import 'package:dev_widgets/src/formatters/json_formatter/json_formatter_page.dart';
 import 'package:dev_widgets/src/home/home_page.dart';
 import 'package:dev_widgets/src/formatters/sql_formatter/sql_formatter_page.dart';
@@ -54,11 +53,7 @@ class Navigation {
       page: () => const LipsumGeneratorView(),
       binding: LipsumGeneratorControllerBinding(),
     ),
-    GetPage(
-      name: Routes.uuidGenerator,
-      page: () => const UuidGeneratorView(),
-      binding: UuidGeneratorControllerBinding(),
-    ),
+    GetPage(name: Routes.uuidGenerator, page: () => const UuidGeneratorPage()),
     GetPage(
       name: Routes.base64TextEncoder,
       page: () => const Base64TextEncoderView(),

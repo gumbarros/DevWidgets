@@ -1,4 +1,3 @@
-import 'package:dev_widgets/src/impl/domain/generators/uuid_generator.dart';
 import 'package:dev_widgets/src/generators/generators_group.dart';
 import 'package:dev_widgets/src/models/group.dart';
 import 'package:dev_widgets/src/models/tool.dart';
@@ -30,6 +29,4 @@ class UuidGeneratorTool implements Tool {
 
   @override
   String get menuTitle => "uuid".tr();
-
-  UuidGenerator get generator => UuidGenerator();
 }

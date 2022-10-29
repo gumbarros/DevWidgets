@@ -1,4 +1,3 @@
-import 'package:dev_widgets/src/formatters/xml_formatter/xml_formatter.dart';
 import 'package:dev_widgets/src/models/group.dart';
 import 'package:dev_widgets/src/formatters/formatters_group.dart';
 import 'package:dev_widgets/src/models/tool.dart';
@@ -27,8 +26,6 @@ class XmlFormatterTool implements Tool {
 
   @override
   String get name => "xmlformat";
-
-  XmlFormatter get formatter => XmlFormatter();
 
   @override
   String get menuTitle => "xml_formatter_menu_name".tr();

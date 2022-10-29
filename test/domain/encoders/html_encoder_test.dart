@@ -1,4 +1,4 @@
-import 'package:dev_widgets/domain/helpers/encoders/html_encoder.dart';
+import 'package:dev_widgets/src/impl/domain/encoders/html_encoder.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

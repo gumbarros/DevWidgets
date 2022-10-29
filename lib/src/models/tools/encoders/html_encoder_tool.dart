@@ -1,5 +1,5 @@
-import 'package:dev_widgets/domain/helpers/encoders/encoder.dart';
-import 'package:dev_widgets/domain/helpers/encoders/html_encoder.dart';
+import 'package:dev_widgets/src/impl/domain/encoders/encoder.dart';
+import 'package:dev_widgets/src/impl/domain/encoders/html_encoder.dart';
 import 'package:dev_widgets/src/models/groups/group.dart';
 import 'package:dev_widgets/src/models/groups/encoders_group.dart';
 import 'package:dev_widgets/infrastructure/navigation/routes.dart';

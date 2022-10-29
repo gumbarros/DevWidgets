@@ -1,4 +1,4 @@
-import 'package:dev_widgets/src/impl/helpers.dart';
+import 'package:dev_widgets/src/impl/presentation/helpers.dart';
 import 'package:screenshot/screenshot.dart';
 import 'dart:typed_data';
 import 'package:dev_widgets/src/models/tools/encoders/base64_image_encoder_tool.dart';

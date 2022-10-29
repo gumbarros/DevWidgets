@@ -1,7 +1,6 @@
 import 'package:dev_widgets/infrastructure/bindings/controllers/brazil/cnpj_generator_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/brazil/cpf_generator_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/converters/json_to_class_converter_controller_binding.dart';
-import 'package:dev_widgets/infrastructure/bindings/controllers/converters/json_yaml_converter_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/encoders/base64_image_encoder_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/encoders/base64_text_encoder_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/encoders/html_encoder_controller_binding.dart';
@@ -14,7 +13,7 @@ import 'package:dev_widgets/infrastructure/bindings/controllers/formatters/sql_f
 import 'package:dev_widgets/presentation/brazil/views/cpf/cnpj_generator_view.dart';
 import 'package:dev_widgets/presentation/brazil/views/cpf/cpf_generator_view.dart';
 import 'package:dev_widgets/presentation/converters/views/json_to_class_converter_view.dart';
-import 'package:dev_widgets/presentation/converters/views/json_yaml_converter_view.dart';
+import 'package:dev_widgets/src/impl/presentation/converters/json_yaml_converter_page.dart';
 import 'package:dev_widgets/presentation/encoders/views/base64_image_encoder_view.dart';
 import 'package:dev_widgets/presentation/encoders/views/base64_text_encoder_view.dart';
 import 'package:dev_widgets/presentation/encoders/views/html_encoder_view.dart';
@@ -22,15 +21,14 @@ import 'package:dev_widgets/presentation/encoders/views/url_encoder_view.dart';
 import 'package:dev_widgets/presentation/formatters/views/xml_formatter_view.dart';
 import 'package:dev_widgets/presentation/generators/views/lipsum_generator_view.dart';
 import 'package:dev_widgets/presentation/generators/views/uuid_generator_view.dart';
-import 'package:dev_widgets/src/impl/home/home_page.dart';
+import 'package:dev_widgets/src/impl/presentation/home/home_page.dart';
 import 'package:dev_widgets/presentation/formatters/views/json_formatter_view.dart';
 import 'package:dev_widgets/presentation/formatters/views/sql_formatter_view.dart';
-import 'package:dev_widgets/src/impl/text/html_preview/html_preview_page.dart';
-import 'package:dev_widgets/src/impl/text/markdown_preview/markdown_preview_page.dart';
-import 'package:dev_widgets/src/impl/settings/settings_page.dart';
-import 'package:dev_widgets/src/impl/text/text_diff/text_diff_page.dart';
-import 'package:dev_widgets/src/impl/text/text_escape/text_escape_page.dart';
-import 'package:dev_widgets/src/tools.dart';
+import 'package:dev_widgets/src/impl/presentation/text/html_preview/html_preview_page.dart';
+import 'package:dev_widgets/src/impl/presentation/text/markdown_preview/markdown_preview_page.dart';
+import 'package:dev_widgets/src/impl/presentation/settings/settings_page.dart';
+import 'package:dev_widgets/src/impl/presentation/text/text_diff/text_diff_page.dart';
+import 'package:dev_widgets/src/impl/presentation/text/text_escape/text_escape_page.dart';
 import 'package:get/get.dart';
 import 'routes.dart';
 
@@ -57,7 +55,7 @@ class Navigation {
         name: Routes.markdownPreview, page: () => const MarkdownPreviewPage()),
     GetPage(
       name: Routes.textDiff,
-      page: () => TextDiffPage(),
+      page: () => const TextDiffPage(),
     ),
     GetPage(
       name: Routes.xmlFormatter,
@@ -96,10 +94,8 @@ class Navigation {
       binding: JsonToClassConverterControllerBinding(),
     ),
     GetPage(
-      name: Routes.jsonYamlConverter,
-      page: () => const JsonYamlConverterView(),
-      binding: JsonYamlConverterControllerBinding(),
-    ),
+        name: Routes.jsonYamlConverter,
+        page: () => const JsonYamlConverterPage()),
     GetPage(
       name: Routes.cpf,
       page: () => const CpfGeneratorView(),

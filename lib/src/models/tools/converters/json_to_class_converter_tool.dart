@@ -1,4 +1,4 @@
-import 'package:dev_widgets/domain/helpers/converters/json_to_class/json_to_class_converter.dart';
+import 'package:dev_widgets/src/impl/domain/converters/json_to_class/json_to_class_converter.dart';
 import 'package:dev_widgets/src/models/groups/converters_group.dart';
 import 'package:dev_widgets/src/models/groups/group.dart';
 import 'package:dev_widgets/src/models/tools/tool.dart';

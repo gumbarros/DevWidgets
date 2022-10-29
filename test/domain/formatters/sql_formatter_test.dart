@@ -1,4 +1,4 @@
-import 'package:dev_widgets/domain/helpers/formatters/sql_formatter/sql_formatter.dart';
+import 'package:dev_widgets/src/impl/domain/formatters/sql_formatter/sql_formatter.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

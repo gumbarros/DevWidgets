@@ -1,4 +1,4 @@
-import 'package:dev_widgets/domain/helpers/encoders/base_64_text_encoder.dart';
+import 'package:dev_widgets/src/impl/domain/encoders/base_64_text_encoder.dart';
 import 'package:dev_widgets/src/models/groups/group.dart';
 import 'package:dev_widgets/src/models/groups/encoders_group.dart';
 import 'package:dev_widgets/src/models/tools/tool.dart';

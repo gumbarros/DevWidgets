@@ -1,4 +1,4 @@
-import 'package:dev_widgets/domain/helpers/text/text_escaper.dart' as escaper;
+import 'package:dev_widgets/src/impl/domain/text/text_escaper.dart' as escaper;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

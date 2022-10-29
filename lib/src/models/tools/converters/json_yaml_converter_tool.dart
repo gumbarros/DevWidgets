@@ -1,4 +1,3 @@
-import 'package:dev_widgets/domain/helpers/converters/json_yaml_converter.dart';
 import 'package:dev_widgets/src/models/groups/group.dart';
 import 'package:dev_widgets/src/models/groups/converters_group.dart';
 import 'package:dev_widgets/src/models/tools/tool.dart';
@@ -30,6 +29,4 @@ class JsonYamlConverterTool implements Tool {
 
   @override
   String get menuTitle => "json_yaml_converter".tr();
-
-  JsonYamlConverter get converter => JsonYamlConverter();
 }

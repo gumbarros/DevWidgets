@@ -1,0 +1,1 @@
+enum GenerationMode { cpf, cnpj }

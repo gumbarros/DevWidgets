@@ -1,6 +1,5 @@
+import 'package:dev_widgets/src/group.dart';
 import 'package:flutter/material.dart';
-import 'package:easy_localization/easy_localization.dart';
-import '../../group.dart';
 
 class HomeGroup implements Group {
   static const HomeGroup _singleton = HomeGroup._internal();
@@ -15,5 +14,5 @@ class HomeGroup implements Group {
   IconData get icon => Icons.house;
 
   @override
-  String get name => "all_tools".tr();
+  String get name => "home";
 }

@@ -10,10 +10,12 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tools = allTools.where((t) => t.group.name != "home").toList();
+
     return Scaffold(
         appBar: DefaultAppBar(title: "all_tools".tr()),
         body: ResponsiveGridView.builder(
-          itemCount: allTools.length,
+          itemCount: tools.length,
           padding: const EdgeInsets.all(8.0),
           shrinkWrap: true,
           gridDelegate: const ResponsiveGridDelegate(
@@ -23,7 +25,7 @@ class HomePage extends StatelessWidget {
               maxCrossAxisExtent: 300,
               minCrossAxisExtent: 300),
           itemBuilder: (BuildContext context, int index) =>
-              HomeCard(allTools[index]),
+              HomeCard(tools[index]),
         ));
   }
 }

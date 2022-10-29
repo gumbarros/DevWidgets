@@ -23,7 +23,7 @@ class SettingsTool implements Tool {
   Group get group => HomeGroup();
 
   @override
-  String get description => "settings_description".tr();
+  String get description => "settings".tr();
 
   @override
   String get name => "settings";

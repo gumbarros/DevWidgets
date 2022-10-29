@@ -59,7 +59,6 @@ class SettingsNotifer extends StateNotifier<Settings> {
 
   void setLocale(BuildContext context, Locale locale) {
     context.setLocale(locale);
-    state = state.copyWith(locale: locale);
   }
 
   void addFavorite(String name) {

@@ -5,8 +5,6 @@ import 'package:yaru/yaru.dart';
 class Settings {
   final List<String> favorites;
 
-  final Locale locale;
-
   final ThemeMode themeMode;
   final bool highContrast;
   final YaruVariant yaruVariant;
@@ -18,10 +16,9 @@ class Settings {
   const Settings(
       {this.favorites = const [],
       this.themeMode = ThemeMode.system,
-      this.locale = const Locale("en_US"),
       this.highContrast = false,
       this.yaruVariant = YaruVariant.orange,
-      this.textEditorTheme = "vs",
+      this.textEditorTheme = "vs2015",
       this.textEditorFontSize = 18,
       this.textEditorFontFamily = "Hack"});
 
@@ -37,7 +34,6 @@ class Settings {
     return Settings(
         themeMode: themeMode ?? this.themeMode,
         favorites: favorites ?? this.favorites,
-        locale: locale ?? this.locale,
         highContrast: highContrast ?? this.highContrast,
         textEditorFontFamily: textEditorFontFamily ?? this.textEditorFontFamily,
         textEditorFontSize: textEditorFontSize ?? this.textEditorFontSize,

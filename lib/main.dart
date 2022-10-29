@@ -1,4 +1,3 @@
-import 'package:dev_widgets/src/impl/settings/settings_provider.dart';
 import 'package:dev_widgets/src/router.dart';
 import 'package:dev_widgets/src/supported_locales.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -35,16 +34,13 @@ class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ProviderScope(
-      child: Consumer(builder: (context, ref, _) {
-        return MaterialApp.router(
-          routerConfig: router,
-          debugShowCheckedModeBanner: false,
-          localizationsDelegates: context.localizationDelegates,
-          supportedLocales: context.supportedLocales,
-          locale: ref.watch(settingsProvider).locale,
-          title: "DevWidgets",
-        );
-      }),
-    );
+        child: MaterialApp.router(
+      routerConfig: router,
+      debugShowCheckedModeBanner: false,
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
+      title: "DevWidgets",
+    ));
   }
 }

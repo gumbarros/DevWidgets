@@ -1,7 +1,6 @@
 import 'package:dev_widgets/src/described_enum.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 
@@ -28,14 +27,6 @@ String applyWebSpaceFix(String string) {
   return string;
 }
 
-successSnackbar(String message) {
-  if (!Get.isSnackbarOpen) {
-    Get.snackbar(StringTranslateExtension("success").tr(), message,
-        icon: const Icon(Icons.check), backgroundColor: Colors.green);
-  }
-}
-
 copyToClipboard(String text) async {
   await Clipboard.setData(ClipboardData(text: applyWebSpaceFix(text)));
-  successSnackbar(StringTranslateExtension("copied_to_the_clipboard").tr());
 }

@@ -1,7 +1,8 @@
 import 'package:dev_widgets/src/group.dart';
 import 'package:dev_widgets/src/impl/converters/converters_group.dart';
+import 'package:dev_widgets/src/impl/converters/json_yaml/json_yaml_converter_page.dart';
 import 'package:dev_widgets/src/tool.dart';
-import 'package:dev_widgets/infrastructure/navigation/routes.dart';
+import 'package:dev_widgets/src/routes.dart';
 import 'package:flutter/material.dart';
 
 import 'package:easy_localization/easy_localization.dart';
@@ -29,4 +30,7 @@ class JsonYamlConverterTool implements Tool {
 
   @override
   String get menuTitle => "json_yaml_converter".tr();
+
+  @override
+  Widget get page => const JsonYamlConverterPage();
 }

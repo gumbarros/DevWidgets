@@ -1,9 +1,8 @@
-import 'package:dev_widgets/infrastructure/navigation/routes.dart';
+import 'package:dev_widgets/src/routes.dart';
 import 'package:dev_widgets/src/impl/layout/yaru/providers/compact_mode_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:get/get.dart';
-
+import 'package:go_router/go_router.dart';
 import 'package:responsive_framework/responsive_framework.dart' as responsive;
 import 'package:responsive_framework/responsive_framework.dart';
 
@@ -32,7 +31,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
         actions: [
           IconButton(
-              onPressed: () => Get.toNamed(Routes.settings),
+              onPressed: () => context.go(Routes.settings),
               icon: const Icon(Icons.settings))
         ],
         title: Text(title));

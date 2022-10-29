@@ -22,8 +22,6 @@ dependencies:
   flutter_markdown: ^0.6.12
   flutter_riverpod: ^2.0.2
   flutter_widget_from_html: ^0.8.5
-
-  get: ^4.6.5
   go_router: ^5.1.1
   highlight: ^0.7.0
   hive_flutter: ^1.1.0

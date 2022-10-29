@@ -1,7 +1,8 @@
 import 'package:dev_widgets/src/group.dart';
+import 'package:dev_widgets/src/impl/text/text_escape/text_escape_page.dart';
 import 'package:dev_widgets/src/impl/text/text_group.dart';
 import 'package:dev_widgets/src/tool.dart';
-import 'package:dev_widgets/infrastructure/navigation/routes.dart';
+import 'package:dev_widgets/src/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 
@@ -28,4 +29,7 @@ class TextEscapeTool implements Tool {
 
   @override
   String get menuTitle => "text_escape_menu_name".tr();
+
+  @override
+  Widget get page => const TextEscapePage();
 }

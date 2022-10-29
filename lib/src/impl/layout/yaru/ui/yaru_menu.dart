@@ -1,7 +1,6 @@
 import 'package:dev_widgets/src/groups.dart';
 import 'package:dev_widgets/src/impl/layout/yaru/providers/compact_mode_provider.dart';
 import 'package:dev_widgets/src/impl/layout/yaru/providers/selected_tool_provider.dart';
-import 'package:dev_widgets/src/group.dart';
 import 'package:dev_widgets/src/tool.dart';
 import 'package:dev_widgets/src/impl/layout/yaru/models/yaru_menu_item.dart';
 import 'package:dev_widgets/src/impl/layout/yaru/ui/yaru_menu_search_box.dart';
@@ -10,7 +9,7 @@ import 'package:dev_widgets/src/impl/settings/settings_provider.dart';
 import 'package:dev_widgets/src/tools.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 const double _kScrollbarThickness = 8.0;
@@ -56,7 +55,7 @@ class YaruMenu extends ConsumerWidget {
               onTap: () {
                 ref.read(selectedToolProvider.notifier).state =
                     homeTool.name.toString();
-                Get.toNamed(homeTool.route);
+                context.go(homeTool.route);
               },
             ),
             for (Tool tool in ref
@@ -69,7 +68,7 @@ class YaruMenu extends ConsumerWidget {
                 icon: tool.icon,
                 onTap: () {
                   ref.read(selectedToolProvider.notifier).state = tool.name;
-                  Get.toNamed(tool.route);
+                  context.go(tool.route);
                 },
               ),
           ]
@@ -97,12 +96,12 @@ class YaruMenu extends ConsumerWidget {
                     child: IconButton(
                         icon: Icon(group.icon),
                         onPressed: () {
-                          Get.toNamed('/home', arguments: [group.name]);
+                          context.go('/home');
                         }),
                   ),
                   child: YaruExpandable(
                     isExpanded: true,
-                    onChange: (_) => Get.toNamed('/home'),
+                    onChange: (_) => context.go('/home'),
                     header: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Row(
@@ -128,7 +127,7 @@ class YaruMenu extends ConsumerWidget {
                           onTap: () {
                             ref.read(selectedToolProvider.notifier).state =
                                 tool.name;
-                            Get.offAllNamed(tool.route);
+                            context.go(tool.route);
                           },
                         )
                     ]),

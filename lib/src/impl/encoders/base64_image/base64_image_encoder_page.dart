@@ -37,7 +37,7 @@ class Base64ImageEncoderPage extends ConsumerWidget {
                           Visibility(
                             visible: !kIsWeb,
                             child: ElevatedButton.icon(
-                                onPressed: () => downloadImage(ref),
+                                onPressed: () => downloadImage(context, ref),
                                 icon: const Icon(Icons.download),
                                 label: Text("download_image".tr())),
                           )

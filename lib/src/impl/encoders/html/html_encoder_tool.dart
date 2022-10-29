@@ -1,6 +1,7 @@
 import 'package:dev_widgets/src/group.dart';
 import 'package:dev_widgets/src/impl/encoders/encoders_group.dart';
-import 'package:dev_widgets/infrastructure/navigation/routes.dart';
+import 'package:dev_widgets/src/impl/encoders/html/html_encoder_page.dart';
+import 'package:dev_widgets/src/routes.dart';
 import 'package:dev_widgets/src/tool.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -28,4 +29,7 @@ class HtmlEncoderTool implements Tool {
 
   @override
   String get menuTitle => "html_encoder_menu_name".tr();
+
+  @override
+  Widget get page => const HtmlEncoderPage();
 }

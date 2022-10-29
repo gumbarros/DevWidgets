@@ -8,8 +8,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-class UrlEncoderView extends ConsumerWidget {
-  const UrlEncoderView({Key? key}) : super(key: key);
+class UrlEncoderPage extends ConsumerWidget {
+  const UrlEncoderPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, ref) {

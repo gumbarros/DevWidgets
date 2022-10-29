@@ -1,9 +1,9 @@
 import 'package:dev_widgets/src/impl/generators/generators_group.dart';
 import 'package:dev_widgets/src/group.dart';
+import 'package:dev_widgets/src/impl/generators/lipsum/lipsum_generator_page.dart';
 import 'package:dev_widgets/src/tool.dart';
-import 'package:dev_widgets/infrastructure/navigation/routes.dart';
+import 'package:dev_widgets/src/routes.dart';
 import 'package:flutter/material.dart';
-
 import 'package:easy_localization/easy_localization.dart';
 
 class LipsumGeneratorTool implements Tool {
@@ -29,4 +29,7 @@ class LipsumGeneratorTool implements Tool {
 
   @override
   String get menuTitle => "lipsum".tr();
+
+  @override
+  Widget get page => const LipsumGeneratorPage();
 }

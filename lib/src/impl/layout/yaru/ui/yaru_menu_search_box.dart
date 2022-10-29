@@ -1,9 +1,9 @@
-import 'package:dev_widgets/infrastructure/navigation/routes.dart';
+import 'package:dev_widgets/src/routes.dart';
 import 'package:dev_widgets/src/impl/layout/yaru/models/yaru_menu_item.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:go_router/go_router.dart';
 
 class YaruMenuSearchBox extends StatelessWidget {
   final TextEditingController controller;
@@ -40,7 +40,7 @@ class YaruMenuSearchBox extends StatelessWidget {
           border: const UnderlineInputBorder(),
         )),
         onChanged: (tool) {
-          Get.toNamed(tool?.route ?? Routes.home);
+          context.go(tool?.route ?? Routes.home);
         });
   }
 }

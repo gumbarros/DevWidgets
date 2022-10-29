@@ -12,6 +12,7 @@ import 'package:dev_widgets/src/impl/formatters/xml_formatter/xml_formatter_tool
 import 'package:dev_widgets/src/impl/generators/lipsum/lipsum_generator_tool.dart';
 import 'package:dev_widgets/src/impl/generators/uuid/uuid_generator_tool.dart';
 import 'package:dev_widgets/src/impl/home/home_tool.dart';
+import 'package:dev_widgets/src/impl/settings/settings_tool.dart';
 import 'package:dev_widgets/src/impl/text/html_preview/html_preview_tool.dart';
 import 'package:dev_widgets/src/impl/text/markdown_preview/markdown_preview_tool.dart';
 import 'package:dev_widgets/src/impl/text/text_diff/text_diff_tool.dart';
@@ -21,6 +22,7 @@ import 'package:dev_widgets/src/tool.dart';
 const allTools = [
   HomeTool(),
   HtmlEncoderTool(),
+  SettingsTool(),
   JsonFormatterTool(),
   SqlFormatterTool(),
   TextEscapeTool(),

@@ -2,7 +2,7 @@ import 'package:dev_widgets/src/tool.dart';
 import 'package:dev_widgets/src/impl/settings/settings_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 class HomeCard extends StatelessWidget {
@@ -25,7 +25,7 @@ class HomeCard extends StatelessWidget {
             onExit: (_) =>
                 ref.read(isFavoriteVisibleProvider.notifier).state = false,
             child: YaruSelectableContainer(
-              onTap: () => Get.toNamed(tool.route),
+              onTap: () => context.go(tool.route),
               selected: false,
               child: Stack(
                 children: <Widget>[

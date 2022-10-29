@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class IOToolbar extends StatelessWidget {
   const IOToolbar({
@@ -23,11 +22,7 @@ class IOToolbar extends StatelessWidget {
             child: Wrap(
               spacing: 8.0, // gap between adjacent chips
               runSpacing: 4.0,
-              children: actions
-                      ?.map((element) =>
-                          element.marginOnly(left: 8.0, right: 8.0))
-                      .toList() ??
-                  [],
+              children: actions ?? [],
             ),
           )
         ],

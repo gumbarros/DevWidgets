@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:dev_widgets/domain/helpers/formatters/json_formatter.dart';
 import 'package:dev_widgets/src/models/tools/formatters/indentation.dart';
-import 'package:dev_widgets/presentation/helpers.dart';
+import 'package:dev_widgets/src/impl/helpers.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:json2yaml/json2yaml.dart';
 import 'package:yaml/yaml.dart';

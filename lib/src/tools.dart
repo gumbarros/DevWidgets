@@ -1,6 +1,7 @@
 import 'package:dev_widgets/src/models/tools/tools.dart';
 
 const allTools = [
+  HomeTool(),
   HtmlEncoderTool(),
   JsonFormatterTool(),
   SqlFormatterTool(),

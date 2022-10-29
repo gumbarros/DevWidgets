@@ -1,4 +1,5 @@
-import 'package:dev_widgets/presentation/helpers.dart';
+import 'package:dev_widgets/src/impl/helpers.dart';
+import 'package:dev_widgets/src/impl/text/text_escape/text_escape_providers.dart';
 import 'package:dev_widgets/src/impl/widgets/default_app_bar.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/input_editor.dart';
 import 'package:dev_widgets/src/impl/widgets/multi_split_view_divider.dart';
@@ -14,14 +15,12 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class TextDiffPage extends ConsumerWidget {
-  final Tool tool;
-
-  const TextDiffPage(this.tool, {Key? key}) : super(key: key);
+  const TextDiffPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, ref) {
     return Scaffold(
-        appBar: DefaultAppBar(title: tool.homeTitle),
+        appBar: DefaultAppBar(title: "text_diff".tr()),
         body: SizedBox(
           height: MediaQuery.of(context).size.height - kToolbarHeight,
           child: ListView(
@@ -100,20 +99,14 @@ class TextDiffPage extends ConsumerWidget {
                       children: [
                         InputEditor(
                             toolbarTitle: "old_text".tr(),
-                            inputController: TextEditingController(),
-                            onChanged: (value) {
-                              ref.read(oldTextProvider.notifier).state =
-                                  applyWebSpaceFix(value);
-                            },
+                            inputController:
+                                ref.read(oldTextControllerProvider),
                             height: MediaQuery.of(context).size.height / 3,
                             usesCodeControllers: false),
                         InputEditor(
                             toolbarTitle: "new_text".tr(),
-                            inputController: TextEditingController(),
-                            onChanged: (value) {
-                              ref.read(newTextProvider.notifier).state =
-                                  applyWebSpaceFix(value);
-                            },
+                            inputController:
+                                ref.read(newTextControllerProvider),
                             height: MediaQuery.of(context).size.height / 3,
                             usesCodeControllers: false),
                       ],

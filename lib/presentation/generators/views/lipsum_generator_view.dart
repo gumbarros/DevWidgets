@@ -1,11 +1,10 @@
 import 'package:dev_widgets/src/models/tools/generators/lipsum/lipsum_type.dart';
 import 'package:dev_widgets/presentation/generators/controllers/lipsum_generator_controller.dart';
 import 'package:dev_widgets/src/impl/widgets/default_app_bar.dart';
-import 'package:dev_widgets/presentation/helpers.dart';
+import 'package:dev_widgets/src/impl/helpers.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/output_editor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 import 'package:get/get.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';

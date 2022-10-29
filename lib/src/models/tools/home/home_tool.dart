@@ -22,7 +22,7 @@ class HomeTool implements Tool {
   Group get group => HomeGroup();
 
   @override
-  String get description => "json_formatter_description".tr();
+  String get description => "home_tool".tr();
 
   @override
   String get name => "home";

@@ -1,23 +1,21 @@
 import 'package:dev_widgets/src/impl/text/text_escape/text_escape_providers.dart';
 import 'package:dev_widgets/src/models/tools/text/text_escape/escape_conversion_mode.dart';
 import 'package:dev_widgets/src/impl/widgets/default_app_bar.dart';
-import 'package:dev_widgets/presentation/helpers.dart';
+import 'package:dev_widgets/src/impl/helpers.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/io_editor.dart';
-import 'package:dev_widgets/src/models/tools/tool.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 class TextEscapePage extends ConsumerWidget {
-  final Tool tool;
-
-  const TextEscapePage({Key? key, required this.tool}) : super(key: key);
+  const TextEscapePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-        appBar: DefaultAppBar(title: tool.homeTitle),
+        appBar: DefaultAppBar(title: "text_escape".tr()),
         body: SizedBox(
           height: MediaQuery.of(context).size.height - kToolbarHeight,
           child: ListView(
@@ -56,8 +54,8 @@ class TextEscapePage extends ConsumerWidget {
                   height: MediaQuery.of(context).size.height / 1.2,
                   child: IOEditor(
                     usesCodeControllers: false,
-                    inputController: TextEditingController(),
-                    outputController: TextEditingController(),
+                    inputController: ref.watch(inputControllerProvider),
+                    outputController: ref.watch(outputControllerProvider),
                     isVerticalLayout: true,
                   )),
             ],

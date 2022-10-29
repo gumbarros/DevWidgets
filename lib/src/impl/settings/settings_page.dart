@@ -1,5 +1,5 @@
 import 'package:dev_widgets/src/models/tools/settings/settings_tool.dart';
-import 'package:dev_widgets/presentation/helpers.dart';
+import 'package:dev_widgets/src/impl/helpers.dart';
 import 'package:dev_widgets/src/impl/widgets/default_app_bar.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/themes.dart';
 import 'package:dev_widgets/src/impl/settings/settings_provider.dart';
@@ -19,7 +19,7 @@ class SettingsPage extends ConsumerWidget {
     final settings = ref.watch(settingsProvider);
 
     return Scaffold(
-        appBar: DefaultAppBar(title: SettingsTool().homeTitle),
+        appBar: DefaultAppBar(title: "settings".tr()),
         body: SizedBox(
           height: MediaQuery.of(context).size.height - kToolbarHeight,
           child: ListView(

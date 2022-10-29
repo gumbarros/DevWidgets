@@ -1,6 +1,6 @@
 import 'package:dev_widgets/src/models/tools/formatters/sql_formatter/sql_dialect.dart';
 import 'package:dev_widgets/presentation/formatters/controllers/sql_formatter_controller.dart';
-import 'package:dev_widgets/presentation/helpers.dart';
+import 'package:dev_widgets/src/impl/helpers.dart';
 import 'package:dev_widgets/src/impl/widgets/default_app_bar.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/io_editor.dart';
 import 'package:flutter/material.dart';

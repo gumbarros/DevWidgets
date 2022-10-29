@@ -1,21 +1,19 @@
-import 'package:dev_widgets/src/models/tools/home/home_tool.dart';
-import 'package:dev_widgets/presentation/home/home_controller.dart';
 import 'package:dev_widgets/src/impl/widgets/default_app_bar.dart';
 import 'package:dev_widgets/src/impl/home/tool_card.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:dev_widgets/src/tools.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_grid.dart';
 
-class HomeView extends GetView<HomeController> {
-  const HomeView({Key? key}) : super(key: key);
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: DefaultAppBar(title: HomeTool().homeTitle),
+        appBar: DefaultAppBar(title: "all_tools".tr()),
         body: ResponsiveGridView.builder(
-          itemCount: controller.tools.length,
+          itemCount: allTools.length,
           padding: const EdgeInsets.all(8.0),
           shrinkWrap: true,
           gridDelegate: const ResponsiveGridDelegate(
@@ -25,7 +23,7 @@ class HomeView extends GetView<HomeController> {
               maxCrossAxisExtent: 300,
               minCrossAxisExtent: 300),
           itemBuilder: (BuildContext context, int index) =>
-              ToolCard(controller.tools[index]),
+              ToolCard(allTools[index]),
         ));
   }
 }

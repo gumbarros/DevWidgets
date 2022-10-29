@@ -68,7 +68,7 @@ class Main extends StatelessWidget {
                                   const ResponsiveBreakpoint.resize(1440,
                                       name: 'DESKTOP_LARGE'),
                                   const ResponsiveBreakpoint.resize(2460,
-                                      name: '4k'),
+                                      name: '4K'),
                                 ],
                               ));
                     },

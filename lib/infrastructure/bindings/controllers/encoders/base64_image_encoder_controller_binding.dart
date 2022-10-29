@@ -2,7 +2,6 @@ import 'package:dev_widgets/src/models/tools/encoders/base64_image_encoder_tool.
 import 'package:dev_widgets/infrastructure/bindings/controllers/get_tool.dart';
 import 'package:dev_widgets/presentation/encoders/controllers/base64_image_encoder_controller.dart';
 import 'package:get/get.dart';
-import 'package:easy_localization/easy_localization.dart';
 
 class Base64ImageEncoderControllerBinding extends Bindings {
   @override

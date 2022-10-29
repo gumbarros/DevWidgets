@@ -7,6 +7,7 @@ import 'package:dev_widgets/src/impl/layout/yaru/models/yaru_menu_item.dart';
 import 'package:dev_widgets/src/impl/layout/yaru/ui/yaru_menu_search_box.dart';
 import 'package:dev_widgets/src/impl/layout/yaru/ui/yaru_menu_tile.dart';
 import 'package:dev_widgets/src/impl/settings/settings_provider.dart';
+import 'package:dev_widgets/src/tools.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get.dart';
@@ -28,6 +29,8 @@ class YaruMenu extends ConsumerWidget {
     final scrollbarThicknessWithTrack =
         _calcScrollbarThicknessWithTrack(context);
 
+    final homeTool = getToolByName("home");
+
     return ListView(
       children: [
         Visibility(
@@ -48,13 +51,13 @@ class YaruMenu extends ConsumerWidget {
         Column(
           children: <Widget>[
             YaruMenuTile(
-              selected: selectedToolName == HomeTool().name.toString(),
-              title: YaruPageItemTitle.text(HomeTool().menuTitle),
-              icon: HomeTool().icon,
+              selected: selectedToolName == homeTool.name.toString(),
+              title: YaruPageItemTitle.text(homeTool.menuTitle),
+              icon: homeTool.icon,
               onTap: () {
                 ref.read(selectedToolProvider.notifier).state =
-                    HomeTool().name.toString();
-                Get.toNamed(HomeTool().route);
+                    homeTool.name.toString();
+                Get.toNamed(homeTool.route);
               },
             ),
             for (Tool tool in ref
@@ -62,7 +65,7 @@ class YaruMenu extends ConsumerWidget {
                 .favorites
                 .map((e) => tools.firstWhere((t) => e == t.name)))
               YaruMenuTile(
-                selected: ref.watch(selectedToolProvider) == tool.name,
+                selected: selectedToolName == tool.name,
                 title: Text(tool.homeTitle),
                 icon: tool.icon,
                 onTap: () {
@@ -120,8 +123,7 @@ class YaruMenu extends ConsumerWidget {
                       for (var tool
                           in tools.where((t) => t.group.name == group.name))
                         YaruMenuTile(
-                          selected:
-                              ref.watch(selectedToolProvider) == tool.name,
+                          selected: selectedToolName == tool.name,
                           title: YaruPageItemTitle.text(tool.menuTitle),
                           icon: tool.icon,
                           onTap: () {

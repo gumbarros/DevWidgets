@@ -1,9 +1,8 @@
 import 'package:code_text_field/code_text_field.dart';
-import 'package:dev_widgets/presentation/helpers.dart';
+import 'package:dev_widgets/src/impl/helpers.dart';
 import 'package:dev_widgets/src/impl/widgets/default_app_bar.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/io_editor.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/io_toolbar.dart';
-import 'package:dev_widgets/src/models/tools/tools.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -17,7 +16,7 @@ class MarkdownPreviewPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, ref) {
     return Scaffold(
-        appBar: DefaultAppBar(title: MarkdownPreviewTool().homeTitle),
+        appBar: DefaultAppBar(title: "markdown_preview".tr()),
         body: SizedBox(
             height: MediaQuery.of(context).size.height - kToolbarHeight,
             child: SingleChildScrollView(

@@ -1,7 +1,7 @@
 import 'package:dev_widgets/src/models/tools/formatters/indentation.dart';
 import 'package:dev_widgets/presentation/formatters/controllers/json_formatter_controller.dart';
 import 'package:dev_widgets/src/impl/widgets/default_app_bar.dart';
-import 'package:dev_widgets/presentation/helpers.dart';
+import 'package:dev_widgets/src/impl/helpers.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/io_editor.dart';
 import 'package:flutter/material.dart';
 

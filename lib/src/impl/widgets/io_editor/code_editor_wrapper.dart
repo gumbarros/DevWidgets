@@ -8,11 +8,10 @@ class CodeEditorWrapper extends ConsumerWidget {
   final TextEditingController? textEditingController;
   final bool usesCodeControllers;
   final bool readOnly;
-  final Function(String)? onChanged;
+
   const CodeEditorWrapper(
       {super.key,
       required this.usesCodeControllers,
-      this.onChanged,
       required this.textEditingController,
       this.readOnly = false});
 
@@ -26,7 +25,6 @@ class CodeEditorWrapper extends ConsumerWidget {
             CodeThemeData(styles: textEditorThemes[settings.textEditorTheme]!),
         child: CodeField(
           wrap: true,
-          onChanged: onChanged,
           textStyle: TextStyle(
               fontFamily: settings.textEditorFontFamily,
               fontSize: settings.textEditorFontSize,
@@ -42,7 +40,6 @@ class CodeEditorWrapper extends ConsumerWidget {
     } else {
       return TextField(
         maxLines: null,
-        onChanged: onChanged,
         style: TextStyle(
             fontFamily: settings.textEditorFontFamily,
             fontSize: settings.textEditorFontSize,

@@ -15,5 +15,5 @@ export 'package:dev_widgets/src/models/tools/home/home_tool.dart';
 export 'package:dev_widgets/src/models/tools/text/html_preview_tool.dart';
 export 'package:dev_widgets/src/models/tools/text/markdown_preview_tool.dart';
 export 'package:dev_widgets/src/models/tools/text/text_diff_tool.dart';
-export 'package:dev_widgets/src/models/tools/text/text_escape/text_escape.dart';
+export 'package:dev_widgets/src/models/tools/text/text_escape/text_escape_tool.dart';
 export 'package:dev_widgets/src/models/tools/tool.dart';

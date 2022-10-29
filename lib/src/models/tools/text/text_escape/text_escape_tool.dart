@@ -1,10 +1,8 @@
-import 'package:dev_widgets/domain/helpers/text/text_escaper.dart';
 import 'package:dev_widgets/src/models/groups/group.dart';
 import 'package:dev_widgets/src/models/groups/text_group.dart';
 import 'package:dev_widgets/src/models/tools/tool.dart';
 import 'package:dev_widgets/infrastructure/navigation/routes.dart';
 import 'package:flutter/material.dart';
-
 import 'package:easy_localization/easy_localization.dart';
 
 class TextEscapeTool implements Tool {
@@ -30,6 +28,4 @@ class TextEscapeTool implements Tool {
 
   @override
   String get menuTitle => "text_escape_menu_name".tr();
-
-  TextEscaper get escaper => TextEscaper();
 }

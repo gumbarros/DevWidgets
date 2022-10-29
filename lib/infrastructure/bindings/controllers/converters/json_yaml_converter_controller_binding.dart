@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:dev_widgets/src/models/tools/converters/json_yaml_converter_tool.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/get_tool.dart';
 import 'package:dev_widgets/presentation/converters/controllers/json_yaml_converter_controller.dart';

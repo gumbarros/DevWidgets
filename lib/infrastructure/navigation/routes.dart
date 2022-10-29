@@ -28,9 +28,9 @@ class Routes {
 
   static String getToolRouteByCommandLineArgs(List<String> args) {
     if (args.isNotEmpty) {
-      return tools
+      return allTools
           .firstWhere((tool) => tool.name == args.first,
-              orElse: () => HomeTool())
+              orElse: () => const HomeTool())
           .route;
     }
     return Routes.home;

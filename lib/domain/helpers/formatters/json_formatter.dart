@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:dev_widgets/domain/helpers/formatters/formatter.dart';
 import 'package:dev_widgets/src/models/tools/formatters/indentation.dart';
-import 'package:dev_widgets/presentation/helpers.dart';
+import 'package:dev_widgets/src/impl/helpers.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class JsonFormatter implements Formatter {

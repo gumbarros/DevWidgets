@@ -1,9 +1,9 @@
 import 'package:code_text_field/code_text_field.dart';
-import 'package:dev_widgets/presentation/helpers.dart';
+import 'package:dev_widgets/src/impl/helpers.dart';
 import 'package:dev_widgets/src/impl/widgets/default_app_bar.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/io_editor.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/io_toolbar.dart';
-import 'package:dev_widgets/src/models/tools/tools.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
@@ -17,7 +17,7 @@ class HtmlPreviewPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, ref) {
     return Scaffold(
-        appBar: DefaultAppBar(title: HtmlPreviewTool().homeTitle),
+        appBar: DefaultAppBar(title: "html_preview".tr()),
         body: SizedBox(
             height: MediaQuery.of(context).size.height - kToolbarHeight,
             child: SingleChildScrollView(

@@ -9,11 +9,8 @@ import 'package:dev_widgets/infrastructure/bindings/controllers/encoders/url_enc
 import 'package:dev_widgets/infrastructure/bindings/controllers/formatters/xml_formatter_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/generators/lipsum_generator_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/generators/uuid_generator_controller_binding.dart.dart';
-import 'package:dev_widgets/infrastructure/bindings/controllers/home_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/formatters/json_formatter_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/formatters/sql_formatter_controller_binding.dart';
-
-import 'package:dev_widgets/infrastructure/bindings/controllers/text/text_escape_controller_binding.dart';
 import 'package:dev_widgets/presentation/brazil/views/cpf/cnpj_generator_view.dart';
 import 'package:dev_widgets/presentation/brazil/views/cpf/cpf_generator_view.dart';
 import 'package:dev_widgets/presentation/converters/views/json_to_class_converter_view.dart';
@@ -25,26 +22,21 @@ import 'package:dev_widgets/presentation/encoders/views/url_encoder_view.dart';
 import 'package:dev_widgets/presentation/formatters/views/xml_formatter_view.dart';
 import 'package:dev_widgets/presentation/generators/views/lipsum_generator_view.dart';
 import 'package:dev_widgets/presentation/generators/views/uuid_generator_view.dart';
-import 'package:dev_widgets/presentation/home/home_view.dart';
+import 'package:dev_widgets/src/impl/home/home_page.dart';
 import 'package:dev_widgets/presentation/formatters/views/json_formatter_view.dart';
 import 'package:dev_widgets/presentation/formatters/views/sql_formatter_view.dart';
-
 import 'package:dev_widgets/src/impl/text/html_preview/html_preview_page.dart';
 import 'package:dev_widgets/src/impl/text/markdown_preview/markdown_preview_page.dart';
-import 'package:dev_widgets/presentation/text/views/text_escape_view.dart';
 import 'package:dev_widgets/src/impl/settings/settings_page.dart';
 import 'package:dev_widgets/src/impl/text/text_diff/text_diff_page.dart';
+import 'package:dev_widgets/src/impl/text/text_escape/text_escape_page.dart';
+import 'package:dev_widgets/src/tools.dart';
 import 'package:get/get.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'routes.dart';
 
 class Navigation {
   static List<GetPage> pages = [
-    GetPage(
-      name: Routes.home,
-      page: () => const HomeView(),
-      binding: HomeControllerBinding(),
-    ),
+    GetPage(name: Routes.home, page: () => const HomePage()),
     GetPage(
       name: Routes.sqlFormatter,
       page: () => const SQLFormatterView(),
@@ -60,16 +52,12 @@ class Navigation {
       page: () => const HTMLEncoderView(),
       binding: HTMLEncoderControllerBinding(),
     ),
-    GetPage(
-      name: Routes.textEscape,
-      page: () => const TextEscapeView(),
-      binding: TextEscapeControllerBinding(),
-    ),
+    GetPage(name: Routes.textEscape, page: () => const TextEscapePage()),
     GetPage(
         name: Routes.markdownPreview, page: () => const MarkdownPreviewPage()),
     GetPage(
       name: Routes.textDiff,
-      page: () => const TextDiffPage(),
+      page: () => TextDiffPage(),
     ),
     GetPage(
       name: Routes.xmlFormatter,

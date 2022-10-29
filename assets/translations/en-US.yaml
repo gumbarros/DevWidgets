@@ -16,11 +16,10 @@ validator: Validator
 cpf: CPF
 copied_to_the_clipboard: Copied to the clipboard.
 brazil: Brazil
-cpf_format: Format
 cpf_menu_name: CPF Generator
 cnpj: CNPJ
 cnpj_menu_name: CNPJ Generator
-cnpj_format: Format
+format: Format
 cpf_description: Generate brazilian CPFs
 cnpj_description: Generate brazilian CNPJs
 cron_parser: Cron Parser

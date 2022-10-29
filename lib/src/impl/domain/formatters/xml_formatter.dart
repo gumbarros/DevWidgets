@@ -1,6 +1,6 @@
 import 'package:dev_widgets/src/impl/domain/formatters/formatter.dart';
 import 'package:dev_widgets/src/models/tools/formatters/indentation.dart';
-import 'package:dev_widgets/src/impl/presentation/helpers.dart';
+import 'package:dev_widgets/src/helpers.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:xml/xml.dart';
 

@@ -1,7 +1,3 @@
-import 'package:dev_widgets/infrastructure/bindings/controllers/brazil/cnpj_generator_controller_binding.dart';
-import 'package:dev_widgets/infrastructure/bindings/controllers/brazil/cpf_generator_controller_binding.dart';
-import 'package:dev_widgets/infrastructure/bindings/controllers/converters/json_to_class_converter_controller_binding.dart';
-import 'package:dev_widgets/infrastructure/bindings/controllers/encoders/base64_image_encoder_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/encoders/base64_text_encoder_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/encoders/html_encoder_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/encoders/url_encoder_controller_binding.dart';
@@ -10,25 +6,25 @@ import 'package:dev_widgets/infrastructure/bindings/controllers/generators/lipsu
 import 'package:dev_widgets/infrastructure/bindings/controllers/generators/uuid_generator_controller_binding.dart.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/formatters/json_formatter_controller_binding.dart';
 import 'package:dev_widgets/infrastructure/bindings/controllers/formatters/sql_formatter_controller_binding.dart';
-import 'package:dev_widgets/presentation/brazil/views/cpf/cnpj_generator_view.dart';
-import 'package:dev_widgets/presentation/brazil/views/cpf/cpf_generator_view.dart';
-import 'package:dev_widgets/presentation/converters/views/json_to_class_converter_view.dart';
-import 'package:dev_widgets/src/impl/presentation/converters/json_yaml_converter_page.dart';
-import 'package:dev_widgets/presentation/encoders/views/base64_image_encoder_view.dart';
+import 'package:dev_widgets/src/brazil/cpf_cnpj/cpf_cnpj_generation_mode.dart';
+import 'package:dev_widgets/src/brazil/cpf_cnpj/cpf_cnpj_generator_page.dart';
+import 'package:dev_widgets/src/converters/json_class/json_to_class_converter_page.dart';
+import 'package:dev_widgets/src/converters/json_yaml/json_yaml_converter_page.dart';
+import 'package:dev_widgets/src/encoders/base64_image/base64_image_encoder_page.dart';
 import 'package:dev_widgets/presentation/encoders/views/base64_text_encoder_view.dart';
 import 'package:dev_widgets/presentation/encoders/views/html_encoder_view.dart';
 import 'package:dev_widgets/presentation/encoders/views/url_encoder_view.dart';
 import 'package:dev_widgets/presentation/formatters/views/xml_formatter_view.dart';
 import 'package:dev_widgets/presentation/generators/views/lipsum_generator_view.dart';
 import 'package:dev_widgets/presentation/generators/views/uuid_generator_view.dart';
-import 'package:dev_widgets/src/impl/presentation/home/home_page.dart';
+import 'package:dev_widgets/src/home/home_page.dart';
 import 'package:dev_widgets/presentation/formatters/views/json_formatter_view.dart';
 import 'package:dev_widgets/presentation/formatters/views/sql_formatter_view.dart';
-import 'package:dev_widgets/src/impl/presentation/text/html_preview/html_preview_page.dart';
-import 'package:dev_widgets/src/impl/presentation/text/markdown_preview/markdown_preview_page.dart';
-import 'package:dev_widgets/src/impl/presentation/settings/settings_page.dart';
-import 'package:dev_widgets/src/impl/presentation/text/text_diff/text_diff_page.dart';
-import 'package:dev_widgets/src/impl/presentation/text/text_escape/text_escape_page.dart';
+import 'package:dev_widgets/src/text/html_preview/html_preview_page.dart';
+import 'package:dev_widgets/src/text/markdown_preview/markdown_preview_page.dart';
+import 'package:dev_widgets/src/settings/settings_page.dart';
+import 'package:dev_widgets/src/text/text_diff/text_diff_page.dart';
+import 'package:dev_widgets/src/text/text_escape/text_escape_page.dart';
 import 'package:get/get.dart';
 import 'routes.dart';
 
@@ -85,26 +81,20 @@ class Navigation {
     ),
     GetPage(
       name: Routes.base64ImageEncoder,
-      page: () => const Base64ImageEncoderView(),
-      binding: Base64ImageEncoderControllerBinding(),
+      page: () => const Base64ImageEncoderPage(),
     ),
     GetPage(
-      name: Routes.jsonToClass,
-      page: () => const JsonToClassConverterView(),
-      binding: JsonToClassConverterControllerBinding(),
-    ),
+        name: Routes.jsonToClass, page: () => const JsonToClassConverterPage()),
     GetPage(
         name: Routes.jsonYamlConverter,
         page: () => const JsonYamlConverterPage()),
     GetPage(
       name: Routes.cpf,
-      page: () => const CpfGeneratorView(),
-      binding: CpfGeneratorControllerBinding(),
+      page: () => const CpfCnpjGeneratorPage(mode: GenerationMode.cpf),
     ),
     GetPage(
       name: Routes.cnpj,
-      page: () => const CnpjGeneratorView(),
-      binding: CnpjGeneratorControllerBinding(),
+      page: () => const CpfCnpjGeneratorPage(mode: GenerationMode.cnpj),
     ),
     GetPage(
       name: Routes.htmlPreview,

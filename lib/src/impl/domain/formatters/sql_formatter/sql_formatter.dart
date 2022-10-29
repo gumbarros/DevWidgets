@@ -2,7 +2,7 @@ import 'package:dev_widgets/src/impl/domain/formatters/formatter.dart';
 import 'package:dev_widgets/src/impl/domain/formatters/sql_formatter/generic_sql_formatter_provider.dart';
 import 'package:dev_widgets/src/impl/domain/formatters/sql_formatter/sql_formatter_provider.dart';
 import 'package:dev_widgets/src/models/tools/formatters/sql_formatter/sql_dialect.dart';
-import 'package:dev_widgets/src/impl/presentation/helpers.dart';
+import 'package:dev_widgets/src/helpers.dart';
 
 class SqlFormatter implements Formatter {
   @override

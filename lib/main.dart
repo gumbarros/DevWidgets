@@ -1,8 +1,7 @@
-import 'package:dev_widgets/src/layout/yaru/ui/yaru_layout.dart';
-import 'package:dev_widgets/src/settings/settings_provider.dart';
-import 'package:dev_widgets/src/models/tool.dart';
-import 'package:dev_widgets/infrastructure/bindings/domains/initial_bindings.dart';
+import 'package:dev_widgets/src/impl/layout/yaru/ui/yaru_layout.dart';
+import 'package:dev_widgets/src/impl/settings/settings_provider.dart';
 import 'package:dev_widgets/src/supported_locales.dart';
+import 'package:dev_widgets/src/tools.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:dev_widgets/infrastructure/navigation/routes.dart';
 import 'package:easy_localization_loader/easy_localization_loader.dart';
@@ -42,7 +41,6 @@ class Main extends StatelessWidget {
                 localizationsDelegates: context.localizationDelegates,
                 supportedLocales: context.supportedLocales,
                 locale: ref.watch(settingsProvider).locale,
-                initialBinding: InitialBindings(),
                 getPages: Navigation.pages,
                 defaultTransition: Transition.fade,
                 title: "DevWidgets",
@@ -52,7 +50,7 @@ class Main extends StatelessWidget {
                       return GetPageRoute(
                           page: () => ResponsiveWrapper.builder(
                                 YaruLayout(
-                                  tools: Get.find<List<Tool>>(),
+                                  tools: allTools,
                                   child: child,
                                 ),
                                 breakpoints: [

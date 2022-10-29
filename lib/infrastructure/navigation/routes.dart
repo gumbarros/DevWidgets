@@ -1,5 +1,5 @@
 import 'package:dev_widgets/src/tools.dart';
-import 'package:dev_widgets/src/home/home_tool.dart';
+import 'package:dev_widgets/src/impl/home/home_tool.dart';
 
 class Routes {
   static const home = '/home';

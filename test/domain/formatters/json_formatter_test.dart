@@ -1,4 +1,4 @@
-import 'package:dev_widgets/src/formatters/json_formatter/json_formatter.dart';
+import 'package:dev_widgets/src/impl/formatters/json_formatter/json_formatter.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

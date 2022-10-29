@@ -1,4 +1,5 @@
-import 'package:dev_widgets/src/text/text_escape/text_escape.dart' as escape;
+import 'package:dev_widgets/src/impl/text/text_escape/text_escape.dart'
+    as escape;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

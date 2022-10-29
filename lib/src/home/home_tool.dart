@@ -22,7 +22,7 @@ class HomeTool implements Tool {
   Group get group => HomeGroup();
 
   @override
-  String get description => "home_tool".tr();
+  String get description => "all_tools".tr();
 
   @override
   String get name => "home";

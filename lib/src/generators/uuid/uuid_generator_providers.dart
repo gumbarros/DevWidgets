@@ -6,7 +6,6 @@ final uuidTypeProvider = StateProvider<UuidType>((ref) => UuidType.v4);
 final hiphensProvider = StateProvider<bool>((ref) => true);
 final uppercaseProvider = StateProvider<bool>((ref) => true);
 final amountProvider = StateProvider<int>((ref) => 1);
-final outputTextProvider = StateProvider<String>((ref) => "");
 
 class UuidGenerator extends Notifier<String> {
   @override

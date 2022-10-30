@@ -102,20 +102,14 @@ class YaruMenu extends ConsumerWidget {
                   child: YaruExpandable(
                     isExpanded: true,
                     onChange: (_) => context.go('/home'),
-                    header: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                          mainAxisAlignment: !ref.watch(isCompactModeProvider)
-                              ? MainAxisAlignment.center
-                              : MainAxisAlignment.start,
-                          children: [
-                            Icon(group.icon),
-                            Container(
-                              margin: const EdgeInsets.only(left: 8.0),
-                              child:
-                                  Text(group.name, overflow: TextOverflow.fade),
-                            )
-                          ]),
+                    header: SizedBox(
+                      width: MediaQuery.of(context).size.width / 10,
+                      child: YaruMenuTile(
+                          icon: group.icon,
+                          selected: false,
+                          title: YaruPageItemTitle.text(
+                            group.name,
+                          )),
                     ),
                     child: Column(children: [
                       for (var tool

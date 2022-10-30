@@ -4,5 +4,5 @@ abstract class Group {
   final String name;
   final IconData icon;
 
-  Group(this.name, this.icon);
+  const Group(this.name, this.icon);
 }

@@ -1,5 +1,6 @@
 import 'package:dev_widgets/src/impl/helpers.dart';
 import 'package:dev_widgets/src/impl/widgets/default_app_bar.dart';
+import 'package:dev_widgets/src/impl/widgets/default_drawer.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/themes.dart';
 import 'package:dev_widgets/src/impl/settings/settings_provider.dart';
 import 'package:dev_widgets/src/supported_locales.dart';
@@ -19,6 +20,7 @@ class SettingsPage extends ConsumerWidget {
 
     return Scaffold(
         appBar: DefaultAppBar(title: "settings".tr()),
+        drawer: const DefaultDrawer(),
         body: SizedBox(
           height: MediaQuery.of(context).size.height - kToolbarHeight,
           child: ListView(

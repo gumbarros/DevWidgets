@@ -3,6 +3,7 @@ import 'package:dev_widgets/src/impl/converters/json_yaml/json_yaml_conversion_t
 import 'package:dev_widgets/src/impl/formatters/indentation.dart';
 import 'package:dev_widgets/src/impl/helpers.dart';
 import 'package:dev_widgets/src/impl/widgets/default_app_bar.dart';
+import 'package:dev_widgets/src/impl/widgets/default_drawer.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/io_editor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -15,6 +16,7 @@ class JsonYamlConverterPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, ref) {
     return Scaffold(
+        drawer: const DefaultDrawer(),
         appBar: DefaultAppBar(title: "json_yaml_converter".tr()),
         body: SizedBox(
           height: MediaQuery.of(context).size.height - kToolbarHeight,

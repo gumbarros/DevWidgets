@@ -3,6 +3,7 @@ import 'package:dev_widgets/src/impl/formatters/sql_formatter/sql_dialect.dart';
 import 'package:dev_widgets/src/impl/formatters/sql_formatter/sql_formatter_providers.dart';
 import 'package:dev_widgets/src/impl/helpers.dart';
 import 'package:dev_widgets/src/impl/widgets/default_app_bar.dart';
+import 'package:dev_widgets/src/impl/widgets/default_drawer.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/io_editor.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -17,6 +18,7 @@ class SqlFormatterPage extends ConsumerWidget {
   Widget build(BuildContext context, ref) {
     return Scaffold(
         appBar: DefaultAppBar(title: "sql_formatter".tr()),
+        drawer: const DefaultDrawer(),
         body: SizedBox(
           height: MediaQuery.of(context).size.height - kToolbarHeight,
           child: ListView(

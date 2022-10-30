@@ -5,7 +5,7 @@ import 'package:dev_widgets/src/impl/settings/settings_provider.dart';
 import 'package:dev_widgets/src/tool.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
+import 'package:responsive_framework/responsive_framework.dart' as responsive;
 import 'package:yaru/yaru.dart';
 
 class YaruLayout extends ConsumerWidget {
@@ -31,24 +31,29 @@ class YaruLayout extends ConsumerWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  AnimatedSize(
-                    duration: const Duration(milliseconds: 500),
-                    child: SizedBox(
-                      width: ref.watch(isCompactModeProvider)
-                          ? 80
-                          : MediaQuery.of(context).size.width / 5,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          border: Border(
-                            right: BorderSide(
-                              width: 1,
-                              color: Colors.black.withOpacity(0.1),
+                  responsive.ResponsiveVisibility(
+                    hiddenWhen: const [
+                      responsive.Condition.smallerThan(name: "TABLET")
+                    ],
+                    child: AnimatedSize(
+                      duration: const Duration(milliseconds: 500),
+                      child: SizedBox(
+                        width: ref.watch(isCompactModeProvider)
+                            ? 80
+                            : MediaQuery.of(context).size.width / 5,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border(
+                              right: BorderSide(
+                                width: 1,
+                                color: Colors.black.withOpacity(0.1),
+                              ),
                             ),
                           ),
-                        ),
-                        child: YaruMenu(
-                          tools: tools,
-                          selectedToolName: ref.watch(selectedToolProvider),
+                          child: YaruMenu(
+                            tools: tools,
+                            selectedToolName: ref.watch(selectedToolProvider),
+                          ),
                         ),
                       ),
                     ),

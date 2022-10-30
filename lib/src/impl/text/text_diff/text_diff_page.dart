@@ -1,4 +1,5 @@
 import 'package:dev_widgets/src/impl/widgets/default_app_bar.dart';
+import 'package:dev_widgets/src/impl/widgets/default_drawer.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/input_editor.dart';
 import 'package:dev_widgets/src/impl/widgets/multi_split_view_divider.dart';
 import 'package:dev_widgets/src/impl/settings/settings_provider.dart';
@@ -18,6 +19,7 @@ class TextDiffPage extends ConsumerWidget {
   Widget build(BuildContext context, ref) {
     return Scaffold(
         appBar: DefaultAppBar(title: "text_diff".tr()),
+        drawer: const DefaultDrawer(),
         body: SizedBox(
           height: MediaQuery.of(context).size.height - kToolbarHeight,
           child: ListView(

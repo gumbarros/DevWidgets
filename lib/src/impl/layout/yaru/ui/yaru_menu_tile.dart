@@ -7,13 +7,13 @@ class YaruMenuTile extends StatelessWidget {
     super.key,
     required this.selected,
     required this.icon,
-    required this.onTap,
+    this.onTap,
     required this.title,
   });
 
   final bool selected;
   final IconData icon;
-  final Function() onTap;
+  final Function()? onTap;
   final Widget title;
 
   @override

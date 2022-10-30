@@ -13,6 +13,13 @@ abstract class Tool {
   final String route;
   final Widget page;
 
-  const Tool(this.icon, this.homeTitle, this.description, this.group,
-      this.route, this.name, this.menuTitle, this.page);
+  const Tool(
+      {required this.icon,
+      required this.homeTitle,
+      required this.description,
+      required this.group,
+      required this.route,
+      required this.name,
+      required this.menuTitle,
+      required this.page});
 }

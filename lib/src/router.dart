@@ -4,31 +4,32 @@ import 'package:go_router/go_router.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'impl/layout/yaru/ui/yaru_layout.dart';
 
-final GoRouter router = GoRouter(initialLocation: '/home', routes: <GoRoute>[
-  for (final tool in allTools)
-    GoRoute(
-      path: tool.route,
-      pageBuilder: (BuildContext context, GoRouterState state) =>
-          _buildPageWithDefaultTransition(
-              context: context,
-              state: state,
-              child: ResponsiveWrapper.builder(
-                YaruLayout(
-                  tools: allTools,
-                  child: tool.page,
-                ),
-                breakpoints: [
-                  const ResponsiveBreakpoint.autoScale(360),
-                  const ResponsiveBreakpoint.autoScale(480, name: MOBILE),
-                  const ResponsiveBreakpoint.resize(640, name: 'MOBILE_LARGE'),
-                  const ResponsiveBreakpoint.resize(850, name: TABLET),
-                  const ResponsiveBreakpoint.resize(1080, name: DESKTOP),
-                  const ResponsiveBreakpoint.resize(1440,
-                      name: 'DESKTOP_LARGE'),
-                  const ResponsiveBreakpoint.resize(2460, name: '4K'),
-                ],
-              )),
-    )
+layout({required Widget child}) => ResponsiveWrapper.builder(
+      YaruLayout(
+        tools: allTools,
+        child: child,
+      ),
+      breakpoints: [
+        const ResponsiveBreakpoint.autoScale(360),
+        const ResponsiveBreakpoint.autoScale(480, name: MOBILE),
+        const ResponsiveBreakpoint.resize(640, name: 'MOBILE_LARGE'),
+        const ResponsiveBreakpoint.resize(850, name: TABLET),
+        const ResponsiveBreakpoint.resize(1080, name: DESKTOP),
+        const ResponsiveBreakpoint.resize(1440, name: 'DESKTOP_LARGE'),
+        const ResponsiveBreakpoint.resize(2460, name: '4K'),
+      ],
+    );
+
+final GoRouter router = GoRouter(initialLocation: '/home', routes: [
+  ShellRoute(routes: [
+    for (final tool in allTools)
+      GoRoute(
+        path: tool.route,
+        pageBuilder: (BuildContext context, GoRouterState state) =>
+            _buildPageWithDefaultTransition(
+                context: context, state: state, child: tool.page),
+      )
+  ], builder: (context, state, child) => layout(child: child)),
 ]);
 
 CustomTransitionPage _buildPageWithDefaultTransition<T>({

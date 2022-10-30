@@ -3,6 +3,7 @@ import 'package:dev_widgets/src/impl/encoders/base64_text/base64_text_encoder_pr
 import 'package:dev_widgets/src/impl/encoders/encode_conversion_mode.dart';
 import 'package:dev_widgets/src/impl/widgets/default_app_bar.dart';
 import 'package:dev_widgets/src/impl/helpers.dart';
+import 'package:dev_widgets/src/impl/widgets/default_drawer.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/io_editor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -16,6 +17,7 @@ class Base64TextEncoderPage extends ConsumerWidget {
   Widget build(BuildContext context, ref) {
     return Scaffold(
         appBar: DefaultAppBar(title: "base64_text".tr()),
+        drawer: const DefaultDrawer(),
         body: SizedBox(
           height: MediaQuery.of(context).size.height - kToolbarHeight,
           child: ListView(

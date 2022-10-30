@@ -2,7 +2,7 @@ import 'package:dev_widgets/src/group.dart';
 import 'package:dev_widgets/src/impl/text/markdown_preview/markdown_preview_page.dart';
 import 'package:dev_widgets/src/impl/text/text_group.dart';
 import 'package:dev_widgets/src/tool.dart';
-import 'package:dev_widgets/src/routes.dart';
+import 'package:dev_widgets/src/impl/routes.dart';
 import 'package:flutter/material.dart';
 
 import 'package:easy_localization/easy_localization.dart';

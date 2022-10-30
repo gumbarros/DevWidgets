@@ -2,7 +2,7 @@ import 'package:dev_widgets/src/group.dart';
 import 'package:dev_widgets/src/impl/encoders/base64_image/base64_image_encoder_page.dart';
 import 'package:dev_widgets/src/impl/encoders/encoders_group.dart';
 import 'package:dev_widgets/src/tool.dart';
-import 'package:dev_widgets/src/routes.dart';
+import 'package:dev_widgets/src/impl/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 

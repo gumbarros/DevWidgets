@@ -1,8 +1,8 @@
-class LinuxMenuItem {
+class YaruMenuItem {
   final String label;
   final String route;
 
-  LinuxMenuItem(this.label, this.route);
+  YaruMenuItem(this.label, this.route);
 
   @override
   String toString() {

@@ -3,7 +3,7 @@ import 'package:dev_widgets/src/group.dart';
 import 'package:dev_widgets/src/impl/brazil/cpf_cnpj/cpf_cnpj_generation_mode.dart';
 import 'package:dev_widgets/src/impl/brazil/cpf_cnpj/cpf_cnpj_generator_page.dart';
 import 'package:dev_widgets/src/tool.dart';
-import 'package:dev_widgets/src/routes.dart';
+import 'package:dev_widgets/src/impl/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 

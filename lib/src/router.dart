@@ -1,4 +1,4 @@
-import 'package:dev_widgets/src/tools.dart';
+import 'package:dev_widgets/src/impl/tools.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:responsive_framework/responsive_framework.dart';

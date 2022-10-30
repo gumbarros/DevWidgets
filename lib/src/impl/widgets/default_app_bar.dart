@@ -1,4 +1,4 @@
-import 'package:dev_widgets/src/routes.dart';
+import 'package:dev_widgets/src/impl/routes.dart';
 import 'package:dev_widgets/src/impl/layout/yaru/providers/compact_mode_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

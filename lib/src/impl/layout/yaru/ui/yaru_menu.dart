@@ -1,4 +1,4 @@
-import 'package:dev_widgets/src/groups.dart';
+import 'package:dev_widgets/src/impl/groups.dart';
 import 'package:dev_widgets/src/impl/layout/yaru/providers/compact_mode_provider.dart';
 import 'package:dev_widgets/src/impl/layout/yaru/providers/selected_tool_provider.dart';
 import 'package:dev_widgets/src/tool.dart';
@@ -6,7 +6,7 @@ import 'package:dev_widgets/src/impl/layout/yaru/models/yaru_menu_item.dart';
 import 'package:dev_widgets/src/impl/layout/yaru/ui/yaru_menu_search_box.dart';
 import 'package:dev_widgets/src/impl/layout/yaru/ui/yaru_menu_tile.dart';
 import 'package:dev_widgets/src/impl/settings/settings_provider.dart';
-import 'package:dev_widgets/src/tools.dart';
+import 'package:dev_widgets/src/impl/tools.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -39,46 +39,53 @@ class YaruMenu extends ConsumerWidget {
               height: 50,
               child: YaruMenuSearchBox(
                 tools: tools
-                    .map((t) => LinuxMenuItem(t.homeTitle, t.route))
+                    .map((t) => YaruMenuItem(t.homeTitle, t.route))
                     .toList(),
                 controller: TextEditingController(),
               )),
         ),
-        Visibility(
-            visible: ref.watch(isCompactModeProvider), child: const Divider()),
-        Column(
-          children: <Widget>[
-            YaruMenuTile(
-              selected: selectedToolName == homeTool.name.toString(),
-              title: YaruPageItemTitle.text(homeTool.menuTitle),
-              icon: homeTool.icon,
-              onTap: () {
-                ref.read(selectedToolProvider.notifier).state =
-                    homeTool.name.toString();
-                context.go(homeTool.route);
-              },
-            ),
-            for (Tool tool in ref
-                .watch(settingsProvider)
-                .favorites
-                .map((e) => tools.firstWhere((t) => e == t.name)))
+        const Divider(),
+        Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: scrollbarThicknessWithTrack,
+            vertical: 8.0,
+          ),
+          child: Column(
+            children: <Widget>[
               YaruMenuTile(
-                selected: selectedToolName == tool.name,
-                title: Text(tool.homeTitle),
-                icon: tool.icon,
+                selected: selectedToolName == homeTool.name.toString(),
+                title: YaruPageItemTitle.text(homeTool.menuTitle),
+                icon: homeTool.icon,
                 onTap: () {
-                  ref.read(selectedToolProvider.notifier).state = tool.name;
-                  context.go(tool.route);
+                  ref.read(selectedToolProvider.notifier).state =
+                      homeTool.name.toString();
+                  context.go(homeTool.route);
                 },
               ),
-          ]
-              .map((e) => Container(
-                    padding: ref.watch(isCompactModeProvider)
-                        ? const EdgeInsets.all(8.0)
-                        : null,
-                    child: e,
-                  ))
-              .toList(),
+              for (Tool tool in ref
+                  .watch(settingsProvider)
+                  .favorites
+                  .map((e) => tools.firstWhere((t) => e == t.name)))
+                YaruMenuTile(
+                  selected: selectedToolName == tool.name,
+                  title: YaruPageItemTitle.text(
+                    tool.homeTitle,
+                  ),
+                  icon: tool.icon,
+                  onTap: () {
+                    ref.read(selectedToolProvider.notifier).state = tool.name;
+                    context.go(tool.route);
+                  },
+                ),
+            ]
+                .map((e) => Container(
+                      padding: ref.watch(isCompactModeProvider)
+                          ? const EdgeInsets.all(8.0)
+                          : null,
+                      child: e,
+                    ))
+                .toList(),
+          ),
         ),
         const Divider(),
         Column(
@@ -103,7 +110,7 @@ class YaruMenu extends ConsumerWidget {
                     isExpanded: true,
                     onChange: (_) => context.go('/home'),
                     header: SizedBox(
-                      width: MediaQuery.of(context).size.width / 10,
+                      width: 200,
                       child: YaruMenuTile(
                           icon: group.icon,
                           selected: false,
@@ -119,7 +126,7 @@ class YaruMenu extends ConsumerWidget {
                           title: YaruPageItemTitle.text(tool.menuTitle),
                           icon: tool.icon,
                           onTap: () {
-                            ref.read(selectedToolProvider.notifier).state =
+                            ref.watch(selectedToolProvider.notifier).state =
                                 tool.name;
                             context.go(tool.route);
                           },

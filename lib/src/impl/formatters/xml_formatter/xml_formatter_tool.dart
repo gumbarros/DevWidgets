@@ -1,5 +1,5 @@
 import 'package:dev_widgets/src/impl/formatters/xml_formatter/xml_formatter_page.dart';
-import 'package:dev_widgets/src/routes.dart';
+import 'package:dev_widgets/src/impl/routes.dart';
 import 'package:dev_widgets/src/group.dart';
 import 'package:dev_widgets/src/impl/formatters/formatters_group.dart';
 import 'package:dev_widgets/src/tool.dart';

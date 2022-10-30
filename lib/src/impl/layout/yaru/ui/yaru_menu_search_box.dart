@@ -1,4 +1,4 @@
-import 'package:dev_widgets/src/routes.dart';
+import 'package:dev_widgets/src/impl/routes.dart';
 import 'package:dev_widgets/src/impl/layout/yaru/models/yaru_menu_item.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
@@ -7,13 +7,13 @@ import 'package:go_router/go_router.dart';
 
 class YaruMenuSearchBox extends StatelessWidget {
   final TextEditingController controller;
-  final List<LinuxMenuItem> tools;
+  final List<YaruMenuItem> tools;
   const YaruMenuSearchBox(
       {super.key, required this.controller, required this.tools});
 
   @override
   Widget build(BuildContext context) {
-    return DropdownSearch<LinuxMenuItem>(
+    return DropdownSearch<YaruMenuItem>(
         popupProps: PopupProps.menu(
           showSearchBox: true,
           emptyBuilder: (context, searchEntry) {

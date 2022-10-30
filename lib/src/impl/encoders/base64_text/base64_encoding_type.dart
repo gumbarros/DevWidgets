@@ -1,4 +1,4 @@
-import 'package:dev_widgets/src/described_enum.dart';
+import 'package:dev_widgets/src/impl/described_enum.dart';
 
 enum Base64EncodingType implements DescribedEnum {
   utf8("UTF-8"),

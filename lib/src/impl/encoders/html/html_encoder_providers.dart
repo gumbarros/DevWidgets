@@ -13,7 +13,7 @@ final conversionModeProvider =
 final encodingTypeProvider =
     StateProvider<Base64EncodingType>((ref) => Base64EncodingType.utf8);
 
-final inputControllerProvider = StateProvider<CodeController>((ref) {
+final inputControllerProvider = StateProvider.autoDispose<CodeController>((ref) {
   final controller = CodeController(language: xml);
 
   controller.addListener(() {

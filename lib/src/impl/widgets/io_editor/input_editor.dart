@@ -11,7 +11,7 @@ class InputEditor extends StatelessWidget {
       this.height,
       this.toolbarTitle,
       this.isVerticalLayout = false,
-      this.usesCodeControllers = true})
+      this.usesCodeControllers = true, this.onChanged})
       : super(key: key);
 
   final Widget? inputChild;
@@ -20,7 +20,7 @@ class InputEditor extends StatelessWidget {
   final String? toolbarTitle;
   final bool usesCodeControllers;
   final double? width;
-
+  final Function(String value)? onChanged;
   final double? height;
 
   @override
@@ -42,6 +42,7 @@ class InputEditor extends StatelessWidget {
                     ? MediaQuery.of(context).size.height / 3.5
                     : MediaQuery.of(context).size.height / 1.5),
             child: CodeEditorWrapper(
+                onChanged:onChanged,
                 usesCodeControllers: usesCodeControllers,
                 textEditingController: inputController),
           )

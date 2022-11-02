@@ -9,7 +9,7 @@ final sqlDialectProvider =
 
 final outputTextProvider = StateProvider<String>((ref) => "");
 
-final inputControllerProvider = StateProvider<CodeController>((ref) {
+final inputControllerProvider = StateProvider.autoDispose<CodeController>((ref) {
   final inputController = CodeController(language: sql);
 
   inputController.addListener(() {

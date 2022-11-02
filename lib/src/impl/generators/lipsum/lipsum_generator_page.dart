@@ -50,7 +50,7 @@ class LipsumGeneratorPage extends ConsumerWidget {
                           padding: const EdgeInsets.only(left: 8.0),
                           child: ListTile(
                             title: Text(
-                                StringTranslateExtension("lipsum_start").tr()),
+                                StringTranslateExtension("lipsum_start_with").tr()),
                           ),
                         ),
                         actionWidget: Switch(

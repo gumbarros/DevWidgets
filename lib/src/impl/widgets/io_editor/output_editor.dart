@@ -12,7 +12,7 @@ class OutputEditor extends StatelessWidget {
     this.actionButtons,
     this.usesCodeControllers = false,
     this.width,
-    this.height,
+    this.height, this.onChanged,
   }) : super(key: key);
 
   final Widget? outputChild;
@@ -23,6 +23,8 @@ class OutputEditor extends StatelessWidget {
   final bool usesCodeControllers;
   final double? width;
   final double? height;
+  final Function(String value)? onChanged;
+
   @override
   Widget build(BuildContext context) {
     assert(outputChild == null || actionButtons == null,
@@ -51,6 +53,7 @@ class OutputEditor extends StatelessWidget {
             child: CodeEditorWrapper(
                 usesCodeControllers: usesCodeControllers,
                 readOnly: true,
+                onChanged: onChanged,
                 textEditingController: outputController),
           )
         ],

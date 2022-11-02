@@ -18,7 +18,7 @@ final indentationProvider = StateProvider<Indentation>((ref) {
   return Indentation.fourSpaces;
 });
 
-final inputControllerProvider = StateProvider<CodeController>((ref) {
+final inputControllerProvider = StateProvider.autoDispose<CodeController>((ref) {
   final conversionType = ref.watch(conversionTypeProvider);
 
   CodeController inputController;
@@ -53,7 +53,7 @@ final inputControllerProvider = StateProvider<CodeController>((ref) {
   return inputController;
 });
 
-final outputControllerProvider = StateProvider<CodeController>((ref) {
+final outputControllerProvider = StateProvider.autoDispose<CodeController>((ref) {
   final conversionType = ref.watch(conversionTypeProvider);
 
   CodeController outputController;

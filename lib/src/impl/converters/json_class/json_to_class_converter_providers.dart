@@ -12,7 +12,7 @@ final classNameProvider = StateProvider<String>((ref) {
   return "MyClass";
 });
 
-final inputControllerProvider = StateProvider<CodeController>((ref) {
+final inputControllerProvider = StateProvider.autoDispose<CodeController>((ref) {
   final controller = CodeController(language: json);
 
   controller.addListener(() {

@@ -14,7 +14,7 @@ final indentationProvider = StateProvider<Indentation>((ref) {
 
 final outputTextProvider = StateProvider<String>((ref) => "");
 
-final inputControllerProvider = StateProvider<CodeController>((ref) {
+final inputControllerProvider = StateProvider.autoDispose<CodeController>((ref) {
   final inputController = CodeController(language: json);
 
   inputController.addListener(() {

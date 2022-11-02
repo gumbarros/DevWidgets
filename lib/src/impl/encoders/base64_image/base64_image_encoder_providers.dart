@@ -44,9 +44,9 @@ void uploadImage(WidgetRef ref) async {
 }
 
 final screenshotControllerProvider =
-    Provider<ScreenshotController>((ref) => ScreenshotController());
+    Provider.autoDispose<ScreenshotController>((ref) => ScreenshotController());
 
-final inputControllerProvider = StateProvider<TextEditingController>((ref) {
+final inputControllerProvider = StateProvider.autoDispose<TextEditingController>((ref) {
   final controller = TextEditingController();
 
   controller.addListener(() {

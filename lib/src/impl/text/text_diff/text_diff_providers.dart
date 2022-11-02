@@ -19,7 +19,7 @@ final oldTextProvider = StateProvider<String>((ref) {
   return "";
 });
 
-final newTextControllerProvider = StateProvider<TextEditingController>((ref) {
+final newTextControllerProvider = StateProvider.autoDispose<TextEditingController>((ref) {
   final controller = TextEditingController();
 
   controller.addListener(() {
@@ -30,7 +30,7 @@ final newTextControllerProvider = StateProvider<TextEditingController>((ref) {
   return controller;
 });
 
-final oldTextControllerProvider = StateProvider<TextEditingController>((ref) {
+final oldTextControllerProvider = StateProvider.autoDispose<TextEditingController>((ref) {
   final controller = TextEditingController();
 
   controller.addListener(() {

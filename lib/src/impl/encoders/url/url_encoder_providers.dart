@@ -8,7 +8,7 @@ final inputTextProvider = StateProvider<String>((ref) => "");
 final conversionModeProvider =
     StateProvider<ConversionMode>((ref) => ConversionMode.encode);
 
-final inputControllerProvider = StateProvider<TextEditingController>((ref) {
+final inputControllerProvider = StateProvider.autoDispose<TextEditingController>((ref) {
   final controller = TextEditingController();
 
   controller.addListener(() {

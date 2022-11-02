@@ -14,6 +14,12 @@ class IOEditor extends StatelessWidget {
   ///When set to true, creates horizontal separators.
   final bool isVerticalLayout;
 
+  final List<Area>? initialAreas;
+
+  final bool resizable;
+
+  final Function(String value)? inputOnChanged;
+  final Function(String value)? outputOnChanged;
   const IOEditor(
       {super.key,
       this.usesCodeControllers = true,
@@ -21,7 +27,9 @@ class IOEditor extends StatelessWidget {
       this.outputController,
       this.isVerticalLayout = false,
       this.outputChild,
-      this.inputChild});
+      this.inputChild,
+        this.resizable = true,
+        this.initialAreas, this.inputOnChanged, this.outputOnChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -32,20 +40,23 @@ class IOEditor extends StatelessWidget {
         dividerBuilder: (axis, index, resizable, dragging, highlighted,
                 themeData) =>
             MultiSplitViewDivider(dragging: dragging, highlighted: highlighted),
-        initialAreas: [
+        initialAreas: initialAreas ?? [
           Area(weight: 0.5, minimalWeight: 0.3),
           Area(weight: 0.5, minimalWeight: 0.3)
         ],
+        resizable: resizable,
         children: [
           InputEditor(
               inputChild: inputChild,
               inputController: inputController,
               isVerticalLayout: isVerticalLayout,
+              onChanged: inputOnChanged,
               usesCodeControllers: usesCodeControllers),
           OutputEditor(
               outputChild: outputChild,
               outputController: outputController,
               isVerticalLayout: isVerticalLayout,
+              onChanged: outputOnChanged,
               usesCodeControllers: usesCodeControllers)
         ],
       ),

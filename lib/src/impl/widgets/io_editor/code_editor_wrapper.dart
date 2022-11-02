@@ -8,11 +8,12 @@ class CodeEditorWrapper extends ConsumerWidget {
   final TextEditingController? textEditingController;
   final bool usesCodeControllers;
   final bool readOnly;
+  final Function(String value)? onChanged;
 
   const CodeEditorWrapper(
       {super.key,
       required this.usesCodeControllers,
-      required this.textEditingController,
+      required this.textEditingController, this.onChanged,
       this.readOnly = false});
 
   @override
@@ -33,12 +34,13 @@ class CodeEditorWrapper extends ConsumerWidget {
               textBaseline: TextBaseline.alphabetic),
           readOnly: readOnly,
           expands: true,
+          onChanged: onChanged,
           controller:
               (textEditingController ?? CodeController()) as CodeController,
         ),
       );
     } else {
-      return TextField(
+      return TextFormField(
         maxLines: null,
         style: TextStyle(
             fontFamily: settings.textEditorFontFamily,
@@ -49,6 +51,7 @@ class CodeEditorWrapper extends ConsumerWidget {
         minLines: 10,
         enabled: true,
         controller: textEditingController,
+        onChanged: onChanged,
         keyboardType: TextInputType.multiline,
       );
     }

@@ -10,12 +10,12 @@ converters: Konvertierer
 copy: Kopieren
 cron_parser: Cron Parser
 menu_search_bar_hint: Tippe um tools zu suchen...
-json_formatter_menu_name: JSON
-xml_formatter_menu_name: XML
-sql_formatter_menu_name: SQL
-html_encoder_menu_name: HTML
-url_encoder_menu_name: URL
-text_escape_menu_name: Escape / Un-Escape
+json_formatter_short_title: JSON
+xml_formatter_short_title: XML
+sql_formatter_short_title: SQL
+html_encoder_short_title: HTML
+url_encoder_short_title: URL
+text_escape_short_title: Escape / Un-Escape
 cron_parser_description: Parse Cron-Ausdruck um Datum zu erhalten
 current: Aktuell
 decode: Dekodieren
@@ -59,7 +59,7 @@ json_yaml_converter: "JSON <> YAML"
 json_yaml_converter_description: Konvertiere JSON Daten zu YAML und umgekehrt
 no_tools_found: Keine Tools gefunden.
 markdown_preview: Markdown Vorschau
-markdown_preview_menu_name: Markdown Vorschau
+markdown_preview_short_title: Markdown Vorschau
 markdown_preview_description: Preview a Markdown document
 new_text: Neuer Text
 no_cleanup: Keine Bereinigung
@@ -81,7 +81,7 @@ text: Text
 text_diff: Textvergleich
 text_diff_description: Vergleiche zwei Texte
 text_escape: Text Escape / Unescape
-text_diff_menu_name: Text Diff
+text_diff_short_title: Text Diff
 text_escape_description: "Entfernt durch escape / unescape Zeichen aus einem String, die das Parsen verhindern könnten."
 timestamp_converter: Zeitstempel Konvertierer
 timestamp_converter_description: Konvertiere Zeitstempel in lesbaren Text und umgekehrt

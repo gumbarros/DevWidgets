@@ -29,7 +29,7 @@ class CnpjGeneratorTool implements Tool {
   String get name => "cnpj";
 
   @override
-  String get shortTitle => "cnpj_menu_name".tr();
+  String get shortTitle => "cnpj_short_title".tr();
 
   @override
   Widget get page => const CpfCnpjGeneratorPage(

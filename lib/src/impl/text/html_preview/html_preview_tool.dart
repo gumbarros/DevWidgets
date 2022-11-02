@@ -29,7 +29,7 @@ class HtmlPreviewTool implements Tool {
   String get name => "htmlpreview";
 
   @override
-  String get shortTitle => "html_preview_menu_name".tr();
+  String get shortTitle => "html_preview_short_title".tr();
 
   @override
   Widget get page => const HtmlPreviewPage();

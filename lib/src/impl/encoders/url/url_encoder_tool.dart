@@ -28,7 +28,7 @@ class UrlEncoderTool implements Tool {
   String get name => "url-encode";
 
   @override
-  String get shortTitle => "url_encoder_menu_name".tr();
+  String get shortTitle => "url_encoder_short_title".tr();
 
   @override
   Widget get page => const UrlEncoderPage();

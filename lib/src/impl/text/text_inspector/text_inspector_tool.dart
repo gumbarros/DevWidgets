@@ -28,7 +28,7 @@ class TextInspectorTool implements Tool {
   String get name => "textInspector";
 
   @override
-  String get shortTitle => "text_inspector_menu_name".tr();
+  String get shortTitle => "text_inspector_short_title".tr();
 
   @override
   Widget get page => const TextInspectorPage();

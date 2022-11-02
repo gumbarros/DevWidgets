@@ -29,7 +29,7 @@ class SqlFormatterTool implements Tool {
   String get name => "sqlformat";
 
   @override
-  String get shortTitle => "sql_formatter_menu_name".tr();
+  String get shortTitle => "sql_formatter_short_title".tr();
 
   @override
   Widget get page => const SqlFormatterPage();

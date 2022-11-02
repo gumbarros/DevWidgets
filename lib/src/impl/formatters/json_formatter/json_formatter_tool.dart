@@ -28,7 +28,7 @@ class JsonFormatterTool implements Tool {
   String get name => "jsonformat";
 
   @override
-  String get shortTitle => "json_formatter_menu_name".tr();
+  String get shortTitle => "json_formatter_short_title".tr();
 
   @override
   Widget get page => const JsonFormatterPage();

@@ -29,7 +29,7 @@ class MarkdownPreviewTool implements Tool {
   String get name => "markdown";
 
   @override
-  String get shortTitle => "markdown_preview_menu_name".tr();
+  String get shortTitle => "markdown_preview_short_title".tr();
 
   @override
   Widget get page => const MarkdownPreviewPage();

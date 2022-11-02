@@ -25,7 +25,7 @@ class XmlFormatterTool implements Tool {
   String get name => "xmlformat";
 
   @override
-  String get shortTitle => "xml_formatter_menu_name".tr();
+  String get shortTitle => "xml_formatter_short_title".tr();
 
   @override
   Group get group => FormattersGroup();

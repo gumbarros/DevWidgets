@@ -17,7 +17,7 @@ import 'package:dev_widgets/src/impl/text/html_preview/html_preview_tool.dart';
 import 'package:dev_widgets/src/impl/text/markdown_preview/markdown_preview_tool.dart';
 import 'package:dev_widgets/src/impl/text/text_diff/text_diff_tool.dart';
 import 'package:dev_widgets/src/impl/text/text_escape/text_escape_tool.dart';
-// import 'package:dev_widgets/src/impl/text/text_inspector/text_inspector_tool.dart';
+import 'package:dev_widgets/src/impl/text/text_inspector/text_inspector_tool.dart';
 import 'package:dev_widgets/src/tool.dart';
 
 const allTools = [
@@ -40,7 +40,7 @@ const allTools = [
   JsonYamlConverterTool(),
   CnpjGeneratorTool(),
   HtmlPreviewTool(),
-  // TextInspectorTool()
+  TextInspectorTool()
 ];
 
 Tool getToolByName(String name) => allTools.firstWhere((t) => t.name == name);

@@ -29,7 +29,7 @@ class SettingsTool implements Tool {
   String get name => "settings";
 
   @override
-  String get shortTitle => "settings_menu_name".tr();
+  String get shortTitle => "settings_short_title".tr();
 
   @override
   Widget get page => const SettingsPage();

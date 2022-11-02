@@ -28,7 +28,7 @@ class Base64TextEncoderTool implements Tool {
   String get name => "base64text";
 
   @override
-  String get shortTitle => "base64_text_encoder_menu_name".tr();
+  String get shortTitle => "base64_text_encoder_short_title".tr();
 
   @override
   Widget get page => const Base64TextEncoderPage();

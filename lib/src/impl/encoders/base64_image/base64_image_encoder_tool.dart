@@ -28,7 +28,7 @@ class Base64ImageEncoderTool implements Tool {
   String get name => "base64image";
 
   @override
-  String get shortTitle => "base64_image_encoder_menu_name".tr();
+  String get shortTitle => "base64_image_encoder_short_title".tr();
 
   @override
   Widget get page => const Base64ImageEncoderPage();

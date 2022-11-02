@@ -28,7 +28,7 @@ class TextEscapeTool implements Tool {
   String get name => "escape";
 
   @override
-  String get shortTitle => "text_escape_menu_name".tr();
+  String get shortTitle => "text_escape_short_title".tr();
 
   @override
   Widget get page => const TextEscapePage();

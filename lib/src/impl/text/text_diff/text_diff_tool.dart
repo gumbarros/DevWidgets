@@ -29,7 +29,7 @@ class TextDiffTool implements Tool {
   String get name => "diff";
 
   @override
-  String get shortTitle => "text_diff_menu_name".tr();
+  String get shortTitle => "text_diff_short_title".tr();
 
   @override
   Widget get page => const TextDiffPage();

@@ -28,7 +28,7 @@ class HtmlEncoderTool implements Tool {
   String get name => "html";
 
   @override
-  String get shortTitle => "html_encoder_menu_name".tr();
+  String get shortTitle => "html_encoder_short_title".tr();
 
   @override
   Widget get page => const HtmlEncoderPage();

@@ -29,7 +29,7 @@ class CpfGeneratorTool implements Tool {
   String get name => "cpf";
 
   @override
-  String get shortTitle => "cpf_menu_name".tr();
+  String get shortTitle => "cpf_short_title".tr();
 
   @override
   Widget get page => const CpfCnpjGeneratorPage(mode: GenerationMode.cpf);

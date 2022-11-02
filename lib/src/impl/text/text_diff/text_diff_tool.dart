@@ -14,7 +14,7 @@ class TextDiffTool implements Tool {
   IconData get icon => Icons.difference;
 
   @override
-  String get homeTitle => "text_diff".tr();
+  String get fullTitle => "text_diff".tr();
 
   @override
   String get route => Routes.textDiff;
@@ -29,7 +29,7 @@ class TextDiffTool implements Tool {
   String get name => "diff";
 
   @override
-  String get menuTitle => "text_diff_menu_name".tr();
+  String get shortTitle => "text_diff_menu_name".tr();
 
   @override
   Widget get page => const TextDiffPage();

@@ -14,7 +14,7 @@ class MarkdownPreviewTool implements Tool {
   IconData get icon => Icons.insert_drive_file_sharp;
 
   @override
-  String get homeTitle => "markdown_preview".tr();
+  String get fullTitle => "markdown_preview".tr();
 
   @override
   String get route => Routes.markdownPreview;
@@ -29,7 +29,7 @@ class MarkdownPreviewTool implements Tool {
   String get name => "markdown";
 
   @override
-  String get menuTitle => "markdown_preview_menu_name".tr();
+  String get shortTitle => "markdown_preview_menu_name".tr();
 
   @override
   Widget get page => const MarkdownPreviewPage();

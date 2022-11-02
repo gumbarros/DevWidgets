@@ -13,7 +13,7 @@ class UrlEncoderTool implements Tool {
   IconData get icon => Icons.link;
 
   @override
-  String get homeTitle => "url_encoder".tr();
+  String get fullTitle => "url_encoder".tr();
 
   @override
   String get route => Routes.urlEncoder;
@@ -28,7 +28,7 @@ class UrlEncoderTool implements Tool {
   String get name => "url-encode";
 
   @override
-  String get menuTitle => "url_encoder_menu_name".tr();
+  String get shortTitle => "url_encoder_menu_name".tr();
 
   @override
   Widget get page => const UrlEncoderPage();

@@ -14,7 +14,7 @@ class CpfGeneratorTool implements Tool {
   IconData get icon => Icons.person;
 
   @override
-  String get homeTitle => "cpf".tr();
+  String get fullTitle => "cpf".tr();
 
   @override
   String get route => Routes.cpf;
@@ -29,7 +29,7 @@ class CpfGeneratorTool implements Tool {
   String get name => "cpf";
 
   @override
-  String get menuTitle => "cpf_menu_name".tr();
+  String get shortTitle => "cpf_menu_name".tr();
 
   @override
   Widget get page => const CpfCnpjGeneratorPage(mode: GenerationMode.cpf);

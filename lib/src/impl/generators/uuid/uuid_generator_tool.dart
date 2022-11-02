@@ -13,7 +13,7 @@ class UuidGeneratorTool implements Tool {
   IconData get icon => Icons.person;
 
   @override
-  String get homeTitle => "uuid_generator".tr();
+  String get fullTitle => "uuid_generator".tr();
 
   @override
   String get route => Routes.uuidGenerator;
@@ -28,7 +28,7 @@ class UuidGeneratorTool implements Tool {
   String get name => "uuid";
 
   @override
-  String get menuTitle => "uuid".tr();
+  String get shortTitle => "uuid".tr();
 
   @override
   Widget get page => const UuidGeneratorPage();

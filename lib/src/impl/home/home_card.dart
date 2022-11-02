@@ -38,7 +38,7 @@ class HomeCard extends StatelessWidget {
                     child: ListTile(
                       mouseCursor: SystemMouseCursors.click,
                       leading: Icon(tool.icon),
-                      title: Text(tool.homeTitle),
+                      title: Text(tool.fullTitle),
                       subtitle: Text(
                         tool.description,
                         maxLines: 3,

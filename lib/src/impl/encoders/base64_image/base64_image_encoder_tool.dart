@@ -13,7 +13,7 @@ class Base64ImageEncoderTool implements Tool {
   IconData get icon => Icons.image;
 
   @override
-  String get homeTitle => "base64_image_encoder".tr();
+  String get fullTitle => "base64_image_encoder".tr();
 
   @override
   String get route => Routes.base64ImageEncoder;
@@ -28,7 +28,7 @@ class Base64ImageEncoderTool implements Tool {
   String get name => "base64image";
 
   @override
-  String get menuTitle => "base64_image_encoder_menu_name".tr();
+  String get shortTitle => "base64_image_encoder_menu_name".tr();
 
   @override
   Widget get page => const Base64ImageEncoderPage();

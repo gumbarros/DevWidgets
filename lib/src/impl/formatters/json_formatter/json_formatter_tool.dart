@@ -13,7 +13,7 @@ class JsonFormatterTool implements Tool {
   IconData get icon => Icons.data_object;
 
   @override
-  String get homeTitle => "json_formatter".tr();
+  String get fullTitle => "json_formatter".tr();
 
   @override
   String get route => Routes.jsonFormatter;
@@ -28,7 +28,7 @@ class JsonFormatterTool implements Tool {
   String get name => "jsonformat";
 
   @override
-  String get menuTitle => "json_formatter_menu_name".tr();
+  String get shortTitle => "json_formatter_menu_name".tr();
 
   @override
   Widget get page => const JsonFormatterPage();

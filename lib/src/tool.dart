@@ -6,8 +6,8 @@ abstract class Tool {
   ///Used to be a unique identifier in the application and open the tool via command-line.
   final String name;
   final IconData icon;
-  final String homeTitle;
-  final String menuTitle;
+  final String fullTitle;
+  final String shortTitle;
   final String description;
   final Group group;
   final String route;
@@ -15,11 +15,11 @@ abstract class Tool {
 
   const Tool(
       {required this.icon,
-      required this.homeTitle,
+      required this.fullTitle,
       required this.description,
       required this.group,
       required this.route,
       required this.name,
-      required this.menuTitle,
+      required this.shortTitle,
       required this.page});
 }

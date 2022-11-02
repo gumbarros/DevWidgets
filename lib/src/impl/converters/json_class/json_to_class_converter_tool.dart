@@ -13,7 +13,7 @@ class JsonToClassConverterTool implements Tool {
   IconData get icon => Icons.data_object;
 
   @override
-  String get homeTitle => "json_to_class".tr();
+  String get fullTitle => "json_to_class".tr();
 
   @override
   String get route => Routes.jsonToClass;
@@ -28,7 +28,7 @@ class JsonToClassConverterTool implements Tool {
   String get name => "jsonToClass";
 
   @override
-  String get menuTitle => "json_to_class".tr();
+  String get shortTitle => "json_to_class".tr();
 
   @override
   Widget get page => const JsonToClassConverterPage();

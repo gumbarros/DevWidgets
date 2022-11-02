@@ -13,7 +13,7 @@ class XmlFormatterTool implements Tool {
   IconData get icon => Icons.code;
 
   @override
-  String get homeTitle => "xml_formatter".tr();
+  String get fullTitle => "xml_formatter".tr();
 
   @override
   String get route => Routes.xmlFormatter;
@@ -25,7 +25,7 @@ class XmlFormatterTool implements Tool {
   String get name => "xmlformat";
 
   @override
-  String get menuTitle => "xml_formatter_menu_name".tr();
+  String get shortTitle => "xml_formatter_menu_name".tr();
 
   @override
   Group get group => FormattersGroup();

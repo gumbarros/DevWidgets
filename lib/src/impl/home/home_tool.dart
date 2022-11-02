@@ -14,7 +14,7 @@ class HomeTool implements Tool {
   IconData get icon => Icons.home;
 
   @override
-  String get homeTitle => "all_tools".tr();
+  String get fullTitle => "all_tools".tr();
 
   @override
   String get route => Routes.home;
@@ -29,7 +29,7 @@ class HomeTool implements Tool {
   String get name => "home";
 
   @override
-  String get menuTitle => "all_tools".tr();
+  String get shortTitle => "all_tools".tr();
 
   @override
   Widget get page => const HomePage();

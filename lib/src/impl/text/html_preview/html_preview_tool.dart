@@ -14,7 +14,7 @@ class HtmlPreviewTool implements Tool {
   IconData get icon => Icons.code;
 
   @override
-  String get homeTitle => "html_preview".tr();
+  String get fullTitle => "html_preview".tr();
 
   @override
   String get route => Routes.htmlPreview;
@@ -29,7 +29,7 @@ class HtmlPreviewTool implements Tool {
   String get name => "htmlpreview";
 
   @override
-  String get menuTitle => "html_preview_menu_name".tr();
+  String get shortTitle => "html_preview_menu_name".tr();
 
   @override
   Widget get page => const HtmlPreviewPage();

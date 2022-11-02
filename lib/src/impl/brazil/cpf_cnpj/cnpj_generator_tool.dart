@@ -14,7 +14,7 @@ class CnpjGeneratorTool implements Tool {
   IconData get icon => Icons.business;
 
   @override
-  String get homeTitle => "cnpj".tr();
+  String get fullTitle => "cnpj".tr();
 
   @override
   String get route => Routes.cnpj;
@@ -29,7 +29,7 @@ class CnpjGeneratorTool implements Tool {
   String get name => "cnpj";
 
   @override
-  String get menuTitle => "cnpj_menu_name".tr();
+  String get shortTitle => "cnpj_menu_name".tr();
 
   @override
   Widget get page => const CpfCnpjGeneratorPage(

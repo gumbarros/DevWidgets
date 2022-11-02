@@ -13,7 +13,7 @@ class HtmlEncoderTool implements Tool {
   IconData get icon => Icons.code;
 
   @override
-  String get homeTitle => "html_encoder".tr();
+  String get fullTitle => "html_encoder".tr();
 
   @override
   String get route => Routes.htmlEncoder;
@@ -28,7 +28,7 @@ class HtmlEncoderTool implements Tool {
   String get name => "html";
 
   @override
-  String get menuTitle => "html_encoder_menu_name".tr();
+  String get shortTitle => "html_encoder_menu_name".tr();
 
   @override
   Widget get page => const HtmlEncoderPage();

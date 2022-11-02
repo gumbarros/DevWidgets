@@ -39,7 +39,7 @@ class YaruMenu extends ConsumerWidget {
               height: 50,
               child: YaruMenuSearchBox(
                 tools: tools
-                    .map((t) => YaruMenuItem(t.homeTitle, t.route))
+                    .map((t) => YaruMenuItem(t.fullTitle, t.route))
                     .toList(),
                 controller: TextEditingController(),
               )),
@@ -54,7 +54,7 @@ class YaruMenu extends ConsumerWidget {
             children: <Widget>[
               YaruMenuTile(
                 selected: selectedToolName == homeTool.name.toString(),
-                title: YaruPageItemTitle.text(homeTool.menuTitle),
+                title: YaruPageItemTitle.text(homeTool.shortTitle),
                 icon: homeTool.icon,
                 onTap: () {
                   ref.read(selectedToolProvider.notifier).state =
@@ -69,7 +69,7 @@ class YaruMenu extends ConsumerWidget {
                 YaruMenuTile(
                   selected: selectedToolName == tool.name,
                   title: YaruPageItemTitle.text(
-                    tool.homeTitle,
+                    tool.fullTitle,
                   ),
                   icon: tool.icon,
                   onTap: () {
@@ -123,7 +123,7 @@ class YaruMenu extends ConsumerWidget {
                           in tools.where((t) => t.group.name == group.name))
                         YaruMenuTile(
                           selected: selectedToolName == tool.name,
-                          title: YaruPageItemTitle.text(tool.menuTitle),
+                          title: YaruPageItemTitle.text(tool.shortTitle),
                           icon: tool.icon,
                           onTap: () {
                             ref.watch(selectedToolProvider.notifier).state = tool;

@@ -13,7 +13,7 @@ class TextEscapeTool implements Tool {
   IconData get icon => Icons.text_format;
 
   @override
-  String get homeTitle => "text_escape".tr();
+  String get fullTitle => "text_escape".tr();
 
   @override
   String get route => Routes.textEscape;
@@ -28,7 +28,7 @@ class TextEscapeTool implements Tool {
   String get name => "escape";
 
   @override
-  String get menuTitle => "text_escape_menu_name".tr();
+  String get shortTitle => "text_escape_menu_name".tr();
 
   @override
   Widget get page => const TextEscapePage();

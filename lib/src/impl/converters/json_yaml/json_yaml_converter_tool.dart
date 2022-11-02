@@ -14,7 +14,7 @@ class JsonYamlConverterTool implements Tool {
   IconData get icon => Icons.compare_arrows;
 
   @override
-  String get homeTitle => "json_yaml_converter".tr();
+  String get fullTitle => "json_yaml_converter".tr();
 
   @override
   String get route => Routes.jsonYamlConverter;
@@ -29,7 +29,7 @@ class JsonYamlConverterTool implements Tool {
   String get name => "jsonYaml";
 
   @override
-  String get menuTitle => "json_yaml_converter".tr();
+  String get shortTitle => "json_yaml_converter".tr();
 
   @override
   Widget get page => const JsonYamlConverterPage();

@@ -13,7 +13,7 @@ class TextInspectorTool implements Tool {
   IconData get icon => Icons.zoom_in;
 
   @override
-  String get homeTitle => "text_inspector".tr();
+  String get fullTitle => "text_inspector".tr();
 
   @override
   String get route => Routes.textInspector;
@@ -28,7 +28,7 @@ class TextInspectorTool implements Tool {
   String get name => "textInspector";
 
   @override
-  String get menuTitle => "text_inspector_menu_name".tr();
+  String get shortTitle => "text_inspector_menu_name".tr();
 
   @override
   Widget get page => const TextInspectorPage();

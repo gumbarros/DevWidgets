@@ -13,7 +13,7 @@ class Base64TextEncoderTool implements Tool {
   IconData get icon => Icons.text_snippet_sharp;
 
   @override
-  String get homeTitle => "base64_text_encoder".tr();
+  String get fullTitle => "base64_text_encoder".tr();
 
   @override
   String get route => Routes.base64TextEncoder;
@@ -28,7 +28,7 @@ class Base64TextEncoderTool implements Tool {
   String get name => "base64text";
 
   @override
-  String get menuTitle => "base64_text_encoder_menu_name".tr();
+  String get shortTitle => "base64_text_encoder_menu_name".tr();
 
   @override
   Widget get page => const Base64TextEncoderPage();

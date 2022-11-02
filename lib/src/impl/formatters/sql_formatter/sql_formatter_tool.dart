@@ -14,7 +14,7 @@ class SqlFormatterTool implements Tool {
   IconData get icon => Icons.storage;
 
   @override
-  String get homeTitle => "sql_formatter".tr();
+  String get fullTitle => "sql_formatter".tr();
 
   @override
   Group get group => FormattersGroup();
@@ -29,7 +29,7 @@ class SqlFormatterTool implements Tool {
   String get name => "sqlformat";
 
   @override
-  String get menuTitle => "sql_formatter_menu_name".tr();
+  String get shortTitle => "sql_formatter_menu_name".tr();
 
   @override
   Widget get page => const SqlFormatterPage();

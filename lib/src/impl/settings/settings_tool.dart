@@ -14,7 +14,7 @@ class SettingsTool implements Tool {
   IconData get icon => Icons.settings;
 
   @override
-  String get homeTitle => "settings".tr();
+  String get fullTitle => "settings".tr();
 
   @override
   String get route => Routes.settings;
@@ -29,7 +29,7 @@ class SettingsTool implements Tool {
   String get name => "settings";
 
   @override
-  String get menuTitle => "settings_menu_name".tr();
+  String get shortTitle => "settings_menu_name".tr();
 
   @override
   Widget get page => const SettingsPage();

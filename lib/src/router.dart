@@ -14,7 +14,7 @@ layout({required Widget child}) => ResponsiveWrapper.builder(
         tools: allTools,
         child: Consumer(
           builder:(context,ref,_)=> Scaffold(
-            appBar: DefaultAppBar(title: ref.watch(selectedToolProvider).homeTitle),
+            appBar: DefaultAppBar(title: ref.watch(selectedToolProvider).fullTitle),
             drawer: const DefaultDrawer(),
             onDrawerChanged: (value){
               ref.read(isDrawerOpenProvider.notifier).state = value;

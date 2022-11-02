@@ -13,7 +13,7 @@ class LipsumGeneratorTool implements Tool {
   IconData get icon => Icons.text_snippet_rounded;
 
   @override
-  String get homeTitle => "lipsum_generator".tr();
+  String get fullTitle => "lipsum_generator".tr();
 
   @override
   String get route => Routes.lipsumGenerator;
@@ -28,7 +28,7 @@ class LipsumGeneratorTool implements Tool {
   String get name => "lipsum";
 
   @override
-  String get menuTitle => "lipsum".tr();
+  String get shortTitle => "lipsum".tr();
 
   @override
   Widget get page => const LipsumGeneratorPage();

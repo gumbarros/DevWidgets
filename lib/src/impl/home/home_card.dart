@@ -1,3 +1,4 @@
+import 'package:dev_widgets/src/impl/layout/yaru/providers/selected_tool_provider.dart';
 import 'package:dev_widgets/src/tool.dart';
 import 'package:dev_widgets/src/impl/settings/settings_provider.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +26,10 @@ class HomeCard extends StatelessWidget {
             onExit: (_) =>
                 ref.read(isFavoriteVisibleProvider.notifier).state = false,
             child: YaruSelectableContainer(
-              onTap: () => context.go(tool.route),
+              onTap: () {
+                ref.read(selectedToolProvider.notifier).state = tool;
+                context.go(tool.route);
+              },
               selected: false,
               child: Stack(
                 children: <Widget>[

@@ -25,6 +25,7 @@ class Routes {
   static const numberBase = '/converters/numberBase';
   static const cpf = '/brazil/cpf';
   static const cnpj = '/brazil/cnpj';
+  static const textInspector = '/text/inspector';
 
   static String getToolRouteByCommandLineArgs(List<String> args) {
     if (args.isNotEmpty) {

@@ -58,7 +58,7 @@ class YaruMenu extends ConsumerWidget {
                 icon: homeTool.icon,
                 onTap: () {
                   ref.read(selectedToolProvider.notifier).state =
-                      homeTool.name.toString();
+                      homeTool;
                   context.go(homeTool.route);
                 },
               ),
@@ -73,7 +73,7 @@ class YaruMenu extends ConsumerWidget {
                   ),
                   icon: tool.icon,
                   onTap: () {
-                    ref.read(selectedToolProvider.notifier).state = tool.name;
+                    ref.read(selectedToolProvider.notifier).state = tool;
                     context.go(tool.route);
                   },
                 ),
@@ -110,7 +110,7 @@ class YaruMenu extends ConsumerWidget {
                     isExpanded: true,
                     onChange: (_) => context.go('/home'),
                     header: SizedBox(
-                      width: 200,
+                      width: 175,
                       child: YaruMenuTile(
                           icon: group.icon,
                           selected: false,
@@ -126,8 +126,7 @@ class YaruMenu extends ConsumerWidget {
                           title: YaruPageItemTitle.text(tool.menuTitle),
                           icon: tool.icon,
                           onTap: () {
-                            ref.watch(selectedToolProvider.notifier).state =
-                                tool.name;
+                            ref.watch(selectedToolProvider.notifier).state = tool;
                             context.go(tool.route);
                           },
                         )

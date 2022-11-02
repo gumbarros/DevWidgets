@@ -1,4 +1,5 @@
 import 'package:dev_widgets/src/impl/layout/yaru/providers/compact_mode_provider.dart';
+import 'package:dev_widgets/src/impl/layout/yaru/providers/is_drawer_open_provider.dart';
 import 'package:dev_widgets/src/impl/layout/yaru/providers/selected_tool_provider.dart';
 import 'package:dev_widgets/src/impl/layout/yaru/ui/yaru_menu.dart';
 import 'package:dev_widgets/src/impl/settings/settings_provider.dart';
@@ -35,6 +36,7 @@ class YaruLayout extends ConsumerWidget {
                     hiddenWhen: const [
                       responsive.Condition.smallerThan(name: "TABLET")
                     ],
+                    visible: !ref.watch(isDrawerOpenProvider),
                     child: AnimatedSize(
                       duration: const Duration(milliseconds: 500),
                       child: SizedBox(
@@ -52,7 +54,7 @@ class YaruLayout extends ConsumerWidget {
                           ),
                           child: YaruMenu(
                             tools: tools,
-                            selectedToolName: ref.watch(selectedToolProvider),
+                            selectedToolName: ref.watch(selectedToolProvider).name,
                           ),
                         ),
                       ),

@@ -2,14 +2,11 @@ import 'package:code_text_field/code_text_field.dart';
 import 'package:dev_widgets/src/impl/converters/json_class/json_to_class_converter_providers.dart';
 import 'package:dev_widgets/src/impl/converters/json_class/programming_language.dart';
 import 'package:dev_widgets/src/impl/helpers.dart';
-import 'package:dev_widgets/src/impl/widgets/default_app_bar.dart';
-import 'package:dev_widgets/src/impl/widgets/default_drawer.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/io_editor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:highlight/languages/dart.dart';
-import 'package:highlight/languages/json.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 class JsonToClassConverterPage extends ConsumerWidget {
@@ -17,10 +14,7 @@ class JsonToClassConverterPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
-    return Scaffold(
-        drawer: const DefaultDrawer(),
-        appBar: DefaultAppBar(title: "json_to_class".tr()),
-        body: SizedBox(
+    return SizedBox(
           height: MediaQuery.of(context).size.height - kToolbarHeight,
           child: ListView(
             children: [
@@ -87,6 +81,6 @@ class JsonToClassConverterPage extends ConsumerWidget {
                   )),
             ],
           ),
-        ));
+        );
   }
 }

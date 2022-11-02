@@ -1,6 +1,4 @@
 import 'package:dev_widgets/src/impl/helpers.dart';
-import 'package:dev_widgets/src/impl/widgets/default_app_bar.dart';
-import 'package:dev_widgets/src/impl/widgets/default_drawer.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/themes.dart';
 import 'package:dev_widgets/src/impl/settings/settings_provider.dart';
 import 'package:dev_widgets/src/supported_locales.dart';
@@ -18,10 +16,7 @@ class SettingsPage extends ConsumerWidget {
   Widget build(BuildContext context, ref) {
     final settings = ref.watch(settingsProvider);
 
-    return Scaffold(
-        appBar: DefaultAppBar(title: "settings".tr()),
-        drawer: const DefaultDrawer(),
-        body: SizedBox(
+    return SizedBox(
           height: MediaQuery.of(context).size.height - kToolbarHeight,
           child: ListView(
             children: [
@@ -208,7 +203,7 @@ class SettingsPage extends ConsumerWidget {
               ),
             ],
           ),
-        ));
+        );
   }
 
   List<DropdownMenuItem<Locale>> _getLanguageDropdownMenuItems() {

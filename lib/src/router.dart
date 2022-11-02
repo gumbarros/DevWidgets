@@ -1,5 +1,10 @@
+import 'package:dev_widgets/src/impl/layout/yaru/providers/is_drawer_open_provider.dart';
+import 'package:dev_widgets/src/impl/layout/yaru/providers/selected_tool_provider.dart';
 import 'package:dev_widgets/src/impl/tools.dart';
+import 'package:dev_widgets/src/impl/widgets/default_app_bar.dart';
+import 'package:dev_widgets/src/impl/widgets/default_drawer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'impl/layout/yaru/ui/yaru_layout.dart';
@@ -7,7 +12,16 @@ import 'impl/layout/yaru/ui/yaru_layout.dart';
 layout({required Widget child}) => ResponsiveWrapper.builder(
       YaruLayout(
         tools: allTools,
-        child: child,
+        child: Consumer(
+          builder:(context,ref,_)=> Scaffold(
+            appBar: DefaultAppBar(title: ref.watch(selectedToolProvider).homeTitle),
+            drawer: const DefaultDrawer(),
+            onDrawerChanged: (value){
+              ref.read(isDrawerOpenProvider.notifier).state = value;
+            },
+            body: child,
+          ),
+        ),
       ),
       breakpoints: [
         const ResponsiveBreakpoint.autoScale(360),

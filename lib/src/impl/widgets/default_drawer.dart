@@ -11,7 +11,7 @@ class DefaultDrawer extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Drawer(
         child: YaruMenu(
-      selectedToolName: ref.watch(selectedToolProvider),
+      selectedToolName: ref.watch(selectedToolProvider).name,
       tools: allTools,
     ));
   }

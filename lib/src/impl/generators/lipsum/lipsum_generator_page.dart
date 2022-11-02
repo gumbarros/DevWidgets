@@ -1,8 +1,6 @@
 import 'package:dev_widgets/src/impl/generators/lipsum/lipsum_generator_providers.dart';
 import 'package:dev_widgets/src/impl/generators/lipsum/lipsum_type.dart';
-import 'package:dev_widgets/src/impl/widgets/default_app_bar.dart';
 import 'package:dev_widgets/src/impl/helpers.dart';
-import 'package:dev_widgets/src/impl/widgets/default_drawer.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/output_editor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -15,10 +13,7 @@ class LipsumGeneratorPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
-    return Scaffold(
-        appBar: DefaultAppBar(title: "lipsum_generator".tr()),
-        drawer: const DefaultDrawer(),
-        body: SizedBox(
+    return SizedBox(
           height: MediaQuery.of(context).size.height - kToolbarHeight,
           child: ListView(
             children: [
@@ -107,6 +102,6 @@ class LipsumGeneratorPage extends ConsumerWidget {
                   )),
             ],
           ),
-        ));
+        );
   }
 }

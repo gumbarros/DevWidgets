@@ -1,4 +1,5 @@
 import 'package:dev_widgets/src/impl/encoders/base64_image/base64_image_encoder_providers.dart';
+// ignore: unused_import
 import 'package:dev_widgets/src/impl/widgets/default_app_bar.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/io_editor.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/io_toolbar.dart';
@@ -14,9 +15,7 @@ class Base64ImageEncoderPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
-    return Scaffold(
-        appBar: DefaultAppBar(title: "base64_image_encoder".tr()),
-        body: SizedBox(
+    return SizedBox(
             height: MediaQuery.of(context).size.height - kToolbarHeight,
             child: SizedBox(
               height: MediaQuery.of(context).size.height / 1.2,
@@ -57,6 +56,6 @@ class Base64ImageEncoderPage extends ConsumerWidget {
                           isVerticalLayout: false),
                     ],
                   )),
-            )));
+            ));
   }
 }

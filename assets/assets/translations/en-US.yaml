@@ -149,3 +149,8 @@ uuid_type_description: The UUID version to be generated
 uppercase: Uppercase
 hyphens: Hyphens
 generate: Generate
+text_inspector: Text Case Converter & Inspector
+text_inspector_short_title: Case Converter & Inspector
+text_inspector_description: Convert and inspect a string
+convert: Convert
+selection: Selection

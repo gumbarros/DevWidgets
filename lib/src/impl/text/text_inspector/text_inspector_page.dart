@@ -1,5 +1,4 @@
 import 'package:dev_widgets/src/impl/helpers.dart';
-import 'package:dev_widgets/src/impl/layout/yaru/providers/selected_tool_provider.dart';
 import 'package:dev_widgets/src/impl/text/text_inspector/text_inspector_case_convertion.dart';
 import 'package:dev_widgets/src/impl/text/text_inspector/text_inspector_providers.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/io_editor.dart';

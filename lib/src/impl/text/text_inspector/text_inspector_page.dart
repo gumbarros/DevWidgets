@@ -1,3 +1,5 @@
+import 'package:dev_widgets/src/impl/helpers.dart';
+import 'package:dev_widgets/src/impl/layout/yaru/providers/selected_tool_provider.dart';
 import 'package:dev_widgets/src/impl/text/text_inspector/text_inspector_case_convertion.dart';
 import 'package:dev_widgets/src/impl/text/text_inspector/text_inspector_providers.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/io_editor.dart';
@@ -19,15 +21,14 @@ class TextInspectorPage extends HookConsumerWidget {
 
       controller.addListener(() {
         Future(() {
-          ref.read(originalTextProvider.notifier).state = "";
-
           ref.read(selectionOffsetProvider.notifier).state =
               controller.selection.baseOffset;
 
           ref.read(charactersLengthProvider.notifier).state =
               controller.text.characters.length;
 
-          return ref.read(inputTextProvider.notifier).state = controller.text;
+          ref.read(inputTextProvider.notifier).state =
+              applyWebSpaceFix(controller.text);
         });
       });
 
@@ -53,6 +54,11 @@ class TextInspectorPage extends HookConsumerWidget {
               height: MediaQuery.of(context).size.height / 1.8,
               child: IOEditor(
                   resizable: false,
+                  inputOnChanged: ((value) {
+                    ref.read(originalTextProvider.notifier).state = "";
+                    ref.read(selectedCaseConvertionProvider.notifier).state =
+                        CaseConvertion.originalText;
+                  }),
                   initialAreas: [Area(weight: 0.7), Area(weight: 0.3)],
                   usesCodeControllers: false,
                   outputChild: const _TextData(),
@@ -73,7 +79,7 @@ class _ConvertionButtons extends ConsumerWidget {
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: ElevatedButton(
-            onPressed: ref.watch(originalTextProvider) != ""
+            onPressed: ref.watch(originalTextProvider).isNotEmpty
                 ? () {
                     convertCase(ref, CaseConvertion.originalText);
                   }
@@ -84,16 +90,11 @@ class _ConvertionButtons extends ConsumerWidget {
         for (final caseConvertion
             in CaseConvertion.values.where((c) => c.index > 0))
           Padding(
-            padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+            padding: const EdgeInsets.all(8.0),
             child: ElevatedButton(
                 onPressed: caseConvertion.index !=
-                            ref.watch(selectedCaseConvertionProvider).index ||
-                        (ref.watch(originalTextProvider) == "")
+                        ref.watch(selectedCaseConvertionProvider).index
                     ? () {
-                        ref
-                            .read(selectedCaseConvertionProvider.notifier)
-                            .state = caseConvertion;
-
                         convertCase(ref, caseConvertion);
                       }
                     : null,

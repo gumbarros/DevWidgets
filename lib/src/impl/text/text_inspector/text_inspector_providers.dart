@@ -67,5 +67,6 @@ convertCase(WidgetRef ref, CaseConvertion caseConvertion) {
       result = reCase.paramCase;
       break;
   }
+  ref.read(selectedCaseConvertionProvider.notifier).state = caseConvertion;
   ref.read(convertedCaseProvider.notifier).state = result;
 }

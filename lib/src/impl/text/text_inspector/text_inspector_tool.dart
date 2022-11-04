@@ -31,5 +31,5 @@ class TextInspectorTool implements Tool {
   String get shortTitle => "text_inspector_short_title".tr();
 
   @override
-  Widget get page => const TextInspectorPage();
+  Widget get page => TextInspectorPage();
 }

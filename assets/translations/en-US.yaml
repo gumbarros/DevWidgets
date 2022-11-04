@@ -154,3 +154,6 @@ text_inspector_short_title: Case Converter & Inspector
 text_inspector_description: Convert and inspect a string
 convert: Convert
 selection: Selection
+position: Position
+statistics: Statistics
+characters: Characters

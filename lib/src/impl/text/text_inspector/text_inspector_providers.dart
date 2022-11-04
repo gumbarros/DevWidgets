@@ -2,69 +2,70 @@ import 'package:dev_widgets/src/impl/text/text_inspector/text_inspector_case_con
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:recase/recase.dart';
 
-
 final selectedCaseConvertionProvider =
     StateProvider<CaseConvertion>((ref) => CaseConvertion.originalText);
 
-final originalTextProvider = StateProvider<String>((ref)=>"");
+final originalTextProvider = StateProvider<String>((ref) => "");
 
-final inputTextProvider = StateProvider<String>((ref)=>"");
+final inputTextProvider = StateProvider<String>((ref) => "");
 
-class TextConverter extends Notifier<String> {
-  @override
-  String build() => "";
+final selectionOffsetProvider = StateProvider<int>((ref) => 0);
 
-  void convert(CaseConvertion convertion) {
-    String input = ref.read(inputTextProvider);
+final charactersLengthProvider = StateProvider<int>((ref) => 0);
 
-    if(convertion != CaseConvertion.originalText) {
-      ref.read(originalTextProvider.notifier).state = input;
-    }
+final convertedCaseProvider = StateProvider<String>((ref) => "");
 
-    final reCase = ReCase(input);
+convertCase(WidgetRef ref, CaseConvertion caseConvertion) {
+  String input = ref.read(inputTextProvider);
 
-    switch(convertion){
-      case CaseConvertion.originalText:
-        state = ref.read(originalTextProvider);
-        break;
-      case CaseConvertion.sentenceCase:
-        state = reCase.sentenceCase;
-        break;
-      case CaseConvertion.lowerCase:
-        state = input.toLowerCase();
-        break;
-      case CaseConvertion.upperCase:
-        state = input.toUpperCase();
-        break;
-      case CaseConvertion.constantCase:
-        state = reCase.constantCase;
-        break;
-      case CaseConvertion.pascalCase:
-        state = reCase.pascalCase;
-        break;
-      case CaseConvertion.headerCase:
-        state = reCase.headerCase;
-        break;
-      case CaseConvertion.titleCase:
-        state = reCase.titleCase;
-        break;
-      case CaseConvertion.camelCase:
-        state = reCase.camelCase;
-        break;
-      case CaseConvertion.pathCase:
-        state = reCase.pathCase;
-        break;
-      case CaseConvertion.dotCase:
-        state = reCase.dotCase;
-        break;
-      case CaseConvertion.snakeCase:
-        state = reCase.snakeCase;
-        break;
-      case CaseConvertion.paramCase:
-       state = reCase.paramCase;
-        break;
-    }
+  if (caseConvertion != CaseConvertion.originalText) {
+    ref.read(originalTextProvider.notifier).state = input;
   }
-}
 
-final textConverterProvider = NotifierProvider<TextConverter, String>(TextConverter.new);
+  final reCase = ReCase(input);
+
+  String result;
+
+  switch (caseConvertion) {
+    case CaseConvertion.originalText:
+      result = ref.read(originalTextProvider);
+      break;
+    case CaseConvertion.sentenceCase:
+      result = reCase.sentenceCase;
+      break;
+    case CaseConvertion.lowerCase:
+      result = input.toLowerCase();
+      break;
+    case CaseConvertion.upperCase:
+      result = input.toUpperCase();
+      break;
+    case CaseConvertion.constantCase:
+      result = reCase.constantCase;
+      break;
+    case CaseConvertion.pascalCase:
+      result = reCase.pascalCase;
+      break;
+    case CaseConvertion.headerCase:
+      result = reCase.headerCase;
+      break;
+    case CaseConvertion.titleCase:
+      result = reCase.titleCase;
+      break;
+    case CaseConvertion.camelCase:
+      result = reCase.camelCase;
+      break;
+    case CaseConvertion.pathCase:
+      result = reCase.pathCase;
+      break;
+    case CaseConvertion.dotCase:
+      result = reCase.dotCase;
+      break;
+    case CaseConvertion.snakeCase:
+      result = reCase.snakeCase;
+      break;
+    case CaseConvertion.paramCase:
+      result = reCase.paramCase;
+      break;
+  }
+  ref.read(convertedCaseProvider.notifier).state = result;
+}

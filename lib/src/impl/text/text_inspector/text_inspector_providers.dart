@@ -5,15 +5,25 @@ import 'package:recase/recase.dart';
 final selectedCaseConvertionProvider =
     StateProvider<CaseConvertion>((ref) => CaseConvertion.originalText);
 
+final convertedCaseProvider = StateProvider<String>((ref) => "");
+
 final originalTextProvider = StateProvider<String>((ref) => "");
 
 final inputTextProvider = StateProvider<String>((ref) => "");
 
 final selectionOffsetProvider = StateProvider<int>((ref) => 0);
 
-final charactersLengthProvider = StateProvider<int>((ref) => 0);
+final charactersCountProvider = StateProvider<int>((ref) => 0);
 
-final convertedCaseProvider = StateProvider<String>((ref) => "");
+final paragraphCountProvider = StateProvider<int>((ref) => 0);
+
+final lineCountProvider = StateProvider<int>((ref) => 1);
+
+final wordCountProvider = StateProvider<int>((ref) => 0);
+
+final sentenceCountProvider = StateProvider<int>((ref) => 0);
+
+final bytesCountProvider = StateProvider<int>((ref) => 0);
 
 convertCase(WidgetRef ref, CaseConvertion caseConvertion) {
   String input = ref.read(inputTextProvider);

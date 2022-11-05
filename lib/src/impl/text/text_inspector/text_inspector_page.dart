@@ -1,4 +1,5 @@
 import 'package:dev_widgets/src/impl/helpers.dart';
+import 'package:dev_widgets/src/impl/text/text_inspector/helpers/count_extensions.dart';
 import 'package:dev_widgets/src/impl/text/text_inspector/text_inspector_case_convertion.dart';
 import 'package:dev_widgets/src/impl/text/text_inspector/text_inspector_providers.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/io_editor.dart';
@@ -20,14 +21,30 @@ class TextInspectorPage extends HookConsumerWidget {
 
       controller.addListener(() {
         Future(() {
+          final controllerText = applyWebSpaceFix(controller.text);
+
           ref.read(selectionOffsetProvider.notifier).state =
               controller.selection.baseOffset;
 
-          ref.read(charactersLengthProvider.notifier).state =
-              controller.text.characters.length;
+          ref.read(charactersCountProvider.notifier).state =
+              controllerText.characters.length;
 
-          ref.read(inputTextProvider.notifier).state =
-              applyWebSpaceFix(controller.text);
+          ref.read(wordCountProvider.notifier).state =
+              controllerText.countWords();
+
+          ref.read(lineCountProvider.notifier).state =
+              controllerText.countLines();
+
+          ref.read(paragraphCountProvider.notifier).state =
+              controllerText.countParagraphs();
+
+          ref.read(sentenceCountProvider.notifier).state =
+              controllerText.countSentences();
+
+          ref.read(bytesCountProvider.notifier).state =
+              controllerText.countBytes();
+
+          ref.read(inputTextProvider.notifier).state = controllerText;
         });
       });
 
@@ -124,33 +141,56 @@ class _TextData extends ConsumerWidget {
             children: [
               Text("selection".tr(),
                   style: Theme.of(context).textTheme.titleMedium),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text("position".tr(),
-                      style: Theme.of(context).textTheme.bodyText1),
-                  Text(ref.watch(selectionOffsetProvider).toString(),
-                      style: Theme.of(context).textTheme.bodyText1),
-                ],
-              ),
+              _TextDataEntry(
+                  label: "position".tr(),
+                  value: ref.watch(selectionOffsetProvider).toString()),
               const SizedBox(
                 height: 10,
               ),
               Text("statistics".tr(),
                   style: Theme.of(context).textTheme.titleMedium),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text("characters".tr(),
-                      style: Theme.of(context).textTheme.bodyText1),
-                  Text(ref.watch(charactersLengthProvider).toString(),
-                      style: Theme.of(context).textTheme.bodyText1),
-                ],
-              ),
+              _TextDataEntry(
+                  label: "characters".tr(),
+                  value: ref.watch(charactersCountProvider).toString()),
+              _TextDataEntry(
+                  label: "words".tr(),
+                  value: ref.watch(wordCountProvider).toString()),
+              _TextDataEntry(
+                  label: "lines".tr(),
+                  value: ref.watch(lineCountProvider).toString()),
+              _TextDataEntry(
+                  label: "sentences".tr(),
+                  value: ref.watch(sentenceCountProvider).toString()),
+              _TextDataEntry(
+                  label: "paragraphs".tr(),
+                  value: ref.watch(paragraphCountProvider).toString()),
+              _TextDataEntry(
+                  label: "bytes".tr(),
+                  value: ref.watch(bytesCountProvider).toString())
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class _TextDataEntry extends ConsumerWidget {
+  final String label;
+  final String value;
+
+  const _TextDataEntry({required this.label, required this.value, Key? key})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context, ref) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(label, style: Theme.of(context).textTheme.bodyText2),
+        Text(value,
+            style: Theme.of(context).textTheme.bodyText2),
+      ],
     );
   }
 }

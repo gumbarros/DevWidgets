@@ -1,3 +1,4 @@
+import 'package:dev_widgets/src/impl/helpers.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/io_toolbar.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart';
@@ -17,6 +18,11 @@ class InputToolBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IOToolbar(title: toolbarTitle ?? "input".tr(), actions: [
+      ElevatedButton.icon(
+        icon: const Icon(Icons.copy),
+        label: Text("copy".tr()),
+        onPressed: () async => await copyToClipboard(inputController.text),
+      ),
       ElevatedButton.icon(
         icon: const Icon(Icons.paste),
         label: Text("paste".tr()),

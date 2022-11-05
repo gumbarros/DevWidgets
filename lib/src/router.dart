@@ -13,10 +13,11 @@ layout({required Widget child}) => ResponsiveWrapper.builder(
       YaruLayout(
         tools: allTools,
         child: Consumer(
-          builder:(context,ref,_)=> Scaffold(
-            appBar: DefaultAppBar(title: ref.watch(selectedToolProvider).fullTitle),
+          builder: (context, ref, _) => Scaffold(
+            appBar:
+                DefaultAppBar(title: ref.watch(selectedToolProvider).fullTitle),
             drawer: const DefaultDrawer(),
-            onDrawerChanged: (value){
+            onDrawerChanged: (value) {
               ref.read(isDrawerOpenProvider.notifier).state = value;
             },
             body: child,

@@ -9,6 +9,7 @@ encoders_decoders: Encoders / Decoders
 html: HTML
 input: Entrada
 text: Texto
+sentences: Frases
 brazil: Brasil
 json_formatter: Formatador JSON
 json_formatter_description: Indente ou minifique arquivos JSON
@@ -24,3 +25,4 @@ sort_json_properties_alphabetically: Ordenar as propriedades JSON em ordem alfab
 sql_formatter: Formatador SQL
 sql_formatter_description: Indente consultas SQL
 position: Posição
+bytes: Bytes

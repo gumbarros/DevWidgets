@@ -14,6 +14,7 @@ generator: Generator
 formatter: Formatter
 validator: Validator
 cpf: CPF
+lines: Lines
 copied_to_the_clipboard: Copied to the clipboard.
 brazil: Brazil
 cpf_short_title: CPF Generator
@@ -142,7 +143,7 @@ lipsum_amount_description: "Amount of words, sentences or paragraphs to be gener
 uuid_generator: UUID Generator
 uuid_generator_description: Generate v1 and v4 uuids
 uuid: UUID
-v1: "1"
+v1: 1
 v4: 4 (GUID)
 uuid_type: UUID version
 uuid_type_description: The UUID version to be generated
@@ -157,3 +158,4 @@ selection: Selection
 position: Position
 statistics: Statistics
 characters: Characters
+bytes: Bytes

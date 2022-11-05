@@ -1,5 +1,7 @@
+import 'package:dev_widgets/src/impl/layout/yaru/providers/selected_tool_provider.dart';
 import 'package:dev_widgets/src/impl/routes.dart';
 import 'package:dev_widgets/src/impl/layout/yaru/providers/compact_mode_provider.dart';
+import 'package:dev_widgets/src/impl/tools.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -37,9 +39,15 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
         actions: [
-          IconButton(
-              onPressed: () => context.go(Routes.settings),
-              icon: const Icon(Icons.settings))
+          Consumer(
+            builder: (context, ref, child) => IconButton(
+                onPressed: () {
+                  ref.read(selectedToolProvider.notifier).state =
+                      getToolByName("settings");
+                  context.go(Routes.settings);
+                },
+                icon: const Icon(Icons.settings)),
+          )
         ],
         title: Text(title));
   }

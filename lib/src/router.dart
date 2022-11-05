@@ -1,4 +1,5 @@
 import 'package:dev_widgets/src/impl/layout/yaru/providers/is_drawer_open_provider.dart';
+import 'package:dev_widgets/src/impl/layout/yaru/providers/selected_group_provider.dart';
 import 'package:dev_widgets/src/impl/layout/yaru/providers/selected_tool_provider.dart';
 import 'package:dev_widgets/src/impl/tools.dart';
 import 'package:dev_widgets/src/impl/widgets/default_app_bar.dart';
@@ -13,15 +14,20 @@ layout({required Widget child}) => ResponsiveWrapper.builder(
       YaruLayout(
         tools: allTools,
         child: Consumer(
-          builder: (context, ref, _) => Scaffold(
-            appBar:
-                DefaultAppBar(title: ref.watch(selectedToolProvider).fullTitle),
-            drawer: const DefaultDrawer(),
-            onDrawerChanged: (value) {
-              ref.read(isDrawerOpenProvider.notifier).state = value;
-            },
-            body: child,
-          ),
+          builder: (context, ref, _) {
+            final selectedTool = ref.watch(selectedToolProvider);
+            final selectedGroup = ref.watch(selectedGroupProvider)?.name;
+            final home = getToolByName("home");
+
+            return Scaffold(
+              appBar: DefaultAppBar(title: selectedTool.name != "home" ? selectedTool.fullTitle : (selectedGroup ?? home.fullTitle)),
+              drawer: const DefaultDrawer(),
+              onDrawerChanged: (value) {
+                ref.read(isDrawerOpenProvider.notifier).state = value;
+              },
+              body: child,
+            );
+          },
         ),
       ),
       breakpoints: [

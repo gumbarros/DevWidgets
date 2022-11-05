@@ -1,6 +1,8 @@
 import 'package:dev_widgets/src/impl/groups.dart';
 import 'package:dev_widgets/src/impl/layout/yaru/providers/compact_mode_provider.dart';
+import 'package:dev_widgets/src/impl/layout/yaru/providers/selected_group_provider.dart';
 import 'package:dev_widgets/src/impl/layout/yaru/providers/selected_tool_provider.dart';
+import 'package:dev_widgets/src/impl/layout/yaru/ui/yaru_menu_panel_list.dart';
 import 'package:dev_widgets/src/tool.dart';
 import 'package:dev_widgets/src/impl/layout/yaru/models/yaru_menu_item.dart';
 import 'package:dev_widgets/src/impl/layout/yaru/ui/yaru_menu_search_box.dart';
@@ -57,8 +59,7 @@ class YaruMenu extends ConsumerWidget {
                 title: YaruPageItemTitle.text(homeTool.shortTitle),
                 icon: homeTool.icon,
                 onTap: () {
-                  ref.read(selectedToolProvider.notifier).state =
-                      homeTool;
+                  ref.read(selectedToolProvider.notifier).state = homeTool;
                   context.go(homeTool.route);
                 },
               ),
@@ -74,6 +75,8 @@ class YaruMenu extends ConsumerWidget {
                   icon: tool.icon,
                   onTap: () {
                     ref.read(selectedToolProvider.notifier).state = tool;
+                    ref.read(selectedGroupProvider.notifier).state = null;
+
                     context.go(tool.route);
                   },
                 ),
@@ -88,54 +91,7 @@ class YaruMenu extends ConsumerWidget {
           ),
         ),
         const Divider(),
-        Column(
-          children: [
-            for (var group in allGroups)
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: scrollbarThicknessWithTrack,
-                  vertical: 8.0,
-                ),
-                child: Visibility(
-                  visible: !ref.watch(isCompactModeProvider),
-                  replacement: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: IconButton(
-                        icon: Icon(group.icon),
-                        onPressed: () {
-                          context.go('/home');
-                        }),
-                  ),
-                  child: YaruExpandable(
-                    isExpanded: true,
-                    onChange: (_) => context.go('/home'),
-                    header: SizedBox(
-                      width: 175,
-                      child: YaruMenuTile(
-                          icon: group.icon,
-                          selected: false,
-                          title: YaruPageItemTitle.text(
-                            group.name,
-                          )),
-                    ),
-                    child: Column(children: [
-                      for (var tool
-                          in tools.where((t) => t.group.name == group.name))
-                        YaruMenuTile(
-                          selected: selectedToolName == tool.name,
-                          title: YaruPageItemTitle.text(tool.shortTitle),
-                          icon: tool.icon,
-                          onTap: () {
-                            ref.watch(selectedToolProvider.notifier).state = tool;
-                            context.go(tool.route);
-                          },
-                        )
-                    ]),
-                  ),
-                ),
-              )
-          ],
-        )
+        YaruMenuPanelList(allGroups)
       ],
     );
   }

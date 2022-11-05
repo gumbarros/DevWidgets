@@ -25,7 +25,8 @@ class CodeEditorWrapper extends ConsumerWidget {
         data:
             CodeThemeData(styles: textEditorThemes[settings.textEditorTheme]!),
         child: CodeField(
-          wrap: true,
+          wrap: settings.textEditorWrap,
+          lineNumbers: settings.textEditorDisplayLineNumbers,
           textStyle: TextStyle(
               fontFamily: settings.textEditorFontFamily,
               fontSize: settings.textEditorFontSize,
@@ -41,7 +42,7 @@ class CodeEditorWrapper extends ConsumerWidget {
       );
     } else {
       return TextFormField(
-        maxLines: null,
+        maxLines:settings.textEditorWrap ? null : 10,
         style: TextStyle(
             fontFamily: settings.textEditorFontFamily,
             fontSize: settings.textEditorFontSize,

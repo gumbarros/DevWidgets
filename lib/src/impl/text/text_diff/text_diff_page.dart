@@ -15,6 +15,9 @@ class TextDiffPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
+
+    final settings = ref.watch(settingsProvider);
+
     return SizedBox(
           height: MediaQuery.of(context).size.height - kToolbarHeight,
           child: ListView(
@@ -140,8 +143,7 @@ class TextDiffPage extends ConsumerWidget {
                           fontSize:
                               ref.watch(settingsProvider).textEditorFontSize,
                           textBaseline: TextBaseline.alphabetic,
-                          fontFamily:
-                              ref.watch(settingsProvider).textEditorFontFamily,
+                          fontFamily: settings.textEditorFontFamily,
                           color: Theme.of(context).textTheme.bodyText1!.color),
                       newText: ref.watch(newTextProvider),
                       oldText: ref.watch(oldTextProvider),

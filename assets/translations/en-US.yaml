@@ -9,15 +9,21 @@ conversion_mode: Select which conversion mode you want to use
 converters: Converters
 dialect: Dialect
 generic_sql: Generic SQL
+source_code: Source Code
 copy: Copy
+about: About
 generator: Generator
+application: Application
 formatter: Formatter
 validator: Validator
 cpf: CPF
+github: GitHub
 lines: Lines
 copied_to_the_clipboard: Copied to the clipboard.
 brazil: Brazil
 cpf_short_title: CPF Generator
+version: Version
+build_info: Build Info
 cnpj: CNPJ
 cnpj_short_title: CNPJ Generator
 format: Format
@@ -122,7 +128,9 @@ text_diff_short_title: Text Diff
 text_escape_description: "Escapes or unescapes a string, removing characters that could prevent parsing."
 timestamp_converter: Timestamp Converter
 timestamp_converter_description: Convert timestamp to human-readable date and vice versa
-two_spaces: Two Spaces
+two_spaces: Two spaces
+wrap_text: Wrap Text
+display_line_numbers: Display Line Numbers
 unescape: Unescape
 url_encoder: URL Encoder / Decoder
 url_encoder_description: Encode or decode all the applicable characters to their corresponding URL entities

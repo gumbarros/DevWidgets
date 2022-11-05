@@ -3,6 +3,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:yaru/yaru.dart';
 
 final _settingsBox = Hive.box("settings");
@@ -15,6 +16,7 @@ Settings loadSettingsFromBox() {
       textEditorFontSize:
           _settingsBox.get("textEditorFontSize", defaultValue: 18.0),
       textEditorTheme: _settingsBox.get("textEditorTheme", defaultValue: "vs"),
+      textEditorWrap: _settingsBox.get("textEditorWrap", defaultValue: false),
       favorites: _settingsBox.get("favorites", defaultValue: <String>[]),
       themeMode:
           ThemeMode.values[_settingsBox.get("themeMode", defaultValue: 0)],
@@ -47,6 +49,17 @@ class SettingsNotifer extends StateNotifier<Settings> {
     state = state.copyWith(textEditorTheme: theme);
   }
 
+  void setTextEditorWrap(bool wrap) {
+    _settingsBox.put("textEditorWrap", wrap);
+    state = state.copyWith(textEditorWrap: wrap);
+  }
+
+  void setTextEditorDisplayLineNumbers(bool displayLineNumbers) {
+    _settingsBox.put("textEditorDisplayLineNumbers", displayLineNumbers);
+    state = state.copyWith(textEditorDisplayLineNumbers: displayLineNumbers);
+  }
+
+
   void setYaruVariant(YaruVariant variant) {
     _settingsBox.put("yaruVariant", variant.index);
     state = state.copyWith(yaruVariant: variant);
@@ -60,7 +73,7 @@ class SettingsNotifer extends StateNotifier<Settings> {
   void setLocale(BuildContext context, Locale locale) {
     context.setLocale(locale);
   }
-
+  
   void addFavorite(String name) {
     final favorites = state.favorites;
     favorites.add(name);
@@ -79,4 +92,10 @@ class SettingsNotifer extends StateNotifier<Settings> {
 final settingsProvider =
     StateNotifierProvider<SettingsNotifer, Settings>((ref) {
   return SettingsNotifer();
+});
+
+
+final buildInfoProvider = FutureProvider<String>((ref) async{
+  final info = await PackageInfo.fromPlatform();
+  return "${info.appName} - ${info.version}+${info.buildNumber}";
 });

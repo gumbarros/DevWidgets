@@ -17,6 +17,7 @@ class TextInspectorPage extends HookConsumerWidget {
   Widget build(BuildContext context, ref) {
     final controller = useTextEditingController();
     final wordDistributionController = useTextEditingController();
+    final characterDistributionController = useTextEditingController();
 
     useEffect(() {
       controller.text = ref.read(convertedCaseProvider);
@@ -47,7 +48,10 @@ class TextInspectorPage extends HookConsumerWidget {
               controllerText.countBytes();
 
           ref.read(wordDistributionProvider.notifier).state =
-              controllerText.wordDistribuition();
+              controllerText.wordDistribution();
+
+          ref.read(characterDistributionProvider.notifier).state =
+              controllerText.characterDistribution();
 
           ref.read(inputTextProvider.notifier).state = controllerText;
         });
@@ -57,7 +61,10 @@ class TextInspectorPage extends HookConsumerWidget {
     }, [ref.watch(convertedCaseProvider)]);
 
     useEffect(() {
-      wordDistributionController.text = ref.read(wordDistributionProvider).getString();
+      wordDistributionController.text =
+          ref.read(wordDistributionProvider).getString();
+      characterDistributionController.text =
+          ref.read(characterDistributionProvider).getString();
 
       return;
     }, [ref.watch(inputTextProvider)]);
@@ -88,7 +95,10 @@ class TextInspectorPage extends HookConsumerWidget {
                   }),
                   initialAreas: [Area(weight: 0.7), Area(weight: 0.3)],
                   usesCodeControllers: false,
-                  outputChild: _TextData(wordDistributionController),
+                  outputChild: _TextData(
+                      wordDistributionController: wordDistributionController,
+                      characterDistributionController:
+                          characterDistributionController),
                   inputController: controller)),
         ]));
   }
@@ -134,8 +144,11 @@ class _ConvertionButtons extends ConsumerWidget {
 
 class _TextData extends ConsumerWidget {
   final TextEditingController wordDistributionController;
+  final TextEditingController characterDistributionController;
 
-  const _TextData(this.wordDistributionController, {
+  const _TextData({
+    required this.wordDistributionController,
+    required this.characterDistributionController,
     Key? key,
   }) : super(key: key);
 
@@ -150,7 +163,6 @@ class _TextData extends ConsumerWidget {
           margin: const EdgeInsets.all(8.0),
           height: MediaQuery.of(context).size.height / 1.5,
           child: ListView(
-
             children: [
               Text("selection".tr(),
                   style: Theme.of(context).textTheme.titleMedium),
@@ -187,9 +199,20 @@ class _TextData extends ConsumerWidget {
                   style: Theme.of(context).textTheme.titleMedium),
               TextFormField(
                 controller: wordDistributionController,
-                maxLines: null,
+                maxLines: 10,
                 readOnly: true,
-                style:  Theme.of(context).textTheme.bodyText2,
+                style: Theme.of(context).textTheme.bodyText2,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Text("character_distribution".tr(),
+                  style: Theme.of(context).textTheme.titleMedium),
+              TextFormField(
+                controller: characterDistributionController,
+                maxLines: 10,
+                readOnly: true,
+                style: Theme.of(context).textTheme.bodyText2,
               )
             ],
           ),

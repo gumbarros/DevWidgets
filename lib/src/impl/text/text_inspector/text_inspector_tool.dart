@@ -10,7 +10,7 @@ class TextInspectorTool implements Tool {
   const TextInspectorTool() : super();
 
   @override
-  IconData get icon => Icons.zoom_in;
+  IconData get icon => Icons.text_fields;
 
   @override
   String get fullTitle => "text_inspector".tr();

@@ -1,3 +1,4 @@
+import 'package:dev_widgets/src/impl/text/text_inspector/helpers/distribution_extensions.dart';
 import 'package:dev_widgets/src/impl/text/text_inspector/text_inspector_case_convertion.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:recase/recase.dart';
@@ -25,7 +26,9 @@ final sentenceCountProvider = StateProvider<int>((ref) => 0);
 
 final bytesCountProvider = StateProvider<int>((ref) => 0);
 
-final wordDistributionProvider = StateProvider<Map<String?, int>>((ref) => {});
+final wordDistributionProvider = StateProvider<DistributionMap>((ref) => {});
+
+final characterDistributionProvider = StateProvider<DistributionMap>((ref) => {});
 
 convertCase(WidgetRef ref, CaseConvertion caseConvertion) {
   String input = ref.read(inputTextProvider);

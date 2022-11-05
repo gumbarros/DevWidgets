@@ -18,7 +18,7 @@ extension Count on String {
     return count;
   }
 
-  int countSentences() => RegExp(r'([A-Z][^\.!?]*[\.!?])')
+  int countSentences() => RegExp(r'([A-Z][^.!?]*[.!?])')
       .allMatches(this)
       .map((e) => e.group(0))
       .length;

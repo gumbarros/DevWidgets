@@ -1,7 +1,7 @@
-import 'package:dev_widgets/src/impl/text/text_inspector/helpers/split_extensions.dart';
+import 'package:dev_widgets/src/impl/text/text_inspector/helpers/split_extension.dart';
 import 'dart:convert';
 
-extension CountExtensions on String {
+extension Count on String {
   int countOccurences(String find) {
     int count = 0;
     int matchIndex = 0;
@@ -18,7 +18,10 @@ extension CountExtensions on String {
     return count;
   }
 
-  int countSentences() => RegExp(r'([A-Z][^\.!?]*[\.!?])').allMatches(this).map((e) => e.group(0)).length;
+  int countSentences() => RegExp(r'([A-Z][^\.!?]*[\.!?])')
+      .allMatches(this)
+      .map((e) => e.group(0))
+      .length;
 
   int countLines() => const LineSplitter().convert(this).length;
 

@@ -1,4 +1,4 @@
-import 'package:dev_widgets/src/impl/text/text_inspector/helpers/count_extensions.dart';
+import 'package:dev_widgets/src/impl/text/text_inspector/helpers/count_extension.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

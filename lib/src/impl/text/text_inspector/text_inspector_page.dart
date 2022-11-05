@@ -1,5 +1,6 @@
 import 'package:dev_widgets/src/impl/helpers.dart';
-import 'package:dev_widgets/src/impl/text/text_inspector/helpers/count_extensions.dart';
+import 'package:dev_widgets/src/impl/text/text_inspector/helpers/count_extension.dart';
+import 'package:dev_widgets/src/impl/text/text_inspector/helpers/distribution_extensions.dart';
 import 'package:dev_widgets/src/impl/text/text_inspector/text_inspector_case_convertion.dart';
 import 'package:dev_widgets/src/impl/text/text_inspector/text_inspector_providers.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/io_editor.dart';
@@ -15,6 +16,7 @@ class TextInspectorPage extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, ref) {
     final controller = useTextEditingController();
+    final wordDistributionController = useTextEditingController();
 
     useEffect(() {
       controller.text = ref.read(convertedCaseProvider);
@@ -44,12 +46,21 @@ class TextInspectorPage extends HookConsumerWidget {
           ref.read(bytesCountProvider.notifier).state =
               controllerText.countBytes();
 
+          ref.read(wordDistributionProvider.notifier).state =
+              controllerText.wordDistribuition();
+
           ref.read(inputTextProvider.notifier).state = controllerText;
         });
       });
 
       return;
     }, [ref.watch(convertedCaseProvider)]);
+
+    useEffect(() {
+      wordDistributionController.text = ref.read(wordDistributionProvider).getString();
+
+      return;
+    }, [ref.watch(inputTextProvider)]);
 
     return SizedBox(
         height: MediaQuery.of(context).size.height - kToolbarHeight,
@@ -77,7 +88,7 @@ class TextInspectorPage extends HookConsumerWidget {
                   }),
                   initialAreas: [Area(weight: 0.7), Area(weight: 0.3)],
                   usesCodeControllers: false,
-                  outputChild: const _TextData(),
+                  outputChild: _TextData(wordDistributionController),
                   inputController: controller)),
         ]));
   }
@@ -122,7 +133,9 @@ class _ConvertionButtons extends ConsumerWidget {
 }
 
 class _TextData extends ConsumerWidget {
-  const _TextData({
+  final TextEditingController wordDistributionController;
+
+  const _TextData(this.wordDistributionController, {
     Key? key,
   }) : super(key: key);
 
@@ -136,8 +149,8 @@ class _TextData extends ConsumerWidget {
           width: MediaQuery.of(context).size.width / 1.5,
           margin: const EdgeInsets.all(8.0),
           height: MediaQuery.of(context).size.height / 1.5,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: ListView(
+
             children: [
               Text("selection".tr(),
                   style: Theme.of(context).textTheme.titleMedium),
@@ -166,7 +179,18 @@ class _TextData extends ConsumerWidget {
                   value: ref.watch(paragraphCountProvider).toString()),
               _TextDataEntry(
                   label: "bytes".tr(),
-                  value: ref.watch(bytesCountProvider).toString())
+                  value: ref.watch(bytesCountProvider).toString()),
+              const SizedBox(
+                height: 10,
+              ),
+              Text("word_distribution".tr(),
+                  style: Theme.of(context).textTheme.titleMedium),
+              TextFormField(
+                controller: wordDistributionController,
+                maxLines: null,
+                readOnly: true,
+                style:  Theme.of(context).textTheme.bodyText2,
+              )
             ],
           ),
         ),
@@ -188,8 +212,7 @@ class _TextDataEntry extends ConsumerWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(label, style: Theme.of(context).textTheme.bodyText2),
-        Text(value,
-            style: Theme.of(context).textTheme.bodyText2),
+        Text(value, style: Theme.of(context).textTheme.bodyText2),
       ],
     );
   }

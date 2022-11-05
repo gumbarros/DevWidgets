@@ -25,6 +25,8 @@ final sentenceCountProvider = StateProvider<int>((ref) => 0);
 
 final bytesCountProvider = StateProvider<int>((ref) => 0);
 
+final wordDistributionProvider = StateProvider<Map<String?, int>>((ref) => {});
+
 convertCase(WidgetRef ref, CaseConvertion caseConvertion) {
   String input = ref.read(inputTextProvider);
 

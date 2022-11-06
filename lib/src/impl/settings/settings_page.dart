@@ -277,9 +277,10 @@ class _About extends ConsumerWidget {
         YaruRow(
           enabled: true,
           trailingWidget: Text(
-            "source_code".tr(),
+            "repository".tr(),
             style: const TextStyle(fontSize: 18),
           ),
+          description: "repository_about".tr(),
           padding: const EdgeInsets.all(8.0),
           actionWidget:       ElevatedButton.icon(
             icon: const Icon(Icons.link),

@@ -1,15 +1,15 @@
 import 'package:dev_widgets/src/impl/routes.dart';
 import 'package:dev_widgets/src/impl/layout/yaru/models/yaru_menu_item.dart';
+import 'package:dev_widgets/src/impl/tools.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:go_router/go_router.dart';
 
 class YaruMenuSearchBox extends StatelessWidget {
-  final TextEditingController controller;
-  final List<YaruMenuItem> tools;
-  const YaruMenuSearchBox(
-      {super.key, required this.controller, required this.tools});
+  const YaruMenuSearchBox({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,8 @@ class YaruMenuSearchBox extends StatelessWidget {
                 child: Text(StringTranslateExtension("no_tools_found").tr()));
           },
         ),
-        items: tools,
+        items:
+            allTools.map((e) => YaruMenuItem(e.fullTitle, e.route)).toList(),
         dropdownDecoratorProps: DropDownDecoratorProps(
             dropdownSearchDecoration: InputDecoration(
           prefixIcon: const Icon(

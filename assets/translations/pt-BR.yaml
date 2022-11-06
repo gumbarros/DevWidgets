@@ -15,6 +15,8 @@ json_formatter: Formatador JSON
 json_formatter_description: Indente ou minifique arquivos JSON
 json_yaml_converter: "JSON <> YAML"
 language: Idioma
+repository: Repositório
+repository_about: No repositorio você pode abrir issues para reportar um problema, ver o código fonte ou deixar um feedback :)
 settings: Configurações
 output: Saída
 font_size: Tamanho da Fonte

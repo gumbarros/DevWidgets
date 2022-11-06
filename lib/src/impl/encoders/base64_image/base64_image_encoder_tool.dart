@@ -22,7 +22,7 @@ class Base64ImageEncoderTool implements Tool {
   String get description => "base64_image_encoder_description".tr();
 
   @override
-  Group get group => EncodersGroup();
+  Group get group => const EncodersGroup();
 
   @override
   String get name => "base64image";

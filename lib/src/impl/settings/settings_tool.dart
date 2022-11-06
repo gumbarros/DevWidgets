@@ -20,7 +20,7 @@ class SettingsTool implements Tool {
   String get route => Routes.settings;
 
   @override
-  Group get group => HomeGroup();
+  Group get group => const HomeGroup();
 
   @override
   String get description => "settings".tr();

@@ -23,7 +23,7 @@ class JsonYamlConverterTool implements Tool {
   String get description => "json_yaml_converter_description".tr();
 
   @override
-  Group get group => ConvertersGroup();
+  Group get group => const ConvertersGroup();
 
   @override
   String get name => "jsonYaml";

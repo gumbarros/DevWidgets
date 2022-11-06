@@ -17,7 +17,7 @@ class SqlFormatterTool implements Tool {
   String get fullTitle => "sql_formatter".tr();
 
   @override
-  Group get group => FormattersGroup();
+  Group get group => const FormattersGroup();
 
   @override
   String get route => Routes.sqlFormatter;

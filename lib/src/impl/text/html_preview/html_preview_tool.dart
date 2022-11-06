@@ -23,7 +23,7 @@ class HtmlPreviewTool implements Tool {
   String get description => "html_preview_description".tr();
 
   @override
-  Group get group => TextGroup();
+  Group get group => const TextGroup();
 
   @override
   String get name => "htmlpreview";

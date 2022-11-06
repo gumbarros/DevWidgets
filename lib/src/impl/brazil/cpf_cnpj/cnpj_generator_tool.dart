@@ -23,7 +23,7 @@ class CnpjGeneratorTool implements Tool {
   String get description => "cnpj_description".tr();
 
   @override
-  Group get group => BrazilGroup();
+  Group get group => const BrazilGroup();
 
   @override
   String get name => "cnpj";

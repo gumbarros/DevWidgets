@@ -22,7 +22,7 @@ class Base64TextEncoderTool implements Tool {
   String get description => "base64_text_encoder_description".tr();
 
   @override
-  Group get group => EncodersGroup();
+  Group get group => const EncodersGroup();
 
   @override
   String get name => "base64text";

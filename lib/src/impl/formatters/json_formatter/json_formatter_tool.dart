@@ -19,7 +19,7 @@ class JsonFormatterTool implements Tool {
   String get route => Routes.jsonFormatter;
 
   @override
-  Group get group => FormattersGroup();
+  Group get group => const FormattersGroup();
 
   @override
   String get description => "json_formatter_description".tr();

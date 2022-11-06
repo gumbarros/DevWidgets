@@ -23,7 +23,7 @@ class CpfGeneratorTool implements Tool {
   String get description => "cpf_description".tr();
 
   @override
-  Group get group => BrazilGroup();
+  Group get group => const BrazilGroup();
 
   @override
   String get name => "cpf";

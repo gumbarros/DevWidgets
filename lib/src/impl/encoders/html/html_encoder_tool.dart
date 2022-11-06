@@ -22,7 +22,7 @@ class HtmlEncoderTool implements Tool {
   String get description => "html_encoder_description".tr();
 
   @override
-  Group get group => EncodersGroup();
+  Group get group => const EncodersGroup();
 
   @override
   String get name => "html";

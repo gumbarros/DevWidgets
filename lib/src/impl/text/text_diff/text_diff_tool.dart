@@ -23,7 +23,7 @@ class TextDiffTool implements Tool {
   String get description => "text_diff_description".tr();
 
   @override
-  Group get group => TextGroup();
+  Group get group => const TextGroup();
 
   @override
   String get name => "diff";

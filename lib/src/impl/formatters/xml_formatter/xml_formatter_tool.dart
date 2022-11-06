@@ -28,7 +28,7 @@ class XmlFormatterTool implements Tool {
   String get shortTitle => "xml_formatter_short_title".tr();
 
   @override
-  Group get group => FormattersGroup();
+  Group get group => const FormattersGroup();
 
   @override
   Widget get page => const XmlFormatterPage();

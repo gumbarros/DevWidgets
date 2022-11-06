@@ -22,7 +22,7 @@ class UrlEncoderTool implements Tool {
   String get description => "url_encoder_description".tr();
 
   @override
-  Group get group => EncodersGroup();
+  Group get group => const EncodersGroup();
 
   @override
   String get name => "url-encode";

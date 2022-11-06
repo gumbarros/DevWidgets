@@ -22,7 +22,7 @@ class LipsumGeneratorTool implements Tool {
   String get description => "lipsum_generator_description".tr();
 
   @override
-  Group get group => GeneratorsGroup();
+  Group get group => const GeneratorsGroup();
 
   @override
   String get name => "lipsum";

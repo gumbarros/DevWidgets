@@ -20,7 +20,7 @@ class HomeTool implements Tool {
   String get route => Routes.home;
 
   @override
-  Group get group => HomeGroup();
+  Group get group => const HomeGroup();
 
   @override
   String get description => "all_tools".tr();

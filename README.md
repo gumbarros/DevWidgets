@@ -4,7 +4,7 @@
 [![Flutter Responsive](https://img.shields.io/badge/flutter-responsive-brightgreen.svg)](https://github.com/Codelessly/ResponsiveFramework)
 [![Download](https://img.shields.io/badge/Download-22272e?logo=github)](https://github.com/gumbarros/DevWidgets/releases/tag/latest)
 
-![image](https://user-images.githubusercontent.com/52143624/197393871-c90f9511-abac-4564-bcfb-fe114667753c.png)
+![image](https://user-images.githubusercontent.com/52143624/200149077-a6174b79-5667-4ad5-b41c-380e225016de.png)
 
 
 DevWidgets is a W.I.P Flutter application with several tools such as generators, formatters and converters for developers.

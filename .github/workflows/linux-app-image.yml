@@ -38,7 +38,7 @@ jobs:
         chmod +x appimagetool-x86_64.AppImage
         cp -r linux/appimage_assets/* DevWidgets.AppDir/
         chmod +x DevWidgets.AppDir/AppRun
-        ./appimagetool.AppImage-x86_64 DevWidgets.AppDir/
+        ./appimagetool-x86_64.AppImage DevWidgets.AppDir/
     
     - name: Automatic Releases
       uses: marvinpinto/action-automatic-releases@latest

@@ -5,5 +5,5 @@ Type=Application
 Terminal=false
 Name=DevWidgets
 Exec=devwidgets %u
-Icon=tux
+Icon=icon
 Categories=Utility;Development;

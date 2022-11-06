@@ -18,10 +18,10 @@ class SettingsPage extends StatelessWidget {
     return SizedBox(
       height: MediaQuery.of(context).size.height - kToolbarHeight,
       child: ListView(
-        children: const [
+        children:  const [
           _ApplicationSettings(),
           _TextEditorSettings(),
-          _About()
+          _About(),
         ],
       ),
     );

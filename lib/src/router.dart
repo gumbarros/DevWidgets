@@ -44,7 +44,8 @@ layout({required Widget child}) => ResponsiveWrapper.builder(
       ],
     );
 
-final GoRouter router = GoRouter(initialLocation: '/home', routes: [
+final GoRouter router = GoRouter(
+    initialLocation: '/home', routes: [
   ShellRoute(routes: [
     for (final tool in allTools)
       GoRoute(

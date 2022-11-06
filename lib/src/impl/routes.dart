@@ -1,6 +1,3 @@
-import 'package:dev_widgets/src/impl/tools.dart';
-import 'package:dev_widgets/src/impl/home/home_tool.dart';
-
 class Routes {
   static const home = '/home';
 
@@ -26,14 +23,4 @@ class Routes {
   static const cpf = '/brazil/cpf';
   static const cnpj = '/brazil/cnpj';
   static const textInspector = '/text/inspector';
-
-  static String getToolRouteByCommandLineArgs(List<String> args) {
-    if (args.isNotEmpty) {
-      return allTools
-          .firstWhere((tool) => tool.name == args.first,
-              orElse: () => const HomeTool())
-          .route;
-    }
-    return Routes.home;
-  }
 }

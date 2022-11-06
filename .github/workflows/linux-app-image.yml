@@ -34,11 +34,11 @@ jobs:
     - name: Prepare AppImage Files
       run: |
         cp -r build/linux/x64/release/bundle DevWidgets.AppDir
-        wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
-        chmod +x ./appimagetool-x86_64.AppImage
+        wget -c https://github.com/$(wget -q https://github.com/probonopd/go-appimage/releases/expanded_assets/continuous -O - | grep "appimagetool-.*-x86_64.AppImage" | head -n 1 | cut -d '"' -f 2) -O appimagetool.AppImage
+        chmod +x appimagetool.AppImage
         cp -r linux/appimage_assets/* DevWidgets.AppDir/
         chmod +x DevWidgets.AppDir/AppRun
-        ./appimagetool-x86_64.AppImage DevWidgets.AppDir/
+        ./appimagetool.AppImage DevWidgets.AppDir/
     
     - name: Automatic Releases
       uses: marvinpinto/action-automatic-releases@latest

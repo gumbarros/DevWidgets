@@ -3,13 +3,7 @@ import 'package:easy_localization/easy_localization.dart';
 import '../../group.dart';
 
 class FormattersGroup implements Group {
-  static const FormattersGroup _singleton = FormattersGroup._internal();
-
-  factory FormattersGroup() {
-    return _singleton;
-  }
-
-  const FormattersGroup._internal();
+  const FormattersGroup() : super();
 
   @override
   IconData get icon => Icons.notes;

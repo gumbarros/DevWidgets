@@ -3,14 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class TextGroup implements Group {
-  static const TextGroup _singleton = TextGroup._internal();
-
-  factory TextGroup() {
-    return _singleton;
-  }
-
-  const TextGroup._internal();
-
+  const TextGroup() : super();
   @override
   IconData get icon => Icons.format_size;
 

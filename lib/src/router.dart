@@ -1,4 +1,5 @@
 import 'package:dev_widgets/src/impl/layout/yaru/providers/is_drawer_open_provider.dart';
+import 'package:dev_widgets/src/impl/layout/yaru/providers/selected_group_provider.dart';
 import 'package:dev_widgets/src/impl/layout/yaru/providers/selected_tool_provider.dart';
 import 'package:dev_widgets/src/impl/tools.dart';
 import 'package:dev_widgets/src/impl/widgets/default_app_bar.dart';
@@ -11,17 +12,24 @@ import 'impl/layout/yaru/ui/yaru_layout.dart';
 
 layout({required Widget child}) => ResponsiveWrapper.builder(
       YaruLayout(
-        tools: allTools,
         child: Consumer(
-          builder: (context, ref, _) => Scaffold(
-            appBar:
-                DefaultAppBar(title: ref.watch(selectedToolProvider).fullTitle),
-            drawer: const DefaultDrawer(),
-            onDrawerChanged: (value) {
-              ref.read(isDrawerOpenProvider.notifier).state = value;
-            },
-            body: child,
-          ),
+          builder: (context, ref, _) {
+            final selectedTool = ref.watch(selectedToolProvider);
+            final selectedGroup = ref.watch(selectedGroupProvider)?.name;
+            final home = getToolByName("home");
+
+            return Scaffold(
+              appBar: DefaultAppBar(
+                  title: selectedTool.name != "home"
+                      ? selectedTool.fullTitle
+                      : (selectedGroup ?? home.fullTitle)),
+              drawer: const DefaultDrawer(),
+              onDrawerChanged: (value) {
+                ref.read(isDrawerOpenProvider.notifier).state = value;
+              },
+              body: child,
+            );
+          },
         ),
       ),
       breakpoints: [
@@ -29,6 +37,7 @@ layout({required Widget child}) => ResponsiveWrapper.builder(
         const ResponsiveBreakpoint.autoScale(480, name: MOBILE),
         const ResponsiveBreakpoint.resize(640, name: 'MOBILE_LARGE'),
         const ResponsiveBreakpoint.resize(850, name: TABLET),
+        const ResponsiveBreakpoint.resize(920, name: 'TABLET_LARGE'),
         const ResponsiveBreakpoint.resize(1080, name: DESKTOP),
         const ResponsiveBreakpoint.resize(1440, name: 'DESKTOP_LARGE'),
         const ResponsiveBreakpoint.resize(2460, name: '4K'),

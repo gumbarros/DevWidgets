@@ -1,9 +1,6 @@
-import 'package:dev_widgets/src/impl/layout/yaru/providers/compact_mode_provider.dart';
 import 'package:dev_widgets/src/impl/layout/yaru/providers/is_drawer_open_provider.dart';
-import 'package:dev_widgets/src/impl/layout/yaru/providers/selected_tool_provider.dart';
 import 'package:dev_widgets/src/impl/layout/yaru/ui/yaru_menu.dart';
 import 'package:dev_widgets/src/impl/settings/settings_provider.dart';
-import 'package:dev_widgets/src/tool.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:responsive_framework/responsive_framework.dart' as responsive;
@@ -11,9 +8,8 @@ import 'package:yaru/yaru.dart';
 
 class YaruLayout extends ConsumerWidget {
   final Widget? child;
-  final List<Tool> tools;
 
-  const YaruLayout({super.key, required this.child, required this.tools});
+  const YaruLayout({super.key, required this.child});
 
   @override
   Widget build(BuildContext context, ref) {
@@ -34,31 +30,21 @@ class YaruLayout extends ConsumerWidget {
                 children: [
                   responsive.ResponsiveVisibility(
                     hiddenWhen: const [
-                      responsive.Condition.smallerThan(name: "TABLET")
+                      responsive.Condition.smallerThan(name: 'TABLET_LARGE')
                     ],
                     visible: !ref.watch(isDrawerOpenProvider),
-                    child: AnimatedSize(
-                      duration: const Duration(milliseconds: 500),
-                      child: SizedBox(
-                        width: ref.watch(isCompactModeProvider)
-                            ? 80
-                            : MediaQuery.of(context).size.width / 5,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            border: Border(
-                              right: BorderSide(
-                                width: 1,
-                                color: Colors.black.withOpacity(0.1),
-                              ),
+                      child: Container(
+                        width:MediaQuery.of(context).size.width / 5,
+                        decoration: BoxDecoration(
+                          border: Border(
+                            right: BorderSide(
+                              width: 1,
+                              color: Colors.black.withOpacity(0.1),
                             ),
                           ),
-                          child: YaruMenu(
-                            tools: tools,
-                            selectedToolName: ref.watch(selectedToolProvider).name,
-                          ),
                         ),
+                        child: const YaruMenu(),
                       ),
-                    ),
                   ),
                   Expanded(
                     child: child ?? const SizedBox.shrink(),

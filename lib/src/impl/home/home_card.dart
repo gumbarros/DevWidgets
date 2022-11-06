@@ -1,3 +1,4 @@
+import 'package:dev_widgets/src/impl/layout/yaru/providers/selected_group_provider.dart';
 import 'package:dev_widgets/src/impl/layout/yaru/providers/selected_tool_provider.dart';
 import 'package:dev_widgets/src/tool.dart';
 import 'package:dev_widgets/src/impl/settings/settings_provider.dart';
@@ -28,6 +29,7 @@ class HomeCard extends StatelessWidget {
             child: YaruSelectableContainer(
               onTap: () {
                 ref.read(selectedToolProvider.notifier).state = tool;
+                ref.read(selectedGroupProvider.notifier).state = null;
                 context.go(tool.route);
               },
               selected: false,

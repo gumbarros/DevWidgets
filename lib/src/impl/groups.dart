@@ -5,7 +5,7 @@ import 'package:dev_widgets/src/impl/formatters/formatters_group.dart';
 import 'package:dev_widgets/src/impl/generators/generators_group.dart';
 import 'package:dev_widgets/src/impl/text/text_group.dart';
 
-final allGroups = [
+const allGroups = [
   ConvertersGroup(),
   EncodersGroup(),
   FormattersGroup(),

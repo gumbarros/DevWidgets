@@ -9,7 +9,7 @@ conversion_mode: Select which conversion mode you want to use
 converters: Converters
 dialect: Dialect
 generic_sql: Generic SQL
-source_code: Source Code
+repository: Repository
 copy: Copy
 about: About
 generator: Generator
@@ -22,6 +22,7 @@ lines: Lines
 copied_to_the_clipboard: Copied to the clipboard.
 brazil: Brazil
 cpf_short_title: CPF Generator
+repository_about: In the repository you can open issues to report a problem, see the source code or leave feedback :)
 version: Version
 build_info: Build Info
 cnpj: CNPJ

@@ -141,6 +141,7 @@ paragraphs: Paragraphs
 sentences: Sentences
 words: Words
 generators: Generators
+enabled: Enabled
 lipsum_generator: Lorem Ipsum Generator
 lipsum_generator_description: "Words, sentences and paragraphs"
 lipsum: Lorem Ipsum
@@ -148,10 +149,23 @@ lipsum_generator_mode: Generator mode
 lipsum_generator_mode_description: "Generate words, sentences or paragraphs with lorem ipsum text"
 lipsum_start_with: Start with 'Lorem ipsum dolor sit amet ...'
 amount: Amount
+json_to_sql_invalid_json_data: "Invalid JSON data.\nPlease input a array with objects like the example above."
+licenses: Licenses
+licenses_description: Access to all third-party licenses
 lipsum_amount_description: "Amount of words, sentences or paragraphs to be generated"
 uuid_generator: UUID Generator
 uuid_generator_description: Generate v1 and v4 uuids
 uuid: UUID
+options: Options
+fields: Fields
+field_name: Name
+table_name: Table Name
+data_type: Data Type
+length: Length
+required: Required
+primary_key: Primary Key
+json_to_sql: JSON -> SQL
+json_to_sql_description: Convert JSON data to table definitions or insert/update/delete scripts.
 v1: 1
 v4: 4 (GUID)
 uuid_type: UUID version

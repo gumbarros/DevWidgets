@@ -1,6 +1,6 @@
 import 'dart:convert';
-
-import 'package:dev_widgets/src/impl/converters/json_to_sql/helpers/json_to_sql_generator.dart';
+import 'package:dev_widgets/src/impl/converters/json_to_sql/helpers/json_to_sql_generator.dart'
+    as sql_generator;
 import 'package:dev_widgets/src/impl/converters/json_to_sql/helpers/table_fields_mapper.dart';
 import 'package:dev_widgets/src/impl/converters/json_to_sql/helpers/table_field.dart';
 import 'package:dev_widgets/src/impl/converters/json_to_sql/page/json_to_sql_converter_options.dart';
@@ -27,12 +27,17 @@ void main() {
     });
 
     test("Create table script", () {
-      final generator = JsonToSqlGenerator(
-          tableName: "Product", fields: fields, values: values);
-
-      final result = generator.getCreateTableScript();
+      final result = sql_generator.getCreateTableScript(
+          tableName: "Product", fields: fields, ifNotExists: false);
 
       expect(result, expectedTable);
+    });
+
+    test("Drop table script", () {
+      final result =
+          sql_generator.getDropTableScript("Product", ifExists: false);
+
+      expect(result, "DROP TABLE Product;");
     });
   });
 }

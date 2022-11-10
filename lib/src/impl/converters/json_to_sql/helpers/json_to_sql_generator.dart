@@ -1,49 +1,71 @@
 import 'package:dev_widgets/src/impl/converters/json_to_sql/helpers/data_type.dart';
 import 'package:dev_widgets/src/impl/converters/json_to_sql/helpers/table_field.dart';
 
-class JsonToSqlGenerator {
-  final String tableName;
-  final List<TableField> fields;
-  final List<Map<String, dynamic>> values;
+String getCreateTableScript(
+    {required String tableName,
+    required List<TableField> fields,
+    required bool ifNotExists}) {
+  final script = StringBuffer();
 
-  JsonToSqlGenerator(
-      {required this.tableName, required this.fields, required this.values});
+  script.write("CREATE TABLE");
 
-  ///
-/*(CREATE TABLE mytable(
-   Id                INTEGER  NOT NULL PRIMARY KEY 
-  ,Name              VARCHAR(12) NOT NULL
-  ,Quantity          INTEGER  NOT NULL
-  ,Price             INTEGER  NOT NULL
-  ,Color             VARCHAR(4) NOT NULL
-  ,ManufacturingDate VARCHAR(19) NOT NULL
-);
-*/
-  String getCreateTableScript() {
-    final buffer = StringBuffer();
+  if (ifNotExists) {
+    script.write(" IF NOT EXISTS");
+  }
 
-    buffer.writeln("CREATE TABLE $tableName(");
+  script.writeln(" $tableName(");
 
-    for (var i = 0; i < fields.length; i++) {
-      final field = fields[i];
+  final primaryKeys =
+      fields.where((f) => f.primaryKey).map((k) => k.fieldName).toList();
+  final isSinglePrimaryKey = primaryKeys.length == 1;
 
-      buffer.write("\t${field.fieldName} ${field.dataType}");
+  for (var i = 0; i < fields.length; i++) {
+    final field = fields[i];
 
-      if (field.dataType == DataType.varChar) {
-        buffer.write("(${field.length ?? "MAX"})");
-      }
+    script.write("\t${field.fieldName} ${field.dataType}");
 
-      buffer.write(field.required ? " NOT NULL" : " NULL");
-
-      if (field.primaryKey) {
-        buffer.write("PRIMARY KEY");
-      }
-
-      buffer.writeln(i != fields.length - 1 ? "," : "");
+    if (field.dataType == DataType.varChar) {
+      script.write("(${field.length ?? "MAX"})");
     }
 
-    buffer.write(");");
+    script.write(field.required ? " NOT NULL" : " NULL");
 
-    return buffer.toString();
+    if (field.primaryKey && isSinglePrimaryKey) {
+      script.write(" PRIMARY KEY");
+    }
+
+    script.writeln(i != fields.length - 1
+        ? ","
+        : primaryKeys.length > 1
+            ? ","
+            : "");
   }
+
+  if (primaryKeys.length > 1) {
+    script.write(" CONSTRAINT PK_$tableName PRIMARY KEY (");
+
+    for (var i = 0; i < primaryKeys.length; i++) {
+      script.write(primaryKeys[i]);
+      script.write(i != primaryKeys.length - 1 ? "," : "");
+    }
+    script.writeln(")");
+  }
+
+  script.write(");");
+
+  return script.toString();
+}
+
+String getDropTableScript(String tableName, {required bool ifExists}) {
+  final script = StringBuffer();
+
+  script.write("DROP TABLE");
+
+  if (ifExists) {
+    script.write(" IF EXISTS");
+  }
+
+  script.write(" $tableName;");
+
+  return script.toString();
 }

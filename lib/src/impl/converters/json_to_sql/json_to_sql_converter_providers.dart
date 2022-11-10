@@ -1,4 +1,5 @@
-import 'package:dev_widgets/src/impl/converters/json_to_sql/helpers/json_to_sql_generator.dart';
+import 'package:dev_widgets/src/impl/converters/json_to_sql/helpers/json_to_sql_generator.dart'
+    as sqlGenerator;
 import 'package:dev_widgets/src/impl/converters/json_to_sql/helpers/table_field.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -10,16 +11,44 @@ final tableNameProvider = StateProvider<String>((ref) => "MyTable");
 
 final valuesProvider = StateProvider<List<Map<String, dynamic>>>((ref) => []);
 
+final enableCreateTableProvider = StateProvider((ref) => true);
+final enableCreateTableIfNotExistsProvider = StateProvider((ref) => true);
+
+final enableDropTableProvider = StateProvider((ref) => false);
+final enableDropTableIfExistsProvider = StateProvider((ref) => false);
+
 final sqlOutputProvider = StateProvider<String>((ref) {
   final tableName = ref.watch(tableNameProvider);
   final fields =
       ref.watch(fieldListProvider).where((element) => element.enabled).toList();
   final values = ref.watch(valuesProvider);
 
-  final generator =
-      JsonToSqlGenerator(tableName: tableName, fields: fields, values: values);
+  final enableCreateTable = ref.watch(enableCreateTableProvider);
+  final enableCreateTableIfNotExists =
+      ref.watch(enableCreateTableIfNotExistsProvider);
 
-  return generator.getCreateTableScript();
+  final enableDropTable = ref.watch(enableDropTableProvider);
+  final enableDropTableIfExists = ref.watch(enableDropTableIfExistsProvider);
+
+  final output = StringBuffer();
+
+  if (enableDropTable) {
+    output.writeln(sqlGenerator.getDropTableScript(tableName,
+        ifExists: enableDropTableIfExists));
+
+    output.writeln();
+  }
+
+  if (enableCreateTable) {
+    output.writeln(sqlGenerator.getCreateTableScript(
+        tableName: tableName,
+        fields: fields,
+        ifNotExists: enableCreateTableIfNotExists));
+
+    output.writeln();
+  }
+
+  return output.toString();
 });
 
 final isValidJsonProvider = StateProvider<bool>((ref) => false);

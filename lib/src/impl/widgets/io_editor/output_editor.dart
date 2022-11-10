@@ -12,7 +12,8 @@ class OutputEditor extends StatelessWidget {
     this.actionButtons,
     this.usesCodeControllers = false,
     this.width,
-    this.height, this.onChanged,
+    this.height,
+    this.onChanged,
   }) : super(key: key);
 
   final Widget? outputChild;

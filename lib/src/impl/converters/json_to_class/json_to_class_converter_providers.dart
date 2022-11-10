@@ -1,6 +1,6 @@
 import 'package:code_text_field/code_text_field.dart';
-import 'package:dev_widgets/src/impl/converters/json_class/json_to_class_converter.dart';
-import 'package:dev_widgets/src/impl/converters/json_class/programming_language.dart';
+import 'package:dev_widgets/src/impl/converters/json_to_class/json_to_class_converter.dart';
+import 'package:dev_widgets/src/impl/converters/json_to_class/programming_language.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:highlight/languages/json.dart';
 
@@ -12,7 +12,8 @@ final classNameProvider = StateProvider<String>((ref) {
   return "MyClass";
 });
 
-final inputControllerProvider = StateProvider.autoDispose<CodeController>((ref) {
+final inputControllerProvider =
+    StateProvider.autoDispose<CodeController>((ref) {
   final controller = CodeController(language: json);
 
   controller.addListener(() {

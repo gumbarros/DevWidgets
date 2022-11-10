@@ -1,6 +1,6 @@
 import 'package:dev_widgets/src/impl/converters/converters_group.dart';
 import 'package:dev_widgets/src/group.dart';
-import 'package:dev_widgets/src/impl/converters/json_class/json_to_class_converter_page.dart';
+import 'package:dev_widgets/src/impl/converters/json_to_class/json_to_class_converter_page.dart';
 import 'package:dev_widgets/src/tool.dart';
 import 'package:dev_widgets/src/impl/routes.dart';
 import 'package:flutter/material.dart';

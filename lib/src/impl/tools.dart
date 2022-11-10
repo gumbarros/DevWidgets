@@ -1,6 +1,7 @@
 import 'package:dev_widgets/src/impl/brazil/cpf_cnpj/cnpj_generator_tool.dart';
 import 'package:dev_widgets/src/impl/brazil/cpf_cnpj/cpf_generator_tool.dart';
-import 'package:dev_widgets/src/impl/converters/json_class/json_to_class_converter_tool.dart';
+import 'package:dev_widgets/src/impl/converters/json_to_class/json_to_class_converter_tool.dart';
+import 'package:dev_widgets/src/impl/converters/json_to_sql/json_to_sql_converter_tool.dart';
 import 'package:dev_widgets/src/impl/converters/json_yaml/json_yaml_converter_tool.dart';
 import 'package:dev_widgets/src/impl/encoders/base64_image/base64_image_encoder_tool.dart';
 import 'package:dev_widgets/src/impl/encoders/base64_text/base64_text_encoder_tool.dart';
@@ -40,7 +41,8 @@ const allTools = [
   JsonYamlConverterTool(),
   CnpjGeneratorTool(),
   HtmlPreviewTool(),
-  TextInspectorTool()
+  TextInspectorTool(),
+  JsonToSqlConverterTool()
 ];
 
 Tool getToolByName(String name) => allTools.firstWhere((t) => t.name == name);

@@ -18,7 +18,7 @@ class SettingsPage extends StatelessWidget {
     return SizedBox(
       height: MediaQuery.of(context).size.height - kToolbarHeight,
       child: ListView(
-        children:  const [
+        children: const [
           _ApplicationSettings(),
           _TextEditorSettings(),
           _About(),
@@ -37,9 +37,7 @@ class _ApplicationSettings extends ConsumerWidget {
 
     return Container(
       margin: const EdgeInsets.all(8.0),
-      child: YaruSection(
-        headline: "application".tr(),
-          children: [
+      child: YaruSection(headline: "application".tr(), children: [
         YaruRow(
           enabled: true,
           padding: const EdgeInsets.all(8.0),
@@ -253,12 +251,50 @@ class _About extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
-
     final buildInfo = ref.watch(buildInfoProvider);
 
     return Container(
       margin: const EdgeInsets.all(8.0),
       child: YaruSection(headline: "about".tr(), children: [
+        MouseRegion(
+          cursor: SystemMouseCursors.click,
+          child: GestureDetector(
+            behavior: HitTestBehavior.deferToChild,
+            onTap: () =>
+                showAboutDialog(context: context, useRootNavigator: false),
+            child: YaruRow(
+              enabled: true,
+              trailingWidget: Text(
+                "licenses".tr(),
+                style: const TextStyle(fontSize: 18),
+              ),
+              description: "licenses_description".tr(),
+              padding: const EdgeInsets.all(8.0),
+              actionWidget: const SizedBox.shrink(),
+              leadingWidget: const Icon(Icons.document_scanner),
+            ),
+          ),
+        ),
+        MouseRegion(
+          cursor: SystemMouseCursors.click,
+          child: GestureDetector(
+            onTap: () async {
+              await launchUrl(
+                  Uri.parse("https://www.github.com/gumbarros/DevWidgets"));
+            },
+            child: YaruRow(
+              enabled: true,
+              trailingWidget: Text(
+                "repository".tr(),
+                style: const TextStyle(fontSize: 18),
+              ),
+              description: "repository_about".tr(),
+              padding: const EdgeInsets.all(8.0),
+              actionWidget: const SizedBox.shrink(),
+              leadingWidget: const Icon(Icons.code),
+            ),
+          ),
+        ),
         YaruRow(
           enabled: true,
           trailingWidget: Text(
@@ -267,29 +303,12 @@ class _About extends ConsumerWidget {
           ),
           description: buildInfo.when(
             loading: () => "...",
-            data: (data)=>data,
-            error: (error, _)=> error.toString(),
+            data: (data) => data,
+            error: (error, _) => error.toString(),
           ),
           padding: const EdgeInsets.all(8.0),
           actionWidget: const SizedBox.shrink(),
           leadingWidget: const Icon(Icons.computer),
-        ),
-        YaruRow(
-          enabled: true,
-          trailingWidget: Text(
-            "repository".tr(),
-            style: const TextStyle(fontSize: 18),
-          ),
-          description: "repository_about".tr(),
-          padding: const EdgeInsets.all(8.0),
-          actionWidget:       ElevatedButton.icon(
-            icon: const Icon(Icons.link),
-            label: Text("github".tr()),
-            onPressed: () async {
-              await launchUrl(Uri.parse("https://www.github.com/gumbarros/DevWidgets"));
-            },
-          ),
-          leadingWidget: const Icon(Icons.code),
         ),
       ]),
     );

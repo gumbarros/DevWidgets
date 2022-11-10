@@ -1,7 +1,6 @@
 import 'dart:convert';
+import 'package:dev_widgets/src/impl/converters/json_to_class/programming_language.dart';
 import 'package:json_to_dart/json_to_dart.dart';
-
-import 'package:dev_widgets/src/impl/converters/json_class/programming_language.dart';
 import 'package:dev_widgets/src/impl/helpers.dart';
 import 'package:easy_localization/easy_localization.dart';
 

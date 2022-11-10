@@ -1,5 +1,6 @@
 import 'package:dev_widgets/src/impl/settings/settings.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/adapters.dart';
@@ -59,7 +60,6 @@ class SettingsNotifer extends StateNotifier<Settings> {
     state = state.copyWith(textEditorDisplayLineNumbers: displayLineNumbers);
   }
 
-
   void setYaruVariant(YaruVariant variant) {
     _settingsBox.put("yaruVariant", variant.index);
     state = state.copyWith(yaruVariant: variant);
@@ -73,7 +73,7 @@ class SettingsNotifer extends StateNotifier<Settings> {
   void setLocale(BuildContext context, Locale locale) {
     context.setLocale(locale);
   }
-  
+
   void addFavorite(String name) {
     final favorites = state.favorites;
     favorites.add(name);
@@ -94,8 +94,8 @@ final settingsProvider =
   return SettingsNotifer();
 });
 
-
-final buildInfoProvider = FutureProvider<String>((ref) async{
+final buildInfoProvider = FutureProvider<String>((ref) async {
   final info = await PackageInfo.fromPlatform();
-  return "${info.appName} - ${info.version}+${info.buildNumber}";
+
+  return "${info.appName} - ${info.version}+${info.buildNumber}-${kDebugMode ? "DEBUG" : "RELEASE"}";
 });

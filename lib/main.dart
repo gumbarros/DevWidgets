@@ -10,6 +10,7 @@ Future<void> ensureInitialized() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
   await Hive.openBox('settings');
+  EasyLocalization.logger.enableLevels = [];
   await EasyLocalization.ensureInitialized();
 }
 

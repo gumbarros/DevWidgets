@@ -10,7 +10,7 @@ class JsonToSqlConverterTool implements Tool {
   const JsonToSqlConverterTool() : super();
 
   @override
-  IconData get icon => Icons.dataset;
+  IconData get icon => Icons.storage;
 
   @override
   String get fullTitle => "json_to_sql".tr();

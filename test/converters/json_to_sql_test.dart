@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:dev_widgets/src/impl/converters/json_to_sql/helpers/json_to_sql_generator.dart'
+import 'package:dev_widgets/src/impl/converters/json_to_sql/helpers/sql_generator.dart'
     as sql_generator;
 import 'package:dev_widgets/src/impl/converters/json_to_sql/helpers/table_fields_mapper.dart';
 import 'package:dev_widgets/src/impl/converters/json_to_sql/helpers/table_field.dart';
@@ -17,12 +17,20 @@ void main() {
 	ManufacturingDate DATETIME NOT NULL
 );""";
 
+    const String expectedInsertScript = """
+INSERT INTO Product (Id,Name,Quantity,Price,Color,ManufacturingDate) VALUES (1,'My Product',5,100.0,'Red','2012-02-27 13:27:00');
+INSERT INTO Product (Id,Name,Quantity,Price,Color,ManufacturingDate) VALUES (2,'My Product 2',2,12.0,NULL,'2012-02-27 13:27:00');
+""";
+
     late List<TableField> fields;
     late List<Map<String, dynamic>> values;
 
-    test("Count length of the fields", () {
+    setUpAll(() {
       values = List<Map<String, dynamic>>.from(jsonDecode(exampleJson));
       fields = getTableFields(values);
+    });
+
+    test("Count length of the fields", () {
       expect(fields.length, 6);
     });
 
@@ -38,6 +46,13 @@ void main() {
           sql_generator.getDropTableScript("Product", ifExists: false);
 
       expect(result, "DROP TABLE Product;");
+    });
+
+    test("Insert script", () {
+      final result = sql_generator.getInsertScript(
+          tableName: "Product", fields: fields, valueList: values);
+
+      expect(result, expectedInsertScript);
     });
   });
 }

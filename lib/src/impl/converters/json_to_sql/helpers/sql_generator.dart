@@ -28,7 +28,7 @@ String getCreateTableScript(
       script.write("(${field.length ?? "MAX"})");
     }
 
-    script.write(field.required ? " NOT NULL" : " NULL");
+    script.write(field.required && !field.primaryKey ? " NOT NULL" : " NULL");
 
     if (field.primaryKey && isSinglePrimaryKey) {
       script.write(" PRIMARY KEY");
@@ -66,6 +66,58 @@ String getDropTableScript(String tableName, {required bool ifExists}) {
   }
 
   script.write(" $tableName;");
+
+  return script.toString();
+}
+
+String _getInsertFields(List<TableField> fields) {
+  final buffer = StringBuffer();
+
+  buffer.write("(");
+
+  for (var i = 0; i < fields.length; i++) {
+    buffer.write(fields[i].fieldName);
+    buffer.write(i != fields.length - 1 ? "," : "");
+  }
+
+  buffer.write(")");
+
+  return buffer.toString();
+}
+
+String _getInsertValues(Map<String, dynamic> valueList) {
+  final buffer = StringBuffer();
+
+  buffer.write("(");
+
+  for (var i = 0; i < valueList.entries.length; i++) {
+    final value = valueList.entries.elementAt(i).value;
+
+    if (value is String || value is DateTime) {
+      buffer.write("'$value'");
+    } else {
+      buffer.write(value ?? "NULL");
+    }
+    buffer.write(i != valueList.length - 1 ? "," : "");
+  }
+
+  buffer.write(")");
+
+  return buffer.toString();
+}
+
+String getInsertScript(
+    {required String tableName,
+    required List<TableField> fields,
+    required List<Map<String, dynamic>> valueList}) {
+  final script = StringBuffer();
+
+  final insertFields = _getInsertFields(fields);
+
+  for (var map in valueList) {
+    final values = _getInsertValues(map);
+    script.writeln("INSERT INTO $tableName $insertFields VALUES $values;");
+  }
 
   return script.toString();
 }

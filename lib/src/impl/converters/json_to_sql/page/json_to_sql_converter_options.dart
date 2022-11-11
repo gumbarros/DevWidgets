@@ -1,5 +1,6 @@
 import 'package:code_text_field/code_text_field.dart';
 import 'package:dev_widgets/src/impl/converters/json_to_sql/helpers/data_type.dart';
+import 'package:dev_widgets/src/impl/converters/json_to_sql/helpers/script_type.dart';
 import 'package:dev_widgets/src/impl/converters/json_to_sql/helpers/table_field.dart';
 import 'package:dev_widgets/src/impl/converters/json_to_sql/json_to_sql_converter_providers.dart';
 import 'package:dev_widgets/src/impl/helpers.dart';
@@ -245,6 +246,47 @@ class _Configuration extends ConsumerWidget {
                     value: ref.watch(enableDropTableIfExistsProvider),
                   )),
             ),
+          ]),
+          enabled: true,
+          actionWidget: const SizedBox.shrink()),
+      YaruRow(
+          trailingWidget: Row(children: [
+            Container(
+                padding: const EdgeInsets.all(8.0),
+                width: MediaQuery.of(context).size.width / 5,
+                child: RadioListTile<ScriptType>(
+                  groupValue: ref.watch(scriptTypeProvider),
+                  onChanged: (value) {
+                    ref.read(scriptTypeProvider.notifier).state = value!;
+                  },
+                  title: const Text("INSERT"),
+                  value: ScriptType.insert,
+                  controlAffinity: ListTileControlAffinity.trailing,
+                )),
+            Container(
+                padding: const EdgeInsets.all(8.0),
+                width: MediaQuery.of(context).size.width / 5,
+                child: RadioListTile<ScriptType>(
+                  groupValue: ref.watch(scriptTypeProvider),
+                  onChanged: (value) {
+                    ref.read(scriptTypeProvider.notifier).state = value!;
+                  },
+                  title: const Text("UPDATE"),
+                  value: ScriptType.update,
+                  controlAffinity: ListTileControlAffinity.trailing,
+                )),
+            Container(
+                padding: const EdgeInsets.all(8.0),
+                width: MediaQuery.of(context).size.width / 5,
+                child: RadioListTile<ScriptType>(
+                  value: ScriptType.delete,
+                  onChanged: (value) {
+                    ref.read(scriptTypeProvider.notifier).state = value!;
+                  },
+                  title: const Text("DELETE"),
+                  controlAffinity: ListTileControlAffinity.trailing,
+                  groupValue: ref.watch(scriptTypeProvider),
+                )),
           ]),
           enabled: true,
           actionWidget: const SizedBox.shrink()),

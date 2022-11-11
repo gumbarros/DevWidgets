@@ -1,5 +1,6 @@
-import 'package:dev_widgets/src/impl/converters/json_to_sql/helpers/json_to_sql_generator.dart'
+import 'package:dev_widgets/src/impl/converters/json_to_sql/helpers/sql_generator.dart'
     as sql_generator;
+import 'package:dev_widgets/src/impl/converters/json_to_sql/helpers/script_type.dart';
 import 'package:dev_widgets/src/impl/converters/json_to_sql/helpers/table_field.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -17,11 +18,13 @@ final enableCreateTableIfNotExistsProvider = StateProvider((ref) => true);
 final enableDropTableProvider = StateProvider((ref) => false);
 final enableDropTableIfExistsProvider = StateProvider((ref) => false);
 
+final scriptTypeProvider = StateProvider((ref) => ScriptType.insert);
+
 final sqlOutputProvider = StateProvider<String>((ref) {
   final tableName = ref.watch(tableNameProvider);
   final fields =
       ref.watch(fieldListProvider).where((element) => element.enabled).toList();
-  // ignore: unused_local_variable
+
   final values = ref.watch(valuesProvider);
 
   final enableCreateTable = ref.watch(enableCreateTableProvider);
@@ -30,6 +33,8 @@ final sqlOutputProvider = StateProvider<String>((ref) {
 
   final enableDropTable = ref.watch(enableDropTableProvider);
   final enableDropTableIfExists = ref.watch(enableDropTableIfExistsProvider);
+
+  final scriptType = ref.watch(scriptTypeProvider);
 
   final output = StringBuffer();
 
@@ -45,8 +50,20 @@ final sqlOutputProvider = StateProvider<String>((ref) {
         tableName: tableName,
         fields: fields,
         ifNotExists: enableCreateTableIfNotExists));
-
     output.writeln();
+  }
+
+  switch (scriptType) {
+    case ScriptType.insert:
+      output.writeln(sql_generator.getInsertScript(
+          tableName: tableName, fields: fields, valueList: values));
+      break;
+    case ScriptType.update:
+      // TODO: Handle this case.
+      break;
+    case ScriptType.delete:
+      // TODO: Handle this case.
+      break;
   }
 
   return output.toString();

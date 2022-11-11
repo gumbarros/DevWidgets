@@ -59,10 +59,8 @@ final sqlOutputProvider = StateProvider<String>((ref) {
           tableName: tableName, fields: fields, valueList: values));
       break;
     case ScriptType.update:
-      // TODO: Handle this case.
       break;
     case ScriptType.delete:
-      // TODO: Handle this case.
       break;
   }
 

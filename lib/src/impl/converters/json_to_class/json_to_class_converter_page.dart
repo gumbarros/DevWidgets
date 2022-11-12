@@ -1,19 +1,41 @@
-import 'package:code_text_field/code_text_field.dart';
 import 'package:dev_widgets/src/impl/converters/json_to_class/json_to_class_converter_providers.dart';
 import 'package:dev_widgets/src/impl/converters/json_to_class/programming_language.dart';
 import 'package:dev_widgets/src/impl/helpers.dart';
+import 'package:dev_widgets/src/impl/widgets/io_editor/code_controller_hook.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/io_editor.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:highlight/languages/dart.dart';
+import 'package:highlight/languages/json.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-class JsonToClassConverterPage extends ConsumerWidget {
+class JsonToClassConverterPage extends HookConsumerWidget {
   const JsonToClassConverterPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, ref) {
+    final inputController = useCodeController(language: json);
+    final outputController = useCodeController(language: dart);
+
+    useEffect(() {
+      Future(() {
+        inputController.addListener(() {
+          ref.read(inputTextProvider.notifier).state = inputController.text;
+        });
+      });
+
+      return;
+    });
+
+    useEffect(() {
+      Future(() {
+        return outputController.text = ref.watch(outputTextProvider);
+      });
+      return;
+    }, [ref.watch(outputTextProvider)]);
+
     return SizedBox(
       height: MediaQuery.of(context).size.height - kToolbarHeight,
       child: ListView(
@@ -75,9 +97,8 @@ class JsonToClassConverterPage extends ConsumerWidget {
           SizedBox(
               height: MediaQuery.of(context).size.height / 1.2,
               child: IOEditor(
-                inputController: ref.watch(inputControllerProvider),
-                outputController: CodeController(
-                    language: dart, text: ref.watch(outputTextProvider)),
+                inputController: inputController,
+                outputController: outputController,
               )),
         ],
       ),

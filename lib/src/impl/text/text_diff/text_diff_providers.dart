@@ -1,5 +1,3 @@
-import 'package:dev_widgets/src/impl/helpers.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pretty_diff_text/pretty_diff_text.dart';
 
@@ -17,26 +15,4 @@ final newTextProvider = StateProvider<String>((ref) {
 
 final oldTextProvider = StateProvider<String>((ref) {
   return "";
-});
-
-final newTextControllerProvider = StateProvider.autoDispose<TextEditingController>((ref) {
-  final controller = TextEditingController();
-
-  controller.addListener(() {
-    ref.read(newTextProvider.notifier).state =
-        applyWebSpaceFix(controller.text);
-  });
-
-  return controller;
-});
-
-final oldTextControllerProvider = StateProvider.autoDispose<TextEditingController>((ref) {
-  final controller = TextEditingController();
-
-  controller.addListener(() {
-    ref.read(oldTextProvider.notifier).state =
-        applyWebSpaceFix(controller.text);
-  });
-
-  return controller;
 });

@@ -63,6 +63,8 @@ final sqlOutputProvider = StateProvider<String>((ref) {
           tableName: tableName, fields: fields, values: values));
       break;
     case ScriptType.delete:
+      output.writeln(sql_generator.getDeleteScript(
+          tableName: tableName, fields: fields, values: values));
       break;
   }
 

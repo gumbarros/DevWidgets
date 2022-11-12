@@ -149,7 +149,7 @@ String _getUpdateValues(List<TableField> fields, Map<String, dynamic> map) {
   return buffer.toString();
 }
 
-String _getUpdateWhere(List<TableField> fields, Map<String, dynamic> map) {
+String _getWhere(List<TableField> fields, Map<String, dynamic> map) {
   final buffer = StringBuffer();
 
   final primaryKeyFields =
@@ -178,8 +178,22 @@ String getUpdateScript(
 
   for (var map in values) {
     final updateValues = _getUpdateValues(fields, map);
-    final updateWhere = _getUpdateWhere(fields, map);
-    script.writeln("UPDATE $tableName SET $updateValues WHERE $updateWhere;");
+    final where = _getWhere(fields, map);
+    script.writeln("UPDATE $tableName SET $updateValues WHERE $where;");
+  }
+
+  return script.toString();
+}
+
+String getDeleteScript(
+    {required String tableName,
+    required List<TableField> fields,
+    required List<Map<String, dynamic>> values}) {
+  final script = StringBuffer();
+
+  for (var map in values) {
+    final where = _getWhere(fields, map);
+    script.writeln("DELETE FROM $tableName WHERE $where;");
   }
 
   return script.toString();

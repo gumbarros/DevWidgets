@@ -65,5 +65,16 @@ UPDATE Product SET Name = 'My Product 2',Quantity = 2,Price = 12.0,Color = NULL,
           tableName: "Product", fields: fields, values: values);
       expect(result, expectedUpdateScript);
     });
+
+    test("Delete script", () {
+      const String expectedDeleteScript = """
+DELETE FROM Product WHERE Id = 1;
+DELETE FROM Product WHERE Id = 2;
+""";
+
+      final result = sql_generator.getDeleteScript(
+          tableName: "Product", fields: fields, values: values);
+      expect(result, expectedDeleteScript);
+    });
   });
 }

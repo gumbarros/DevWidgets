@@ -56,9 +56,11 @@ final sqlOutputProvider = StateProvider<String>((ref) {
   switch (scriptType) {
     case ScriptType.insert:
       output.writeln(sql_generator.getInsertScript(
-          tableName: tableName, fields: fields, valueList: values));
+          tableName: tableName, fields: fields, values: values));
       break;
     case ScriptType.update:
+      output.writeln(sql_generator.getUpdateScript(
+          tableName: tableName, fields: fields, values: values));
       break;
     case ScriptType.delete:
       break;

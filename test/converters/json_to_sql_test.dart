@@ -8,20 +8,6 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('Json to Sql', () {
-    const String expectedTable = """CREATE TABLE Product(
-	Id INTEGER NOT NULL,
-	Name VARCHAR(MAX) NOT NULL,
-	Quantity INTEGER NOT NULL,
-	Price NUMBER NOT NULL,
-	Color VARCHAR(MAX) NULL,
-	ManufacturingDate DATETIME NOT NULL
-);""";
-
-    const String expectedInsertScript = """
-INSERT INTO Product (Id,Name,Quantity,Price,Color,ManufacturingDate) VALUES (1,'My Product',5,100.0,'Red','2012-02-27 13:27:00');
-INSERT INTO Product (Id,Name,Quantity,Price,Color,ManufacturingDate) VALUES (2,'My Product 2',2,12.0,NULL,'2012-02-27 13:27:00');
-""";
-
     late List<TableField> fields;
     late List<Map<String, dynamic>> values;
 
@@ -35,6 +21,15 @@ INSERT INTO Product (Id,Name,Quantity,Price,Color,ManufacturingDate) VALUES (2,'
     });
 
     test("Create table script", () {
+      const String expectedTable = """CREATE TABLE Product(
+\tId INTEGER NOT NULL PRIMARY KEY,
+\tName VARCHAR(MAX) NOT NULL,
+\tQuantity INTEGER NOT NULL,
+\tPrice NUMBER NOT NULL,
+\tColor VARCHAR(MAX) NULL,
+\tManufacturingDate DATETIME NOT NULL
+);""";
+
       final result = sql_generator.getCreateTableScript(
           tableName: "Product", fields: fields, ifNotExists: false);
 
@@ -49,10 +44,26 @@ INSERT INTO Product (Id,Name,Quantity,Price,Color,ManufacturingDate) VALUES (2,'
     });
 
     test("Insert script", () {
+      const String expectedInsertScript = """
+INSERT INTO Product (Id,Name,Quantity,Price,Color,ManufacturingDate) VALUES (1,'My Product',5,100.0,'Red','2012-02-27 13:27:00');
+INSERT INTO Product (Id,Name,Quantity,Price,Color,ManufacturingDate) VALUES (2,'My Product 2',2,12.0,NULL,'2012-02-27 13:27:00');
+""";
+
       final result = sql_generator.getInsertScript(
-          tableName: "Product", fields: fields, valueList: values);
+          tableName: "Product", fields: fields, values: values);
 
       expect(result, expectedInsertScript);
+    });
+
+    test("Update script", () {
+      const String expectedUpdateScript = """
+UPDATE Product SET Name = 'My Product',Quantity = 5,Price = 100.0,Color = 'Red',ManufacturingDate = '2012-02-27 13:27:00' WHERE Id = 1;
+UPDATE Product SET Name = 'My Product 2',Quantity = 2,Price = 12.0,Color = NULL,ManufacturingDate = '2012-02-27 13:27:00' WHERE Id = 2;
+""";
+
+      final result = sql_generator.getUpdateScript(
+          tableName: "Product", fields: fields, values: values);
+      expect(result, expectedUpdateScript);
     });
   });
 }

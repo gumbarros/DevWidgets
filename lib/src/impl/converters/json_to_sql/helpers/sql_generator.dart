@@ -28,7 +28,7 @@ String getCreateTableScript(
       script.write("(${field.length ?? "MAX"})");
     }
 
-    script.write(field.required && !field.primaryKey ? " NOT NULL" : " NULL");
+    script.write(field.required || field.primaryKey ? " NOT NULL" : " NULL");
 
     if (field.primaryKey && isSinglePrimaryKey) {
       script.write(" PRIMARY KEY");
@@ -85,20 +85,24 @@ String _getInsertFields(List<TableField> fields) {
   return buffer.toString();
 }
 
-String _getInsertValues(Map<String, dynamic> valueList) {
+String _getValue(dynamic value) {
+  if (value is String || value is DateTime) {
+    return "'$value'";
+  } else {
+    return value?.toString() ?? "NULL";
+  }
+}
+
+String _getInsertValues(Map<String, dynamic> values) {
   final buffer = StringBuffer();
 
   buffer.write("(");
 
-  for (var i = 0; i < valueList.entries.length; i++) {
-    final value = valueList.entries.elementAt(i).value;
+  for (var i = 0; i < values.entries.length; i++) {
+    final value = values.entries.elementAt(i).value;
 
-    if (value is String || value is DateTime) {
-      buffer.write("'$value'");
-    } else {
-      buffer.write(value ?? "NULL");
-    }
-    buffer.write(i != valueList.length - 1 ? "," : "");
+    buffer.write(_getValue(value));
+    buffer.write(i != values.length - 1 ? "," : "");
   }
 
   buffer.write(")");
@@ -109,14 +113,73 @@ String _getInsertValues(Map<String, dynamic> valueList) {
 String getInsertScript(
     {required String tableName,
     required List<TableField> fields,
-    required List<Map<String, dynamic>> valueList}) {
+    required List<Map<String, dynamic>> values}) {
   final script = StringBuffer();
 
   final insertFields = _getInsertFields(fields);
 
-  for (var map in valueList) {
-    final values = _getInsertValues(map);
-    script.writeln("INSERT INTO $tableName $insertFields VALUES $values;");
+  for (var map in values) {
+    final insertValues = _getInsertValues(map);
+    script
+        .writeln("INSERT INTO $tableName $insertFields VALUES $insertValues;");
+  }
+
+  return script.toString();
+}
+
+String _getUpdateValues(List<TableField> fields, Map<String, dynamic> map) {
+  final buffer = StringBuffer();
+
+  final nonPrimaryKeyFields =
+      fields.where((f) => !f.primaryKey).map((f) => f.fieldName).toList();
+
+  final nonPrimaryKeyValues =
+      map.entries.where((entry) => nonPrimaryKeyFields.contains(entry.key));
+
+  for (var i = 0; i < nonPrimaryKeyValues.length; i++) {
+    final field = nonPrimaryKeyFields[i];
+
+    final value = nonPrimaryKeyValues.elementAt(i).value;
+
+    buffer.write("$field = ${_getValue(value)}");
+
+    buffer.write(i != nonPrimaryKeyValues.length - 1 ? "," : "");
+  }
+
+  return buffer.toString();
+}
+
+String _getUpdateWhere(List<TableField> fields, Map<String, dynamic> map) {
+  final buffer = StringBuffer();
+
+  final primaryKeyFields =
+      fields.where((f) => f.primaryKey).map((f) => f.fieldName).toList();
+
+  final primaryKeyValues =
+      map.entries.where((entry) => primaryKeyFields.contains(entry.key));
+
+  for (var i = 0; i < primaryKeyValues.length; i++) {
+    final field = primaryKeyFields[i];
+
+    final value = primaryKeyValues.elementAt(i).value;
+    buffer.write("$field = ${_getValue(value)}");
+
+    buffer.write(i != primaryKeyValues.length - 1 ? "," : "");
+  }
+
+  return buffer.toString();
+}
+
+String getUpdateScript(
+    {required String tableName,
+    required List<TableField> fields,
+    required List<Map<String, dynamic>> values}) {
+  final script = StringBuffer();
+
+  for (var map in values) {
+    final updateValues = _getUpdateValues(fields, map);
+    final updateWhere = _getUpdateWhere(fields, map);
+    script.writeln("UPDATE $tableName SET $updateValues WHERE $updateWhere;");
   }
 
   return script.toString();

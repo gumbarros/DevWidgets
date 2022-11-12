@@ -263,30 +263,42 @@ class _Configuration extends ConsumerWidget {
                   value: ScriptType.insert,
                   controlAffinity: ListTileControlAffinity.trailing,
                 )),
-            Container(
-                padding: const EdgeInsets.all(8.0),
-                width: MediaQuery.of(context).size.width / 5,
-                child: RadioListTile<ScriptType>(
-                  groupValue: ref.watch(scriptTypeProvider),
-                  onChanged: (value) {
-                    ref.read(scriptTypeProvider.notifier).state = value!;
-                  },
-                  title: const Text("UPDATE"),
-                  value: ScriptType.update,
-                  controlAffinity: ListTileControlAffinity.trailing,
-                )),
-            Container(
-                padding: const EdgeInsets.all(8.0),
-                width: MediaQuery.of(context).size.width / 5,
-                child: RadioListTile<ScriptType>(
-                  value: ScriptType.delete,
-                  onChanged: (value) {
-                    ref.read(scriptTypeProvider.notifier).state = value!;
-                  },
-                  title: const Text("DELETE"),
-                  controlAffinity: ListTileControlAffinity.trailing,
-                  groupValue: ref.watch(scriptTypeProvider),
-                )),
+            Visibility(
+              visible: ref
+                  .watch(fieldListProvider)
+                  .where((f) => f.primaryKey)
+                  .isNotEmpty,
+              child: Container(
+                  padding: const EdgeInsets.all(8.0),
+                  width: MediaQuery.of(context).size.width / 5,
+                  child: RadioListTile<ScriptType>(
+                    groupValue: ref.watch(scriptTypeProvider),
+                    onChanged: (value) {
+                      ref.read(scriptTypeProvider.notifier).state = value!;
+                    },
+                    title: const Text("UPDATE"),
+                    value: ScriptType.update,
+                    controlAffinity: ListTileControlAffinity.trailing,
+                  )),
+            ),
+            Visibility(
+              visible: ref
+                  .watch(fieldListProvider)
+                  .where((f) => f.primaryKey)
+                  .isNotEmpty,
+              child: Container(
+                  padding: const EdgeInsets.all(8.0),
+                  width: MediaQuery.of(context).size.width / 5,
+                  child: RadioListTile<ScriptType>(
+                    value: ScriptType.delete,
+                    onChanged: (value) {
+                      ref.read(scriptTypeProvider.notifier).state = value!;
+                    },
+                    title: const Text("DELETE"),
+                    controlAffinity: ListTileControlAffinity.trailing,
+                    groupValue: ref.watch(scriptTypeProvider),
+                  )),
+            ),
           ]),
           enabled: true,
           actionWidget: const SizedBox.shrink()),

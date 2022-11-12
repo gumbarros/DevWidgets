@@ -7,14 +7,17 @@ List<TableField> getTableFields(List<Map<String, dynamic>> values) {
   for (Map map in values) {
     map.removeWhere((key, value) =>
         (value.runtimeType == List<dynamic>) || (_isMap(value)));
+
     for (final entry in map.entries) {
       if (!fields.map((f) => f.fieldId).contains(entry.key)) {
+        final dataType = _getFieldType(entry.value);
+
         fields.add(TableField(
             fieldId: entry.key,
             fieldName: entry.key,
-            dataType: _getFieldType(entry.value),
+            dataType: dataType,
             length: null,
-            primaryKey: false,
+            primaryKey: fields.isEmpty && dataType == DataType.integer,
             enabled: true,
             required: values.every((element) => element[entry.key] != null)));
       }

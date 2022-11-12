@@ -54,7 +54,9 @@ dev_dependencies:
 
 flutter:
   assets:
+    - assets/icon/icon.png
     - assets/translations/
+    
   fonts:
     - family: Fira Code
       fonts:

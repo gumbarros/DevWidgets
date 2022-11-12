@@ -1,4 +1,4 @@
-import 'package:dev_widgets/src/impl/routes.dart';
+import 'package:dev_widgets/src/impl/layout/yaru/providers/selected_tool_provider.dart';
 import 'package:dev_widgets/src/impl/layout/yaru/models/yaru_menu_item.dart';
 import 'package:dev_widgets/src/impl/tools.dart';
 import 'package:dropdown_search/dropdown_search.dart';
@@ -6,13 +6,15 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:go_router/go_router.dart';
 
-class YaruMenuSearchBox extends StatelessWidget {
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+class YaruMenuSearchBox extends HookConsumerWidget {
   const YaruMenuSearchBox({
     super.key,
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
     return DropdownSearch<YaruMenuItem>(
         popupProps: PopupProps.menu(
           showSearchBox: true,
@@ -21,8 +23,9 @@ class YaruMenuSearchBox extends StatelessWidget {
                 child: Text(StringTranslateExtension("no_tools_found").tr()));
           },
         ),
-        items:
-            allTools.map((e) => YaruMenuItem(e.fullTitle, e.route)).toList(),
+        items: allTools
+            .map((e) => YaruMenuItem(e.name, e.fullTitle, e.route))
+            .toList(),
         dropdownDecoratorProps: DropDownDecoratorProps(
             dropdownSearchDecoration: InputDecoration(
           prefixIcon: const Icon(
@@ -41,7 +44,11 @@ class YaruMenuSearchBox extends StatelessWidget {
           border: const UnderlineInputBorder(),
         )),
         onChanged: (tool) {
-          context.go(tool?.route ?? Routes.home);
+          if (tool != null) {
+            ref.read(selectedToolProvider.notifier).state =
+                getToolByName(tool.name);
+            context.go(tool.route);
+          }
         });
   }
 }

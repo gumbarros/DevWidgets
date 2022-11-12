@@ -1,5 +1,7 @@
 all_tools: Alle Tools
+amount: Anzahl
 app_name: DevWidgets
+brightness: Helligkeit
 clear: Leeren
 compact: Kompakt
 configuration: Konfiguration
@@ -9,107 +11,105 @@ conversion_mode: Wähle den Konvertier-Modus
 converters: Konvertierer
 copy: Kopieren
 cron_parser: Cron Parser
-menu_search_bar_hint: Tippe um tools zu suchen...
-json_formatter_short_title: JSON
-xml_formatter_short_title: XML
-sql_formatter_short_title: SQL
-html_encoder_short_title: HTML
-url_encoder_short_title: URL
-text_escape_short_title: Escape / Un-Escape
 cron_parser_description: Parse Cron-Ausdruck um Datum zu erhalten
 current: Aktuell
+dark: Dunkel
 decode: Dekodieren
 diff_mode_efficiency: "Erhöhe die Effizienz, indem häufige, kurze Gemeinsamkeiten ignoriert werden."
 diff_mode_none: Keine Verschönerung. Roher output.
 diff_mode_semantic: "Erhöhe Lesbarkeit, indem wahrscheinlich unbeabsichtigte, häufige Gemeinsamkeiten versteckt werden."
 difference: Differez
 edit_cost: Bearbeitungskosten
-theme: Theme
-primary_color: Primärfarbe
-brightness: Helligkeit
-system: System
-light: Hell
-dark: Dunkel
 efficiency_cleanup: Effizienzbereinigung
 efficiency_cleanup_description: "Erhöhe die Effizienz, indem häufige, kurze Gemeinsamkeiten ignoriert werden. Je höher die Bearbeitungskosten desto aggressiver die Bereinigung."
 encode: Kodieren
 encoders_decoders: Kodierer / Dekodierer
-settings: Einstellungen
-text_editor: Text Editor
-language: Sprache
 error: Fehler
-font_size: Schriftgröße
-font_family: Schriftart
-warning: Warnung
-high_contrast: Hoher Kontrast
-restart_to_apply_changes: "Du musst die App vielleicht neu starten, um die Einstellungen für den Editor zu speichern."
 escape: Escape
+font_family: Schriftart
+font_size: Schriftgröße
 formatters: Formatierer
 four_spaces: Vier Leerzeichen
+generate: Generieren
+generators: Generatoren
+high_contrast: Hoher Kontrast
 home: Home
 html_encoder: HTML Kodierer / Dekodierer
 html_encoder_description: Kodiere oder dekodiere alle möglichen Zeichen in ihre HTML Entitäten
+html_encoder_short_title: HTML
+hyphens: Bindestriche
 indentation: Einrückung
 input: Eingabe
 invalid_json_data: Üngültige JSON Daten.
 invalid_xml_data: Ungültige XML Daten.
 json_formatter: JSON Formatierer
 json_formatter_description: Rücke oder minimiere JSON Daten
+json_formatter_short_title: JSON
 json_yaml_converter: "JSON <> YAML"
 json_yaml_converter_description: Konvertiere JSON Daten zu YAML und umgekehrt
-no_tools_found: Keine Tools gefunden.
+language: Sprache
+light: Hell
+lipsum: Lorem Ipsum
+lipsum_amount_description: "Anzahl der Wörter, Sätze oder Absätze, die generiert werden sollen"
+lipsum_generator: Lorem Ipsum Generator
+lipsum_generator_description: "Wörter, Sätze und Absätze"
+lipsum_generator_mode: Generator Modus
+lipsum_generator_mode_description: "Generiere Wörter, Sätze oder Absätze mit Lorem Ipsum Text"
+lipsum_start_with: Beginne mit 'Lorem ipsum dolor sit amet ...'
 markdown_preview: Markdown Vorschau
-markdown_preview_short_title: Markdown Vorschau
 markdown_preview_description: Preview a Markdown document
+markdown_preview_short_title: Markdown Vorschau
+menu_search_bar_hint: Tippe um tools zu suchen...
 new_text: Neuer Text
 no_cleanup: Keine Bereinigung
 no_cleanup_description: Rohe Ausgabe
+no_tools_found: Keine Tools gefunden.
 number_base_converter: Zahlenbasis Konvertierer
 number_base_converter_description: Konvertiere Zahlen von einer Basis in eine andere
 old_text: Alter Text
 one_tab: Ein Tab
 output: Ausgabe
+paragraphs: Absätze
 paste: Einfügen
 preview: Vorschau
+primary_color: Primärfarbe
+restart_to_apply_changes: "Du musst die App vielleicht neu starten, um die Einstellungen für den Editor zu speichern."
 search_bar_hint: "Tippe, um nach tools zu suchen..."
 semantic_cleanup: Semantische Bereinigung
 semantic_cleanup_description: "Erhöhe Lesbarkeit, indem wahrscheinlich unbeabsichtigte, häufige Gemeinsamkeiten versteckt werden."
+sentences: Sätze
+settings: Einstellungen
 sort_json_properties_alphabetically: Sortiere JSON Eigenschaften alphabetisch
 sql_formatter: SQL Formatierer
 sql_formatter_description: Rücke SQL-Abfragen ein
+sql_formatter_short_title: SQL
+system: System
 text: Text
 text_diff: Textvergleich
 text_diff_description: Vergleiche zwei Texte
-text_escape: Text Escape / Unescape
 text_diff_short_title: Text Diff
+text_editor: Text Editor
+text_escape: Text Escape / Unescape
 text_escape_description: "Entfernt durch escape / unescape Zeichen aus einem String, die das Parsen verhindern könnten."
+text_escape_short_title: Escape / Un-Escape
+theme: Theme
 timestamp_converter: Zeitstempel Konvertierer
 timestamp_converter_description: Konvertiere Zeitstempel in lesbaren Text und umgekehrt
 two_spaces: Zwei Leerzeichen
 unescape: Unescape
+uppercase: Großbuchstaben
 url_encoder: URL Kodierer / Dekodierer
 url_encoder_description: Kodiere oder dekodiere alle möglichen Zeichen in ihre URL Entitäten
-xml_formatter: XML Formatierer
-xml_formatter_description: Rücke oder minimiere XML Daten
-paragraphs: Absätze
-sentences: Sätze
-words: Wörter
-generators: Generatoren
-lipsum_generator: Lorem Ipsum Generator
-lipsum_generator_description: "Wörter, Sätze und Absätze"
-lipsum: Lorem Ipsum
-lipsum_generator_mode: Generator Modus
-lipsum_generator_mode_description: "Generiere Wörter, Sätze oder Absätze mit Lorem Ipsum Text"
-lipsum_start_with: Beginne mit 'Lorem ipsum dolor sit amet ...'
-amount: Anzahl
-lipsum_amount_description: "Anzahl der Wörter, Sätze oder Absätze, die generiert werden sollen"
+url_encoder_short_title: URL
+uuid: UUID
 uuid_generator: UUID Generator
 uuid_generator_description: Generiere v1 und v4 uuids
-uuid: UUID
-v1: "1"
-v4: 4 (GUID)
 uuid_type: UUID Version
 uuid_type_description: Die zu generierende UUID Version
-uppercase: Großbuchstaben
-hyphens: Bindestriche
-generate: Generieren
+v1: "1"
+v4: 4 (GUID)
+warning: Warnung
+words: Wörter
+xml_formatter: XML Formatierer
+xml_formatter_description: Rücke oder minimiere XML Daten
+xml_formatter_short_title: XML

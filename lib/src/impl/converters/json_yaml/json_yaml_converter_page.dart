@@ -10,6 +10,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:highlight/languages/json.dart';
 import 'package:highlight/languages/yaml.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:json2yaml/json2yaml.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 class JsonYamlConverterPage extends HookConsumerWidget {
@@ -92,24 +93,45 @@ class JsonYamlConverterPage extends HookConsumerWidget {
                             .read(indentationProvider.notifier)
                             .state = selected!),
                   ),
+                ])),
+            Visibility(
+                visible: ref.watch(conversionTypeProvider) ==
+                    JsonYamlConversionType.jsonToYaml,
+                child: Column(children: [
                   YaruRow(
                     enabled: true,
-                    leadingWidget: const Icon(Icons.sort_by_alpha),
+                    leadingWidget: const Icon(Icons.arrow_right_alt),
                     trailingWidget: Padding(
                       padding: const EdgeInsets.only(left: 8.0),
                       child: Text(
-                        "sort_json_properties_alphabetically".tr(),
+                        "yaml_style".tr(),
                         style: const TextStyle(fontSize: 18),
                       ),
                     ),
-                    actionWidget: Switch(
-                      value: ref.watch(sortAlphabeticallyProvider),
-                      onChanged: (value) => ref
-                          .read(sortAlphabeticallyProvider.notifier)
-                          .state = value,
-                    ),
-                  )
-                ]))
+                    actionWidget: DropdownButton<YamlStyle>(
+                        value: ref.watch(yamlStyleProvider),
+                        items: getYamlStyleDropdownMenuItems(),
+                        onChanged: (selected) => ref
+                            .read(yamlStyleProvider.notifier)
+                            .state = selected!),
+                  ),
+                ])),
+            YaruRow(
+              enabled: true,
+              leadingWidget: const Icon(Icons.sort_by_alpha),
+              trailingWidget: Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Text(
+                  "sort_properties_alphabetically".tr(),
+                  style: const TextStyle(fontSize: 18),
+                ),
+              ),
+              actionWidget: Switch(
+                value: ref.watch(sortAlphabeticallyProvider),
+                onChanged: (value) =>
+                    ref.read(sortAlphabeticallyProvider.notifier).state = value,
+              ),
+            )
           ]),
         ),
         SizedBox(

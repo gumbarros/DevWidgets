@@ -15,7 +15,7 @@ String formatJson(String json,
     return "invalid_json_data".tr();
   }
   if (object != null) {
-    if (sortAlphabetically) object = _sort(object);
+    if (sortAlphabetically) object = sortJson(object);
     if (indentation != Indentation.compact) {
       return JsonEncoder.withIndent(indentation.toString()).convert(object);
     }
@@ -25,30 +25,30 @@ String formatJson(String json,
   }
 }
 
-_sort(json) {
+sortJson(json) {
   if (json is Map) {
     for (var entry in json.entries) {
       if (entry.value is List || entry.value is Map) {
-        json[entry.key] = _sort(entry);
+        json[entry.key] = sortJson(entry);
       }
     }
     return _sortKeys(json);
   } else if (json is List) {
     for (var i = 0; i < json.length; i++) {
       final value = json[i];
-      if (value is List || value is Map) json[i] = _sort(value);
+      if (value is List || value is Map) json[i] = sortJson(value);
     }
     return json;
   } else if (json.value is Map) {
     for (final entry in json.value.entries) {
       if (entry.value is List || entry.value is Map) {
-        json.value[entry.key] = _sort(entry);
+        json.value[entry.key] = sortJson(entry);
       }
     }
   } else if (json.value is List) {
     for (var i = 0; i < json.value.length; i++) {
       final value = json.value[i];
-      if (value is List || value is Map) json.value[i] = _sort(value);
+      if (value is List || value is Map) json.value[i] = sortJson(value);
     }
     return json.value;
   }

@@ -6,6 +6,7 @@ class Routes {
   static const sqlFormatter = '/formatters/sql';
   static const jsonFormatter = '/formatters/json';
   static const xmlFormatter = '/formatters/xml';
+  static const yamlFormatter = '/formatters/yamlFormatter';
   static const htmlEncoder = "/encoders/html";
   static const textEscape = "/text/escape";
   static const htmlPreview = '/text/htmlPreview';

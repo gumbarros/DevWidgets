@@ -10,6 +10,7 @@ import 'package:dev_widgets/src/impl/encoders/url/url_encoder_tool.dart';
 import 'package:dev_widgets/src/impl/formatters/json_formatter/json_formatter_tool.dart';
 import 'package:dev_widgets/src/impl/formatters/sql_formatter/sql_formatter_tool.dart';
 import 'package:dev_widgets/src/impl/formatters/xml_formatter/xml_formatter_tool.dart';
+import 'package:dev_widgets/src/impl/formatters/yaml_formatter/yaml_formatter_tool.dart';
 import 'package:dev_widgets/src/impl/generators/lipsum/lipsum_generator_tool.dart';
 import 'package:dev_widgets/src/impl/generators/uuid/uuid_generator_tool.dart';
 import 'package:dev_widgets/src/impl/home/home_tool.dart';
@@ -42,7 +43,8 @@ const allTools = [
   CnpjGeneratorTool(),
   HtmlPreviewTool(),
   TextInspectorTool(),
-  JsonToSqlConverterTool()
+  JsonToSqlConverterTool(),
+  YamlFormatterTool()
 ];
 
 Tool getToolByName(String name) => allTools.firstWhere((t) => t.name == name);

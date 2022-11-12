@@ -1,30 +1,30 @@
 all_tools: Todas as ferramentas
 app_name: DevWidgets
+brazil: Brasil
+bytes: Bytes
 clear: Limpar
 compact: Compacta
 converters: Conversores
 copy: Copiar
 cron_parser: Analisador de Cron
 encoders_decoders: Encoders / Decoders
+error: Erro
+font_size: Tamanho da Fonte
 html: HTML
 input: Entrada
-text: Texto
-sentences: Frases
-brazil: Brasil
+invalid_json_data: Dados JSON invalidos.
 json_formatter: Formatador JSON
 json_formatter_description: Indente ou minifique arquivos JSON
 json_yaml_converter: "JSON <> YAML"
 language: Idioma
-repository: Repositório
-repository_about: No repositorio você pode abrir issues para reportar um problema, ver o código fonte ou deixar um feedback :)
-settings: Configurações
 output: Saída
-font_size: Tamanho da Fonte
 paste: Colar
-error: Erro
-invalid_json_data: Dados JSON invalidos.
+position: Posição
+repository: Repositório
+repository_about: "No repositorio você pode abrir issues para reportar um problema, ver o código fonte ou deixar um feedback :)"
+sentences: Frases
+settings: Configurações
 sort_json_properties_alphabetically: Ordenar as propriedades JSON em ordem alfabética
 sql_formatter: Formatador SQL
 sql_formatter_description: Indente consultas SQL
-position: Posição
-bytes: Bytes
+text: Texto

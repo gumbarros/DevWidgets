@@ -141,6 +141,7 @@ paragraphs: Paragraphs
 sentences: Sentences
 words: Words
 generators: Generators
+invalid_yaml_data: Invalid YAML data
 enabled: Enabled
 lipsum_generator: Lorem Ipsum Generator
 lipsum_generator_description: "Words, sentences and paragraphs"

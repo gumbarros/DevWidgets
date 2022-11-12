@@ -1,187 +1,197 @@
+about: About
 all_tools: All Tools
+amount: Amount
 app_name: DevWidgets
+application: Application
+base64_image_encoder: Base 64 Image Encoder / Decoder
+base64_image_encoder_description: Encode and Decode Base64 image data
+base64_image_encoder_short_title: Base 64 Image
+base64_text_encoder: Base 64 Text Encoder / Decoder
+base64_text_encoder_description: Encode and Decode Base64 text data
+base64_text_encoder_short_title: Base 64 Text
+brazil: Brazil
+brightness: Brightness
+build_info: Build Info
+bytes: Bytes
+character_distribution: Character Distribution
+characters: Characters
+class_name: Class name
 clear: Clear
+cnpj: CNPJ
+cnpj_description: Generate brazilian CNPJs
+cnpj_short_title: CNPJ Generator
 compact: Compact
 configuration: Configuration
 conversion: Conversion
 conversion_description: Select which conversion mode you want to use
 conversion_mode: Select which conversion mode you want to use
+conversion_type: Conversion type
+convert: Convert
 converters: Converters
-dialect: Dialect
-generic_sql: Generic SQL
-repository: Repository
-copy: Copy
-about: About
-generator: Generator
-application: Application
-formatter: Formatter
-validator: Validator
-cpf: CPF
-github: GitHub
-lines: Lines
 copied_to_the_clipboard: Copied to the clipboard.
-brazil: Brazil
-cpf_short_title: CPF Generator
-repository_about: In the repository you can open issues to report a problem, see the source code or leave feedback :)
-version: Version
-build_info: Build Info
-cnpj: CNPJ
-cnpj_short_title: CNPJ Generator
-format: Format
+copy: Copy
+cpf: CPF
 cpf_description: Generate brazilian CPFs
-cnpj_description: Generate brazilian CNPJs
+cpf_short_title: CPF Generator
 cron_parser: Cron Parser
-menu_search_bar_hint: Type to search for tools...
-json_formatter_short_title: JSON
-xml_formatter_short_title: XML
-sql_formatter_short_title: SQL
-html_encoder_short_title: HTML
-url_encoder_short_title: URL
-text_escape_short_title: Escape / Unescape
 cron_parser_description: Parse Cron expression to get scheduled dates
 current: Current
+dark: Dark
+data_type: Data Type
 decode: Decode
-base64_text_encoder: Base 64 Text Encoder / Decoder
-base64_text_encoder_description: Encode and Decode Base64 text data
-base64_text_encoder_short_title: Base 64 Text
-base64_image_encoder: Base 64 Image Encoder / Decoder
-base64_image_encoder_description: Encode and Decode Base64 image data
-base64_image_encoder_short_title: Base 64 Image
-upload_image: Upload Image
-download_image: Download Image
-success: "Success !"
-file_saved_to_documents: File saved to the documents folder.
-encoding: Encoding
-html_preview: HTML Preview
-html: HTML
-html_preview_short_title: HTML Preview
-html_preview_description: Preview a HTML document
-encoding_description: Select which encoding you want to use
+dialect: Dialect
 diff_mode_efficiency: Increase computational efficiency by factoring out short commonalities which are not worth the overhead.
 diff_mode_none: No cleanup. Raw output.
 diff_mode_semantic: Increase human readability by factoring out commonalities which are likely to be coincidental.
 difference: Difference
+display_line_numbers: Display Line Numbers
+download_image: Download Image
 edit_cost: Edit Cost
-theme: Theme
-primary_color: Primary Color
-brightness: Brightness
-system: System
-light: Light
-dark: Dark
 efficiency_cleanup: Efficiency Cleanup
 efficiency_cleanup_description: "Increase computational efficiency by factoring out short commonalities which are not worth the overhead. The larger the edit cost, the more aggressive the cleanup"
+enabled: Enabled
 encode: Encode
 encoders_decoders: Encoders / Decoders
-settings: Settings
-text_editor: Text Editor
-language: Language
+encoding: Encoding
+encoding_description: Select which encoding you want to use
 error: Error
-font_size: Font Size
-font_family: Font Family
-warning: Warning
-high_contrast: High Contrast
-restart_to_apply_changes: You may need to restart the app to apply changes to the editor.
 escape: Escape
+field_name: Name
+fields: Fields
+file_saved_to_documents: File saved to the documents folder.
+font_family: Font Family
+font_size: Font Size
+format: Format
+formatter: Formatter
 formatters: Formatters
 four_spaces: Four Spaces
+generate: Generate
+generator: Generator
+generators: Generators
+generic: Generic
+generic_sql: Generic SQL
+github: GitHub
+high_contrast: High Contrast
 home: Home
+html: HTML
 html_encoder: HTML Encoder / Decoder
 html_encoder_description: Encode or decode all the applicable characters to their corresponding HTML entities
+html_encoder_short_title: HTML
+html_preview: HTML Preview
+html_preview_description: Preview a HTML document
+html_preview_short_title: HTML Preview
+hyphens: Hyphens
 indentation: Indentation
 input: Input
-conversion_type: Conversion type
+invalid_data: Invalid data
 invalid_json_data: Invalid JSON data.
 invalid_xml_data: Invalid XML data.
-json_to_class: "JSON -> Class"
-class_name: Class name
-upload_file: Upload File
-programming_language: Programming language
-json_to_class_description: Convert JSON data to a programming language class
+invalid_yaml_data: Invalid YAML data
 json_formatter: JSON Formatter
 json_formatter_description: Indent or minify JSON data
+json_formatter_short_title: JSON
+json_to_class: "JSON -> Class"
+json_to_class_description: Convert JSON data to a programming language class
+json_to_sql: "JSON -> SQL"
+json_to_sql_description: Convert JSON data to table definitions or insert/update/delete scripts.
+json_to_sql_invalid_json_data: |-
+  Invalid JSON data.
+  Please input a array with objects like the example above.
 json_yaml_converter: "JSON <> YAML"
 json_yaml_converter_description: Convert JSON data to YAML and vice versa
-no_tools_found: No tools found.
+language: Language
+length: Length
+licenses: Licenses
+licenses_description: Access to all third-party licenses
+light: Light
+lines: Lines
+lipsum: Lorem Ipsum
+lipsum_amount_description: "Amount of words, sentences or paragraphs to be generated"
+lipsum_generator: Lorem Ipsum Generator
+lipsum_generator_description: "Words, sentences and paragraphs"
+lipsum_generator_mode: Generator mode
+lipsum_generator_mode_description: "Generate words, sentences or paragraphs with lorem ipsum text"
+lipsum_start_with: Start with 'Lorem ipsum dolor sit amet ...'
 markdown_preview: Markdown Preview
-markdown_preview_short_title: Markdown Preview
 markdown_preview_description: Preview a Markdown document
+markdown_preview_short_title: Markdown Preview
+menu_search_bar_hint: Type to search for tools...
 new_text: New text
 no_cleanup: No Cleanup
 no_cleanup_description: Raw output
+no_tools_found: No tools found.
 number_base_converter: Number Base Converter
 number_base_converter_description: Convert numbers from one base to another
 old_text: Old text
 one_tab: One Tab
+options: Options
 output: Output
+paragraphs: Paragraphs
 paste: Paste
+position: Position
 preview: Preview
+primary_color: Primary Color
+primary_key: Primary Key
+programming_language: Programming language
+repository: Repository
+repository_about: "In the repository you can open issues to report a problem, see the source code or leave feedback :)"
+required: Required
+restart_to_apply_changes: You may need to restart the app to apply changes to the editor.
 search_bar_hint: Type to search for tools...
+selection: Selection
 semantic_cleanup: Semantic Cleanup
 semantic_cleanup_description: Increase human readability by factoring out commonalities which are likely to be coincidental
+sentences: Sentences
+settings: Settings
 sort_json_properties_alphabetically: Sort JSON properties alphabetically
+sort_properties_alphabetically: Sort properties alphabetically
+sort_yaml_properties_alphabetically: Sort YAML properties alphabetically
 sql_formatter: SQL Formatter
 sql_formatter_description: Indent SQL queries
+sql_formatter_short_title: SQL
+statistics: Statistics
+success: "Success !"
+system: System
+table_name: Table Name
 text: Text
 text_diff: Text Comparer
 text_diff_description: Compare two texts
-text_escape: Text Escape / Unescape
 text_diff_short_title: Text Diff
+text_editor: Text Editor
+text_escape: Text Escape / Unescape
 text_escape_description: "Escapes or unescapes a string, removing characters that could prevent parsing."
+text_escape_short_title: Escape / Unescape
+text_inspector: "Text Case Converter & Inspector"
+text_inspector_description: Convert and inspect a string
+text_inspector_short_title: "Case Converter & Inspector"
+theme: Theme
 timestamp_converter: Timestamp Converter
 timestamp_converter_description: Convert timestamp to human-readable date and vice versa
 two_spaces: Two spaces
-wrap_text: Wrap Text
-display_line_numbers: Display Line Numbers
 unescape: Unescape
+upload_file: Upload File
+upload_image: Upload Image
+uppercase: Uppercase
 url_encoder: URL Encoder / Decoder
 url_encoder_description: Encode or decode all the applicable characters to their corresponding URL entities
-xml_formatter: XML Formatter
-xml_formatter_description: Indent or minify XML data
-paragraphs: Paragraphs
-sentences: Sentences
-words: Words
-generators: Generators
-invalid_yaml_data: Invalid YAML data
-enabled: Enabled
-lipsum_generator: Lorem Ipsum Generator
-lipsum_generator_description: "Words, sentences and paragraphs"
-lipsum: Lorem Ipsum
-lipsum_generator_mode: Generator mode
-lipsum_generator_mode_description: "Generate words, sentences or paragraphs with lorem ipsum text"
-lipsum_start_with: Start with 'Lorem ipsum dolor sit amet ...'
-amount: Amount
-json_to_sql_invalid_json_data: "Invalid JSON data.\nPlease input a array with objects like the example above."
-licenses: Licenses
-licenses_description: Access to all third-party licenses
-lipsum_amount_description: "Amount of words, sentences or paragraphs to be generated"
+url_encoder_short_title: URL
+uuid: UUID
 uuid_generator: UUID Generator
 uuid_generator_description: Generate v1 and v4 uuids
-uuid: UUID
-options: Options
-fields: Fields
-field_name: Name
-table_name: Table Name
-data_type: Data Type
-length: Length
-required: Required
-primary_key: Primary Key
-json_to_sql: JSON -> SQL
-json_to_sql_description: Convert JSON data to table definitions or insert/update/delete scripts.
-v1: 1
-v4: 4 (GUID)
 uuid_type: UUID version
 uuid_type_description: The UUID version to be generated
-uppercase: Uppercase
-hyphens: Hyphens
-generate: Generate
-text_inspector: Text Case Converter & Inspector
-text_inspector_short_title: Case Converter & Inspector
-text_inspector_description: Convert and inspect a string
-convert: Convert
-selection: Selection
-position: Position
-statistics: Statistics
-characters: Characters
-bytes: Bytes
+v1: 1
+v4: 4 (GUID)
+validator: Validator
+version: Version
+warning: Warning
 word_distribution: Word Distribution
-character_distribution: Character Distribution
+words: Words
+wrap_text: Wrap Text
+xml_formatter: XML Formatter
+xml_formatter_description: Indent or minify XML data
+xml_formatter_short_title: XML
+yaml_formatter: YAML Formatter
+yaml_formatter_description: Format and sort YAML data
+yaml_formatter_short_title: YAML
+yaml_style: YAML Style

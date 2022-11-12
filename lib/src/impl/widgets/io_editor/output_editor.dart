@@ -6,7 +6,7 @@ class OutputEditor extends StatelessWidget {
   const OutputEditor({
     Key? key,
     this.outputChild,
-    required this.outputController,
+    this.outputController,
     this.isVerticalLayout = false,
     this.toolbarTitle,
     this.actionButtons,

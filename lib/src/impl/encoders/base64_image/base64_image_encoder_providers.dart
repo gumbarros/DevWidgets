@@ -33,28 +33,13 @@ void uploadImage(WidgetRef ref) async {
 
     final text = const Base64Encoder().convert(bytes);
 
-    final controller = TextEditingController(text: text);
-    controller.addListener(() {
-      final bytes = const Base64Decoder().convert(controller.text);
-      ref.read(outputImageProvider.notifier).state = bytes;
-    });
-
-    ref.read(inputControllerProvider.notifier).state = controller;
+    ref.read(inputTextProvider.notifier).state = text;
   }
 }
 
+final inputTextProvider = StateProvider<String>((ref) => "");
+
 final screenshotControllerProvider =
     Provider.autoDispose<ScreenshotController>((ref) => ScreenshotController());
-
-final inputControllerProvider = StateProvider.autoDispose<TextEditingController>((ref) {
-  final controller = TextEditingController();
-
-  controller.addListener(() {
-    final bytes = const Base64Decoder().convert(controller.text);
-    ref.read(outputImageProvider.notifier).state = bytes;
-  });
-
-  return controller;
-});
 
 final outputImageProvider = StateProvider<Uint8List>((ref) => Uint8List(0));

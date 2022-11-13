@@ -1,4 +1,4 @@
-name: Build release packages
+name: Build & deploy Linux packages
 
 on:
   push:
@@ -6,8 +6,8 @@ on:
       - main
 
 jobs:  
-  build_linux:
-    name: Build release packages
+  build_deploy_linux:
+    name: Build & deploy Linux packages
     runs-on: ubuntu-latest
     
     steps:
@@ -31,13 +31,14 @@ jobs:
     - name: Build
       run: flutter build linux --release
     
-    - name: Build Debian
-      uses: kentik/pkg@v1.0.0-rc8
+    - name: Build Debian Package
+      uses: jiro4989/build-deb-action@v2
       with:
-        name: DevWidgets
+        package: DevWidgets
+        package_root: build/linux/x64/release/bundle
+        maintainer: gumbarros
         version: 1.0.0
-        format: deb
-        package: linux/package.yaml
+        desc: DevWidgets is a Flutter application with several tools such as generators, formatters and converters for developers
         
     - name: Build AppImage
       run: |

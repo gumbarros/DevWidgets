@@ -1,4 +1,4 @@
-name: Build Linux AppImage
+name: Build release packages
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:  
   build_linux:
-    name: Build for Linux
+    name: Build release packages
     runs-on: ubuntu-latest
     
     steps:

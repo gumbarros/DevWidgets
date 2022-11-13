@@ -1,4 +1,5 @@
 import 'package:dev_widgets/src/impl/helpers.dart';
+import 'package:dev_widgets/src/impl/settings/settings.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/input_editor.dart';
 import 'package:dev_widgets/src/impl/widgets/multi_split_view_divider.dart';
 import 'package:dev_widgets/src/impl/settings/settings_provider.dart';
@@ -105,7 +106,7 @@ class TextDiffPage extends HookConsumerWidget {
                 ]),
           ),
           SizedBox(
-              height: MediaQuery.of(context).size.height / 3,
+              height: MediaQuery.of(context).size.height / 2.5,
               child: MultiSplitViewTheme(
                 data: MultiSplitViewThemeData(dividerThickness: 5),
                 child: MultiSplitView(
@@ -122,59 +123,96 @@ class TextDiffPage extends HookConsumerWidget {
                     InputEditor(
                         toolbarTitle: "old_text".tr(),
                         inputController: oldTextController,
-                        height: MediaQuery.of(context).size.height / 3,
+                        minLines: 20,
+                        height: MediaQuery.of(context).size.height / 2.5,
                         usesCodeControllers: false),
                     InputEditor(
                         toolbarTitle: "new_text".tr(),
+                        minLines: 20,
                         inputController: newTextController,
-                        height: MediaQuery.of(context).size.height / 3,
+                        height: MediaQuery.of(context).size.height / 2.5,
                         usesCodeControllers: false),
                   ],
                 ),
               )),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Align(
-                alignment: Alignment.topLeft,
-                child: Container(
-                  margin: const EdgeInsets.all(8.0),
-                  child: Text("difference".tr(),
-                      style: Theme.of(context).textTheme.titleMedium,
-                      textAlign: TextAlign.start),
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.all(8.0),
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Theme.of(context).disabledColor,
-                  ),
-                  borderRadius: const BorderRadius.all(
-                    Radius.circular(10),
-                  ),
-                ),
-                height: MediaQuery.of(context).size.height / 3,
-                width: MediaQuery.of(context).size.width,
-                padding: const EdgeInsets.all(8.0),
-                child: SingleChildScrollView(
-                    child: PrettyDiffText(
-                  textAlign: TextAlign.left,
-                  diffEditCost: ref.watch(editCostProvider),
-                  diffCleanupType: ref.watch(diffCleanupTypeProvider),
-                  defaultTextStyle: TextStyle(
-                      fontSize: ref.watch(settingsProvider).textEditorFontSize,
-                      textBaseline: TextBaseline.alphabetic,
-                      fontFamily: settings.textEditorFontFamily,
-                      color: Theme.of(context).textTheme.bodyText1!.color),
-                  newText: ref.watch(newTextProvider),
-                  oldText: ref.watch(oldTextProvider),
-                )),
-              )
-            ],
+          GestureDetector(
+            onTap: () {
+              showDialog(
+                barrierDismissible: true,
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    title: YaruDialogTitle(
+                        closeIconData: Icons.close, title: "difference".tr()),
+                    content: _Diff(settings: settings, isDialog: true),
+                  );
+                },
+              );
+            },
+            child: _Diff(settings: settings),
           ),
         ],
       ),
+    );
+  }
+}
+
+class _Diff extends ConsumerWidget {
+  const _Diff({
+    Key? key,
+    required this.settings,
+    this.isDialog = false,
+  }) : super(key: key);
+
+  final Settings settings;
+
+  final bool isDialog;
+
+  @override
+  Widget build(BuildContext context, ref) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Visibility(
+          visible: !isDialog,
+          child: Align(
+            alignment: Alignment.topLeft,
+            child: Container(
+              margin: const EdgeInsets.all(8.0),
+              child: Text("difference".tr(),
+                  style: Theme.of(context).textTheme.titleMedium,
+                  textAlign: TextAlign.start),
+            ),
+          ),
+        ),
+        Container(
+          margin: const EdgeInsets.all(8.0),
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Theme.of(context).disabledColor,
+            ),
+            borderRadius: const BorderRadius.all(
+              Radius.circular(10),
+            ),
+          ),
+          height: MediaQuery.of(context).size.height / 1.5,
+          width: MediaQuery.of(context).size.width,
+          padding: const EdgeInsets.all(8.0),
+          child: SingleChildScrollView(
+              child: PrettyDiffText(
+            textAlign: TextAlign.left,
+            diffEditCost: ref.watch(editCostProvider),
+            diffCleanupType: ref.watch(diffCleanupTypeProvider),
+            defaultTextStyle: TextStyle(
+                fontSize: ref.watch(settingsProvider).textEditorFontSize,
+                textBaseline: TextBaseline.alphabetic,
+                fontFamily: settings.textEditorFontFamily,
+                color: Theme.of(context).textTheme.bodyText1!.color),
+            newText: ref.watch(newTextProvider),
+            oldText: ref.watch(oldTextProvider),
+          )),
+        )
+      ],
     );
   }
 }

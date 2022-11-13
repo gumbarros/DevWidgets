@@ -9,7 +9,7 @@ class InputEditor extends StatelessWidget {
       this.inputController,
       this.width,
       this.height,
-      this.toolbarTitle,
+      this.toolbarTitle, this.minLines,
       this.isVerticalLayout = false,
       this.usesCodeControllers = true, this.onChanged})
       : super(key: key);
@@ -22,6 +22,7 @@ class InputEditor extends StatelessWidget {
   final double? width;
   final Function(String value)? onChanged;
   final double? height;
+  final int? minLines;
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +44,7 @@ class InputEditor extends StatelessWidget {
                     : MediaQuery.of(context).size.height / 1.5),
             child: CodeEditorWrapper(
                 onChanged:onChanged,
+                minLines: minLines,
                 usesCodeControllers: usesCodeControllers,
                 textEditingController: inputController),
           )

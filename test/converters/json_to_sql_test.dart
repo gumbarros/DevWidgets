@@ -22,12 +22,12 @@ void main() {
 
     test("Create table script", () {
       const String expectedTable = """CREATE TABLE Product(
-\tId INTEGER NOT NULL PRIMARY KEY,
-\tName VARCHAR(MAX) NOT NULL,
-\tQuantity INTEGER NOT NULL,
-\tPrice NUMBER NOT NULL,
-\tColor VARCHAR(MAX) NULL,
-\tManufacturingDate DATETIME NOT NULL
+    Id INTEGER NOT NULL PRIMARY KEY,
+    Name VARCHAR(MAX) NOT NULL,
+    Quantity INTEGER NOT NULL,
+    Price NUMBER NOT NULL,
+    Color VARCHAR(MAX) NULL,
+    ManufacturingDate DATETIME NOT NULL
 );""";
 
       final result = sql_generator.getCreateTableScript(

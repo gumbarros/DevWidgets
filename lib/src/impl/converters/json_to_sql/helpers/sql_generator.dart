@@ -22,7 +22,7 @@ String getCreateTableScript(
   for (var i = 0; i < fields.length; i++) {
     final field = fields[i];
 
-    script.write("\t${field.fieldName} ${field.dataType}");
+    script.write("    ${field.fieldName} ${field.dataType}");
 
     if (field.dataType == DataType.varChar) {
       script.write("(${field.length ?? "MAX"})");

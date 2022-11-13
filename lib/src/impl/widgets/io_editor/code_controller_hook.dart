@@ -15,18 +15,11 @@ class _CodeControllerHookCreator {
   }
 }
 
-/// Creates a [CodeController], either via an initial text or an initial
-/// [TextEditingValue].
+/// Creates a [CodeController], with an optional initial text.
 ///
 /// To use a [CodeController] with an optional initial text, use:
 /// ```dart
 /// final controller = useCodeController(text: 'initial text');
-/// ```
-///
-/// To use a [CodeController] with an optional initial value, use:
-/// ```dart
-/// final controller = useCodeController
-///   .fromValue(TextEditingValue.empty);
 /// ```
 ///
 /// Changing the text or initial value after the widget has been built has no

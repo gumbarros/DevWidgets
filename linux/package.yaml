@@ -1,0 +1,12 @@
+meta:
+  description: DevWidgets
+  vendor: Gustavo Mauricio de Barros
+  maintainer: Gustavo Mauricio de Barros
+files:
+  "build/linux/x64/release/":
+    file: dev-widgets
+    mode: "0755"
+    user: "root"
+scripts:
+  "post-install": scripts/post-inst
+user: root

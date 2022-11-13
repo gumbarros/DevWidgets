@@ -31,7 +31,15 @@ jobs:
     - name: Build
       run: flutter build linux --release
     
-    - name: Prepare AppImage Files
+    - name: Build Debian
+      uses: kentik/pkg@v1.0.0-rc8
+      with:
+        name: DevWidgets
+        version: 1.0.0
+        format: deb
+        package: linux/package.yaml
+        
+    - name: Build AppImage
       run: |
         cp -r build/linux/x64/release/bundle DevWidgets.AppDir
         wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
@@ -39,6 +47,7 @@ jobs:
         cp -r linux/appimage_assets/* DevWidgets.AppDir/
         chmod +x DevWidgets.AppDir/AppRun
         ./appimagetool-x86_64.AppImage DevWidgets.AppDir/
+        
     
     - name: Automatic Releases
       uses: marvinpinto/action-automatic-releases@latest
@@ -47,4 +56,6 @@ jobs:
         automatic_release_tag: "latest"
         prerelease: true
         title: "Latest Build"
-        files: DevWidgets-x86_64.AppImage
+        files: |
+            *.AppImage
+            *.deb

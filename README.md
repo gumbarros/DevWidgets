@@ -3,7 +3,7 @@
 </p>
 <h2 align="center">DevWidgets</h2>
 <p align="center">
-DevWidgets is a W.I.P Flutter application with several tools such as generators, formatters and converters for developers.
+DevWidgets is a Flutter application with several tools such as generators, formatters and converters for developers.
 It's directly inspired by <a href="https://github.com/veler/DevToys">DevToys</a>.<br>
 <a href="https://gumbarros.github.io/DevWidgets">Clicking here</a> you can try it directly from your browser 🌐!
 </p>

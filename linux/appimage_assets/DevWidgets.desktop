@@ -6,4 +6,5 @@ Exec=devwidgets %u
 Icon=icon
 Terminal=false
 Type=Application
-Categories=Development;
+Categories=Development
+StartupWMClass=<wmclass>;

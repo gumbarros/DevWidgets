@@ -1,4 +1,4 @@
-name: Build & deploy Linux packages
+name: Build & deploy Linux AppImage
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:  
   build_deploy_linux:
-    name: Build & deploy Linux packages
+    name: Build & deploy Linux AppImage
     runs-on: ubuntu-latest
     
     steps:
@@ -17,6 +17,12 @@ jobs:
     - name: Install Dependencies
       run: sudo apt update && sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev
       
+    - name: Cache Flutter dependencies
+      uses: actions/cache@v1
+      with:
+        path: /opt/hostedtoolcache/flutter
+        key: ${{ runner.OS }}-flutter-install-cache-${{ env.flutter_version }}
+        
     - name: Install Flutter
       uses: subosito/flutter-action@v2
       with:
@@ -30,15 +36,6 @@ jobs:
       
     - name: Build
       run: flutter build linux --release
-    
-    - name: Build Debian Package
-      uses: jiro4989/build-deb-action@v2
-      with:
-        package: DevWidgets
-        package_root: build/linux/x64/release/bundle
-        maintainer: gumbarros
-        version: 1.0.0
-        desc: DevWidgets is a Flutter application with several tools such as generators, formatters and converters for developers
         
     - name: Build AppImage
       run: |
@@ -57,6 +54,4 @@ jobs:
         automatic_release_tag: "latest"
         prerelease: true
         title: "Latest Build"
-        files: |
-            *.AppImage
-            *.deb
+        files: DevWidgets-x86_64.AppImage

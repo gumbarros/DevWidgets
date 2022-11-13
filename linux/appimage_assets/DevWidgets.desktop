@@ -1,9 +1,9 @@
-#!/usr/bin/env xdg-open
 [Desktop Entry]
-Version=1.0
-Type=Application
-Terminal=false
 Name=DevWidgets
+Version=1.0.0
+Comment=DevWidgets is a Flutter application with several tools such as generators, formatters and converters for developers. It's directly inspired by DevToys. 
 Exec=devwidgets %u
 Icon=icon
+Terminal=false
+Type=Application
 Categories=Utility;Development;

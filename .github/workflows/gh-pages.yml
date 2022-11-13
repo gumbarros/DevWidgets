@@ -1,4 +1,4 @@
-name: Build & deploy
+name: Build & deploy to GitHub pages
 
 on:
   push:
@@ -16,7 +16,12 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-    
+
+    - name: Cache Flutter dependencies
+      uses: actions/cache@v1
+      with:
+        path: /opt/hostedtoolcache/flutter
+        key: ${{ runner.OS }}-flutter-install-cache-${{ env.flutter_version }}
     - name: Install Flutter
       uses: subosito/flutter-action@v2
       with:

@@ -9,7 +9,7 @@ class InputEditor extends StatelessWidget {
       this.inputController,
       this.width,
       this.height,
-      this.toolbarTitle, this.minLines,
+      this.toolbarTitle, this.minLines = 10,
       this.isVerticalLayout = false,
       this.usesCodeControllers = true, this.onChanged})
       : super(key: key);

@@ -1,7 +1,7 @@
 name: Automatic Release
 on:
   workflow_run:
-    workflows: ["Build AppImage", "Build Flatpak"]
+    workflows: ["Build & deploy for Linux"]
     types: [completed]
 
 jobs:  

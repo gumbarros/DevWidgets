@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=DevWidgets
+Summary=Utilities for developers.
 Icon=br.com.barros.DevWidgets
 Exec=devwidgets %U
 Categories=Development

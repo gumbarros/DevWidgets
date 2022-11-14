@@ -1,4 +1,4 @@
-name: Build Flatpak
+name: Build & deploy for Linux
 
 on:
   push:
@@ -61,10 +61,42 @@ jobs:
         uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v4
         with:
           bundle: DevWidgets.flatpak
-          manifest-path: br.com.barros.DevWidgets.json
+          manifest-path: br.com.barros.DevWidgets.yml
 
       - name: Upload .flatpak artifact to workflow
         uses: actions/upload-artifact@v2
         with:
           name: Flatpak artifact
           path: DevWidgets.flatpak
+
+  build-appimage:
+    name: Build AppImage
+    runs-on: ubuntu-latest
+    needs: build-flutter-app
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Download app archive
+        uses: actions/download-artifact@v3
+        with:
+          name: DevWidgets-Archive
+
+      - name: Extract archive
+        run: |
+          tar -xf DevWidgets-Linux-Portable.tar.gz -C portable/
+
+      - name: Build AppImage
+        run: |
+          cp -r portable DevWidgets.AppDir
+          wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
+          chmod +x ./appimagetool-x86_64.AppImage
+          cp -r linux/appimage_assets/* DevWidgets.AppDir/
+          chmod +x DevWidgets.AppDir/AppRun
+          ./appimagetool-x86_64.AppImage DevWidgets.AppDir/
+
+      - name: Upload .AppImage artifact to workflow
+        uses: actions/upload-artifact@v2
+        with:
+          name: AppImage artifact
+          path: DevWidgets-x86_64.AppImage

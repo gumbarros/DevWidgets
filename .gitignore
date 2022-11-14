@@ -46,3 +46,8 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 pubspec.lock
+
+# Flatpak
+build-dir/
+DevWidgets-Linux-Portable.tar.gz
+.flatpak-builder/

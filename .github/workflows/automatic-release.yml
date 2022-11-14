@@ -1,0 +1,32 @@
+name: Automatic Release
+on:
+  workflow_run:
+    workflows: ["Build AppImage", "Build Flatpak"]
+    types: [completed]
+
+jobs:  
+  automatic_release:
+    name: Automatic Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download AppImage artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: DevWidgets-x86_64.AppImage
+
+      - name: Download Flatpak artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: DevWidgets.flatpak
+
+      - name: Automatic Releases
+        uses: marvinpinto/action-automatic-releases@latest
+        with: 
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: false
+          title: "Latest Build"
+          files: |
+              DevWidgets-x86_64.AppImage
+              DevWidgets.flatpak
+        

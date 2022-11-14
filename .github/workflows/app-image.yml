@@ -1,4 +1,4 @@
-name: Build & deploy Linux AppImage
+name: Build AppImage
 
 on:
   push:
@@ -6,8 +6,8 @@ on:
       - main
 
 jobs:  
-  build_deploy_linux:
-    name: Build & deploy Linux AppImage
+  build_appimage:
+    name: Build AppImage
     runs-on: ubuntu-latest
     
     steps:
@@ -45,13 +45,9 @@ jobs:
         cp -r linux/appimage_assets/* DevWidgets.AppDir/
         chmod +x DevWidgets.AppDir/AppRun
         ./appimagetool-x86_64.AppImage DevWidgets.AppDir/
-        
-    
-    - name: Automatic Releases
-      uses: marvinpinto/action-automatic-releases@latest
-      with: 
-        repo_token: "${{ secrets.GITHUB_TOKEN }}"
-        automatic_release_tag: "latest"
-        prerelease: false
-        title: "Latest Build"
-        files: DevWidgets-x86_64.AppImage
+
+    - name: Upload .AppImage artifact to workflow
+        uses: actions/upload-artifact@v2
+        with:
+          name: AppImage artifact
+          path: DevWidgets-x86_64.AppImage

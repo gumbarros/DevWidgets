@@ -171,13 +171,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.2"
-  console:
-    dependency: transitive
-    description:
-      name: console
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "4.1.0"
   convert:
     dependency: transitive
     description:
@@ -450,13 +443,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.2+3"
-  get_it:
-    dependency: transitive
-    description:
-      name: get_it
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "7.2.0"
   glob:
     dependency: transitive
     description:
@@ -667,13 +653,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0"
-  msix:
-    dependency: "direct dev"
-    description:
-      name: msix
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "3.7.0"
   multi_split_view:
     dependency: "direct main"
     description:

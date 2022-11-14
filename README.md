@@ -24,7 +24,7 @@ It's directly inspired by <a href="https://github.com/veler/DevToys">DevToys</a>
 
 ### Download from Releases
 
-You can download a nightly build for Linux or Windows from the latest commit
+You can download a nightly build for Linux from the latest commit
 from [here](https://github.com/gumbarros/DevWidgets/releases).
 
 ### Building from source

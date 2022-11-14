@@ -14,6 +14,8 @@ It's directly inspired by <a href="https://github.com/veler/DevToys">DevToys</a>
   <a href="https://github.com/gumbarros/DevWidgets/releases/tag/latest">
     <img src="https://img.shields.io/badge/Download-22272e?logo=github" alt="Download">
   </a>
+  <image src="https://user-images.githubusercontent.com/52143624/201690529-58c277d6-91f1-466a-b076-da680a0f2a9d.png" alt="DevWidgetsHome">
+
 </p>
 
 ---

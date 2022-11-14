@@ -89,7 +89,6 @@ msix_config:
   display_name: DevWidgets
   publisher_display_name: Gustavo Mauricio de Barros
   identity_name: br.com.barros.DevWidgets
-  msix_version: 1.0.0.0
   logo_path: assets/icon/icon.png
   install_certificate: false
   output_name: DevWidgets

@@ -18,10 +18,11 @@ jobs:
         with:
           channel: 'stable' 
 
+      - name: Get dependencies
+        run: flutter pub get
+
       - name: Build
-        run: |
-          flutter pub get
-          flutter pub run msix:create
+        run: flutter pub run msix:create
 
       - name: Upload .msix for release
         uses: actions/upload-artifact@v2

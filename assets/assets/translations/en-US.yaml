@@ -23,7 +23,6 @@ cnpj_short_title: CNPJ Generator
 compact: Compact
 configuration: Configuration
 conversion: Conversion
-conversion_description: Select which conversion mode you want to use
 conversion_mode: Select which conversion mode you want to use
 conversion_type: Conversion type
 convert: Convert
@@ -93,7 +92,7 @@ json_formatter_short_title: JSON
 json_to_class: "JSON -> Class"
 json_to_class_description: Convert JSON data to a programming language class
 json_to_sql: "JSON -> SQL"
-json_to_sql_description: Convert JSON data to table definitions or insert/update/delete scripts.
+json_to_sql_description: Convert JSON data to table definitions or INSERT/UPDATE/DELETE scripts.
 json_to_sql_invalid_json_data: |-
   Invalid JSON data.
   Please input a array with objects like the example above.
@@ -136,8 +135,6 @@ programming_language: Programming language
 repository: Repository
 repository_about: "In the repository you can open issues to report a problem, see the source code or leave feedback :)"
 required: Required
-restart_to_apply_changes: You may need to restart the app to apply changes to the editor.
-search_bar_hint: Type to search for tools...
 selection: Selection
 semantic_cleanup: Semantic Cleanup
 semantic_cleanup_description: Increase human readability by factoring out commonalities which are likely to be coincidental

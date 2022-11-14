@@ -24,7 +24,7 @@ It's directly inspired by <a href="https://github.com/veler/DevToys">DevToys</a>
 
 ### Download from Releases
 
-You can download a nightly build for Linux from the latest commit
+You can download a nightly build for Linux or Windows from the latest commit
 from [here](https://github.com/gumbarros/DevWidgets/releases).
 
 ### Building from source
@@ -36,13 +36,20 @@ git clone https://github.com/gumbarros/DevWidgets
 ```
 
 2. Install [Flutter](https://docs.flutter.dev/get-started/)
-3. Restore the dependencies and build the project
+3. Restore the dependencies
 
 ```bash
 flutter pub get
-flutter run
 ```
-
+4. Build for your OS
+```bash
+# Windows
+flutter build windows --release
+# Mac
+flutter build macos --release
+# Linux
+flutter build linux --release
+```
 ---
 
 ## Contributing

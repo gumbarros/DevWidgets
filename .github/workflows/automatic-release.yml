@@ -21,6 +21,12 @@ jobs:
           workflow: flatpak.yml
           name: Flatpak artifact
 
+      - name: Download Windows artifact
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          workflow: windows.yml
+          name: Windows artifact
+
       - name: Automatic Release
         uses: marvinpinto/action-automatic-releases@latest
         with: 

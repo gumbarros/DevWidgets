@@ -51,6 +51,7 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^2.0.1
   flutter_launcher_icons: ^0.10.0
+  msix: ^3.7.0
 
 flutter:
   assets:
@@ -83,3 +84,12 @@ flutter_icons:
     generate: true
   linux:
     generate: true
+
+msix_config:
+  display_name: DevWidgets
+  publisher_display_name: Gustavo Mauricio de Barros
+  identity_name: br.com.barros.DevWidgets
+  msix_version: 1.0.0.0
+  logo_path: assets/icon/icon.png
+  install_certificate: false
+  output_name: DevWidgets

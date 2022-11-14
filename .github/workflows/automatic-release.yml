@@ -10,13 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download AppImage artifact
-        uses: actions/download-artifact@v3
+        uses: dawidd6/action-download-artifact@v2
         with:
           workflow: appimage.yml
           name: DevWidgets-x86_64.AppImage
 
       - name: Download Flatpak artifact
-        uses: actions/download-artifact@v3
+        uses: dawidd6/action-download-artifact@v2
         with:
           workflow: flatpak.yml
           name: DevWidgets.flatpak

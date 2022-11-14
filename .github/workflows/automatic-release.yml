@@ -9,6 +9,12 @@ jobs:
     name: Automatic Release
     runs-on: ubuntu-latest
     steps:
+      - name: Download Linux portable artifact
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          workflow: flatpak.yml
+          name: DevWidgets-Archive
+    
       - name: Download AppImage artifact
         uses: dawidd6/action-download-artifact@v2
         with:
@@ -30,5 +36,6 @@ jobs:
           title: "Latest Build"
           files: |
               DevWidgets-x86_64.AppImage
+              DevWidgets-Linux-Portable.tar.gz
               DevWidgets.flatpak
         

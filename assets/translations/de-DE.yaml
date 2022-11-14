@@ -6,7 +6,6 @@ clear: Leeren
 compact: Kompakt
 configuration: Konfiguration
 conversion: Konvertieren
-conversion_description: Wähle den Konvertier-Modus
 conversion_mode: Wähle den Konvertier-Modus
 converters: Konvertierer
 copy: Kopieren
@@ -73,8 +72,6 @@ paragraphs: Absätze
 paste: Einfügen
 preview: Vorschau
 primary_color: Primärfarbe
-restart_to_apply_changes: "Du musst die App vielleicht neu starten, um die Einstellungen für den Editor zu speichern."
-search_bar_hint: "Tippe, um nach tools zu suchen..."
 semantic_cleanup: Semantische Bereinigung
 semantic_cleanup_description: "Erhöhe Lesbarkeit, indem wahrscheinlich unbeabsichtigte, häufige Gemeinsamkeiten versteckt werden."
 sentences: Sätze

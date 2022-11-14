@@ -33,7 +33,7 @@ class YaruMenuSearchBox extends HookConsumerWidget {
           ),
           prefixIconConstraints:
               const BoxConstraints.expand(width: 40, height: 40),
-          hintText: StringTranslateExtension("menu_search_bar_hint").tr(),
+          hintText: "menu_search_bar_hint".tr(),
           hintStyle: const TextStyle(fontSize: 15),
           enabledBorder: const UnderlineInputBorder(
               borderSide: BorderSide(

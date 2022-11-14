@@ -54,9 +54,7 @@ class TextEscapePage extends HookConsumerWidget {
                       child: ListTile(
                           title:
                               Text(StringTranslateExtension("conversion").tr()),
-                          subtitle: Text(
-                              StringTranslateExtension("conversion_description")
-                                  .tr())),
+                          subtitle: Text("conversion_mode".tr())),
                     ),
                     actionWidget: DropdownButton<EscapeConversionMode>(
                         value: ref.watch(escapeConversionModeProvider),

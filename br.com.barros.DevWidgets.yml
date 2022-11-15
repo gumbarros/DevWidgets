@@ -10,7 +10,7 @@ finish-args:
   - --socket=wayland
   - --device=dri
   - --socket=pulseaudio
-  - --share=network
+  - --filesystem=host
 modules:
   - name: devwidgets
     buildsystem: simple

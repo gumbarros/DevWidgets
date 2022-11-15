@@ -84,7 +84,7 @@ jobs:
 
       - name: Extract archive
         run: |
-          mkdir portable && tar -xf DevWidgets.tar.gz -C $_
+          mkdir portable && tar -xf DevWidgets-Linux-Portable.tar.gz -C $_
 
       - name: Build AppImage
         run: |

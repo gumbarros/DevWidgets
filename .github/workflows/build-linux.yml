@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-flutter-app:
-    name: Build and compressed Flutter app
+    name: Build and compress Flutter app
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -84,7 +84,7 @@ jobs:
 
       - name: Extract archive
         run: |
-          tar -xf DevWidgets-Linux-Portable.tar.gz -C portable/
+          mkdir portable && tar -xf DevWidgets.tar.gz -C $_
 
       - name: Build AppImage
         run: |

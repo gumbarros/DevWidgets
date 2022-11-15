@@ -1,4 +1,4 @@
-name: Build & deploy for Linux
+name: Build & Deploy
 
 on:
   push:
@@ -100,3 +100,35 @@ jobs:
         with:
           name: AppImage artifact
           path: DevWidgets-x86_64.AppImage
+
+  automatic_release:
+    name: Automatic Release
+    runs-on: ubuntu-latest
+    needs: [build-appimage, build-flatpak]
+    steps:
+      - name: Download Linux portable artifact
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          name: DevWidgets-Archive
+    
+      - name: Download AppImage artifact
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          name: AppImage artifact
+
+      - name: Download Flatpak artifact
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          name: Flatpak artifact
+          
+      - name: Automatic Release
+        uses: marvinpinto/action-automatic-releases@latest
+        with: 
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: false
+          title: "Latest Build"
+          files: |
+              DevWidgets-x86_64.AppImage
+              DevWidgets-Linux-Portable.tar.gz
+              DevWidgets.flatpak

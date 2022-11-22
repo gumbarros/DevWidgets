@@ -1,10 +1,8 @@
 import 'package:dev_widgets/src/impl/converters/json_to_sql/json_to_sql_converter_providers.dart';
-import 'package:dev_widgets/src/impl/widgets/io_editor/code_controller_hook.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/output_editor.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:highlight/languages/sql.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class JsonToSqlConverterOutput extends HookConsumerWidget {
@@ -12,7 +10,7 @@ class JsonToSqlConverterOutput extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
-    final controller = useCodeController(language: sql);
+    final controller = useTextEditingController();
 
     useEffect(() {
       controller.text = !ref.read(isValidJsonProvider)
@@ -25,7 +23,7 @@ class JsonToSqlConverterOutput extends HookConsumerWidget {
       child: SizedBox(
         height: MediaQuery.of(context).size.height - kToolbarHeight,
         child: OutputEditor(
-            outputController: controller, usesCodeControllers: true),
+            outputController: controller, usesCodeControllers: false),
       ),
     );
   }

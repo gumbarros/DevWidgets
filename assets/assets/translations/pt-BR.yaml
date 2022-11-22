@@ -44,7 +44,8 @@ diff_mode_none: Sem limpeza. Texto bruto.
 diff_mode_semantic: Aumentar a legibilidade humana, tendo em conta os pontos comuns que são susceptíveis de ser coincidentes.
 difference: Diferença
 display_line_numbers: Mostrar número de linhas
-download_image: Baixar imagem
+download_desktop_version: Download da versão desktop
+download_image: Download da imagem
 edit_cost: Custo de edição
 efficiency_cleanup: Limpeza eficaz
 efficiency_cleanup_description: "Aumentar a eficiência computacional, tendo em conta as pequenas semelhanças que não valem as despesas gerais. Quanto maior for o custo de edição, mais agressiva será a limpeza."
@@ -130,7 +131,7 @@ paste: Colar
 position: Posição
 preview: Visualização
 primary_color: Cor primária
-primary_key: Chave primária
+primary_key: Chave Primária
 programming_language: Linguagem de programação
 repository: Repositório
 repository_about: "No repositório pode abrir issues para reportar um problema, ver o código fonte ou deixar feedback :)"

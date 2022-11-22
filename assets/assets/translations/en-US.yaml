@@ -43,10 +43,11 @@ diff_mode_efficiency: Increase computational efficiency by factoring out short c
 diff_mode_none: No cleanup. Raw output.
 diff_mode_semantic: Increase human readability by factoring out commonalities which are likely to be coincidental.
 difference: Difference
-display_line_numbers: Display Line Numbers
-download_image: Download Image
+display_line_numbers: Display line numbers
+download_desktop_version: Download desktop version
+download_image: Download image
 edit_cost: Edit Cost
-efficiency_cleanup: Efficiency Cleanup
+efficiency_cleanup: Efficiency cleanup
 efficiency_cleanup_description: "Increase computational efficiency by factoring out short commonalities which are not worth the overhead. The larger the edit cost, the more aggressive the cleanup"
 enabled: Enabled
 encode: Encode
@@ -58,8 +59,8 @@ escape: Escape
 field_name: Name
 fields: Fields
 file_saved_to_documents: File saved to the documents folder.
-font_family: Font Family
-font_size: Font Size
+font_family: Font family
+font_size: Font size
 format: Format
 formatter: Formatter
 formatters: Formatters
@@ -70,7 +71,7 @@ generators: Generators
 generic: Generic
 generic_sql: Generic SQL
 github: GitHub
-high_contrast: High Contrast
+high_contrast: High contrast
 home: Home
 html: HTML
 html_encoder: HTML Encoder / Decoder
@@ -129,14 +130,14 @@ paragraphs: Paragraphs
 paste: Paste
 position: Position
 preview: Preview
-primary_color: Primary Color
+primary_color: Primary color
 primary_key: Primary Key
 programming_language: Programming language
 repository: Repository
 repository_about: "In the repository you can open issues to report a problem, see the source code or leave feedback :)"
 required: Required
 selection: Selection
-semantic_cleanup: Semantic Cleanup
+semantic_cleanup: Semantic cleanup
 semantic_cleanup_description: Increase human readability by factoring out commonalities which are likely to be coincidental
 sentences: Sentences
 settings: Settings
@@ -182,9 +183,9 @@ v4: 4 (GUID)
 validator: Validator
 version: Version
 warning: Warning
-word_distribution: Word Distribution
+word_distribution: Word distribution
 words: Words
-wrap_text: Wrap Text
+wrap_text: Wrap text
 xml_formatter: XML Formatter
 xml_formatter_description: Indent or minify XML data
 xml_formatter_short_title: XML

@@ -93,7 +93,7 @@ jobs:
           chmod +x ./appimagetool-x86_64.AppImage
           cp -r linux/appimage_assets/* DevWidgets.AppDir/
           chmod +x DevWidgets.AppDir/AppRun
-          ./appimagetool-x86_64.AppImage DevWidgets.AppDir/ --appimage-extract
+          ./appimagetool-x86_64.AppImage DevWidgets.AppDir/
 
       - name: Upload .AppImage artifact to workflow
         uses: actions/upload-artifact@v2

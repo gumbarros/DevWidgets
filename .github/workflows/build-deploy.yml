@@ -90,6 +90,7 @@ jobs:
         run: |
           cp -r portable DevWidgets.AppDir
           wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
+          sudo apt install libfuse2
           chmod +x ./appimagetool-x86_64.AppImage
           cp -r linux/appimage_assets/* DevWidgets.AppDir/
           chmod +x DevWidgets.AppDir/AppRun

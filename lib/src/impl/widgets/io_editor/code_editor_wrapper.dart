@@ -15,7 +15,7 @@ class CodeEditorWrapper extends ConsumerWidget {
       required this.usesCodeControllers,
       this.textEditingController,
       this.onChanged,
-        this.minLines = 10,
+      this.minLines = 10,
       this.readOnly = false});
 
   @override
@@ -27,6 +27,12 @@ class CodeEditorWrapper extends ConsumerWidget {
         data:
             CodeThemeData(styles: textEditorThemes[settings.textEditorTheme]!),
         child: CodeField(
+          cursorColor: Theme.of(context).focusColor,
+          decoration: BoxDecoration(
+            color: Theme.of(context).backgroundColor,
+          ),
+          lineNumberStyle:
+              LineNumberStyle(textStyle: Theme.of(context).textTheme.bodySmall),
           wrap: settings.textEditorWrap,
           lineNumbers: settings.textEditorDisplayLineNumbers,
           textStyle: TextStyle(

@@ -16,7 +16,8 @@ Settings loadSettingsFromBox() {
       highContrast: _settingsBox.get("highContrast", defaultValue: false),
       textEditorFontSize:
           _settingsBox.get("textEditorFontSize", defaultValue: 18.0),
-      textEditorTheme: _settingsBox.get("textEditorTheme", defaultValue: "vs"),
+      textEditorTheme:
+          _settingsBox.get("textEditorTheme", defaultValue: "vs2015"),
       textEditorWrap: _settingsBox.get("textEditorWrap", defaultValue: false),
       favorites: _settingsBox.get("favorites", defaultValue: <String>[]),
       themeMode:

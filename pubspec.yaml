@@ -1,5 +1,5 @@
 name: dev_widgets
-version: 1.0.0+1
+version: 1.0.1'+1
 publish_to: none
 description: Cross-platform utilities for developers.
 environment:

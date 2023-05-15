@@ -100,33 +100,30 @@ class _ApplicationSettings extends ConsumerWidget {
             value: settings.highContrast,
           ),
         ),
-        Visibility(
-          visible: true,
-          child: YaruRow(
-            enabled: true,
-            padding: const EdgeInsets.all(8.0),
-            leadingWidget: const Icon(Icons.brush),
-            trailingWidget: Text(
-              "primary_color".tr(),
-              style: const TextStyle(fontSize: 18),
-            ),
-            actionWidget: Flexible(
-              child: Wrap(
-                crossAxisAlignment: WrapCrossAlignment.start,
-                alignment: WrapAlignment.start,
-                children: [
-                  for (var variant in YaruVariant.values)
-                    YaruColorDisk(
-                      onPressed: () {
-                        ref
-                            .read(settingsProvider.notifier)
-                            .setYaruVariant(variant);
-                      },
-                      color: variant.color,
-                      selected: settings.yaruVariant == variant,
-                    ),
-                ],
-              ),
+        YaruRow(
+          enabled: true,
+          padding: const EdgeInsets.all(8.0),
+          leadingWidget: const Icon(Icons.brush),
+          trailingWidget: Text(
+            "primary_color".tr(),
+            style: const TextStyle(fontSize: 18),
+          ),
+          actionWidget: Flexible(
+            child: Wrap(
+              crossAxisAlignment: WrapCrossAlignment.start,
+              alignment: WrapAlignment.start,
+              children: [
+                for (var variant in YaruVariant.values)
+                  YaruColorDisk(
+                    onPressed: () {
+                      ref
+                          .read(settingsProvider.notifier)
+                          .setYaruVariant(variant);
+                    },
+                    color: variant.color,
+                    selected: settings.yaruVariant == variant,
+                  ),
+              ],
             ),
           ),
         ),

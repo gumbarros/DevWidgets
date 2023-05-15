@@ -30,7 +30,6 @@ class Settings {
   Settings copyWith(
       {List<String>? favorites,
       ThemeMode? themeMode,
-      Locale? locale,
       bool? highContrast,
       YaruVariant? yaruVariant,
       String? textEditorTheme,

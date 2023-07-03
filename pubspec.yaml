@@ -19,7 +19,7 @@ dependencies:
   flutter_markdown: ^0.6.12
   flutter_riverpod: ^2.0.2
   flutter_widget_from_html: ^0.8.5
-  go_router: ^5.1.1
+  go_router: ^9.0.0
   highlight: ^0.7.0
   hive_flutter: ^1.1.0
   hooks_riverpod: ^2.1.1
@@ -28,13 +28,13 @@ dependencies:
   json2yaml: ^3.0.0
   json_to_dart: ^1.0.5
   multi_split_view: ^2.1.0
-  package_info_plus: ^3.0.1
+  package_info_plus: ^4.0.2
   path: ^1.8.2
   path_provider: ^2.0.11
   pretty_diff_text: ^1.0.0
   recase: ^4.1.0
   responsive_framework: ^0.2.0
-  screenshot: ^1.2.3
+  screenshot: ^2.1.0
   url_launcher: ^6.1.6
   uuid: ^3.0.6
   xml: ^6.1.0

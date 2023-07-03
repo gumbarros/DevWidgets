@@ -207,7 +207,7 @@ class _Diff extends ConsumerWidget {
                 fontSize: ref.watch(settingsProvider).textEditorFontSize,
                 textBaseline: TextBaseline.alphabetic,
                 fontFamily: settings.textEditorFontFamily,
-                color: Theme.of(context).textTheme.bodyText1!.color),
+                color: Theme.of(context).textTheme.bodyLarge!.color),
             newText: ref.watch(newTextProvider),
             oldText: ref.watch(oldTextProvider),
           )),

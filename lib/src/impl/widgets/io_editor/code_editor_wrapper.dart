@@ -44,7 +44,7 @@ class CodeEditorWrapper extends ConsumerWidget {
       );
     } else {
       return TextFormField(
-        maxLines: settings.textEditorWrap ? null : 10,
+        maxLines: settings.textEditorWrap ? null : (minLines! + 1),
         style: TextStyle(
             fontFamily: settings.textEditorFontFamily,
             fontSize: settings.textEditorFontSize,

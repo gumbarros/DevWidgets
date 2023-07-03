@@ -201,7 +201,7 @@ class _TextData extends ConsumerWidget {
                 controller: wordDistributionController,
                 maxLines: 10,
                 readOnly: true,
-                style: Theme.of(context).textTheme.bodyText2,
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
               const SizedBox(
                 height: 10,
@@ -212,7 +212,7 @@ class _TextData extends ConsumerWidget {
                 controller: characterDistributionController,
                 maxLines: 10,
                 readOnly: true,
-                style: Theme.of(context).textTheme.bodyText2,
+                style: Theme.of(context).textTheme.bodyMedium,
               )
             ],
           ),
@@ -234,8 +234,8 @@ class _TextDataEntry extends ConsumerWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(label, style: Theme.of(context).textTheme.bodyText2),
-        Text(value, style: Theme.of(context).textTheme.bodyText2),
+        Text(label, style: Theme.of(context).textTheme.bodyMedium),
+        Text(value, style: Theme.of(context).textTheme.bodyMedium),
       ],
     );
   }

@@ -17,12 +17,12 @@ Future<void> ensureInitialized() async {
 Future<void> main() async {
   await ensureInitialized();
 
-  runApp(EasyLocalization(
+  runApp(ProviderScope(child:EasyLocalization(
       path: 'assets/translations',
       assetLoader: YamlAssetLoader(),
       fallbackLocale: const Locale("en", "US"),
       supportedLocales: supportedLocales.map((l) => l.locale).toList(),
-      child: const Main()));
+      child: const Main())));
 }
 
 class Main extends StatelessWidget {
@@ -30,14 +30,13 @@ class Main extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ProviderScope(
-        child: MaterialApp.router(
+    return MaterialApp.router(
       routerConfig: router,
       debugShowCheckedModeBanner: false,
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
       title: "DevWidgets",
-    ));
+    );
   }
 }

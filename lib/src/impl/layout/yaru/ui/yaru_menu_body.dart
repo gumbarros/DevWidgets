@@ -10,8 +10,7 @@ import 'package:go_router/go_router.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 class YaruMenuBody extends ConsumerWidget {
-
-  const YaruMenuBody({Key? key}) : super(key: key);
+  const YaruMenuBody({super.key});
 
   @override
   Widget build(BuildContext context, ref) {

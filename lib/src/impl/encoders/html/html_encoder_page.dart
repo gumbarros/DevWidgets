@@ -3,15 +3,15 @@ import 'package:dev_widgets/src/impl/encoders/html/html_encoder_providers.dart';
 import 'package:dev_widgets/src/impl/helpers.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/code_controller_hook.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/io_editor.dart';
-import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:highlight/languages/xml.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 class HtmlEncoderPage extends HookConsumerWidget {
-  const HtmlEncoderPage({Key? key}) : super(key: key);
+  const HtmlEncoderPage({super.key});
 
   @override
   Widget build(BuildContext context, ref) {

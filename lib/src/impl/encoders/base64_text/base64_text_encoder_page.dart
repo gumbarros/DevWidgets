@@ -3,14 +3,14 @@ import 'package:dev_widgets/src/impl/encoders/base64_text/base64_text_encoder_pr
 import 'package:dev_widgets/src/impl/encoders/encode_conversion_mode.dart';
 import 'package:dev_widgets/src/impl/helpers.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/io_editor.dart';
-import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 class Base64TextEncoderPage extends HookConsumerWidget {
-  const Base64TextEncoderPage({Key? key}) : super(key: key);
+  const Base64TextEncoderPage({super.key});
 
   @override
   Widget build(BuildContext context, ref) {

@@ -1,6 +1,6 @@
+import 'package:brazil/brazil.dart';
 import 'package:dev_widgets/src/impl/brazil/cpf_cnpj/cpf_cnpj_generation_mode.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:brazil/brazil.dart';
 
 final isFormattedProvider = StateProvider<bool>((ref) => false);
 final amountProvider = StateProvider<int>((ref) => 1);
@@ -25,6 +25,10 @@ class CpfCnpjGenerator extends Notifier<String> {
     }
 
     state = output;
+  }
+
+  clear() {
+    state = "";
   }
 }
 

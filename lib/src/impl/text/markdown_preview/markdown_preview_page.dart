@@ -2,17 +2,17 @@ import 'package:dev_widgets/src/impl/helpers.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/code_controller_hook.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/io_editor.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/io_toolbar.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:highlight/languages/markdown.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final outputTextProvider = StateProvider<String>((ref) => "");
 
 class MarkdownPreviewPage extends HookConsumerWidget {
-  const MarkdownPreviewPage({Key? key}) : super(key: key);
+  const MarkdownPreviewPage({super.key});
 
   @override
   Widget build(BuildContext context, ref) {

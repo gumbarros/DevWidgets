@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class OutputEditor extends StatelessWidget {
   const OutputEditor({
-    Key? key,
+    super.key,
     this.outputChild,
     this.outputController,
     this.isVerticalLayout = false,
@@ -14,7 +14,7 @@ class OutputEditor extends StatelessWidget {
     this.width,
     this.height,
     this.onChanged,
-  }) : super(key: key);
+  });
 
   final Widget? outputChild;
   final TextEditingController? outputController;

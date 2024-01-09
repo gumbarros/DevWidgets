@@ -32,7 +32,7 @@ const exampleJson = """[
 ]""";
 
 class JsonToSqlConverterOptions extends ConsumerWidget {
-  const JsonToSqlConverterOptions({Key? key}) : super(key: key);
+  const JsonToSqlConverterOptions({super.key});
 
   @override
   Widget build(BuildContext context, ref) {
@@ -51,9 +51,8 @@ class JsonToSqlConverterOptions extends ConsumerWidget {
 
 class _Fields extends ConsumerWidget {
   const _Fields({
-    Key? key,
     required this.fields,
-  }) : super(key: key);
+  });
 
   final List<TableField> fields;
 
@@ -165,9 +164,7 @@ class _Fields extends ConsumerWidget {
 }
 
 class _Configuration extends ConsumerWidget {
-  const _Configuration({
-    Key? key,
-  }) : super(key: key);
+  const _Configuration();
 
   @override
   Widget build(BuildContext context, ref) {

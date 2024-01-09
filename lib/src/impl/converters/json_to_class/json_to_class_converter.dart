@@ -1,8 +1,9 @@
 import 'dart:convert';
+
 import 'package:dev_widgets/src/impl/converters/json_to_class/programming_language.dart';
-import 'package:json_to_dart/json_to_dart.dart';
 import 'package:dev_widgets/src/impl/helpers.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:json_dart_generator/json_dart_generator.dart';
 
 abstract class _JsonToClassProvider {
   String convert(String className, String jsonData);
@@ -11,9 +12,9 @@ abstract class _JsonToClassProvider {
 class _JsonToDartConverter implements _JsonToClassProvider {
   @override
   String convert(String className, String jsonData) {
-    var generator = ModelGenerator(className);
+    var generator = DartCodeGenerator(rootClassName: className);
 
-    return generator.generateDartClasses(jsonData).code;
+    return generator.generate(jsonData);
   }
 }
 

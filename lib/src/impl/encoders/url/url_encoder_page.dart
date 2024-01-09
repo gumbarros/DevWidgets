@@ -2,14 +2,14 @@ import 'package:dev_widgets/src/impl/encoders/encode_conversion_mode.dart';
 import 'package:dev_widgets/src/impl/encoders/url/url_encoder_providers.dart';
 import 'package:dev_widgets/src/impl/helpers.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/io_editor.dart';
-import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 class UrlEncoderPage extends HookConsumerWidget {
-  const UrlEncoderPage({Key? key}) : super(key: key);
+  const UrlEncoderPage({super.key});
 
   @override
   Widget build(BuildContext context, ref) {

@@ -1,4 +1,5 @@
 import 'dart:convert';
+
 import 'package:dev_widgets/src/impl/converters/json_to_sql/helpers/table_fields_mapper.dart';
 import 'package:dev_widgets/src/impl/converters/json_to_sql/json_to_sql_converter_providers.dart';
 import 'package:dev_widgets/src/impl/helpers.dart';
@@ -8,7 +9,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class JsonToSqlConverterInput extends HookConsumerWidget {
-  const JsonToSqlConverterInput({Key? key}) : super(key: key);
+  const JsonToSqlConverterInput({super.key});
 
   @override
   Widget build(BuildContext context, ref) {

@@ -6,7 +6,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class JsonToSqlConverterOutput extends HookConsumerWidget {
-  const JsonToSqlConverterOutput({Key? key}) : super(key: key);
+  const JsonToSqlConverterOutput({super.key});
 
   @override
   Widget build(BuildContext context, ref) {

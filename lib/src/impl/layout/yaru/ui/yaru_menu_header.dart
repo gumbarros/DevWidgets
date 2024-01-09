@@ -8,7 +8,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 class YaruMenuHeader extends ConsumerWidget {
-  const YaruMenuHeader({Key? key}) : super(key: key);
+  const YaruMenuHeader({super.key});
 
   @override
   Widget build(BuildContext context, ref) {

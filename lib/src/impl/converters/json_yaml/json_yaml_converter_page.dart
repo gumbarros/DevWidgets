@@ -1,11 +1,11 @@
-import 'package:dev_widgets/src/impl/converters/json_yaml/json_yaml_converter_providers.dart';
 import 'package:dev_widgets/src/impl/converters/json_yaml/json_yaml_conversion_type.dart';
+import 'package:dev_widgets/src/impl/converters/json_yaml/json_yaml_converter_providers.dart';
 import 'package:dev_widgets/src/impl/formatters/indentation.dart';
 import 'package:dev_widgets/src/impl/helpers.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/code_controller_hook.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/io_editor.dart';
-import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:highlight/languages/json.dart';
 import 'package:highlight/languages/yaml.dart';
@@ -14,7 +14,7 @@ import 'package:json2yaml/json2yaml.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 class JsonYamlConverterPage extends HookConsumerWidget {
-  const JsonYamlConverterPage({Key? key}) : super(key: key);
+  const JsonYamlConverterPage({super.key});
 
   @override
   Widget build(BuildContext context, ref) {

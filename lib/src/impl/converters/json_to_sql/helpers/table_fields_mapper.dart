@@ -38,12 +38,12 @@ bool _isMap(value) {
 
 DataType _getFieldType(dynamic value) {
   switch (value.runtimeType) {
-    case int:
+    case const (int):
       return DataType.integer;
-    case bool:
+    case const (bool):
       return DataType.bit;
-    case num:
-    case double:
+    case const (num):
+    case const (double):
       return DataType.number;
     default:
       if (DateTime.tryParse(value.toString()) != null) {

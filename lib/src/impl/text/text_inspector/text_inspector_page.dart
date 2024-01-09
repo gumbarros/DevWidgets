@@ -105,9 +105,7 @@ class TextInspectorPage extends HookConsumerWidget {
 }
 
 class _ConvertionButtons extends ConsumerWidget {
-  const _ConvertionButtons({
-    Key? key,
-  }) : super(key: key);
+  const _ConvertionButtons();
 
   @override
   Widget build(BuildContext context, ref) {
@@ -149,8 +147,7 @@ class _TextData extends ConsumerWidget {
   const _TextData({
     required this.wordDistributionController,
     required this.characterDistributionController,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context, ref) {
@@ -226,8 +223,7 @@ class _TextDataEntry extends ConsumerWidget {
   final String label;
   final String value;
 
-  const _TextDataEntry({required this.label, required this.value, Key? key})
-      : super(key: key);
+  const _TextDataEntry({required this.label, required this.value});
 
   @override
   Widget build(BuildContext context, ref) {

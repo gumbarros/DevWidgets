@@ -1,9 +1,9 @@
 import 'package:dev_widgets/src/impl/brazil/cpf_cnpj/cpf_cnpj_generation_mode.dart';
 import 'package:dev_widgets/src/impl/brazil/cpf_cnpj/cpf_cnpj_providers.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/output_editor.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
@@ -11,7 +11,7 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 class CpfCnpjGeneratorPage extends HookConsumerWidget {
   final GenerationMode mode;
 
-  const CpfCnpjGeneratorPage({Key? key, required this.mode}) : super(key: key);
+  const CpfCnpjGeneratorPage({super.key, required this.mode});
 
   @override
   Widget build(BuildContext context, ref) {
@@ -100,11 +100,10 @@ class CpfCnpjGeneratorPage extends HookConsumerWidget {
                 usesCodeControllers: false,
                 actionButtons: [
                   ElevatedButton.icon(
-                    icon: const Icon(Icons.clear),
-                    label: Text(StringTranslateExtension("clear").tr()),
-                    onPressed: () =>
-                        ref.read(cpfCnpjGeneratorProvider.notifier).state = "",
-                  ),
+                      icon: const Icon(Icons.clear),
+                      label: Text(StringTranslateExtension("clear").tr()),
+                      onPressed: () =>
+                          ref.read(cpfCnpjGeneratorProvider.notifier).clear())
                 ],
               )),
         ],

@@ -1,6 +1,6 @@
 import 'package:dev_widgets/src/impl/helpers.dart';
-import 'package:dev_widgets/src/impl/widgets/io_editor/themes.dart';
 import 'package:dev_widgets/src/impl/settings/settings_provider.dart';
+import 'package:dev_widgets/src/impl/widgets/io_editor/themes.dart';
 import 'package:dev_widgets/src/supported_locales.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +11,7 @@ import 'package:yaru/yaru.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 class SettingsPage extends StatelessWidget {
-  const SettingsPage({Key? key}) : super(key: key);
+  const SettingsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class SettingsPage extends StatelessWidget {
 }
 
 class _ApplicationSettings extends ConsumerWidget {
-  const _ApplicationSettings({Key? key}) : super(key: key);
+  const _ApplicationSettings();
 
   @override
   Widget build(BuildContext context, ref) {
@@ -133,7 +133,7 @@ class _ApplicationSettings extends ConsumerWidget {
 }
 
 class _TextEditorSettings extends ConsumerWidget {
-  const _TextEditorSettings({Key? key}) : super(key: key);
+  const _TextEditorSettings();
 
   @override
   Widget build(BuildContext context, ref) {
@@ -244,7 +244,7 @@ class _TextEditorSettings extends ConsumerWidget {
 }
 
 class _About extends ConsumerWidget {
-  const _About({Key? key}) : super(key: key);
+  const _About();
 
   @override
   Widget build(BuildContext context, ref) {

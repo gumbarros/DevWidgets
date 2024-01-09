@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class IOToolbar extends StatelessWidget {
   const IOToolbar({
-    Key? key,
+    super.key,
     required this.title,
     this.actions,
-  }) : super(key: key);
+  });
 
   final String title;
   final List<Widget>? actions;

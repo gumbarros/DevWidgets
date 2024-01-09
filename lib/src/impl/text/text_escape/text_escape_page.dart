@@ -1,15 +1,15 @@
-import 'package:dev_widgets/src/impl/text/text_escape/text_escape_providers.dart';
-import 'package:dev_widgets/src/impl/text/text_escape/escape_conversion_mode.dart';
 import 'package:dev_widgets/src/impl/helpers.dart';
+import 'package:dev_widgets/src/impl/text/text_escape/escape_conversion_mode.dart';
+import 'package:dev_widgets/src/impl/text/text_escape/text_escape_providers.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/io_editor.dart';
-import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 class TextEscapePage extends HookConsumerWidget {
-  const TextEscapePage({Key? key}) : super(key: key);
+  const TextEscapePage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

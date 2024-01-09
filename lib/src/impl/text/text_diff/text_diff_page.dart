@@ -1,9 +1,10 @@
 import 'package:dev_widgets/src/impl/helpers.dart';
 import 'package:dev_widgets/src/impl/settings/settings.dart';
-import 'package:dev_widgets/src/impl/widgets/io_editor/input_editor.dart';
-import 'package:dev_widgets/src/impl/widgets/multi_split_view_divider.dart';
 import 'package:dev_widgets/src/impl/settings/settings_provider.dart';
 import 'package:dev_widgets/src/impl/text/text_diff/text_diff_providers.dart';
+import 'package:dev_widgets/src/impl/widgets/io_editor/input_editor.dart';
+import 'package:dev_widgets/src/impl/widgets/multi_split_view_divider.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -11,10 +12,9 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:multi_split_view/multi_split_view.dart';
 import 'package:pretty_diff_text/pretty_diff_text.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
-import 'package:easy_localization/easy_localization.dart';
 
 class TextDiffPage extends HookConsumerWidget {
-  const TextDiffPage({Key? key}) : super(key: key);
+  const TextDiffPage({super.key});
 
   @override
   Widget build(BuildContext context, ref) {
@@ -159,10 +159,9 @@ class TextDiffPage extends HookConsumerWidget {
 
 class _Diff extends ConsumerWidget {
   const _Diff({
-    Key? key,
     required this.settings,
     this.isDialog = false,
-  }) : super(key: key);
+  });
 
   final Settings settings;
 

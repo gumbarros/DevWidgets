@@ -2,15 +2,15 @@ import 'package:dev_widgets/src/impl/generators/lipsum/lipsum_generator_provider
 import 'package:dev_widgets/src/impl/generators/lipsum/lipsum_type.dart';
 import 'package:dev_widgets/src/impl/helpers.dart';
 import 'package:dev_widgets/src/impl/widgets/io_editor/output_editor.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 class LipsumGeneratorPage extends HookConsumerWidget {
-  const LipsumGeneratorPage({Key? key}) : super(key: key);
+  const LipsumGeneratorPage({super.key});
 
   @override
   Widget build(BuildContext context, ref) {

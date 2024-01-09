@@ -17,16 +17,17 @@ Future<void> ensureInitialized() async {
 Future<void> main() async {
   await ensureInitialized();
 
-  runApp(ProviderScope(child:EasyLocalization(
-      path: 'assets/translations',
-      assetLoader: YamlAssetLoader(),
-      fallbackLocale: const Locale("en", "US"),
-      supportedLocales: supportedLocales.map((l) => l.locale).toList(),
-      child: const Main())));
+  runApp(ProviderScope(
+      child: EasyLocalization(
+          path: 'assets/translations',
+          assetLoader: const YamlAssetLoader(),
+          fallbackLocale: const Locale("en", "US"),
+          supportedLocales: supportedLocales.map((l) => l.locale).toList(),
+          child: const Main())));
 }
 
 class Main extends StatelessWidget {
-  const Main({Key? key}) : super(key: key);
+  const Main({super.key});
 
   @override
   Widget build(BuildContext context) {

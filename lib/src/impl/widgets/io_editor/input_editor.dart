@@ -4,15 +4,16 @@ import 'package:flutter/material.dart';
 
 class InputEditor extends StatelessWidget {
   const InputEditor(
-      {Key? key,
+      {super.key,
       this.inputChild,
       this.inputController,
       this.width,
       this.height,
-      this.toolbarTitle, this.minLines = 10,
+      this.toolbarTitle,
+      this.minLines = 10,
       this.isVerticalLayout = false,
-      this.usesCodeControllers = true, this.onChanged})
-      : super(key: key);
+      this.usesCodeControllers = true,
+      this.onChanged});
 
   final Widget? inputChild;
   final TextEditingController? inputController;
@@ -43,7 +44,7 @@ class InputEditor extends StatelessWidget {
                     ? MediaQuery.of(context).size.height / 3.5
                     : MediaQuery.of(context).size.height / 1.5),
             child: CodeEditorWrapper(
-                onChanged:onChanged,
+                onChanged: onChanged,
                 minLines: minLines,
                 usesCodeControllers: usesCodeControllers,
                 textEditingController: inputController),

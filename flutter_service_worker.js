@@ -2,59 +2,59 @@
 const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
-const RESOURCES = {
-  "manifest.json": "cd5f92954660745f6b1c54187427ba03",
-"version.json": "eb1e09bea2531729343672b27fab8379",
-"icons/Icon-512.png": "0b285219bbaa1d42b22d3f4da97298d9",
-"icons/Icon-192.png": "f7234cd5c3a8efe6b29d43e6ae0df608",
-"icons/Icon-maskable-512.png": "0b285219bbaa1d42b22d3f4da97298d9",
-"icons/Icon-maskable-192.png": "f7234cd5c3a8efe6b29d43e6ae0df608",
-"canvaskit/profiling/canvaskit.js": "38164e5a72bdad0faa4ce740c9b8e564",
-"canvaskit/profiling/canvaskit.wasm": "95a45378b69e77af5ed2bc72b2209b94",
-"canvaskit/canvaskit.js": "2bc454a691c631b07a9307ac4ca47797",
-"canvaskit/canvaskit.wasm": "bf50631470eb967688cca13ee181af62",
-"favicon.png": "85812388bd37c0d2bea08eecb8e99afe",
-"flutter.js": "f85e6fb278b0fd20c349186fb46ae36d",
-"index.html": "a1f695559792e0cd6ef48c933625ca71",
-"/": "a1f695559792e0cd6ef48c933625ca71",
-"main.dart.js": "fbd6b98f3f700a7aa514fbe88536b780",
-"assets/NOTICES": "950a055f023be7c16dc467ca4123795e",
-"assets/packages/yaru/src/text/fonts/Ubuntu-LI.ttf": "d8d09723b71ebb22bc31881877609622",
-"assets/packages/yaru/src/text/fonts/Ubuntu-R.ttf": "7f0b42d1d6a4d3e646c558185f6711ea",
-"assets/packages/yaru/src/text/fonts/Ubuntu-BI.ttf": "f270899858f8204b62043167ac8d9552",
-"assets/packages/yaru/src/text/fonts/Ubuntu-L.ttf": "2759de5c01527bd9730b4d1838e6c938",
-"assets/packages/yaru/src/text/fonts/Ubuntu-B.ttf": "008e6bc48c8eaa5d2855d57e6b0b8595",
-"assets/packages/yaru/src/text/fonts/Ubuntu-RI.ttf": "6da3b4e2adcbcf2889e59c81d2326a43",
-"assets/packages/yaru/src/text/fonts/Ubuntu-M.ttf": "2aaaafd5fe853746266cad7eafcc871e",
-"assets/packages/yaru/src/text/fonts/Ubuntu-MI.ttf": "137201ae9563c760964063e122d587b7",
-"assets/packages/wakelock_web/assets/no_sleep.js": "7748a45cd593f33280669b29c2c8919a",
-"assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
-"assets/packages/yaru_widgets/assets/ubuntu_logo.png": "1cd87df893e3c75b7df2e850e0dfc1d7",
-"assets/packages/easy_localization/i18n/ar-DZ.json": "acc0a8eebb2fcee312764600f7cc41ec",
-"assets/packages/easy_localization/i18n/en-US.json": "5f5fda8715e8bf5116f77f469c5cf493",
-"assets/packages/easy_localization/i18n/en.json": "5f5fda8715e8bf5116f77f469c5cf493",
-"assets/packages/easy_localization/i18n/ar.json": "acc0a8eebb2fcee312764600f7cc41ec",
-"assets/shaders/ink_sparkle.frag": "83c076d55fdbf5e6f73f29c79926992c",
-"assets/FontManifest.json": "be4e7fc0d3c67a048a7a89bec4d76b20",
-"assets/AssetManifest.json": "03f15463301397e9fa2b51b065500886",
-"assets/fonts/MaterialIcons-Regular.otf": "95db9098c58fd6db106f1116bae85a0b",
-"assets/fonts/FiraCode-Regular.ttf": "a09618fdaaa2aef4b7b45e26b7267763",
-"assets/fonts/JetBrainsMonoNL-Regular.ttf": "fbd467fbc7230e0bcfc20de2e15b3777",
+
+const RESOURCES = {"flutter.js": "7d69e653079438abfbb24b82a655b0a4",
+"manifest.json": "cd5f92954660745f6b1c54187427ba03",
+"index.html": "82e3ced64cd5331f48464023e34ab82a",
+"/": "82e3ced64cd5331f48464023e34ab82a",
+"assets/AssetManifest.bin": "1ff7a818f1162870fae2238ab6d7c99a",
 "assets/fonts/Hack-Regular.ttf": "d9ab192896af1ab48c760f3368842b79",
 "assets/fonts/Monocraft.otf": "f301197b08c8e25e0212ef95c1039ad6",
+"assets/fonts/JetBrainsMonoNL-Regular.ttf": "fbd467fbc7230e0bcfc20de2e15b3777",
+"assets/fonts/MaterialIcons-Regular.otf": "0f2ced9cf38ebcb1d23779d7aa06fc12",
+"assets/fonts/FiraCode-Regular.ttf": "a09618fdaaa2aef4b7b45e26b7267763",
+"assets/assets/icon/icon.png": "651340b46ddaff0011be5abbfb67b8bc",
 "assets/assets/translations/pt-BR.yaml": "b49d6d3964a8ac1209e0a52a82f06cd7",
+"assets/assets/translations/ja-JP.yaml": "a003d4971ca71bf1b2121c3fc72b5a28",
 "assets/assets/translations/en-US.yaml": "30597bdf6ad99d7424521311ae0ecc0d",
 "assets/assets/translations/de-DE.yaml": "8cc13bd85f8040bfb19f29fb683f7ca2",
-"assets/assets/icon/icon.png": "651340b46ddaff0011be5abbfb67b8bc"
-};
-
+"assets/AssetManifest.bin.json": "d9d416a1d5c8f130f2d1af0c3f18a236",
+"assets/FontManifest.json": "be4e7fc0d3c67a048a7a89bec4d76b20",
+"assets/shaders/ink_sparkle.frag": "4096b5150bac93c41cbc9b45276bd90f",
+"assets/NOTICES": "de4e21f910bbd1bbfa54d62aee7b11b0",
+"assets/AssetManifest.json": "2cad870a4e0befebe7a5749277d82e49",
+"assets/packages/yaru/src/text/fonts/Ubuntu-RI.ttf": "6f1f6aa0bc3920f8eccbe06fdc883ada",
+"assets/packages/yaru/src/text/fonts/Ubuntu-R.ttf": "29b1464e2d39f94775515968be952cb4",
+"assets/packages/yaru/src/text/fonts/Ubuntu-M.ttf": "d22dd270cff85396469ca949121abc10",
+"assets/packages/yaru/src/text/fonts/Ubuntu-MI.ttf": "e8d536491885e9c071e3ee4803d951d2",
+"assets/packages/yaru/src/text/fonts/Ubuntu-B.ttf": "c33c9da914508707cc7d4453239176a5",
+"assets/packages/yaru/src/text/fonts/Ubuntu-LI.ttf": "dff2c7f7e103ee2516e9c993b62453f3",
+"assets/packages/yaru/src/text/fonts/Ubuntu-L.ttf": "8752cc329a4ba278de1fbe87848f64f0",
+"assets/packages/yaru/src/text/fonts/Ubuntu-BI.ttf": "9eac57f171903e63575285b864a03ac8",
+"assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "f2163b9d4e6f1ea52063f498c8878bb9",
+"assets/packages/yaru_widgets/assets/ubuntu_logo.png": "1cd87df893e3c75b7df2e850e0dfc1d7",
+"assets/packages/wakelock_plus/assets/no_sleep.js": "7748a45cd593f33280669b29c2c8919a",
+"favicon.png": "85812388bd37c0d2bea08eecb8e99afe",
+"main.dart.js": "c151dd2e571ab0b8dee74698f7131026",
+"version.json": "eb1e09bea2531729343672b27fab8379",
+"canvaskit/canvaskit.wasm": "73584c1a3367e3eaf757647a8f5c5989",
+"canvaskit/skwasm.js": "87063acf45c5e1ab9565dcf06b0c18b8",
+"canvaskit/skwasm.wasm": "2fc47c0a0c3c7af8542b601634fe9674",
+"canvaskit/skwasm.worker.js": "bfb704a6c714a75da9ef320991e88b03",
+"canvaskit/canvaskit.js": "eb8797020acdbdf96a12fb0405582c1b",
+"canvaskit/chromium/canvaskit.wasm": "143af6ff368f9cd21c863bfa4274c406",
+"canvaskit/chromium/canvaskit.js": "0ae8bbcc58155679458a0f7a00f66873",
+"icons/Icon-512.png": "0b285219bbaa1d42b22d3f4da97298d9",
+"icons/Icon-192.png": "f7234cd5c3a8efe6b29d43e6ae0df608",
+"icons/Icon-maskable-192.png": "f7234cd5c3a8efe6b29d43e6ae0df608",
+"icons/Icon-maskable-512.png": "0b285219bbaa1d42b22d3f4da97298d9"};
 // The application shell files that are downloaded before a service worker can
 // start.
-const CORE = [
-  "main.dart.js",
+const CORE = ["main.dart.js",
 "index.html",
 "assets/AssetManifest.json",
 "assets/FontManifest.json"];
+
 // During install, the TEMP cache is populated with the application shell files.
 self.addEventListener("install", (event) => {
   self.skipWaiting();
@@ -65,7 +65,6 @@ self.addEventListener("install", (event) => {
     })
   );
 });
-
 // During activate, the cache is populated with the temp files downloaded in
 // install. If this service worker is upgrading from one with a saved
 // MANIFEST, then use this to retain unchanged resource files.
@@ -87,6 +86,8 @@ self.addEventListener("activate", function(event) {
         await caches.delete(TEMP);
         // Save the manifest to make future upgrades efficient.
         await manifestCache.put('manifest', new Response(JSON.stringify(RESOURCES)));
+        // Claim client to enable caching on first launch
+        self.clients.claim();
         return;
       }
       var oldManifest = await manifest.json();
@@ -112,6 +113,8 @@ self.addEventListener("activate", function(event) {
       await caches.delete(TEMP);
       // Save the manifest to make future upgrades efficient.
       await manifestCache.put('manifest', new Response(JSON.stringify(RESOURCES)));
+      // Claim client to enable caching on first launch
+      self.clients.claim();
       return;
     } catch (err) {
       // On an unhandled exception the state of the cache cannot be guaranteed.
@@ -122,7 +125,6 @@ self.addEventListener("activate", function(event) {
     }
   }());
 });
-
 // The fetch handler redirects requests for RESOURCE files to the service
 // worker cache.
 self.addEventListener("fetch", (event) => {
@@ -162,7 +164,6 @@ self.addEventListener("fetch", (event) => {
     })
   );
 });
-
 self.addEventListener('message', (event) => {
   // SkipWaiting can be used to immediately activate a waiting service worker.
   // This will also require a page refresh triggered by the main worker.
@@ -175,7 +176,6 @@ self.addEventListener('message', (event) => {
     return;
   }
 });
-
 // Download offline will check the RESOURCES for all files not in the cache
 // and populate them.
 async function downloadOffline() {
@@ -196,7 +196,6 @@ async function downloadOffline() {
   }
   return contentCache.addAll(resources);
 }
-
 // Attempt to download the resource online before falling back to
 // the offline cache.
 function onlineFirst(event) {

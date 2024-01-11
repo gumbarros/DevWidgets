@@ -41,34 +41,6 @@ jobs:
           name: DevWidgets-Archive
           path: DevWidgets-Linux-Portable.tar.gz
 
-  build-flatpak:
-    name: Build flatpak
-    needs: build-flutter-app
-    runs-on: ubuntu-latest
-    container:
-      image: bilelmoussaoui/flatpak-github-actions:freedesktop-21.08
-      options: --privileged
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Download app archive
-        uses: actions/download-artifact@v3
-        with:
-          name: DevWidgets-Archive
-
-      - name: Build .flatpak
-        uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v4
-        with:
-          bundle: DevWidgets.flatpak
-          manifest-path: br.com.barros.DevWidgets.yml
-
-      - name: Upload .flatpak artifact to workflow
-        uses: actions/upload-artifact@v2
-        with:
-          name: Flatpak artifact
-          path: DevWidgets.flatpak
-
   build-appimage:
     name: Build AppImage
     runs-on: ubuntu-latest

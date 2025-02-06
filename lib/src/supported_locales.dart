@@ -15,4 +15,5 @@ const supportedLocales = [
   SupportedLocale("German", Locale('de', 'DE')),
   SupportedLocale("Japanese", Locale('ja', 'JP')),
   SupportedLocale("French", Locale('fr', 'FR')),
+  SupportedLocale("Spanish", Locale('es', 'ES')),
 ];

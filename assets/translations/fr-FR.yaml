@@ -1,0 +1,195 @@
+about: À propos
+all_tools: Tous les outils
+amount: Quantité
+app_name: DevWidgets
+application: Application
+base64_image_encoder: Encodeur / Décodeur d'image Base 64
+base64_image_encoder_description: Encoder et décoder les données d'image en Base64
+base64_image_encoder_short_title: Image Base 64
+base64_text_encoder: Encodeur / Décodeur de texte Base 64
+base64_text_encoder_description: Encoder et décoder le texte en Base64
+base64_text_encoder_short_title: Texte Base 64
+brazil: Brésil
+brightness: Luminosité
+build_info: Informations de build
+bytes: Octets
+character_distribution: Distribution des caractères
+characters: Caractères
+class_name: Nom de classe
+clear: Effacer
+cnpj: CNPJ
+cnpj_description: Générer des CNPJs brésiliens
+cnpj_short_title: Générateur de CNPJ
+compact: Compact
+configuration: Configuration
+conversion: Conversion
+conversion_mode: Sélectionnez le mode de conversion que vous souhaitez utiliser
+conversion_type: Type de conversion
+convert: Convertir
+converters: Convertisseurs
+copied_to_the_clipboard: Copié dans le presse-papiers.
+copy: Copier
+cpf: CPF
+cpf_description: Générer des CPFs brésiliens
+cpf_short_title: Générateur de CPF
+cron_parser: Analyseur Cron
+cron_parser_description: Analyser une expression Cron pour obtenir les dates planifiées
+current: Actuel
+dark: Sombre
+data_type: Type de données
+decode: Décoder
+dialect: Dialecte
+diff_mode_efficiency: Augmenter l'efficacité informatique en éliminant les similitudes courtes qui ne valent pas le surcoût.
+diff_mode_none: Pas de nettoyage. Sortie brute.
+diff_mode_semantic: Augmenter la lisibilité en supprimant les similitudes susceptibles d'être accidentelles.
+difference: Différence
+display_line_numbers: Afficher les numéros de ligne
+download_desktop_version: Télécharger la version de bureau
+download_image: Télécharger l'image
+edit_cost: Coût d'édition
+efficiency_cleanup: Nettoyage d'efficacité
+efficiency_cleanup_description: "Augmenter l'efficacité informatique en éliminant les similitudes courtes qui ne valent pas le surcoût. Plus le coût d'édition est élevé, plus le nettoyage est agressif."
+enabled: Activé
+encode: Encoder
+encoders_decoders: Encodeurs / Décodeurs
+encoding: Encodage
+encoding_description: Sélectionnez l'encodage que vous souhaitez utiliser
+error: Erreur
+escape: Échapper
+field_name: Nom
+fields: Champs
+file_saved_to_documents: Fichier enregistré dans le dossier Documents.
+font_family: Police
+font_size: Taille de la police
+format: Format
+formatter: Formateur
+formatters: Formateurs
+four_spaces: Quatre espaces
+generate: Générer
+generator: Générateur
+generators: Générateurs
+generic: Générique
+generic_sql: SQL générique
+github: GitHub
+high_contrast: Contraste élevé
+home: Accueil
+html: HTML
+html_encoder: Encodeur / Décodeur HTML
+html_encoder_description: Encoder ou décoder les caractères applicables en leurs entités HTML correspondantes
+html_encoder_short_title: HTML
+html_preview: Aperçu HTML
+html_preview_description: Prévisualiser un document HTML
+html_preview_short_title: Aperçu HTML
+hyphens: Traits d'union
+indentation: Indentation
+input: Entrée
+invalid_data: Données invalides
+invalid_json_data: Données JSON invalides.
+invalid_xml_data: Données XML invalides.
+invalid_yaml_data: Données YAML invalides
+json_formatter: Formateur JSON
+json_formatter_description: Indenter ou minifier des données JSON
+json_formatter_short_title: JSON
+json_to_class: "JSON -> Classe"
+json_to_class_description: Convertir les données JSON en une classe de langage de programmation
+json_to_sql: "JSON -> SQL"
+json_to_sql_description: Convertir les données JSON en définitions de table ou en scripts INSERT/UPDATE/DELETE.
+json_to_sql_invalid_json_data: |-
+  Données JSON invalides.
+  Veuillez entrer un tableau avec des objets comme dans l'exemple ci-dessus.
+json_yaml_converter: "JSON <> YAML"
+json_yaml_converter_description: Convertir les données JSON en YAML et vice versa
+language: Langue
+length: Longueur
+licenses: Licences
+licenses_description: Accéder à toutes les licences tierces
+light: Clair
+lines: Lignes
+lipsum: Lorem Ipsum
+lipsum_amount_description: "Quantité de mots, phrases ou paragraphes à générer"
+lipsum_generator: Générateur de Lorem Ipsum
+lipsum_generator_description: "Mots, phrases et paragraphes"
+lipsum_generator_mode: Mode de génération
+lipsum_generator_mode_description: "Générer des mots, phrases ou paragraphes avec du texte Lorem Ipsum"
+lipsum_start_with: Commencer par 'Lorem ipsum dolor sit amet ...'
+markdown_preview: Aperçu Markdown
+markdown_preview_description: Prévisualiser un document Markdown
+markdown_preview_short_title: Aperçu Markdown
+menu_search_bar_hint: Tapez pour rechercher des outils...
+new_text: Nouveau texte
+no_cleanup: Aucun nettoyage
+no_cleanup_description: Sortie brute
+no_tools_found: Aucun outil trouvé.
+number_base_converter: Convertisseur de base numérique
+number_base_converter_description: Convertir les nombres d'une base à une autre
+old_text: Ancien texte
+one_tab: Une tabulation
+options: Options
+output: Sortie
+paragraphs: Paragraphes
+paste: Coller
+position: Position
+preview: Aperçu
+primary_color: Couleur principale
+primary_key: Clé primaire
+programming_language: Langage de programmation
+repository: Dépôt
+repository_about: "Dans le dépôt, vous pouvez ouvrir des problèmes pour signaler un problème, voir le code source ou laisser un commentaire :)"
+required: Requis
+selection: Sélection
+semantic_cleanup: Nettoyage sémantique
+semantic_cleanup_description: Augmenter la lisibilité en supprimant les similitudes susceptibles d'être accidentelles
+sentences: Phrases
+settings: Paramètres
+sort_json_properties_alphabetically: Trier les propriétés JSON par ordre alphabétique
+sort_properties_alphabetically: Trier les propriétés par ordre alphabétique
+sort_yaml_properties_alphabetically: Trier les propriétés YAML par ordre alphabétique
+sql_formatter: Formateur SQL
+sql_formatter_description: Indenter les requêtes SQL
+sql_formatter_short_title: SQL
+statistics: Statistiques
+success: "Succès !"
+system: Système
+table_name: Nom de la table
+text: Texte
+text_diff: Comparateur de texte
+text_diff_description: Comparer deux textes
+text_diff_short_title: Différence de texte
+text_editor: Éditeur de texte
+text_escape: Échapper / Déséchapper le texte
+text_escape_description: "Échappe ou déséchappe une chaîne, en supprimant les caractères qui pourraient empêcher l'analyse."
+text_escape_short_title: Échapper / Déséchapper
+text_inspector: "Convertisseur de casse & Inspecteur de texte"
+text_inspector_description: Convertir et inspecter une chaîne
+text_inspector_short_title: "Convertisseur de casse & Inspecteur"
+theme: Thème
+timestamp_converter: Convertisseur de timestamp
+timestamp_converter_description: Convertir un timestamp en date lisible et vice versa
+two_spaces: Deux espaces
+unescape: Déséchapper
+upload_file: Télécharger un fichier
+upload_image: Télécharger une image
+uppercase: Majuscule
+url_encoder: Encodeur / Décodeur URL
+url_encoder_description: Encoder ou décoder tous les caractères applicables en leurs entités URL correspondantes
+url_encoder_short_title: URL
+uuid: UUID
+uuid_generator: Générateur d'UUID
+uuid_generator_description: Générer des UUID v1 et v4
+uuid_type: Version de l'UUID
+uuid_type_description: La version d'UUID à générer
+v1: 1
+v4: 4 (GUID)
+validator: Validateur
+version: Version
+warning: Avertissement
+word_distribution: Distribution des mots
+words: Mots
+wrap_text: Envelopper le texte
+xml_formatter: Formateur XML
+xml_formatter_description: Indenter ou minifier les données XML
+xml_formatter_short_title: XML
+yaml_formatter: Formateur YAML
+yaml_formatter_description: Formater et trier les données YAML
+yaml_formatter_short_title: YAML
+yaml_style: Style YAML
